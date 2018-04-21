@@ -16,5 +16,10 @@ namespace TechStore
         {
             InitializeComponent();
         }
+
+        private void UiActionIzlaz_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
