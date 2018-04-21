@@ -31,7 +31,7 @@
             this.uiInputKorisnickoIme = new System.Windows.Forms.TextBox();
             this.uiInputLozinka = new System.Windows.Forms.TextBox();
             this.uiLabelKorisnickoIme = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uiLabelLozinka = new System.Windows.Forms.Label();
             this.uiActionPrijaviSe = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -60,14 +60,14 @@
             this.uiLabelKorisnickoIme.TabIndex = 2;
             this.uiLabelKorisnickoIme.Text = "Korisničko ime:";
             // 
-            // label1
+            // uiLabelLozinka
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Lozinka:";
+            this.uiLabelLozinka.AutoSize = true;
+            this.uiLabelLozinka.Location = new System.Drawing.Point(110, 127);
+            this.uiLabelLozinka.Name = "uiLabelLozinka";
+            this.uiLabelLozinka.Size = new System.Drawing.Size(47, 13);
+            this.uiLabelLozinka.TabIndex = 3;
+            this.uiLabelLozinka.Text = "Lozinka:";
             // 
             // uiActionPrijaviSe
             // 
@@ -77,7 +77,7 @@
             this.uiActionPrijaviSe.TabIndex = 4;
             this.uiActionPrijaviSe.Text = "PRIJAVI SE";
             this.uiActionPrijaviSe.UseVisualStyleBackColor = true;
-            this.uiActionPrijaviSe.Click += new System.EventHandler(this.uiActionPrijaviSe_Click);
+            this.uiActionPrijaviSe.Click += new System.EventHandler(this.UiActionPrijaviSe_Click);
             // 
             // uiActionOdustani
             // 
@@ -87,7 +87,7 @@
             this.uiActionOdustani.TabIndex = 5;
             this.uiActionOdustani.Text = "ODUSTANI";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
-            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
+            this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
             // frmPrijava
             // 
@@ -97,12 +97,13 @@
             this.ClientSize = new System.Drawing.Size(390, 323);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionPrijaviSe);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiLabelLozinka);
             this.Controls.Add(this.uiLabelKorisnickoIme);
             this.Controls.Add(this.uiInputLozinka);
             this.Controls.Add(this.uiInputKorisnickoIme);
             this.Name = "frmPrijava";
             this.Text = "PRIJAVA";
+            this.Load += new System.EventHandler(this.FrmPrijava_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +114,7 @@
         private System.Windows.Forms.TextBox uiInputKorisnickoIme;
         private System.Windows.Forms.TextBox uiInputLozinka;
         private System.Windows.Forms.Label uiLabelKorisnickoIme;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label uiLabelLozinka;
         private System.Windows.Forms.Button uiActionPrijaviSe;
         private System.Windows.Forms.Button uiActionOdustani;
     }

@@ -17,16 +17,30 @@ namespace TechStore
             InitializeComponent();
         }
 
-        private void uiActionOdustani_Click(object sender, EventArgs e)
+        private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void uiActionPrijaviSe_Click(object sender, EventArgs e)
+        private void UiActionPrijaviSe_Click(object sender, EventArgs e)
         {
-            Form frmIzbornik = new Form();
+            Form frmIzbornik = new FrmIzbornik();
             frmIzbornik.Show();
             Hide();
+        }
+
+        private void FrmPrijava_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            this.KeyDown += FrmPrijava_KeyDown;
+        }
+
+        private void FrmPrijava_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString()=="F1")
+            {
+                MessageBox.Show("Popup prozor!");
+            }
         }
     }
 }
