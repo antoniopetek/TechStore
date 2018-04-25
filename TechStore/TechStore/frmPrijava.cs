@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class frmPrijava : Form
+    public partial class FrmPrijava : Form
     {
-        public frmPrijava()
+        public FrmPrijava()
         {
             InitializeComponent();
         }

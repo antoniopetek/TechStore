@@ -1,6 +1,6 @@
 ﻿namespace TechStore
 {
-    partial class frmPrijava
+    partial class FrmPrijava
     {
         /// <summary>
         /// Required designer variable.

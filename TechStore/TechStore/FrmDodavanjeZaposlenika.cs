@@ -10,27 +10,17 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmIzbornik : Form
+    public partial class FrmDodavanjeZaposlenika : Form
     {
-        public FrmIzbornik()
+        public FrmDodavanjeZaposlenika()
         {
             InitializeComponent();
         }
 
-        private void UiActionIzlaz_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void uiActionDodajZaposlenika_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void uiActionZaposlenici_Click(object sender, EventArgs e)
-        {
-            FrmZaposlenici formaZaposlenici = new FrmZaposlenici();
-            formaZaposlenici.Show();
+            MessageBox.Show("Uspješno ste dodali zaposlenika!", "ZAPOSLENIK DODAN", MessageBoxButtons.OK, MessageBoxIcon.None);
+            Close();
         }
     }
 }

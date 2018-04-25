@@ -16,7 +16,7 @@ namespace TechStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrijava());
+            Application.Run(new FrmPrijava());
         }
     }
 }
