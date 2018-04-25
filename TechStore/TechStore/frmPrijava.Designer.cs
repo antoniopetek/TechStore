@@ -40,7 +40,7 @@
             // 
             this.uiInputKorisnickoIme.Location = new System.Drawing.Point(113, 91);
             this.uiInputKorisnickoIme.Name = "uiInputKorisnickoIme";
-            this.uiInputKorisnickoIme.Size = new System.Drawing.Size(166, 20);
+            this.uiInputKorisnickoIme.Size = new System.Drawing.Size(180, 20);
             this.uiInputKorisnickoIme.TabIndex = 0;
             // 
             // uiInputLozinka
@@ -48,32 +48,37 @@
             this.uiInputLozinka.Location = new System.Drawing.Point(113, 143);
             this.uiInputLozinka.Name = "uiInputLozinka";
             this.uiInputLozinka.PasswordChar = '*';
-            this.uiInputLozinka.Size = new System.Drawing.Size(166, 20);
+            this.uiInputLozinka.Size = new System.Drawing.Size(180, 20);
             this.uiInputLozinka.TabIndex = 1;
             // 
             // uiLabelKorisnickoIme
             // 
             this.uiLabelKorisnickoIme.AutoSize = true;
+            this.uiLabelKorisnickoIme.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiLabelKorisnickoIme.Location = new System.Drawing.Point(110, 75);
             this.uiLabelKorisnickoIme.Name = "uiLabelKorisnickoIme";
-            this.uiLabelKorisnickoIme.Size = new System.Drawing.Size(78, 13);
+            this.uiLabelKorisnickoIme.Size = new System.Drawing.Size(93, 13);
             this.uiLabelKorisnickoIme.TabIndex = 2;
             this.uiLabelKorisnickoIme.Text = "Korisničko ime:";
             // 
             // uiLabelLozinka
             // 
             this.uiLabelLozinka.AutoSize = true;
+            this.uiLabelLozinka.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiLabelLozinka.Location = new System.Drawing.Point(110, 127);
             this.uiLabelLozinka.Name = "uiLabelLozinka";
-            this.uiLabelLozinka.Size = new System.Drawing.Size(47, 13);
+            this.uiLabelLozinka.Size = new System.Drawing.Size(55, 13);
             this.uiLabelLozinka.TabIndex = 3;
             this.uiLabelLozinka.Text = "Lozinka:";
             // 
             // uiActionPrijaviSe
             // 
-            this.uiActionPrijaviSe.Location = new System.Drawing.Point(113, 202);
+            this.uiActionPrijaviSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionPrijaviSe.Location = new System.Drawing.Point(113, 194);
             this.uiActionPrijaviSe.Name = "uiActionPrijaviSe";
-            this.uiActionPrijaviSe.Size = new System.Drawing.Size(75, 29);
+            this.uiActionPrijaviSe.Size = new System.Drawing.Size(90, 44);
             this.uiActionPrijaviSe.TabIndex = 4;
             this.uiActionPrijaviSe.Text = "PRIJAVI SE";
             this.uiActionPrijaviSe.UseVisualStyleBackColor = true;
@@ -81,15 +86,16 @@
             // 
             // uiActionOdustani
             // 
-            this.uiActionOdustani.Location = new System.Drawing.Point(204, 202);
+            this.uiActionOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionOdustani.Location = new System.Drawing.Point(209, 194);
             this.uiActionOdustani.Name = "uiActionOdustani";
-            this.uiActionOdustani.Size = new System.Drawing.Size(75, 29);
+            this.uiActionOdustani.Size = new System.Drawing.Size(84, 44);
             this.uiActionOdustani.TabIndex = 5;
             this.uiActionOdustani.Text = "ODUSTANI";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
-            // frmPrijava
+            // FrmPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +109,7 @@
             this.Controls.Add(this.uiLabelKorisnickoIme);
             this.Controls.Add(this.uiInputLozinka);
             this.Controls.Add(this.uiInputKorisnickoIme);
-            this.Name = "frmPrijava";
+            this.Name = "FrmPrijava";
             this.Text = "PRIJAVA";
             this.Load += new System.EventHandler(this.FrmPrijava_Load);
             this.ResumeLayout(false);

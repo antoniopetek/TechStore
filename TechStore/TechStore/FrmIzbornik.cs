@@ -22,15 +22,22 @@ namespace TechStore
             Application.Exit();
         }
 
-        private void uiActionDodajZaposlenika_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void uiActionZaposlenici_Click(object sender, EventArgs e)
         {
             FrmZaposlenici formaZaposlenici = new FrmZaposlenici();
             formaZaposlenici.Show();
+        }
+
+        private void uiActionDodajPoslovnicu_Click(object sender, EventArgs e)
+        {
+            FrmPoslovnica formaPoslovnica = new FrmPoslovnica();
+            formaPoslovnica.Show();
+        }
+
+        private void uiActionPregledArtikala_Click(object sender, EventArgs e)
+        {
+            FrmKolicina formaKolicina = new FrmKolicina();
+            formaKolicina.Show();
         }
     }
 }

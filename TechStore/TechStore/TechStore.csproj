@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDodavanjePoslovnice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodavanjePoslovnice.Designer.cs">
+      <DependentUpon>FrmDodavanjePoslovnice.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDodavanjeZaposlenika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +63,12 @@
     </Compile>
     <Compile Include="FrmHelp.Designer.cs">
       <DependentUpon>FrmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPoslovnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPoslovnica.Designer.cs">
+      <DependentUpon>FrmPoslovnica.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrijava.cs">
       <SubType>Form</SubType>
@@ -75,8 +88,17 @@
     <Compile Include="FrmZaposlenici.Designer.cs">
       <DependentUpon>FrmZaposlenici.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKolicina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKolicina.Designer.cs">
+      <DependentUpon>FrmKolicina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDodavanjePoslovnice.resx">
+      <DependentUpon>FrmDodavanjePoslovnice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDodavanjeZaposlenika.resx">
       <DependentUpon>FrmDodavanjeZaposlenika.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,11 +108,17 @@
     <EmbeddedResource Include="FrmIzbornik.resx">
       <DependentUpon>FrmIzbornik.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPoslovnica.resx">
+      <DependentUpon>FrmPoslovnica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrijava.resx">
       <DependentUpon>FrmPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmZaposlenici.resx">
       <DependentUpon>FrmZaposlenici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKolicina.resx">
+      <DependentUpon>FrmKolicina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

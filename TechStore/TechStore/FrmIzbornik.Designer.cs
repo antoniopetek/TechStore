@@ -32,7 +32,7 @@
             this.uiActionZaposlenici = new System.Windows.Forms.Button();
             this.uiActionDodajPoslovnicu = new System.Windows.Forms.Button();
             this.uiActionIzlaz = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.uiActionPregledArtikala = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             this.uiActionDodajPoslovnicu.TabIndex = 2;
             this.uiActionDodajPoslovnicu.Text = "Dodaj poslovnicu";
             this.uiActionDodajPoslovnicu.UseVisualStyleBackColor = true;
+            this.uiActionDodajPoslovnicu.Click += new System.EventHandler(this.uiActionDodajPoslovnicu_Click);
             // 
             // uiActionIzlaz
             // 
@@ -79,15 +80,16 @@
             this.uiActionIzlaz.UseVisualStyleBackColor = true;
             this.uiActionIzlaz.Click += new System.EventHandler(this.UiActionIzlaz_Click);
             // 
-            // button1
+            // uiActionPregledArtikala
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(230, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 53);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Pregled artikala po poslovnicama";
-            this.button1.UseVisualStyleBackColor = true;
+            this.uiActionPregledArtikala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionPregledArtikala.Location = new System.Drawing.Point(230, 25);
+            this.uiActionPregledArtikala.Name = "uiActionPregledArtikala";
+            this.uiActionPregledArtikala.Size = new System.Drawing.Size(103, 53);
+            this.uiActionPregledArtikala.TabIndex = 4;
+            this.uiActionPregledArtikala.Text = "Pregled artikala po poslovnicama";
+            this.uiActionPregledArtikala.UseVisualStyleBackColor = true;
+            this.uiActionPregledArtikala.Click += new System.EventHandler(this.uiActionPregledArtikala_Click);
             // 
             // button2
             // 
@@ -120,7 +122,7 @@
             this.ClientSize = new System.Drawing.Size(458, 290);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.uiActionPregledArtikala);
             this.Controls.Add(this.uiActionIzlaz);
             this.Controls.Add(this.uiActionDodajPoslovnicu);
             this.Controls.Add(this.uiActionZaposlenici);
@@ -138,7 +140,7 @@
         private System.Windows.Forms.Button uiActionZaposlenici;
         private System.Windows.Forms.Button uiActionDodajPoslovnicu;
         private System.Windows.Forms.Button uiActionIzlaz;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button uiActionPregledArtikala;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
     }
