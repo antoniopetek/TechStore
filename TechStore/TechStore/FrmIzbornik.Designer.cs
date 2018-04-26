@@ -30,7 +30,7 @@
         {
             this.uiActionDodajArtikl = new System.Windows.Forms.Button();
             this.uiActionZaposlenici = new System.Windows.Forms.Button();
-            this.uiActionDodajPoslovnicu = new System.Windows.Forms.Button();
+            this.uiActionPoslovnice = new System.Windows.Forms.Button();
             this.uiActionIzlaz = new System.Windows.Forms.Button();
             this.uiActionPregledArtikala = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -58,16 +58,16 @@
             this.uiActionZaposlenici.UseVisualStyleBackColor = false;
             this.uiActionZaposlenici.Click += new System.EventHandler(this.uiActionZaposlenici_Click);
             // 
-            // uiActionDodajPoslovnicu
+            // uiActionPoslovnice
             // 
-            this.uiActionDodajPoslovnicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajPoslovnicu.Location = new System.Drawing.Point(121, 25);
-            this.uiActionDodajPoslovnicu.Name = "uiActionDodajPoslovnicu";
-            this.uiActionDodajPoslovnicu.Size = new System.Drawing.Size(103, 53);
-            this.uiActionDodajPoslovnicu.TabIndex = 2;
-            this.uiActionDodajPoslovnicu.Text = "Dodaj poslovnicu";
-            this.uiActionDodajPoslovnicu.UseVisualStyleBackColor = true;
-            this.uiActionDodajPoslovnicu.Click += new System.EventHandler(this.uiActionDodajPoslovnicu_Click);
+            this.uiActionPoslovnice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionPoslovnice.Location = new System.Drawing.Point(121, 25);
+            this.uiActionPoslovnice.Name = "uiActionPoslovnice";
+            this.uiActionPoslovnice.Size = new System.Drawing.Size(103, 53);
+            this.uiActionPoslovnice.TabIndex = 2;
+            this.uiActionPoslovnice.Text = "Poslovnice";
+            this.uiActionPoslovnice.UseVisualStyleBackColor = true;
+            this.uiActionPoslovnice.Click += new System.EventHandler(this.uiActionDodajPoslovnicu_Click);
             // 
             // uiActionIzlaz
             // 
@@ -124,7 +124,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.uiActionPregledArtikala);
             this.Controls.Add(this.uiActionIzlaz);
-            this.Controls.Add(this.uiActionDodajPoslovnicu);
+            this.Controls.Add(this.uiActionPoslovnice);
             this.Controls.Add(this.uiActionZaposlenici);
             this.Controls.Add(this.uiActionDodajArtikl);
             this.Name = "FrmIzbornik";
@@ -138,7 +138,7 @@
 
         private System.Windows.Forms.Button uiActionDodajArtikl;
         private System.Windows.Forms.Button uiActionZaposlenici;
-        private System.Windows.Forms.Button uiActionDodajPoslovnicu;
+        private System.Windows.Forms.Button uiActionPoslovnice;
         private System.Windows.Forms.Button uiActionIzlaz;
         private System.Windows.Forms.Button uiActionPregledArtikala;
         private System.Windows.Forms.Button button2;

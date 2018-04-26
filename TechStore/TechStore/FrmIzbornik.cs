@@ -36,7 +36,7 @@ namespace TechStore
 
         private void uiActionPregledArtikala_Click(object sender, EventArgs e)
         {
-            FrmKolicina formaKolicina = new FrmKolicina();
+            FrmKolicinaArtikala formaKolicina = new FrmKolicinaArtikala();
             formaKolicina.Show();
         }
     }

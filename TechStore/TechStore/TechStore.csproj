@@ -88,11 +88,11 @@
     <Compile Include="FrmZaposlenici.Designer.cs">
       <DependentUpon>FrmZaposlenici.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmKolicina.cs">
+    <Compile Include="FrmKolicinaArtikala.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmKolicina.Designer.cs">
-      <DependentUpon>FrmKolicina.cs</DependentUpon>
+    <Compile Include="FrmKolicinaArtikala.Designer.cs">
+      <DependentUpon>FrmKolicinaArtikala.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="FrmZaposlenici.resx">
       <DependentUpon>FrmZaposlenici.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmKolicina.resx">
-      <DependentUpon>FrmKolicina.cs</DependentUpon>
+    <EmbeddedResource Include="FrmKolicinaArtikala.resx">
+      <DependentUpon>FrmKolicinaArtikala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

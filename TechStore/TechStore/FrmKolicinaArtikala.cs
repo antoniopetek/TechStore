@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmKolicina : Form
+    public partial class FrmKolicinaArtikala : Form
     {
-        public FrmKolicina()
+        public FrmKolicinaArtikala()
         {
             InitializeComponent();
         }
