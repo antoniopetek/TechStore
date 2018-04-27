@@ -62,7 +62,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "DODAJ POSLOVNICU";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // FrmPoslovnica
             // 
@@ -76,6 +76,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmPoslovnica";
             this.Text = "Poslovnica";
+            this.Load += new System.EventHandler(this.FrmPoslovnica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

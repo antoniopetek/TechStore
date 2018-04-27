@@ -209,6 +209,7 @@
             this.Controls.Add(this.uiOutputPodaciOZaposlenima);
             this.Name = "FrmZaposlenici";
             this.Text = "Zaposlenici";
+            this.Load += new System.EventHandler(this.FrmZaposlenici_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPopisZaposlenika)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

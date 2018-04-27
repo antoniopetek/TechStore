@@ -96,6 +96,7 @@
             this.Controls.Add(this.uiOutputGraf);
             this.Name = "FrmKolicinaArtikala";
             this.Text = "Kolicina";
+            this.Load += new System.EventHandler(this.FrmKolicinaArtikala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputGraf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

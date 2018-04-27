@@ -76,6 +76,7 @@
             this.Controls.Add(this.uiOutputPodaciArtikli);
             this.Name = "FrmArtikl";
             this.Text = "FrmArtikl";
+            this.Load += new System.EventHandler(this.FrmArtikl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciArtikli)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

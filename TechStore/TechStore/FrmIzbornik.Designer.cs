@@ -131,6 +131,7 @@
             this.Controls.Add(this.uiActionDodajArtikl);
             this.Name = "FrmIzbornik";
             this.Text = "Izbornik";
+            this.Load += new System.EventHandler(this.FrmIzbornik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -161,7 +161,7 @@
             this.uiActionDodajPoslovnicu.TabIndex = 12;
             this.uiActionDodajPoslovnicu.Text = "Dodaj poslovnicu";
             this.uiActionDodajPoslovnicu.UseVisualStyleBackColor = true;
-            this.uiActionDodajPoslovnicu.Click += new System.EventHandler(this.uiActionDodajPoslovnicu_Click);
+            this.uiActionDodajPoslovnicu.Click += new System.EventHandler(this.UiActionDodajPoslovnicu_Click);
             // 
             // FrmDodavanjePoslovnice
             // 
@@ -185,6 +185,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmDodavanjePoslovnice";
             this.Text = "FrmDodavanjePoslovnice";
+            this.Load += new System.EventHandler(this.FrmDodavanjePoslovnice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

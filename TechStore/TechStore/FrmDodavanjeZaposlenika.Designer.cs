@@ -294,7 +294,7 @@
             this.uiActionDodajZaposlenika.TabIndex = 26;
             this.uiActionDodajZaposlenika.Text = "Dodaj zaposlenika";
             this.uiActionDodajZaposlenika.UseVisualStyleBackColor = true;
-            this.uiActionDodajZaposlenika.Click += new System.EventHandler(this.uiActionDodajZaposlenika_Click);
+            this.uiActionDodajZaposlenika.Click += new System.EventHandler(this.UiActionDodajZaposlenika_Click);
             // 
             // uiInputPoslovnica
             // 
@@ -340,6 +340,7 @@
             this.Controls.Add(this.uiInputID);
             this.Name = "FrmDodavanjeZaposlenika";
             this.Text = "FrmDodavanjeZaposlenika";
+            this.Load += new System.EventHandler(this.FrmDodavanjeZaposlenika_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

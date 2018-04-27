@@ -186,6 +186,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmNoviArtikl";
             this.Text = "FrmNoviArtikl";
+            this.Load += new System.EventHandler(this.FrmNoviArtikl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
