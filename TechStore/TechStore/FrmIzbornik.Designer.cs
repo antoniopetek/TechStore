@@ -39,12 +39,14 @@
             // 
             // uiActionDodajArtikl
             // 
-            this.uiActionDodajArtikl.Location = new System.Drawing.Point(12, 131);
+            this.uiActionDodajArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajArtikl.Location = new System.Drawing.Point(12, 84);
             this.uiActionDodajArtikl.Name = "uiActionDodajArtikl";
-            this.uiActionDodajArtikl.Size = new System.Drawing.Size(75, 23);
+            this.uiActionDodajArtikl.Size = new System.Drawing.Size(103, 53);
             this.uiActionDodajArtikl.TabIndex = 0;
-            this.uiActionDodajArtikl.Text = "Dodaj artikl";
+            this.uiActionDodajArtikl.Text = "Artikli";
             this.uiActionDodajArtikl.UseVisualStyleBackColor = true;
+            this.uiActionDodajArtikl.Click += new System.EventHandler(this.UiActionDodajArtikl_Click);
             // 
             // uiActionZaposlenici
             // 
@@ -56,7 +58,7 @@
             this.uiActionZaposlenici.TabIndex = 1;
             this.uiActionZaposlenici.Text = "Zaposlenici";
             this.uiActionZaposlenici.UseVisualStyleBackColor = false;
-            this.uiActionZaposlenici.Click += new System.EventHandler(this.uiActionZaposlenici_Click);
+            this.uiActionZaposlenici.Click += new System.EventHandler(this.UiActionZaposlenici_Click);
             // 
             // uiActionPoslovnice
             // 
@@ -67,7 +69,7 @@
             this.uiActionPoslovnice.TabIndex = 2;
             this.uiActionPoslovnice.Text = "Poslovnice";
             this.uiActionPoslovnice.UseVisualStyleBackColor = true;
-            this.uiActionPoslovnice.Click += new System.EventHandler(this.uiActionDodajPoslovnicu_Click);
+            this.uiActionPoslovnice.Click += new System.EventHandler(this.UiActionDodajPoslovnicu_Click);
             // 
             // uiActionIzlaz
             // 
@@ -89,7 +91,7 @@
             this.uiActionPregledArtikala.TabIndex = 4;
             this.uiActionPregledArtikala.Text = "Pregled artikala po poslovnicama";
             this.uiActionPregledArtikala.UseVisualStyleBackColor = true;
-            this.uiActionPregledArtikala.Click += new System.EventHandler(this.uiActionPregledArtikala_Click);
+            this.uiActionPregledArtikala.Click += new System.EventHandler(this.UiActionPregledArtikala_Click);
             // 
             // button2
             // 
