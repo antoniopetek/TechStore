@@ -337,6 +337,7 @@
             this.Controls.Add(this.uiInputMaticna);
             this.Name = "FrmKonfiguracija";
             this.Text = "FrmKonfiguracija";
+            this.Load += new System.EventHandler(this.FrmKonfiguracija_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
