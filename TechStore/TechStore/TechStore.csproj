@@ -70,6 +70,12 @@
     <Compile Include="FrmHelp.Designer.cs">
       <DependentUpon>FrmHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKonfiguracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKonfiguracija.Designer.cs">
+      <DependentUpon>FrmKonfiguracija.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNoviArtikl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIzbornik.resx">
       <DependentUpon>FrmIzbornik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKonfiguracija.resx">
+      <DependentUpon>FrmKonfiguracija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNoviArtikl.resx">
       <DependentUpon>FrmNoviArtikl.cs</DependentUpon>

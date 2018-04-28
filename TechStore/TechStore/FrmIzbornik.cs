@@ -65,5 +65,11 @@ namespace TechStore
 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmKonfiguracija formaKonfiguracija = new FrmKonfiguracija();
+            formaKonfiguracija.Show();
+        }
     }
 }

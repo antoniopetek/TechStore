@@ -33,7 +33,6 @@
             this.uiInputPrezime = new System.Windows.Forms.TextBox();
             this.uiInputEmail = new System.Windows.Forms.TextBox();
             this.uiInputKontakt = new System.Windows.Forms.TextBox();
-            this.uiInputZanimanje = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.uiInputKorisnickoIme = new System.Windows.Forms.TextBox();
             this.uiActionDodajZaposlenika = new System.Windows.Forms.Button();
             this.uiInputPoslovnica = new System.Windows.Forms.ComboBox();
+            this.uiInputTipZaposlenika = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // uiInputID
@@ -92,13 +92,6 @@
             this.uiInputKontakt.Name = "uiInputKontakt";
             this.uiInputKontakt.Size = new System.Drawing.Size(129, 20);
             this.uiInputKontakt.TabIndex = 4;
-            // 
-            // uiInputZanimanje
-            // 
-            this.uiInputZanimanje.Location = new System.Drawing.Point(113, 190);
-            this.uiInputZanimanje.Name = "uiInputZanimanje";
-            this.uiInputZanimanje.Size = new System.Drawing.Size(129, 20);
-            this.uiInputZanimanje.TabIndex = 5;
             // 
             // label1
             // 
@@ -160,7 +153,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(22, 167);
+            this.label6.Location = new System.Drawing.Point(34, 167);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 12;
@@ -171,11 +164,11 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(38, 193);
+            this.label7.Location = new System.Drawing.Point(7, 193);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 13);
+            this.label7.Size = new System.Drawing.Size(100, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Zanimanje:";
+            this.label7.Text = "Tip zaposlenika:";
             // 
             // label8
             // 
@@ -304,6 +297,14 @@
             this.uiInputPoslovnica.Size = new System.Drawing.Size(129, 21);
             this.uiInputPoslovnica.TabIndex = 27;
             // 
+            // uiInputTipZaposlenika
+            // 
+            this.uiInputTipZaposlenika.FormattingEnabled = true;
+            this.uiInputTipZaposlenika.Location = new System.Drawing.Point(113, 190);
+            this.uiInputTipZaposlenika.Name = "uiInputTipZaposlenika";
+            this.uiInputTipZaposlenika.Size = new System.Drawing.Size(129, 21);
+            this.uiInputTipZaposlenika.TabIndex = 28;
+            // 
             // FrmDodavanjeZaposlenika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +312,7 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(559, 284);
+            this.Controls.Add(this.uiInputTipZaposlenika);
             this.Controls.Add(this.uiInputPoslovnica);
             this.Controls.Add(this.uiActionDodajZaposlenika);
             this.Controls.Add(this.label12);
@@ -332,7 +334,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.uiInputZanimanje);
             this.Controls.Add(this.uiInputKontakt);
             this.Controls.Add(this.uiInputEmail);
             this.Controls.Add(this.uiInputPrezime);
@@ -353,7 +354,6 @@
         private System.Windows.Forms.TextBox uiInputPrezime;
         private System.Windows.Forms.TextBox uiInputEmail;
         private System.Windows.Forms.TextBox uiInputKontakt;
-        private System.Windows.Forms.TextBox uiInputZanimanje;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -375,5 +375,6 @@
         private System.Windows.Forms.TextBox uiInputKorisnickoIme;
         private System.Windows.Forms.Button uiActionDodajZaposlenika;
         private System.Windows.Forms.ComboBox uiInputPoslovnica;
+        private System.Windows.Forms.ComboBox uiInputTipZaposlenika;
     }
 }
