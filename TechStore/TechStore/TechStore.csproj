@@ -76,6 +76,12 @@
     <Compile Include="FrmKonfiguracija.Designer.cs">
       <DependentUpon>FrmKonfiguracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNabava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNabava.Designer.cs">
+      <DependentUpon>FrmNabava.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNoviArtikl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="FrmIzbornik.Designer.cs">
       <DependentUpon>FrmIzbornik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStanje.Designer.cs">
+      <DependentUpon>FrmStanje.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmZaposlenici.cs">
       <SubType>Form</SubType>
@@ -132,6 +144,9 @@
     <EmbeddedResource Include="FrmKonfiguracija.resx">
       <DependentUpon>FrmKonfiguracija.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNabava.resx">
+      <DependentUpon>FrmNabava.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNoviArtikl.resx">
       <DependentUpon>FrmNoviArtikl.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrijava.resx">
       <DependentUpon>FrmPrijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStanje.resx">
+      <DependentUpon>FrmStanje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmZaposlenici.resx">
       <DependentUpon>FrmZaposlenici.cs</DependentUpon>

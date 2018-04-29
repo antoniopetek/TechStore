@@ -66,10 +66,16 @@ namespace TechStore
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             FrmKonfiguracija formaKonfiguracija = new FrmKonfiguracija();
             formaKonfiguracija.Show();
+        }
+
+        private void UiActionNabavaArtikala_Click(object sender, EventArgs e)
+        {
+            FrmStanje formaStanje = new FrmStanje();
+            formaStanje.Show();
         }
     }
 }

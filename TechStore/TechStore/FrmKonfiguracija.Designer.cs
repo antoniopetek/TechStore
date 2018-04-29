@@ -51,8 +51,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.uiActionIzdajRacun = new System.Windows.Forms.Button();
-            this.uiInputSkica = new System.Windows.Forms.RadioButton();
-            this.uiInputRacun = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // uiInputMaticna
@@ -276,32 +274,7 @@
             this.uiActionIzdajRacun.TabIndex = 22;
             this.uiActionIzdajRacun.Text = "IZDAJ RAČUN";
             this.uiActionIzdajRacun.UseVisualStyleBackColor = true;
-            this.uiActionIzdajRacun.Click += new System.EventHandler(this.uiActionIzdajRacun_Click);
-            // 
-            // uiInputSkica
-            // 
-            this.uiInputSkica.AutoSize = true;
-            this.uiInputSkica.BackColor = System.Drawing.Color.Transparent;
-            this.uiInputSkica.Checked = true;
-            this.uiInputSkica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiInputSkica.Location = new System.Drawing.Point(517, 226);
-            this.uiInputSkica.Name = "uiInputSkica";
-            this.uiInputSkica.Size = new System.Drawing.Size(60, 19);
-            this.uiInputSkica.TabIndex = 23;
-            this.uiInputSkica.Text = "Skica";
-            this.uiInputSkica.UseVisualStyleBackColor = false;
-            // 
-            // uiInputRacun
-            // 
-            this.uiInputRacun.AutoSize = true;
-            this.uiInputRacun.BackColor = System.Drawing.Color.Transparent;
-            this.uiInputRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiInputRacun.Location = new System.Drawing.Point(517, 261);
-            this.uiInputRacun.Name = "uiInputRacun";
-            this.uiInputRacun.Size = new System.Drawing.Size(66, 19);
-            this.uiInputRacun.TabIndex = 24;
-            this.uiInputRacun.Text = "Racun";
-            this.uiInputRacun.UseVisualStyleBackColor = false;
+            this.uiActionIzdajRacun.Click += new System.EventHandler(this.UiActionIzdajRacun_Click);
             // 
             // FrmKonfiguracija
             // 
@@ -310,8 +283,6 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 369);
-            this.Controls.Add(this.uiInputRacun);
-            this.Controls.Add(this.uiInputSkica);
             this.Controls.Add(this.uiActionIzdajRacun);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -368,7 +339,5 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button uiActionIzdajRacun;
-        private System.Windows.Forms.RadioButton uiInputSkica;
-        private System.Windows.Forms.RadioButton uiInputRacun;
     }
 }

@@ -17,7 +17,7 @@ namespace TechStore
             InitializeComponent();
         }
 
-        private void uiActionIzdajRacun_Click(object sender, EventArgs e)
+        private void UiActionIzdajRacun_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Račun uspješno izdan.", "IZDANO", MessageBoxButtons.OK);
         }

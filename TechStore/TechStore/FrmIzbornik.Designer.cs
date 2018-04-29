@@ -33,8 +33,9 @@
             this.uiActionPoslovnice = new System.Windows.Forms.Button();
             this.uiActionIzlaz = new System.Windows.Forms.Button();
             this.uiActionPregledArtikala = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.uiActionIzradaKonfiguracije = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.uiActionNabavaArtikala = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uiActionDodajArtikl
@@ -93,16 +94,16 @@
             this.uiActionPregledArtikala.UseVisualStyleBackColor = true;
             this.uiActionPregledArtikala.Click += new System.EventHandler(this.UiActionPregledArtikala_Click);
             // 
-            // button2
+            // uiActionIzradaKonfiguracije
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(343, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 53);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Izrada konfiguracije";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.uiActionIzradaKonfiguracije.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionIzradaKonfiguracije.Location = new System.Drawing.Point(343, 25);
+            this.uiActionIzradaKonfiguracije.Name = "uiActionIzradaKonfiguracije";
+            this.uiActionIzradaKonfiguracije.Size = new System.Drawing.Size(103, 53);
+            this.uiActionIzradaKonfiguracije.TabIndex = 5;
+            this.uiActionIzradaKonfiguracije.Text = "Izrada konfiguracije";
+            this.uiActionIzradaKonfiguracije.UseVisualStyleBackColor = true;
+            this.uiActionIzradaKonfiguracije.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label1
             // 
@@ -115,6 +116,17 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Prijavljeni ste kao:";
             // 
+            // uiActionNabavaArtikala
+            // 
+            this.uiActionNabavaArtikala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNabavaArtikala.Location = new System.Drawing.Point(121, 84);
+            this.uiActionNabavaArtikala.Name = "uiActionNabavaArtikala";
+            this.uiActionNabavaArtikala.Size = new System.Drawing.Size(103, 53);
+            this.uiActionNabavaArtikala.TabIndex = 7;
+            this.uiActionNabavaArtikala.Text = "Nabava artikala";
+            this.uiActionNabavaArtikala.UseVisualStyleBackColor = true;
+            this.uiActionNabavaArtikala.Click += new System.EventHandler(this.UiActionNabavaArtikala_Click);
+            // 
             // FrmIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,8 +135,9 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(458, 290);
+            this.Controls.Add(this.uiActionNabavaArtikala);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.uiActionIzradaKonfiguracije);
             this.Controls.Add(this.uiActionPregledArtikala);
             this.Controls.Add(this.uiActionIzlaz);
             this.Controls.Add(this.uiActionPoslovnice);
@@ -145,7 +158,8 @@
         private System.Windows.Forms.Button uiActionPoslovnice;
         private System.Windows.Forms.Button uiActionIzlaz;
         private System.Windows.Forms.Button uiActionPregledArtikala;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button uiActionIzradaKonfiguracije;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button uiActionNabavaArtikala;
     }
 }
