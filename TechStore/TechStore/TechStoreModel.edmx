@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Artikl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Kratki_opis" Type="text" />
+          <Property Name="Specifikacija" Type="text" Nullable="false" />
+          <Property Name="Cijena" Type="float" Nullable="false" />
+          <Property Name="Vrsta_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dokument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vrijeme_izdavanja" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="VrstaDokumenta_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dostupnost">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Artikl_ID" Type="int" Nullable="false" />
+          <Property Name="Poslovnica_ID" Type="int" Nullable="false" />
+          <Property Name="Kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kompatibilnost">
+          <Key>
+            <PropertyRef Name="Komponenta1" />
+            <PropertyRef Name="Komponenta2" />
+          </Key>
+          <Property Name="Komponenta1" Type="int" Nullable="false" />
+          <Property Name="Komponenta2" Type="int" Nullable="false" />
+          <Property Name="Kompatibilni" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Poslovnica">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Drzava" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Grad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ulica" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="Broj" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StanjeDokumenta">
+          <Key>
+            <PropertyRef Name="Dokument_ID" />
+            <PropertyRef Name="VrstaStanja_ID" />
+            <PropertyRef Name="Zaposlenik_ID" />
+          </Key>
+          <Property Name="Dokument_ID" Type="int" Nullable="false" />
+          <Property Name="VrstaStanja_ID" Type="int" Nullable="false" />
+          <Property Name="Zaposlenik_ID" Type="int" Nullable="false" />
+          <Property Name="Datum_promjene" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="Napomena" Type="text" />
+        </EntityType>
+        <EntityType Name="StavkaDokumenta">
+          <Key>
+            <PropertyRef Name="Artikl_ID" />
+            <PropertyRef Name="Dokument_ID" />
+          </Key>
+          <Property Name="Artikl_ID" Type="int" Nullable="false" />
+          <Property Name="Dokument_ID" Type="int" Nullable="false" />
+          <Property Name="Kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TipZaposlenika">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VrstaArtikla">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="75" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VrstaDokumenta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VrsteStanja">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="75" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zaposlenik">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Korisnicko_ime" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Lozinka" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kontakt" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Drzava" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Grad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ulica" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="Broj" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Tip_ID" Type="int" Nullable="false" />
+          <Property Name="Poslovnica_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Artikl_VrstaArtikla">
+          <End Role="VrstaArtikla" Type="Self.VrstaArtikla" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrstaArtikla">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Artikl">
+              <PropertyRef Name="Vrsta_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dokument_VrstaDokumenta">
+          <End Role="VrstaDokumenta" Type="Self.VrstaDokumenta" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrstaDokumenta">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="VrstaDokumenta_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dostupnost_Artikl">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dostupnost" Type="Self.Dostupnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Dostupnost">
+              <PropertyRef Name="Artikl_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dostupnost_Poslovnica">
+          <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dostupnost" Type="Self.Dostupnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poslovnica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Dostupnost">
+              <PropertyRef Name="Poslovnica_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kompatibilnost_Artikl">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+          <End Role="Kompatibilnost" Type="Self.Kompatibilnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kompatibilnost">
+              <PropertyRef Name="Komponenta1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kompatibilnost_Artikl1">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+          <End Role="Kompatibilnost" Type="Self.Kompatibilnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kompatibilnost">
+              <PropertyRef Name="Komponenta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StanjeDokumenta_Dokument">
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StanjeDokumenta" Type="Self.StanjeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokument">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StanjeDokumenta">
+              <PropertyRef Name="Dokument_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StanjeDokumenta_VrsteStanja">
+          <End Role="VrsteStanja" Type="Self.VrsteStanja" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StanjeDokumenta" Type="Self.StanjeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrsteStanja">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StanjeDokumenta">
+              <PropertyRef Name="VrstaStanja_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StanjeDokumenta_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StanjeDokumenta" Type="Self.StanjeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StanjeDokumenta">
+              <PropertyRef Name="Zaposlenik_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StavkaDokumenta_Artikl">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StavkaDokumenta" Type="Self.StavkaDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StavkaDokumenta">
+              <PropertyRef Name="Artikl_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StavkaDokumenta_Dokument">
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StavkaDokumenta" Type="Self.StavkaDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokument">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StavkaDokumenta">
+              <PropertyRef Name="Dokument_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zaposlenik_Poslovnica">
+          <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poslovnica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zaposlenik">
+              <PropertyRef Name="Poslovnica_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zaposlenik_TipZaposlenika">
+          <End Role="TipZaposlenika" Type="Self.TipZaposlenika" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipZaposlenika">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zaposlenik">
+              <PropertyRef Name="Tip_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="Artikl" EntityType="Self.Artikl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dokument" EntityType="Self.Dokument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dostupnost" EntityType="Self.Dostupnost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kompatibilnost" EntityType="Self.Kompatibilnost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Poslovnica" EntityType="Self.Poslovnica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StanjeDokumenta" EntityType="Self.StanjeDokumenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StavkaDokumenta" EntityType="Self.StavkaDokumenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipZaposlenika" EntityType="Self.TipZaposlenika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VrstaArtikla" EntityType="Self.VrstaArtikla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VrstaDokumenta" EntityType="Self.VrstaDokumenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VrsteStanja" EntityType="Self.VrsteStanja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zaposlenik" EntityType="Self.Zaposlenik" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Artikl_VrstaArtikla" Association="Self.FK_Artikl_VrstaArtikla">
+            <End Role="VrstaArtikla" EntitySet="VrstaArtikla" />
+            <End Role="Artikl" EntitySet="Artikl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dokument_VrstaDokumenta" Association="Self.FK_Dokument_VrstaDokumenta">
+            <End Role="VrstaDokumenta" EntitySet="VrstaDokumenta" />
+            <End Role="Dokument" EntitySet="Dokument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dostupnost_Artikl" Association="Self.FK_Dostupnost_Artikl">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="Dostupnost" EntitySet="Dostupnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dostupnost_Poslovnica" Association="Self.FK_Dostupnost_Poslovnica">
+            <End Role="Poslovnica" EntitySet="Poslovnica" />
+            <End Role="Dostupnost" EntitySet="Dostupnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kompatibilnost_Artikl" Association="Self.FK_Kompatibilnost_Artikl">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="Kompatibilnost" EntitySet="Kompatibilnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kompatibilnost_Artikl1" Association="Self.FK_Kompatibilnost_Artikl1">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="Kompatibilnost" EntitySet="Kompatibilnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StanjeDokumenta_Dokument" Association="Self.FK_StanjeDokumenta_Dokument">
+            <End Role="Dokument" EntitySet="Dokument" />
+            <End Role="StanjeDokumenta" EntitySet="StanjeDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StanjeDokumenta_VrsteStanja" Association="Self.FK_StanjeDokumenta_VrsteStanja">
+            <End Role="VrsteStanja" EntitySet="VrsteStanja" />
+            <End Role="StanjeDokumenta" EntitySet="StanjeDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StanjeDokumenta_Zaposlenik" Association="Self.FK_StanjeDokumenta_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+            <End Role="StanjeDokumenta" EntitySet="StanjeDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StavkaDokumenta_Artikl" Association="Self.FK_StavkaDokumenta_Artikl">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="StavkaDokumenta" EntitySet="StavkaDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StavkaDokumenta_Dokument" Association="Self.FK_StavkaDokumenta_Dokument">
+            <End Role="Dokument" EntitySet="Dokument" />
+            <End Role="StavkaDokumenta" EntitySet="StavkaDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zaposlenik_Poslovnica" Association="Self.FK_Zaposlenik_Poslovnica">
+            <End Role="Poslovnica" EntitySet="Poslovnica" />
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zaposlenik_TipZaposlenika" Association="Self.FK_Zaposlenik_TipZaposlenika">
+            <End Role="TipZaposlenika" EntitySet="TipZaposlenika" />
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Artikl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kratki_opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Specifikacija" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cijena" Type="Double" Nullable="false" />
+          <Property Name="Vrsta_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VrstaArtikla" Relationship="Self.FK_Artikl_VrstaArtikla" FromRole="Artikl" ToRole="VrstaArtikla" />
+          <NavigationProperty Name="Dostupnost" Relationship="Self.FK_Dostupnost_Artikl" FromRole="Artikl" ToRole="Dostupnost" />
+          <NavigationProperty Name="Kompatibilnost" Relationship="Self.FK_Kompatibilnost_Artikl" FromRole="Artikl" ToRole="Kompatibilnost" />
+          <NavigationProperty Name="Kompatibilnost1" Relationship="Self.FK_Kompatibilnost_Artikl1" FromRole="Artikl" ToRole="Kompatibilnost" />
+          <NavigationProperty Name="StavkaDokumenta" Relationship="Self.FK_StavkaDokumenta_Artikl" FromRole="Artikl" ToRole="StavkaDokumenta" />
+        </EntityType>
+        <EntityType Name="Dokument">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vrijeme_izdavanja" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VrstaDokumenta_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VrstaDokumenta" Relationship="Self.FK_Dokument_VrstaDokumenta" FromRole="Dokument" ToRole="VrstaDokumenta" />
+          <NavigationProperty Name="StanjeDokumenta" Relationship="Self.FK_StanjeDokumenta_Dokument" FromRole="Dokument" ToRole="StanjeDokumenta" />
+          <NavigationProperty Name="StavkaDokumenta" Relationship="Self.FK_StavkaDokumenta_Dokument" FromRole="Dokument" ToRole="StavkaDokumenta" />
+        </EntityType>
+        <EntityType Name="Dostupnost">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Artikl_ID" Type="Int32" Nullable="false" />
+          <Property Name="Poslovnica_ID" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artikl" Relationship="Self.FK_Dostupnost_Artikl" FromRole="Dostupnost" ToRole="Artikl" />
+          <NavigationProperty Name="Poslovnica" Relationship="Self.FK_Dostupnost_Poslovnica" FromRole="Dostupnost" ToRole="Poslovnica" />
+        </EntityType>
+        <EntityType Name="Kompatibilnost">
+          <Key>
+            <PropertyRef Name="Komponenta1" />
+            <PropertyRef Name="Komponenta2" />
+          </Key>
+          <Property Name="Komponenta1" Type="Int32" Nullable="false" />
+          <Property Name="Komponenta2" Type="Int32" Nullable="false" />
+          <Property Name="Kompatibilni" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Artikl" Relationship="Self.FK_Kompatibilnost_Artikl" FromRole="Kompatibilnost" ToRole="Artikl" />
+          <NavigationProperty Name="Artikl1" Relationship="Self.FK_Kompatibilnost_Artikl1" FromRole="Kompatibilnost" ToRole="Artikl" />
+        </EntityType>
+        <EntityType Name="Poslovnica">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Drzava" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Grad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Broj" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Dostupnost" Relationship="Self.FK_Dostupnost_Poslovnica" FromRole="Poslovnica" ToRole="Dostupnost" />
+          <NavigationProperty Name="Zaposlenik" Relationship="Self.FK_Zaposlenik_Poslovnica" FromRole="Poslovnica" ToRole="Zaposlenik" />
+        </EntityType>
+        <EntityType Name="StanjeDokumenta">
+          <Key>
+            <PropertyRef Name="Dokument_ID" />
+            <PropertyRef Name="VrstaStanja_ID" />
+            <PropertyRef Name="Zaposlenik_ID" />
+          </Key>
+          <Property Name="Dokument_ID" Type="Int32" Nullable="false" />
+          <Property Name="VrstaStanja_ID" Type="Int32" Nullable="false" />
+          <Property Name="Zaposlenik_ID" Type="Int32" Nullable="false" />
+          <Property Name="Datum_promjene" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Napomena" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Dokument" Relationship="Self.FK_StanjeDokumenta_Dokument" FromRole="StanjeDokumenta" ToRole="Dokument" />
+          <NavigationProperty Name="VrsteStanja" Relationship="Self.FK_StanjeDokumenta_VrsteStanja" FromRole="StanjeDokumenta" ToRole="VrsteStanja" />
+          <NavigationProperty Name="Zaposlenik" Relationship="Self.FK_StanjeDokumenta_Zaposlenik" FromRole="StanjeDokumenta" ToRole="Zaposlenik" />
+        </EntityType>
+        <EntityType Name="StavkaDokumenta">
+          <Key>
+            <PropertyRef Name="Artikl_ID" />
+            <PropertyRef Name="Dokument_ID" />
+          </Key>
+          <Property Name="Artikl_ID" Type="Int32" Nullable="false" />
+          <Property Name="Dokument_ID" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artikl" Relationship="Self.FK_StavkaDokumenta_Artikl" FromRole="StavkaDokumenta" ToRole="Artikl" />
+          <NavigationProperty Name="Dokument" Relationship="Self.FK_StavkaDokumenta_Dokument" FromRole="StavkaDokumenta" ToRole="Dokument" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TipZaposlenika">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Zaposlenik" Relationship="Self.FK_Zaposlenik_TipZaposlenika" FromRole="TipZaposlenika" ToRole="Zaposlenik" />
+        </EntityType>
+        <EntityType Name="VrstaArtikla">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Artikl" Relationship="Self.FK_Artikl_VrstaArtikla" FromRole="VrstaArtikla" ToRole="Artikl" />
+        </EntityType>
+        <EntityType Name="VrstaDokumenta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Dokument" Relationship="Self.FK_Dokument_VrstaDokumenta" FromRole="VrstaDokumenta" ToRole="Dokument" />
+        </EntityType>
+        <EntityType Name="VrsteStanja">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="StanjeDokumenta" Relationship="Self.FK_StanjeDokumenta_VrsteStanja" FromRole="VrsteStanja" ToRole="StanjeDokumenta" />
+        </EntityType>
+        <EntityType Name="Zaposlenik">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Korisnicko_ime" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lozinka" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kontakt" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Drzava" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Grad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Broj" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tip_ID" Type="Int32" Nullable="false" />
+          <Property Name="Poslovnica_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Poslovnica" Relationship="Self.FK_Zaposlenik_Poslovnica" FromRole="Zaposlenik" ToRole="Poslovnica" />
+          <NavigationProperty Name="StanjeDokumenta" Relationship="Self.FK_StanjeDokumenta_Zaposlenik" FromRole="Zaposlenik" ToRole="StanjeDokumenta" />
+          <NavigationProperty Name="TipZaposlenika" Relationship="Self.FK_Zaposlenik_TipZaposlenika" FromRole="Zaposlenik" ToRole="TipZaposlenika" />
+        </EntityType>
+        <Association Name="FK_Artikl_VrstaArtikla">
+          <End Role="VrstaArtikla" Type="Self.VrstaArtikla" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrstaArtikla">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Artikl">
+              <PropertyRef Name="Vrsta_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dostupnost_Artikl">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dostupnost" Type="Self.Dostupnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Dostupnost">
+              <PropertyRef Name="Artikl_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kompatibilnost_Artikl">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+          <End Role="Kompatibilnost" Type="Self.Kompatibilnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kompatibilnost">
+              <PropertyRef Name="Komponenta1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kompatibilnost_Artikl1">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+          <End Role="Kompatibilnost" Type="Self.Kompatibilnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kompatibilnost">
+              <PropertyRef Name="Komponenta2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StavkaDokumenta_Artikl">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StavkaDokumenta" Type="Self.StavkaDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StavkaDokumenta">
+              <PropertyRef Name="Artikl_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dokument_VrstaDokumenta">
+          <End Role="VrstaDokumenta" Type="Self.VrstaDokumenta" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrstaDokumenta">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="VrstaDokumenta_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StanjeDokumenta_Dokument">
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StanjeDokumenta" Type="Self.StanjeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokument">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StanjeDokumenta">
+              <PropertyRef Name="Dokument_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StavkaDokumenta_Dokument">
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StavkaDokumenta" Type="Self.StavkaDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokument">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StavkaDokumenta">
+              <PropertyRef Name="Dokument_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dostupnost_Poslovnica">
+          <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dostupnost" Type="Self.Dostupnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poslovnica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Dostupnost">
+              <PropertyRef Name="Poslovnica_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zaposlenik_Poslovnica">
+          <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poslovnica">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zaposlenik">
+              <PropertyRef Name="Poslovnica_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StanjeDokumenta_VrsteStanja">
+          <End Role="VrsteStanja" Type="Self.VrsteStanja" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StanjeDokumenta" Type="Self.StanjeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VrsteStanja">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StanjeDokumenta">
+              <PropertyRef Name="VrstaStanja_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StanjeDokumenta_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StanjeDokumenta" Type="Self.StanjeDokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StanjeDokumenta">
+              <PropertyRef Name="Zaposlenik_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zaposlenik_TipZaposlenika">
+          <End Role="TipZaposlenika" Type="Self.TipZaposlenika" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipZaposlenika">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zaposlenik">
+              <PropertyRef Name="Tip_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TechStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Artikl" EntityType="Self.Artikl" />
+          <EntitySet Name="Dokument" EntityType="Self.Dokument" />
+          <EntitySet Name="Dostupnost" EntityType="Self.Dostupnost" />
+          <EntitySet Name="Kompatibilnost" EntityType="Self.Kompatibilnost" />
+          <EntitySet Name="Poslovnica" EntityType="Self.Poslovnica" />
+          <EntitySet Name="StanjeDokumenta" EntityType="Self.StanjeDokumenta" />
+          <EntitySet Name="StavkaDokumenta" EntityType="Self.StavkaDokumenta" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TipZaposlenika" EntityType="Self.TipZaposlenika" />
+          <EntitySet Name="VrstaArtikla" EntityType="Self.VrstaArtikla" />
+          <EntitySet Name="VrstaDokumenta" EntityType="Self.VrstaDokumenta" />
+          <EntitySet Name="VrsteStanja" EntityType="Self.VrsteStanja" />
+          <EntitySet Name="Zaposlenik" EntityType="Self.Zaposlenik" />
+          <AssociationSet Name="FK_Artikl_VrstaArtikla" Association="Self.FK_Artikl_VrstaArtikla">
+            <End Role="VrstaArtikla" EntitySet="VrstaArtikla" />
+            <End Role="Artikl" EntitySet="Artikl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dostupnost_Artikl" Association="Self.FK_Dostupnost_Artikl">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="Dostupnost" EntitySet="Dostupnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kompatibilnost_Artikl" Association="Self.FK_Kompatibilnost_Artikl">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="Kompatibilnost" EntitySet="Kompatibilnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kompatibilnost_Artikl1" Association="Self.FK_Kompatibilnost_Artikl1">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="Kompatibilnost" EntitySet="Kompatibilnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StavkaDokumenta_Artikl" Association="Self.FK_StavkaDokumenta_Artikl">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="StavkaDokumenta" EntitySet="StavkaDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dokument_VrstaDokumenta" Association="Self.FK_Dokument_VrstaDokumenta">
+            <End Role="VrstaDokumenta" EntitySet="VrstaDokumenta" />
+            <End Role="Dokument" EntitySet="Dokument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StanjeDokumenta_Dokument" Association="Self.FK_StanjeDokumenta_Dokument">
+            <End Role="Dokument" EntitySet="Dokument" />
+            <End Role="StanjeDokumenta" EntitySet="StanjeDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StavkaDokumenta_Dokument" Association="Self.FK_StavkaDokumenta_Dokument">
+            <End Role="Dokument" EntitySet="Dokument" />
+            <End Role="StavkaDokumenta" EntitySet="StavkaDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dostupnost_Poslovnica" Association="Self.FK_Dostupnost_Poslovnica">
+            <End Role="Poslovnica" EntitySet="Poslovnica" />
+            <End Role="Dostupnost" EntitySet="Dostupnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zaposlenik_Poslovnica" Association="Self.FK_Zaposlenik_Poslovnica">
+            <End Role="Poslovnica" EntitySet="Poslovnica" />
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StanjeDokumenta_VrsteStanja" Association="Self.FK_StanjeDokumenta_VrsteStanja">
+            <End Role="VrsteStanja" EntitySet="VrsteStanja" />
+            <End Role="StanjeDokumenta" EntitySet="StanjeDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StanjeDokumenta_Zaposlenik" Association="Self.FK_StanjeDokumenta_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+            <End Role="StanjeDokumenta" EntitySet="StanjeDokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zaposlenik_TipZaposlenika" Association="Self.FK_Zaposlenik_TipZaposlenika">
+            <End Role="TipZaposlenika" EntitySet="TipZaposlenika" />
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="TechStoreEntities">
+          <EntitySetMapping Name="Artikl">
+            <EntityTypeMapping TypeName="DBModel.Artikl">
+              <MappingFragment StoreEntitySet="Artikl">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Kratki_opis" ColumnName="Kratki_opis" />
+                <ScalarProperty Name="Specifikacija" ColumnName="Specifikacija" />
+                <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+                <ScalarProperty Name="Vrsta_ID" ColumnName="Vrsta_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dokument">
+            <EntityTypeMapping TypeName="DBModel.Dokument">
+              <MappingFragment StoreEntitySet="Dokument">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Vrijeme_izdavanja" ColumnName="Vrijeme_izdavanja" />
+                <ScalarProperty Name="VrstaDokumenta_ID" ColumnName="VrstaDokumenta_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dostupnost">
+            <EntityTypeMapping TypeName="DBModel.Dostupnost">
+              <MappingFragment StoreEntitySet="Dostupnost">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Artikl_ID" ColumnName="Artikl_ID" />
+                <ScalarProperty Name="Poslovnica_ID" ColumnName="Poslovnica_ID" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kompatibilnost">
+            <EntityTypeMapping TypeName="DBModel.Kompatibilnost">
+              <MappingFragment StoreEntitySet="Kompatibilnost">
+                <ScalarProperty Name="Komponenta1" ColumnName="Komponenta1" />
+                <ScalarProperty Name="Komponenta2" ColumnName="Komponenta2" />
+                <ScalarProperty Name="Kompatibilni" ColumnName="Kompatibilni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Poslovnica">
+            <EntityTypeMapping TypeName="DBModel.Poslovnica">
+              <MappingFragment StoreEntitySet="Poslovnica">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Drzava" ColumnName="Drzava" />
+                <ScalarProperty Name="Grad" ColumnName="Grad" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Broj" ColumnName="Broj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StanjeDokumenta">
+            <EntityTypeMapping TypeName="DBModel.StanjeDokumenta">
+              <MappingFragment StoreEntitySet="StanjeDokumenta">
+                <ScalarProperty Name="Dokument_ID" ColumnName="Dokument_ID" />
+                <ScalarProperty Name="VrstaStanja_ID" ColumnName="VrstaStanja_ID" />
+                <ScalarProperty Name="Zaposlenik_ID" ColumnName="Zaposlenik_ID" />
+                <ScalarProperty Name="Datum_promjene" ColumnName="Datum_promjene" />
+                <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StavkaDokumenta">
+            <EntityTypeMapping TypeName="DBModel.StavkaDokumenta">
+              <MappingFragment StoreEntitySet="StavkaDokumenta">
+                <ScalarProperty Name="Artikl_ID" ColumnName="Artikl_ID" />
+                <ScalarProperty Name="Dokument_ID" ColumnName="Dokument_ID" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipZaposlenika">
+            <EntityTypeMapping TypeName="DBModel.TipZaposlenika">
+              <MappingFragment StoreEntitySet="TipZaposlenika">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VrstaArtikla">
+            <EntityTypeMapping TypeName="DBModel.VrstaArtikla">
+              <MappingFragment StoreEntitySet="VrstaArtikla">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VrstaDokumenta">
+            <EntityTypeMapping TypeName="DBModel.VrstaDokumenta">
+              <MappingFragment StoreEntitySet="VrstaDokumenta">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VrsteStanja">
+            <EntityTypeMapping TypeName="DBModel.VrsteStanja">
+              <MappingFragment StoreEntitySet="VrsteStanja">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zaposlenik">
+            <EntityTypeMapping TypeName="DBModel.Zaposlenik">
+              <MappingFragment StoreEntitySet="Zaposlenik">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Korisnicko_ime" ColumnName="Korisnicko_ime" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Kontakt" ColumnName="Kontakt" />
+                <ScalarProperty Name="Drzava" ColumnName="Drzava" />
+                <ScalarProperty Name="Grad" ColumnName="Grad" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Broj" ColumnName="Broj" />
+                <ScalarProperty Name="Tip_ID" ColumnName="Tip_ID" />
+                <ScalarProperty Name="Poslovnica_ID" ColumnName="Poslovnica_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

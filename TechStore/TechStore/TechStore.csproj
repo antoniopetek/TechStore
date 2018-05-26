@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artikl.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dokument.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dostupnost.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="FrmArtikl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,8 +142,53 @@
     <Compile Include="FrmKolicinaArtikala.Designer.cs">
       <DependentUpon>FrmKolicinaArtikala.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kompatibilnost.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Poslovnica.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StanjeDokumenta.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StavkaDokumenta.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechStoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechStoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechStoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechStoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechStoreModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TipZaposlenika.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaArtikla.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaDokumenta.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrsteStanja.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik.cs">
+      <DependentUpon>TechStoreModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmArtikl.resx">
       <DependentUpon>FrmArtikl.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +238,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -184,12 +248,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="TechStoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TechStoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TechStoreModel.edmx.diagram">
+      <DependentUpon>TechStoreModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pozadina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TechStoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TechStoreModel.Context.cs</LastGenOutput>
+      <DependentUpon>TechStoreModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="TechStoreModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TechStoreModel.edmx</DependentUpon>
+      <LastGenOutput>TechStoreModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
