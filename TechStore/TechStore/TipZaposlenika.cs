@@ -11,7 +11,9 @@ namespace TechStore
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class TipZaposlenika
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,5 +27,21 @@ namespace TechStore
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zaposlenik> Zaposlenik { get; set; }
+
+
+        /// <summary>
+        /// Metoda koja dohvaæa sve tipove zaposlenika iz baze.
+        /// </summary>
+        /// <returns>Vraæa listu u kojoj se nalaze svi tipovi zaposlenika.</returns>
+        public static BindingList<TipZaposlenika> DohvatiTipoveZaposlenika()
+        {
+            BindingList<TipZaposlenika> tipoviZaposlenika = null;
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                tipoviZaposlenika = new BindingList<TipZaposlenika>(db.TipZaposlenika.ToList());
+            }
+
+            return tipoviZaposlenika;
+        }
     }
 }

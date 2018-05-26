@@ -130,11 +130,11 @@
     <Compile Include="FrmStanje.Designer.cs">
       <DependentUpon>FrmStanje.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmZaposlenici.cs">
+    <Compile Include="uiZaposlenici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmZaposlenici.Designer.cs">
-      <DependentUpon>FrmZaposlenici.cs</DependentUpon>
+    <Compile Include="uiZaposlenici.Designer.cs">
+      <DependentUpon>uiZaposlenici.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmKolicinaArtikala.cs">
       <SubType>Form</SubType>
@@ -222,8 +222,8 @@
     <EmbeddedResource Include="FrmStanje.resx">
       <DependentUpon>FrmStanje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmZaposlenici.resx">
-      <DependentUpon>FrmZaposlenici.cs</DependentUpon>
+    <EmbeddedResource Include="uiZaposlenici.resx">
+      <DependentUpon>uiZaposlenici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKolicinaArtikala.resx">
       <DependentUpon>FrmKolicinaArtikala.cs</DependentUpon>
@@ -239,6 +239,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Poslovnica.datasource" />
+    <None Include="Properties\DataSources\TipZaposlenika.datasource" />
+    <None Include="Properties\DataSources\Zaposlenik.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

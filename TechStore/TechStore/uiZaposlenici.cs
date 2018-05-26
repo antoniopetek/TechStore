@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmZaposlenici : Form
+    public partial class uiZaposlenici : Form
     {
-        public FrmZaposlenici()
+        public uiZaposlenici()
         {
             InitializeComponent();
         }
@@ -27,6 +27,7 @@ namespace TechStore
         {
             this.KeyPreview = true;
             this.KeyDown += FrmZaposlenici_KeyDown;
+            OsvjeziZaposlenike();   
         }
 
         private void FrmZaposlenici_KeyDown(object sender, KeyEventArgs e)
@@ -40,6 +41,28 @@ namespace TechStore
                 richTextBox.Text += "Trenutno ste stisnuli F1 na formi Zaposleici.";
                 frmHelp.Show();
 
+            }
+        }
+
+        private void OsvjeziZaposlenike()
+        {
+            zaposlenikBindingSource.DataSource = Zaposlenik.DohvatiSveZaposlenike();
+            tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
+            poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+            
+        }
+
+        private void uiOutputPopisZaposlenika_SelectionChanged(object sender, EventArgs e)
+        {
+            Zaposlenik zaposlenik = zaposlenikBindingSource.Current as Zaposlenik;
+
+            if (zaposlenik != null)
+            {
+                uiOutputAdresa.Text = zaposlenik.Ulica.ToString() + " " + zaposlenik.Broj.ToString() + ", " + zaposlenik.Grad.ToString() + ", " + zaposlenik.Drzava.ToString();
+                uiOutputKontakt.Text = zaposlenik.Kontakt.ToString();
+                uiOutputEmail.Text = zaposlenik.Email.ToString();
+                uiOutputKorisnickoIme.Text = zaposlenik.Korisnicko_ime.ToString();
+                uiOutputLozinka.Text = zaposlenik.Lozinka.ToString();
             }
         }
     }

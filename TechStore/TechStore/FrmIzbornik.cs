@@ -24,7 +24,7 @@ namespace TechStore
 
         private void UiActionZaposlenici_Click(object sender, EventArgs e)
         {
-            FrmZaposlenici formaZaposlenici = new FrmZaposlenici();
+            uiZaposlenici formaZaposlenici = new uiZaposlenici();
             formaZaposlenici.Show();
         }
 
