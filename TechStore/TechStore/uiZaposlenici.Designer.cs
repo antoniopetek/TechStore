@@ -42,6 +42,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.uiOutputLozinka = new System.Windows.Forms.TextBox();
             this.uiOutputKontakt = new System.Windows.Forms.TextBox();
+            this.tipZaposlenikaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,13 +57,10 @@
             this.ulicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tipZaposlenikaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poslovnicaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poslovnicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stanjeDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipZaposlenikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPopisZaposlenika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipZaposlenikaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
@@ -82,7 +82,6 @@
             // 
             this.uiOutputPopisZaposlenika.AllowUserToAddRows = false;
             this.uiOutputPopisZaposlenika.AutoGenerateColumns = false;
-            this.uiOutputPopisZaposlenika.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiOutputPopisZaposlenika.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uiOutputPopisZaposlenika.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -113,9 +112,9 @@
             // uiActionDodajZaposlenika
             // 
             this.uiActionDodajZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajZaposlenika.Location = new System.Drawing.Point(617, 99);
+            this.uiActionDodajZaposlenika.Location = new System.Drawing.Point(599, 96);
             this.uiActionDodajZaposlenika.Name = "uiActionDodajZaposlenika";
-            this.uiActionDodajZaposlenika.Size = new System.Drawing.Size(73, 48);
+            this.uiActionDodajZaposlenika.Size = new System.Drawing.Size(84, 48);
             this.uiActionDodajZaposlenika.TabIndex = 2;
             this.uiActionDodajZaposlenika.Text = "DODAJ";
             this.uiActionDodajZaposlenika.UseVisualStyleBackColor = true;
@@ -211,12 +210,27 @@
             this.uiOutputKontakt.Size = new System.Drawing.Size(179, 20);
             this.uiOutputKontakt.TabIndex = 15;
             // 
+            // tipZaposlenikaBindingSource
+            // 
+            this.tipZaposlenikaBindingSource.DataSource = typeof(TechStore.TipZaposlenika);
+            // 
+            // poslovnicaBindingSource
+            // 
+            this.poslovnicaBindingSource.DataSource = typeof(TechStore.Poslovnica);
+            // 
+            // zaposlenikBindingSource
+            // 
+            this.zaposlenikBindingSource.DataSource = typeof(TechStore.Zaposlenik);
+            // 
             // iDDataGridViewTextBoxColumn
             // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.FillWeight = 50F;
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 104;
             // 
             // imeDataGridViewTextBoxColumn
             // 
@@ -224,6 +238,7 @@
             this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
             this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
             this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imeDataGridViewTextBoxColumn.Width = 105;
             // 
             // prezimeDataGridViewTextBoxColumn
             // 
@@ -231,6 +246,7 @@
             this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
             this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
             this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prezimeDataGridViewTextBoxColumn.Width = 104;
             // 
             // korisnickoimeDataGridViewTextBoxColumn
             // 
@@ -308,10 +324,7 @@
             this.tipIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.tipIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.tipIDDataGridViewTextBoxColumn.ValueMember = "ID";
-            // 
-            // tipZaposlenikaBindingSource
-            // 
-            this.tipZaposlenikaBindingSource.DataSource = typeof(TechStore.TipZaposlenika);
+            this.tipIDDataGridViewTextBoxColumn.Width = 105;
             // 
             // poslovnicaIDDataGridViewTextBoxColumn
             // 
@@ -325,10 +338,7 @@
             this.poslovnicaIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.poslovnicaIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.poslovnicaIDDataGridViewTextBoxColumn.ValueMember = "ID";
-            // 
-            // poslovnicaBindingSource
-            // 
-            this.poslovnicaBindingSource.DataSource = typeof(TechStore.Poslovnica);
+            this.poslovnicaIDDataGridViewTextBoxColumn.Width = 104;
             // 
             // poslovnicaDataGridViewTextBoxColumn
             // 
@@ -354,17 +364,13 @@
             this.tipZaposlenikaDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipZaposlenikaDataGridViewTextBoxColumn.Visible = false;
             // 
-            // zaposlenikBindingSource
-            // 
-            this.zaposlenikBindingSource.DataSource = typeof(TechStore.Zaposlenik);
-            // 
-            // FrmZaposlenici
+            // uiZaposlenici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(726, 383);
+            this.ClientSize = new System.Drawing.Size(706, 383);
             this.Controls.Add(this.uiOutputKontakt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.uiOutputLozinka);
@@ -378,7 +384,7 @@
             this.Controls.Add(this.uiActionDodajZaposlenika);
             this.Controls.Add(this.uiOutputPopisZaposlenika);
             this.Controls.Add(this.uiOutputPodaciOZaposlenima);
-            this.Name = "FrmZaposlenici";
+            this.Name = "uiZaposlenici";
             this.Text = "Zaposlenici";
             this.Load += new System.EventHandler(this.FrmZaposlenici_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPopisZaposlenika)).EndInit();
@@ -407,6 +413,7 @@
         private System.Windows.Forms.TextBox uiOutputKontakt;
         private System.Windows.Forms.BindingSource zaposlenikBindingSource;
         private System.Windows.Forms.BindingSource tipZaposlenikaBindingSource;
+        private System.Windows.Forms.BindingSource poslovnicaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
@@ -420,7 +427,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn brojDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn tipIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn poslovnicaIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource poslovnicaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn poslovnicaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stanjeDokumentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipZaposlenikaDataGridViewTextBoxColumn;

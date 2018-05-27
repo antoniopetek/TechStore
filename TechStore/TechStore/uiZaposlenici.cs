@@ -19,8 +19,10 @@ namespace TechStore
 
         private void uiActionDodajZaposlenika_Click(object sender, EventArgs e)
         {
-            FrmDodavanjeZaposlenika formaDodavanjeZaposlenika = new FrmDodavanjeZaposlenika();
-            formaDodavanjeZaposlenika.Show();
+            uiDodavanjeZaposlenika formaDodavanjeZaposlenika = new uiDodavanjeZaposlenika();
+            formaDodavanjeZaposlenika.ShowDialog();
+
+            OsvjeziZaposlenike();
         }
 
         private void FrmZaposlenici_Load(object sender, EventArgs e)

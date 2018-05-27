@@ -1,6 +1,6 @@
 ﻿namespace TechStore
 {
-    partial class FrmDodavanjeZaposlenika
+    partial class uiDodavanjeZaposlenika
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uiInputID = new System.Windows.Forms.TextBox();
             this.uiInputIme = new System.Windows.Forms.TextBox();
             this.uiInputPrezime = new System.Windows.Forms.TextBox();
@@ -54,7 +55,12 @@
             this.uiInputKorisnickoIme = new System.Windows.Forms.TextBox();
             this.uiActionDodajZaposlenika = new System.Windows.Forms.Button();
             this.uiInputPoslovnica = new System.Windows.Forms.ComboBox();
+            this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiInputTipZaposlenika = new System.Windows.Forms.ComboBox();
+            this.tipZaposlenikaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionOdustani = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipZaposlenikaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiInputID
@@ -281,7 +287,7 @@
             // uiActionDodajZaposlenika
             // 
             this.uiActionDodajZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajZaposlenika.Location = new System.Drawing.Point(200, 235);
+            this.uiActionDodajZaposlenika.Location = new System.Drawing.Point(113, 234);
             this.uiActionDodajZaposlenika.Name = "uiActionDodajZaposlenika";
             this.uiActionDodajZaposlenika.Size = new System.Drawing.Size(198, 37);
             this.uiActionDodajZaposlenika.TabIndex = 26;
@@ -291,27 +297,53 @@
             // 
             // uiInputPoslovnica
             // 
+            this.uiInputPoslovnica.DataSource = this.poslovnicaBindingSource;
+            this.uiInputPoslovnica.DisplayMember = "Naziv";
             this.uiInputPoslovnica.FormattingEnabled = true;
             this.uiInputPoslovnica.Location = new System.Drawing.Point(113, 164);
             this.uiInputPoslovnica.Name = "uiInputPoslovnica";
             this.uiInputPoslovnica.Size = new System.Drawing.Size(129, 21);
             this.uiInputPoslovnica.TabIndex = 27;
+            this.uiInputPoslovnica.ValueMember = "ID";
+            // 
+            // poslovnicaBindingSource
+            // 
+            this.poslovnicaBindingSource.DataSource = typeof(TechStore.Poslovnica);
             // 
             // uiInputTipZaposlenika
             // 
+            this.uiInputTipZaposlenika.DataSource = this.tipZaposlenikaBindingSource;
+            this.uiInputTipZaposlenika.DisplayMember = "Naziv";
             this.uiInputTipZaposlenika.FormattingEnabled = true;
             this.uiInputTipZaposlenika.Location = new System.Drawing.Point(113, 190);
             this.uiInputTipZaposlenika.Name = "uiInputTipZaposlenika";
             this.uiInputTipZaposlenika.Size = new System.Drawing.Size(129, 21);
             this.uiInputTipZaposlenika.TabIndex = 28;
+            this.uiInputTipZaposlenika.ValueMember = "ID";
             // 
-            // FrmDodavanjeZaposlenika
+            // tipZaposlenikaBindingSource
+            // 
+            this.tipZaposlenikaBindingSource.DataSource = typeof(TechStore.TipZaposlenika);
+            // 
+            // uiActionOdustani
+            // 
+            this.uiActionOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionOdustani.Location = new System.Drawing.Point(418, 233);
+            this.uiActionOdustani.Name = "uiActionOdustani";
+            this.uiActionOdustani.Size = new System.Drawing.Size(92, 38);
+            this.uiActionOdustani.TabIndex = 29;
+            this.uiActionOdustani.Text = "Odustani";
+            this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
+            // 
+            // uiDodavanjeZaposlenika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(559, 284);
+            this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiInputTipZaposlenika);
             this.Controls.Add(this.uiInputPoslovnica);
             this.Controls.Add(this.uiActionDodajZaposlenika);
@@ -339,9 +371,11 @@
             this.Controls.Add(this.uiInputPrezime);
             this.Controls.Add(this.uiInputIme);
             this.Controls.Add(this.uiInputID);
-            this.Name = "FrmDodavanjeZaposlenika";
+            this.Name = "uiDodavanjeZaposlenika";
             this.Text = "FrmDodavanjeZaposlenika";
             this.Load += new System.EventHandler(this.FrmDodavanjeZaposlenika_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipZaposlenikaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,5 +410,8 @@
         private System.Windows.Forms.Button uiActionDodajZaposlenika;
         private System.Windows.Forms.ComboBox uiInputPoslovnica;
         private System.Windows.Forms.ComboBox uiInputTipZaposlenika;
+        private System.Windows.Forms.BindingSource poslovnicaBindingSource;
+        private System.Windows.Forms.BindingSource tipZaposlenikaBindingSource;
+        private System.Windows.Forms.Button uiActionOdustani;
     }
 }

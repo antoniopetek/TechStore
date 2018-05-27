@@ -76,11 +76,11 @@
     <Compile Include="FrmDodavanjePoslovnice.Designer.cs">
       <DependentUpon>FrmDodavanjePoslovnice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDodavanjeZaposlenika.cs">
+    <Compile Include="uiDodavanjeZaposlenika.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDodavanjeZaposlenika.Designer.cs">
-      <DependentUpon>FrmDodavanjeZaposlenika.cs</DependentUpon>
+    <Compile Include="uiDodavanjeZaposlenika.Designer.cs">
+      <DependentUpon>uiDodavanjeZaposlenika.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHelp.cs">
       <SubType>Form</SubType>
@@ -195,8 +195,8 @@
     <EmbeddedResource Include="FrmDodavanjePoslovnice.resx">
       <DependentUpon>FrmDodavanjePoslovnice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDodavanjeZaposlenika.resx">
-      <DependentUpon>FrmDodavanjeZaposlenika.cs</DependentUpon>
+    <EmbeddedResource Include="uiDodavanjeZaposlenika.resx">
+      <DependentUpon>uiDodavanjeZaposlenika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHelp.resx">
       <DependentUpon>FrmHelp.cs</DependentUpon>
