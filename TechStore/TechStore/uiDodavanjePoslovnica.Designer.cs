@@ -1,6 +1,6 @@
 ﻿namespace TechStore
 {
-    partial class FrmDodavanjePoslovnice
+    partial class uiDodavanjePoslovnica
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             this.uiInputUlica = new System.Windows.Forms.TextBox();
             this.uiInputBroj = new System.Windows.Forms.TextBox();
             this.uiActionDodajPoslovnicu = new System.Windows.Forms.Button();
+            this.uiActionOdustani = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -155,7 +156,7 @@
             // uiActionDodajPoslovnicu
             // 
             this.uiActionDodajPoslovnicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajPoslovnicu.Location = new System.Drawing.Point(127, 225);
+            this.uiActionDodajPoslovnicu.Location = new System.Drawing.Point(64, 225);
             this.uiActionDodajPoslovnicu.Name = "uiActionDodajPoslovnicu";
             this.uiActionDodajPoslovnicu.Size = new System.Drawing.Size(137, 41);
             this.uiActionDodajPoslovnicu.TabIndex = 12;
@@ -163,13 +164,24 @@
             this.uiActionDodajPoslovnicu.UseVisualStyleBackColor = true;
             this.uiActionDodajPoslovnicu.Click += new System.EventHandler(this.UiActionDodajPoslovnicu_Click);
             // 
-            // FrmDodavanjePoslovnice
+            // uiActionOdustani
+            // 
+            this.uiActionOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionOdustani.Location = new System.Drawing.Point(254, 225);
+            this.uiActionOdustani.Name = "uiActionOdustani";
+            this.uiActionOdustani.Size = new System.Drawing.Size(75, 41);
+            this.uiActionOdustani.TabIndex = 13;
+            this.uiActionOdustani.Text = "Odustani";
+            this.uiActionOdustani.UseVisualStyleBackColor = true;
+            // 
+            // uiDodavanjePoslovnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(341, 296);
+            this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionDodajPoslovnicu);
             this.Controls.Add(this.uiInputBroj);
             this.Controls.Add(this.uiInputUlica);
@@ -183,7 +195,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmDodavanjePoslovnice";
+            this.Name = "uiDodavanjePoslovnica";
             this.Text = "FrmDodavanjePoslovnice";
             this.Load += new System.EventHandler(this.FrmDodavanjePoslovnice_Load);
             this.ResumeLayout(false);
@@ -206,5 +218,6 @@
         private System.Windows.Forms.TextBox uiInputUlica;
         private System.Windows.Forms.TextBox uiInputBroj;
         private System.Windows.Forms.Button uiActionDodajPoslovnicu;
+        private System.Windows.Forms.Button uiActionOdustani;
     }
 }

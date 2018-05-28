@@ -30,7 +30,7 @@ namespace TechStore
 
         private void UiActionDodajPoslovnicu_Click(object sender, EventArgs e)
         {
-            FrmPoslovnica formaPoslovnica = new FrmPoslovnica();
+            uiPoslovnice formaPoslovnica = new uiPoslovnice();
             formaPoslovnica.Show();
         }
 
