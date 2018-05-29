@@ -307,6 +307,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiInputMaticna);
             this.Name = "FrmKonfiguracija";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmKonfiguracija";
             this.Load += new System.EventHandler(this.FrmKonfiguracija_Load);
             this.ResumeLayout(false);

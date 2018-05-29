@@ -67,5 +67,10 @@ namespace TechStore
                 uiOutputLozinka.Text = zaposlenik.Lozinka.ToString();
             }
         }
+
+        private void uiActionNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

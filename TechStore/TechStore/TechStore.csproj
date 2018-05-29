@@ -112,17 +112,17 @@
     <Compile Include="uiPoslovnice.Designer.cs">
       <DependentUpon>uiPoslovnice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPrijava.cs">
+    <Compile Include="uiPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPrijava.Designer.cs">
-      <DependentUpon>FrmPrijava.cs</DependentUpon>
+    <Compile Include="uiPrijava.Designer.cs">
+      <DependentUpon>uiPrijava.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmIzbornik.cs">
+    <Compile Include="uiIzbornik.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIzbornik.Designer.cs">
-      <DependentUpon>FrmIzbornik.cs</DependentUpon>
+    <Compile Include="uiIzbornik.Designer.cs">
+      <DependentUpon>uiIzbornik.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStanje.cs">
       <SubType>Form</SubType>
@@ -136,11 +136,11 @@
     <Compile Include="uiZaposlenici.Designer.cs">
       <DependentUpon>uiZaposlenici.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmKolicinaArtikala.cs">
+    <Compile Include="uiKolicinaArtikala.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmKolicinaArtikala.Designer.cs">
-      <DependentUpon>FrmKolicinaArtikala.cs</DependentUpon>
+    <Compile Include="uiKolicinaArtikala.Designer.cs">
+      <DependentUpon>uiKolicinaArtikala.cs</DependentUpon>
     </Compile>
     <Compile Include="Kompatibilnost.cs">
       <DependentUpon>TechStoreModel.tt</DependentUpon>
@@ -201,8 +201,8 @@
     <EmbeddedResource Include="FrmHelp.resx">
       <DependentUpon>FrmHelp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIzbornik.resx">
-      <DependentUpon>FrmIzbornik.cs</DependentUpon>
+    <EmbeddedResource Include="uiIzbornik.resx">
+      <DependentUpon>uiIzbornik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKonfiguracija.resx">
       <DependentUpon>FrmKonfiguracija.cs</DependentUpon>
@@ -216,8 +216,8 @@
     <EmbeddedResource Include="uiPoslovnice.resx">
       <DependentUpon>uiPoslovnice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrijava.resx">
-      <DependentUpon>FrmPrijava.cs</DependentUpon>
+    <EmbeddedResource Include="uiPrijava.resx">
+      <DependentUpon>uiPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStanje.resx">
       <DependentUpon>FrmStanje.cs</DependentUpon>
@@ -225,8 +225,8 @@
     <EmbeddedResource Include="uiZaposlenici.resx">
       <DependentUpon>uiZaposlenici.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmKolicinaArtikala.resx">
-      <DependentUpon>FrmKolicinaArtikala.cs</DependentUpon>
+    <EmbeddedResource Include="uiKolicinaArtikala.resx">
+      <DependentUpon>uiKolicinaArtikala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -239,6 +239,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Artikl.datasource" />
     <None Include="Properties\DataSources\Poslovnica.datasource" />
     <None Include="Properties\DataSources\TipZaposlenika.datasource" />
     <None Include="Properties\DataSources\Zaposlenik.datasource" />

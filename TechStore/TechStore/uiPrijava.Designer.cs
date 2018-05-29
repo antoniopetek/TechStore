@@ -1,6 +1,6 @@
 ﻿namespace TechStore
 {
-    partial class FrmPrijava
+    partial class uiPrijava
     {
         /// <summary>
         /// Required designer variable.
@@ -110,6 +110,7 @@
             this.Controls.Add(this.uiInputLozinka);
             this.Controls.Add(this.uiInputKorisnickoIme);
             this.Name = "FrmPrijava";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PRIJAVA";
             this.Load += new System.EventHandler(this.FrmPrijava_Load);
             this.ResumeLayout(false);

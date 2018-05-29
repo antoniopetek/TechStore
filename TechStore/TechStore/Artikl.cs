@@ -11,7 +11,9 @@ namespace TechStore
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class Artikl
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -39,5 +41,17 @@ namespace TechStore
         public virtual ICollection<Kompatibilnost> Kompatibilnost1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StavkaDokumenta> StavkaDokumenta { get; set; }
+
+        public static BindingList<Artikl> DohvatiSveArtikle()
+        {
+            BindingList<Artikl> artikli = null;
+            
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                artikli = new BindingList<Artikl>(db.Artikl.ToList());
+            }
+
+            return artikli;
+        }
     }
 }

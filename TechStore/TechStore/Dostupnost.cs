@@ -11,7 +11,9 @@ namespace TechStore
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class Dostupnost
     {
         public int ID { get; set; }
@@ -21,5 +23,17 @@ namespace TechStore
     
         public virtual Artikl Artikl { get; set; }
         public virtual Poslovnica Poslovnica { get; set; }
+
+        public static List<Dostupnost> DohvatiDostupnost(int idArtikla)
+        {
+            List<Dostupnost> dostupnost = null;
+
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                dostupnost = (from d in db.Dostupnost where d.Artikl_ID == idArtikla select d).ToList();
+            }
+
+            return dostupnost;
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmIzbornik : Form
+    public partial class uiIzbornik : Form
     {
-        public FrmIzbornik()
+        public uiIzbornik()
         {
             InitializeComponent();
         }
@@ -25,19 +25,25 @@ namespace TechStore
         private void UiActionZaposlenici_Click(object sender, EventArgs e)
         {
             uiZaposlenici formaZaposlenici = new uiZaposlenici();
-            formaZaposlenici.Show();
+            Hide();
+            formaZaposlenici.ShowDialog();
+            Show();
         }
 
         private void UiActionDodajPoslovnicu_Click(object sender, EventArgs e)
         {
             uiPoslovnice formaPoslovnica = new uiPoslovnice();
-            formaPoslovnica.Show();
+            Hide();
+            formaPoslovnica.ShowDialog();
+            Show();
         }
 
         private void UiActionPregledArtikala_Click(object sender, EventArgs e)
         {
-            FrmKolicinaArtikala formaKolicina = new FrmKolicinaArtikala();
-            formaKolicina.Show();
+            uiKolicinaArtikala formaKolicina = new uiKolicinaArtikala();
+            Hide();
+            formaKolicina.ShowDialog();   
+            Show();
         }
 
         private void UiActionDodajArtikl_Click(object sender, EventArgs e)

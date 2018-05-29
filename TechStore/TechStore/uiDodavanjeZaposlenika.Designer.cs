@@ -372,6 +372,7 @@
             this.Controls.Add(this.uiInputIme);
             this.Controls.Add(this.uiInputID);
             this.Name = "uiDodavanjeZaposlenika";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDodavanjeZaposlenika";
             this.Load += new System.EventHandler(this.FrmDodavanjeZaposlenika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();

@@ -49,5 +49,16 @@ namespace TechStore
 
             return poslovnice;
         }
+
+        public static Poslovnica DohvatiPoslovnicu(int idPoslovnice)
+        {
+            Poslovnica poslovnica = null;
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                poslovnica = (from p in db.Poslovnica where p.ID == idPoslovnice select p).Single();
+            }
+
+            return poslovnica;
+        }
     }
 }

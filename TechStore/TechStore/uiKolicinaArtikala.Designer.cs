@@ -1,6 +1,6 @@
 ﻿namespace TechStore
 {
-    partial class FrmKolicinaArtikala
+    partial class uiKolicinaArtikala
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.uiOutputGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.uiInputArtikl = new System.Windows.Forms.ComboBox();
+            this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputGraf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiOutputGraf
@@ -48,7 +51,7 @@
             this.uiOutputGraf.Name = "uiOutputGraf";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Kolicina";
             this.uiOutputGraf.Series.Add(series1);
             this.uiOutputGraf.Size = new System.Drawing.Size(404, 316);
             this.uiOutputGraf.TabIndex = 0;
@@ -67,11 +70,19 @@
             // 
             // uiInputArtikl
             // 
+            this.uiInputArtikl.DataSource = this.artiklBindingSource;
+            this.uiInputArtikl.DisplayMember = "Naziv";
             this.uiInputArtikl.FormattingEnabled = true;
             this.uiInputArtikl.Location = new System.Drawing.Point(112, 48);
             this.uiInputArtikl.Name = "uiInputArtikl";
-            this.uiInputArtikl.Size = new System.Drawing.Size(160, 21);
+            this.uiInputArtikl.Size = new System.Drawing.Size(228, 21);
             this.uiInputArtikl.TabIndex = 3;
+            this.uiInputArtikl.ValueMember = "ID";
+            this.uiInputArtikl.SelectedValueChanged += new System.EventHandler(this.uiInputArtikl_SelectedValueChanged);
+            // 
+            // artiklBindingSource
+            // 
+            this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
             // 
             // uiActionNatrag
             // 
@@ -82,6 +93,7 @@
             this.uiActionNatrag.TabIndex = 6;
             this.uiActionNatrag.Text = "NATRAG";
             this.uiActionNatrag.UseVisualStyleBackColor = true;
+            this.uiActionNatrag.Click += new System.EventHandler(this.uiActionNatrag_Click);
             // 
             // FrmKolicinaArtikala
             // 
@@ -95,9 +107,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiOutputGraf);
             this.Name = "FrmKolicinaArtikala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kolicina";
             this.Load += new System.EventHandler(this.FrmKolicinaArtikala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputGraf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +123,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox uiInputArtikl;
         private System.Windows.Forms.Button uiActionNatrag;
+        private System.Windows.Forms.BindingSource artiklBindingSource;
     }
 }

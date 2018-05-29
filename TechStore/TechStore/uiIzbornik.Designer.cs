@@ -1,6 +1,6 @@
 ﻿namespace TechStore
 {
-    partial class FrmIzbornik
+    partial class uiIzbornik
     {
         /// <summary>
         /// Required designer variable.
@@ -144,6 +144,7 @@
             this.Controls.Add(this.uiActionZaposlenici);
             this.Controls.Add(this.uiActionDodajArtikl);
             this.Name = "FrmIzbornik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izbornik";
             this.Load += new System.EventHandler(this.FrmIzbornik_Load);
             this.ResumeLayout(false);

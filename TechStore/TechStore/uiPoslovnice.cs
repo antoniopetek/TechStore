@@ -50,5 +50,10 @@ namespace TechStore
         {
             poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
         }
+
+        private void uiActionNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

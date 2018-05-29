@@ -173,6 +173,7 @@
             this.uiActionOdustani.TabIndex = 13;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
             // uiDodavanjePoslovnica
             // 
@@ -196,6 +197,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "uiDodavanjePoslovnica";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDodavanjePoslovnice";
             this.Load += new System.EventHandler(this.FrmDodavanjePoslovnice_Load);
             this.ResumeLayout(false);

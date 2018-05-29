@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmPrijava : Form
+    public partial class uiPrijava : Form
     {
-        public FrmPrijava()
+        public uiPrijava()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace TechStore
 
         private void UiActionPrijaviSe_Click(object sender, EventArgs e)
         {
-            Form frmIzbornik = new FrmIzbornik();
+            Form frmIzbornik = new uiIzbornik();
             frmIzbornik.Show();
             Hide();
         }
