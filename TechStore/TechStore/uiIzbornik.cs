@@ -19,7 +19,7 @@ namespace TechStore
 
         private void UiActionIzlaz_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void UiActionZaposlenici_Click(object sender, EventArgs e)
@@ -56,6 +56,7 @@ namespace TechStore
         {
             this.KeyPreview = true;
             this.KeyDown += FrmIzbornik_KeyDown;
+            PripremiFunkcionalnosti();
         }
 
         private void FrmIzbornik_KeyDown(object sender, KeyEventArgs e)
@@ -82,6 +83,20 @@ namespace TechStore
         {
             FrmStanje formaStanje = new FrmStanje();
             formaStanje.Show();
+        }
+
+        private void PripremiFunkcionalnosti()
+        {
+            if (Zaposlenik.PrijavljeniZaposlenik.Tip_ID == 1)
+            {
+                uiOutputIspis.Text = "Prijavljeni ste kao administrator.";
+            }
+            else
+            {
+                uiOutputIspis.Text = "Prijavljeni ste kao korisnik.";
+                uiActionZaposlenici.Enabled = false;
+                uiActionPoslovnice.Enabled = false;
+            }
         }
     }
 }

@@ -34,7 +34,7 @@
             this.uiActionIzlaz = new System.Windows.Forms.Button();
             this.uiActionPregledArtikala = new System.Windows.Forms.Button();
             this.uiActionIzradaKonfiguracije = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uiOutputIspis = new System.Windows.Forms.Label();
             this.uiActionNabavaArtikala = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -105,16 +105,16 @@
             this.uiActionIzradaKonfiguracije.UseVisualStyleBackColor = true;
             this.uiActionIzradaKonfiguracije.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // label1
+            // uiOutputIspis
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(9, 265);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Prijavljeni ste kao:";
+            this.uiOutputIspis.AutoSize = true;
+            this.uiOutputIspis.BackColor = System.Drawing.Color.Transparent;
+            this.uiOutputIspis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiOutputIspis.Location = new System.Drawing.Point(9, 265);
+            this.uiOutputIspis.Name = "uiOutputIspis";
+            this.uiOutputIspis.Size = new System.Drawing.Size(136, 16);
+            this.uiOutputIspis.TabIndex = 6;
+            this.uiOutputIspis.Text = "Prijavljeni ste kao:";
             // 
             // uiActionNabavaArtikala
             // 
@@ -127,7 +127,7 @@
             this.uiActionNabavaArtikala.UseVisualStyleBackColor = true;
             this.uiActionNabavaArtikala.Click += new System.EventHandler(this.UiActionNabavaArtikala_Click);
             // 
-            // FrmIzbornik
+            // uiIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,14 +136,14 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(458, 290);
             this.Controls.Add(this.uiActionNabavaArtikala);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiOutputIspis);
             this.Controls.Add(this.uiActionIzradaKonfiguracije);
             this.Controls.Add(this.uiActionPregledArtikala);
             this.Controls.Add(this.uiActionIzlaz);
             this.Controls.Add(this.uiActionPoslovnice);
             this.Controls.Add(this.uiActionZaposlenici);
             this.Controls.Add(this.uiActionDodajArtikl);
-            this.Name = "FrmIzbornik";
+            this.Name = "uiIzbornik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izbornik";
             this.Load += new System.EventHandler(this.FrmIzbornik_Load);
@@ -160,7 +160,7 @@
         private System.Windows.Forms.Button uiActionIzlaz;
         private System.Windows.Forms.Button uiActionPregledArtikala;
         private System.Windows.Forms.Button uiActionIzradaKonfiguracije;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label uiOutputIspis;
         private System.Windows.Forms.Button uiActionNabavaArtikala;
     }
 }

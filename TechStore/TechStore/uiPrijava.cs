@@ -24,9 +24,27 @@ namespace TechStore
 
         private void UiActionPrijaviSe_Click(object sender, EventArgs e)
         {
-            Form frmIzbornik = new uiIzbornik();
-            frmIzbornik.Show();
-            Hide();
+            if (uiInputKorisnickoIme.Text != "" && uiInputLozinka.Text != "")
+            {
+                Zaposlenik.PrijavljeniZaposlenik = Zaposlenik.DohvatiZaposlenika(uiInputKorisnickoIme.Text, uiInputLozinka.Text);
+                if (Zaposlenik.PrijavljeniZaposlenik != null)
+                {
+                    uiIzbornik izbornik = new uiIzbornik();
+                    Hide();
+                    izbornik.ShowDialog();
+                    Show();
+                    uiInputKorisnickoIme.Clear();
+                    uiInputLozinka.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Unijeli ste krivo korisničko ime ili lozinku. Pokušajte ponovno.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Niste unijeli sve podatke", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void FrmPrijava_Load(object sender, EventArgs e)
@@ -46,8 +64,7 @@ namespace TechStore
                 richTextBox.Text += "Trenutno ste stisnuli F1 na formi Prijava. Na formi Prijava možete vidjeti unos korisničkog imena i lozinke te dva gumbića." +
                     " Ukoliko unesete dobro korisničko ime i lozinku i pritisnete na gumbić PRIJAVI SE aplikacija vas vodi do glavnog izbornika aplikacije. Ukoliko unesete" +
                     "pogrešno korisničko ime i lozinku aplikacija ispisuje grešku. Pritiskom na gumbić ODUSTANI aplikacija se zatvara. ";
-                frmHelp.Show();
-                
+                frmHelp.Show();     
             }
         }
     }

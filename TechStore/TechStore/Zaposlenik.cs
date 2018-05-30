@@ -35,6 +35,7 @@ namespace TechStore
         public string Broj { get; set; }
         public int Tip_ID { get; set; }
         public int Poslovnica_ID { get; set; }
+        public static Zaposlenik PrijavljeniZaposlenik { get; set; }
     
         public virtual Poslovnica Poslovnica { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -55,5 +56,18 @@ namespace TechStore
 
             return zaposlenici;
         }
+
+        public static Zaposlenik DohvatiZaposlenika(string korisnickoIme, string lozinka)
+        {
+            Zaposlenik zaposlenik = null;
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                zaposlenik = (from z in db.Zaposlenik where z.Korisnicko_ime == korisnickoIme && z.Lozinka == lozinka select z).FirstOrDefault();
+            }
+
+            return zaposlenik;
+        }
+
+
     }
 }
