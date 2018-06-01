@@ -39,8 +39,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.uiOutputIznos = new System.Windows.Forms.Label();
             this.uiActionIzdajRacun = new System.Windows.Forms.Button();
             this.uiInputMaticna = new System.Windows.Forms.ComboBox();
             this.uiInputGraficka = new System.Windows.Forms.ComboBox();
@@ -181,32 +180,21 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "HDD:";
             // 
-            // label11
+            // uiOutputIznos
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(716, 299);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 16);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Ukupan iznos:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(777, 326);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 16);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Iznos";
+            this.uiOutputIznos.AutoSize = true;
+            this.uiOutputIznos.BackColor = System.Drawing.Color.Transparent;
+            this.uiOutputIznos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiOutputIznos.Location = new System.Drawing.Point(875, 296);
+            this.uiOutputIznos.Name = "uiOutputIznos";
+            this.uiOutputIznos.Size = new System.Drawing.Size(105, 16);
+            this.uiOutputIznos.TabIndex = 20;
+            this.uiOutputIznos.Text = "Ukupan iznos:";
             // 
             // uiActionIzdajRacun
             // 
             this.uiActionIzdajRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionIzdajRacun.Location = new System.Drawing.Point(928, 302);
+            this.uiActionIzdajRacun.Location = new System.Drawing.Point(1090, 281);
             this.uiActionIzdajRacun.Name = "uiActionIzdajRacun";
             this.uiActionIzdajRacun.Size = new System.Drawing.Size(116, 44);
             this.uiActionIzdajRacun.TabIndex = 22;
@@ -241,6 +229,7 @@
             this.uiInputProcesor.Name = "uiInputProcesor";
             this.uiInputProcesor.Size = new System.Drawing.Size(236, 21);
             this.uiInputProcesor.TabIndex = 25;
+            this.uiInputProcesor.SelectedIndexChanged += new System.EventHandler(this.uiInputProcesor_SelectedIndexChanged);
             // 
             // uiInputRam
             // 
@@ -250,6 +239,7 @@
             this.uiInputRam.Name = "uiInputRam";
             this.uiInputRam.Size = new System.Drawing.Size(236, 21);
             this.uiInputRam.TabIndex = 26;
+            this.uiInputRam.SelectedIndexChanged += new System.EventHandler(this.uiInputRam_SelectedIndexChanged);
             // 
             // uiInputSsd
             // 
@@ -259,6 +249,7 @@
             this.uiInputSsd.Name = "uiInputSsd";
             this.uiInputSsd.Size = new System.Drawing.Size(236, 21);
             this.uiInputSsd.TabIndex = 27;
+            this.uiInputSsd.SelectedIndexChanged += new System.EventHandler(this.uiInputSsd_SelectedIndexChanged);
             // 
             // uiInputHdd
             // 
@@ -268,6 +259,7 @@
             this.uiInputHdd.Name = "uiInputHdd";
             this.uiInputHdd.Size = new System.Drawing.Size(236, 21);
             this.uiInputHdd.TabIndex = 28;
+            this.uiInputHdd.SelectedIndexChanged += new System.EventHandler(this.uiInputHdd_SelectedIndexChanged);
             // 
             // uiInputNapajanje
             // 
@@ -277,6 +269,7 @@
             this.uiInputNapajanje.Name = "uiInputNapajanje";
             this.uiInputNapajanje.Size = new System.Drawing.Size(236, 21);
             this.uiInputNapajanje.TabIndex = 29;
+            this.uiInputNapajanje.SelectedIndexChanged += new System.EventHandler(this.uiInputNapajanje_SelectedIndexChanged);
             // 
             // uiInputHladnjak
             // 
@@ -286,6 +279,7 @@
             this.uiInputHladnjak.Name = "uiInputHladnjak";
             this.uiInputHladnjak.Size = new System.Drawing.Size(236, 21);
             this.uiInputHladnjak.TabIndex = 30;
+            this.uiInputHladnjak.SelectedIndexChanged += new System.EventHandler(this.uiInputHladnjak_SelectedIndexChanged);
             // 
             // uiInputZvucna
             // 
@@ -295,6 +289,7 @@
             this.uiInputZvucna.Name = "uiInputZvucna";
             this.uiInputZvucna.Size = new System.Drawing.Size(236, 21);
             this.uiInputZvucna.TabIndex = 31;
+            this.uiInputZvucna.SelectedIndexChanged += new System.EventHandler(this.uiInputZvucna_SelectedIndexChanged);
             // 
             // uiInputKuciste
             // 
@@ -304,6 +299,7 @@
             this.uiInputKuciste.Name = "uiInputKuciste";
             this.uiInputKuciste.Size = new System.Drawing.Size(236, 21);
             this.uiInputKuciste.TabIndex = 32;
+            this.uiInputKuciste.SelectedIndexChanged += new System.EventHandler(this.uiInputKuciste_SelectedIndexChanged);
             // 
             // uiOutputKonfiguracija
             // 
@@ -441,8 +437,7 @@
             this.Controls.Add(this.uiInputGraficka);
             this.Controls.Add(this.uiInputMaticna);
             this.Controls.Add(this.uiActionIzdajRacun);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.uiOutputIznos);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -476,8 +471,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label uiOutputIznos;
         private System.Windows.Forms.Button uiActionIzdajRacun;
         private System.Windows.Forms.ComboBox uiInputMaticna;
         private System.Windows.Forms.ComboBox uiInputGraficka;
