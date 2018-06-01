@@ -32,7 +32,7 @@ namespace TechStore
         public double Cijena { get; set; }
         public int Vrsta_ID { get; set; }
     
-        public virtual VrstaArtikla VrstaArtikla { get; set; }
+        public virtual TipZaposlenika VrstaArtikla { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dostupnost> Dostupnost { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -52,6 +52,22 @@ namespace TechStore
             }
 
             return artikli;
+        }
+
+        public static List<Artikl> DohvatiKomponente(string upit)
+        {
+            List<Artikl> komponente = null;
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                komponente = db.Artikl.SqlQuery(upit).ToList();
+            }
+
+            return komponente;
+        }
+
+        public override string ToString()
+        {
+            return Naziv;
         }
     }
 }

@@ -75,7 +75,7 @@ namespace TechStore
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            FrmKonfiguracija formaKonfiguracija = new FrmKonfiguracija();
+            uiKonfiguracija formaKonfiguracija = new uiKonfiguracija();
             formaKonfiguracija.Show();
         }
 

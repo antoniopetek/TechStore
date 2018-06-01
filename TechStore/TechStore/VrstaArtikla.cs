@@ -11,7 +11,9 @@ namespace TechStore
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class VrstaArtikla
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,5 +27,17 @@ namespace TechStore
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Artikl> Artikl { get; set; }
+
+        public static BindingList<VrstaArtikla> DohvatiVrsteArtikala()
+        {
+            BindingList<VrstaArtikla> vrstaArtikala = null;
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                vrstaArtikala = new BindingList<VrstaArtikla>(db.VrstaArtikla.ToList());
+            }
+
+            return vrstaArtikala;
+        }
+
     }
 }

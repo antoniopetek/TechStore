@@ -88,11 +88,11 @@
     <Compile Include="FrmHelp.Designer.cs">
       <DependentUpon>FrmHelp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmKonfiguracija.cs">
+    <Compile Include="uiKonfiguracija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmKonfiguracija.Designer.cs">
-      <DependentUpon>FrmKonfiguracija.cs</DependentUpon>
+    <Compile Include="uiKonfiguracija.Designer.cs">
+      <DependentUpon>uiKonfiguracija.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNabava.cs">
       <SubType>Form</SubType>
@@ -204,8 +204,8 @@
     <EmbeddedResource Include="uiIzbornik.resx">
       <DependentUpon>uiIzbornik.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmKonfiguracija.resx">
-      <DependentUpon>FrmKonfiguracija.cs</DependentUpon>
+    <EmbeddedResource Include="uiKonfiguracija.resx">
+      <DependentUpon>uiKonfiguracija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNabava.resx">
       <DependentUpon>FrmNabava.cs</DependentUpon>
@@ -242,6 +242,7 @@
     <None Include="Properties\DataSources\Artikl.datasource" />
     <None Include="Properties\DataSources\Poslovnica.datasource" />
     <None Include="Properties\DataSources\TipZaposlenika.datasource" />
+    <None Include="Properties\DataSources\VrstaArtikla.datasource" />
     <None Include="Properties\DataSources\Zaposlenik.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -56,8 +56,8 @@ namespace TechStore
             this.KeyPreview = true;
             this.KeyDown += FrmDodavanjeZaposlenika_KeyDown;
 
-            poslovnicaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
-            tipZaposlenikaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+            poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+            tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
         }
 
         private void FrmDodavanjeZaposlenika_KeyDown(object sender, KeyEventArgs e)
