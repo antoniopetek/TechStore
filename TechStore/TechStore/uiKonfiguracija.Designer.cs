@@ -52,19 +52,19 @@
             this.uiInputZvucna = new System.Windows.Forms.ComboBox();
             this.uiInputKuciste = new System.Windows.Forms.ComboBox();
             this.uiOutputKonfiguracija = new System.Windows.Forms.DataGridView();
+            this.vrstaArtiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kratkiopisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specifikacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.vrstaArtiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vrstaArtiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dostupnostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kompatibilnostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputKonfiguracija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -325,12 +325,21 @@
             this.uiOutputKonfiguracija.Size = new System.Drawing.Size(585, 247);
             this.uiOutputKonfiguracija.TabIndex = 33;
             // 
+            // vrstaArtiklaBindingSource
+            // 
+            this.vrstaArtiklaBindingSource.DataSource = typeof(TechStore.TipZaposlenika);
+            // 
+            // artiklBindingSource
+            // 
+            this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
+            // 
             // iDDataGridViewTextBoxColumn
             // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.FillWeight = 22F;
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Visible = false;
             // 
             // nazivDataGridViewTextBoxColumn
             // 
@@ -375,10 +384,6 @@
             this.vrstaIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.vrstaIDDataGridViewTextBoxColumn.ValueMember = "ID";
             // 
-            // vrstaArtiklaBindingSource
-            // 
-            this.vrstaArtiklaBindingSource.DataSource = typeof(TechStore.TipZaposlenika);
-            // 
             // vrstaArtiklaDataGridViewTextBoxColumn
             // 
             this.vrstaArtiklaDataGridViewTextBoxColumn.DataPropertyName = "VrstaArtikla";
@@ -413,10 +418,6 @@
             this.stavkaDokumentaDataGridViewTextBoxColumn.HeaderText = "StavkaDokumenta";
             this.stavkaDokumentaDataGridViewTextBoxColumn.Name = "stavkaDokumentaDataGridViewTextBoxColumn";
             this.stavkaDokumentaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // artiklBindingSource
-            // 
-            this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
             // 
             // uiKonfiguracija
             // 

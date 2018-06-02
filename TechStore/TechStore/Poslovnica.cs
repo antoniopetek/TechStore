@@ -60,5 +60,14 @@ namespace TechStore
 
             return poslovnica;
         }
+
+        public static void DodajPoslovnicu(Poslovnica poslovnica)
+        {
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                db.Poslovnica.Add(poslovnica);
+                db.SaveChanges();
+            }
+        }
     }
 }

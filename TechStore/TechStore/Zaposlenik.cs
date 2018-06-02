@@ -68,6 +68,14 @@ namespace TechStore
             return zaposlenik;
         }
 
+        public static void DodajZaposlenika(Zaposlenik zaposlenik)
+        {
+            using (TechStoreEntities db = new TechStoreEntities())
+            {
+                db.Zaposlenik.Add(zaposlenik);
+                db.SaveChanges();
+            }
+        }
 
     }
 }

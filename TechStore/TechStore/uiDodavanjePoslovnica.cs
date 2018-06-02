@@ -26,21 +26,17 @@ namespace TechStore
 
             else
             {
-                using (TechStoreEntities db = new TechStoreEntities())
+                Poslovnica poslovnica = new Poslovnica
                 {
-                    Poslovnica poslovnica = new Poslovnica
-                    {
-                        Naziv = uiInputNaziv.Text,
-                        Drzava = uiInputDrzava.Text,
-                        Grad = uiInputGrad.Text,
-                        Ulica = uiInputUlica.Text,
-                        Broj = uiInputBroj.Text
-                    };
+                    Naziv = uiInputNaziv.Text,
+                    Drzava = uiInputDrzava.Text,
+                    Grad = uiInputGrad.Text,
+                    Ulica = uiInputUlica.Text,
+                    Broj = uiInputBroj.Text
+                };
 
-                    db.Poslovnica.Add(poslovnica);
-                    db.SaveChanges();
-                    Close();
-                }
+                Poslovnica.DodajPoslovnicu(poslovnica);
+                Close();
             }
         }
 

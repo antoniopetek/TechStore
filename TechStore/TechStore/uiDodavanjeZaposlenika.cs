@@ -26,29 +26,25 @@ namespace TechStore
 
             else
             {
-                using (TechStoreEntities db = new TechStoreEntities())
+                Zaposlenik zaposlenik = new Zaposlenik
                 {
-                    Zaposlenik zaposlenik = new Zaposlenik
-                    {
-                        Ime = uiInputIme.Text,
-                        Prezime = uiInputPrezime.Text,
-                        Email = uiInputEmail.Text,
-                        Kontakt = uiInputKontakt.Text,
-                        Drzava = uiInputDrzava.Text,
-                        Grad = uiInputGrad.Text,
-                        Ulica = uiInputUlica.Text,
-                        Broj = uiInputBroj.Text,
-                        Korisnicko_ime = uiInputKorisnickoIme.Text,
-                        Lozinka = uiInputLozinka.Text,
-                        Poslovnica_ID = int.Parse(uiInputPoslovnica.SelectedValue.ToString()),
-                        Tip_ID = int.Parse(uiInputTipZaposlenika.SelectedValue.ToString())
-                    };
+                    Ime = uiInputIme.Text,
+                    Prezime = uiInputPrezime.Text,
+                    Email = uiInputEmail.Text,
+                    Kontakt = uiInputKontakt.Text,
+                    Drzava = uiInputDrzava.Text,
+                    Grad = uiInputGrad.Text,
+                    Ulica = uiInputUlica.Text,
+                    Broj = uiInputBroj.Text,
+                    Korisnicko_ime = uiInputKorisnickoIme.Text,
+                    Lozinka = uiInputLozinka.Text,
+                    Poslovnica_ID = int.Parse(uiInputPoslovnica.SelectedValue.ToString()),
+                    Tip_ID = int.Parse(uiInputTipZaposlenika.SelectedValue.ToString())
+                };
 
-                    db.Zaposlenik.Add(zaposlenik);
-                    db.SaveChanges();
-                    Close();
-                }
-            }    
+                Zaposlenik.DodajZaposlenika(zaposlenik);
+                Close();
+            }
         }
 
         private void FrmDodavanjeZaposlenika_Load(object sender, EventArgs e)

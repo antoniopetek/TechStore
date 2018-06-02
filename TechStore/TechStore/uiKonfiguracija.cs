@@ -126,11 +126,8 @@ namespace TechStore
         #region OsvjezavanjeComboBox-eva
         private void OsvjeziMaticne()
         {
-            List<Artikl> maticnePloce = null;
-            using(TechStoreEntities db = new TechStoreEntities())
-            {
-                maticnePloce = (from a in db.Artikl where a.Vrsta_ID == 2 select a).ToList();
-            }
+            string upit = "SELECT * FROM Artikl a WHERE a.Vrsta_ID = 2";
+            List<Artikl> maticnePloce = Artikl.DohvatiKomponente(upit);
 
             foreach (Artikl maticna in maticnePloce.OrderBy(x => x.Cijena))
             {
