@@ -53,7 +53,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Kolicina";
             this.uiOutputGraf.Series.Add(series1);
-            this.uiOutputGraf.Size = new System.Drawing.Size(404, 316);
+            this.uiOutputGraf.Size = new System.Drawing.Size(438, 351);
             this.uiOutputGraf.TabIndex = 0;
             this.uiOutputGraf.Text = "chart1";
             // 
@@ -87,7 +87,7 @@
             // uiActionNatrag
             // 
             this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionNatrag.Location = new System.Drawing.Point(348, 12);
+            this.uiActionNatrag.Location = new System.Drawing.Point(382, 12);
             this.uiActionNatrag.Name = "uiActionNatrag";
             this.uiActionNatrag.Size = new System.Drawing.Size(78, 28);
             this.uiActionNatrag.TabIndex = 6;
@@ -95,18 +95,18 @@
             this.uiActionNatrag.UseVisualStyleBackColor = true;
             this.uiActionNatrag.Click += new System.EventHandler(this.uiActionNatrag_Click);
             // 
-            // FrmKolicinaArtikala
+            // uiKolicinaArtikala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(438, 423);
+            this.ClientSize = new System.Drawing.Size(483, 458);
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiInputArtikl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiOutputGraf);
-            this.Name = "FrmKolicinaArtikala";
+            this.Name = "uiKolicinaArtikala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kolicina";
             this.Load += new System.EventHandler(this.FrmKolicinaArtikala_Load);

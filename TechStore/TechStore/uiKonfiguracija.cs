@@ -23,7 +23,7 @@ namespace TechStore
         {
             InitializeComponent();
         }
-        private void FrmKonfiguracija_Load(object sender, EventArgs e)
+        private void uiKonfiguracija_Load(object sender, EventArgs e)
         {
             KeyPreview = true;
             KeyDown += FrmNoviArtikl_KeyDown;
@@ -35,7 +35,7 @@ namespace TechStore
         #endregion
 
         #region PomocneMetode
-        private void UiActionIzdajRacun_Click(object sender, EventArgs e)
+        private void UiActionIspisi_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Račun uspješno izdan.", "IZDANO", MessageBoxButtons.OK);
         }
@@ -46,8 +46,10 @@ namespace TechStore
                 FrmHelp frmHelp = new FrmHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
-                richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
-                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Dodavanje artikla.";
+                richTextBox.Text = "TechStore Help Center\n\n";
+                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Izrada konfiguracije.\n\nOdabirom komponenata iz padajućih izbornika, korisnik aplikacije može izrađivati konfiguraciju " +
+                    "računala. Odabirom svake komponente, u polju za ispis prikazuju mu se osnovne informacije o odabranim komponentama (ID, Naziv, Kratki opis, Cijena i Vrsta). Istovremeno " +
+                    "prikazuje se ukupna cijena odabranih komponenata.";
                 frmHelp.Show();
 
             }
@@ -82,7 +84,7 @@ namespace TechStore
             foreach (Artikl artikl in artikli)
             {
                 double interval = artikl.Cijena / artikli.Max(x => x.Cijena);
-                if ((interval >= postotak - 0.15) && (interval <= postotak + 0.15))
+                if ((interval >= postotak - 0.2) && (interval <= postotak + 0.2))
                 {
                     preporuke.Insert(0, artikl);
                 }
@@ -316,7 +318,8 @@ namespace TechStore
             OsvjeziDataGrid();
             RacunajIznos(9);
         }
-        #endregion       
+        #endregion
+
     }
     
 }

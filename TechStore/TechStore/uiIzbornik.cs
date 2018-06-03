@@ -19,6 +19,7 @@ namespace TechStore
 
         private void UiActionIzlaz_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Uspješno ste se odjavili.", "ODJAVA", MessageBoxButtons.OK);
             Close();
         }
 
@@ -66,8 +67,11 @@ namespace TechStore
                 FrmHelp frmHelp = new FrmHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
-                richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
-                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Izbornik. Na formi Izbornik možete vidjeti";
+                richTextBox.Text = "TechStore Help Center\n\n";
+                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Izbornik.\n\nNa formi Izbornik možete vidjeti 7 tipki: ''Zaposlenici'', ''Poslovnice'', ''Pregled artikala po poslovnicama'' " +
+                    ", ''Izrada konfiguracije'', ''Artikli'', ''Nabava artikala'' i ''Odjava''.\n\nPritiskom na tipku ''Zaposlenici'' otvara se forma za pregled svih zaposlenika i dodavanje novih zaposlenika.\nPritiskom " +
+                    "na tipku ''Poslovnice'' otvara se forma za pregled svih poslovnica i dodavanje novih poslovnice.\nPritiskom na tipku ''Pregled artikala po poslovnicama'' otvara se forma na kojoj je moguće provjeriti " +
+                    "stanje artikala po poslovnicama.\nPritiskom na tipku ''Izrada konfiguracije'' otvara se forma za izradu konfiguracije po želji korisnika. \nPritiskom na tipku ''Odjava'' korisnika se odjavljuje iz aplikacije.";
                 frmHelp.Show();
 
             }
@@ -76,7 +80,7 @@ namespace TechStore
         private void Button2_Click(object sender, EventArgs e)
         {
             uiKonfiguracija formaKonfiguracija = new uiKonfiguracija();
-            formaKonfiguracija.Show();
+            formaKonfiguracija.ShowDialog();
         }
 
         private void UiActionNabavaArtikala_Click(object sender, EventArgs e)

@@ -40,7 +40,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.uiOutputIznos = new System.Windows.Forms.Label();
-            this.uiActionIzdajRacun = new System.Windows.Forms.Button();
+            this.uiActionIspis = new System.Windows.Forms.Button();
             this.uiInputMaticna = new System.Windows.Forms.ComboBox();
             this.uiInputGraficka = new System.Windows.Forms.ComboBox();
             this.uiInputProcesor = new System.Windows.Forms.ComboBox();
@@ -52,19 +52,19 @@
             this.uiInputZvucna = new System.Windows.Forms.ComboBox();
             this.uiInputKuciste = new System.Windows.Forms.ComboBox();
             this.uiOutputKonfiguracija = new System.Windows.Forms.DataGridView();
-            this.vrstaArtiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kratkiopisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specifikacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.vrstaArtiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vrstaArtiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dostupnostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kompatibilnostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputKonfiguracija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -191,16 +191,16 @@
             this.uiOutputIznos.TabIndex = 20;
             this.uiOutputIznos.Text = "Ukupan iznos:";
             // 
-            // uiActionIzdajRacun
+            // uiActionIspis
             // 
-            this.uiActionIzdajRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionIzdajRacun.Location = new System.Drawing.Point(1090, 281);
-            this.uiActionIzdajRacun.Name = "uiActionIzdajRacun";
-            this.uiActionIzdajRacun.Size = new System.Drawing.Size(116, 44);
-            this.uiActionIzdajRacun.TabIndex = 22;
-            this.uiActionIzdajRacun.Text = "IZDAJ RAČUN";
-            this.uiActionIzdajRacun.UseVisualStyleBackColor = true;
-            this.uiActionIzdajRacun.Click += new System.EventHandler(this.UiActionIzdajRacun_Click);
+            this.uiActionIspis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionIspis.Location = new System.Drawing.Point(1090, 281);
+            this.uiActionIspis.Name = "uiActionIspis";
+            this.uiActionIspis.Size = new System.Drawing.Size(116, 44);
+            this.uiActionIspis.TabIndex = 22;
+            this.uiActionIspis.Text = "ISPIŠI";
+            this.uiActionIspis.UseVisualStyleBackColor = true;
+            this.uiActionIspis.Click += new System.EventHandler(this.UiActionIspisi_Click);
             // 
             // uiInputMaticna
             // 
@@ -325,14 +325,6 @@
             this.uiOutputKonfiguracija.Size = new System.Drawing.Size(585, 247);
             this.uiOutputKonfiguracija.TabIndex = 33;
             // 
-            // vrstaArtiklaBindingSource
-            // 
-            this.vrstaArtiklaBindingSource.DataSource = typeof(TechStore.TipZaposlenika);
-            // 
-            // artiklBindingSource
-            // 
-            this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -384,6 +376,10 @@
             this.vrstaIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.vrstaIDDataGridViewTextBoxColumn.ValueMember = "ID";
             // 
+            // vrstaArtiklaBindingSource
+            // 
+            this.vrstaArtiklaBindingSource.DataSource = typeof(TechStore.TipZaposlenika);
+            // 
             // vrstaArtiklaDataGridViewTextBoxColumn
             // 
             this.vrstaArtiklaDataGridViewTextBoxColumn.DataPropertyName = "VrstaArtikla";
@@ -419,6 +415,10 @@
             this.stavkaDokumentaDataGridViewTextBoxColumn.Name = "stavkaDokumentaDataGridViewTextBoxColumn";
             this.stavkaDokumentaDataGridViewTextBoxColumn.Visible = false;
             // 
+            // artiklBindingSource
+            // 
+            this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
+            // 
             // uiKonfiguracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,7 +437,7 @@
             this.Controls.Add(this.uiInputProcesor);
             this.Controls.Add(this.uiInputGraficka);
             this.Controls.Add(this.uiInputMaticna);
-            this.Controls.Add(this.uiActionIzdajRacun);
+            this.Controls.Add(this.uiActionIspis);
             this.Controls.Add(this.uiOutputIznos);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -452,7 +452,7 @@
             this.Name = "uiKonfiguracija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmKonfiguracija";
-            this.Load += new System.EventHandler(this.FrmKonfiguracija_Load);
+            this.Load += new System.EventHandler(this.uiKonfiguracija_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputKonfiguracija)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).EndInit();
@@ -473,7 +473,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label uiOutputIznos;
-        private System.Windows.Forms.Button uiActionIzdajRacun;
+        private System.Windows.Forms.Button uiActionIspis;
         private System.Windows.Forms.ComboBox uiInputMaticna;
         private System.Windows.Forms.ComboBox uiInputGraficka;
         private System.Windows.Forms.ComboBox uiInputProcesor;

@@ -60,10 +60,10 @@ namespace TechStore
                 FrmHelp frmHelp = new FrmHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
-                richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
-                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Prijava. Na formi Prijava možete vidjeti unos korisničkog imena i lozinke te dva gumbića." +
-                    " Ukoliko unesete dobro korisničko ime i lozinku i pritisnete na gumbić PRIJAVI SE aplikacija vas vodi do glavnog izbornika aplikacije. Ukoliko unesete" +
-                    "pogrešno korisničko ime i lozinku aplikacija ispisuje grešku. Pritiskom na gumbić ODUSTANI aplikacija se zatvara. ";
+                richTextBox.Text = "TechStore Help Center\n\n";
+                richTextBox.Text += "Trenutno ste pritisnuli F1 na formi Prijava.\n\nNa formi Prijava možete vidjeti dva tekstualna polja za unos korisničkog imena i lozinke te dvije tipke." +
+                    " Ukoliko unesete dobro korisničko ime i lozinku i pritisnete na tipku ''PRIJAVI SE'' aplikacija vas vodi do glavnog izbornika aplikacije. Ukoliko unesete" +
+                    "pogrešno korisničko ime i lozinku aplikacija ispisuje grešku. Pritiskom na tipku ''ODUSTANI'' aplikacija se zatvara. ";
                 frmHelp.Show();     
             }
         }

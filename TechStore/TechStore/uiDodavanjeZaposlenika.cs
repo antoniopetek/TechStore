@@ -43,6 +43,7 @@ namespace TechStore
                 };
 
                 Zaposlenik.DodajZaposlenika(zaposlenik);
+                MessageBox.Show("Zaposlenik uspješno dodan.", "ZAPOSLENIK DODAN", MessageBoxButtons.OK);
                 Close();
             }
         }
@@ -63,8 +64,11 @@ namespace TechStore
                 FrmHelp frmHelp = new FrmHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
-                richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
-                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Dodavanje zaposlenika.";
+                richTextBox.Text = "TechStore Help Center\n\n";
+                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Dodavanje zaposlenika.\n\nForma Dodavanje zaposlenika služi za dodavanje zaposlenika u bazu. Kako bi se zaposlenik " +
+                    "dodao, potrebno je popuniti tekstualna polja i kliknuti na tipku ''Dodaj zaposlenika''. \nKlikom na tipku ''Dodaj zaposlenika'', zaposlenik se, ukoliko su podaci ispravni, " +
+                    "dodaje te se forma zatvara. U slučaju neispravnog unosa, ispisuje se poruka o neuspješnom unosu te korisnik ima mogućnost ispravka unesenih podataka.\n" +
+                    "Klikom na tipku ''Odustani'', vraćate se na formu za pregled zaposlenika.";
                 frmHelp.Show();
 
             }

@@ -32,8 +32,9 @@ namespace TechStore
                 FrmHelp frmHelp = new FrmHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
-                richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
-                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Poslovnica.";
+                richTextBox.Text = "TechStore Help Center\n\n";
+                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Pregled količina artikala po poslovnicama.\n\nOdabirom artikla iz padajućeg izbornika, " +
+                    "na stupičastom grafu ispod, prikazuje se količina odabranog artikla po poslovnicama.\nKlikom na tipku ''NATRAG'' vraćate se na glavni izbornik.";
                 frmHelp.Show();
 
             }

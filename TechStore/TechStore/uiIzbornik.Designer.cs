@@ -31,7 +31,7 @@
             this.uiActionDodajArtikl = new System.Windows.Forms.Button();
             this.uiActionZaposlenici = new System.Windows.Forms.Button();
             this.uiActionPoslovnice = new System.Windows.Forms.Button();
-            this.uiActionIzlaz = new System.Windows.Forms.Button();
+            this.uiActionOdjava = new System.Windows.Forms.Button();
             this.uiActionPregledArtikala = new System.Windows.Forms.Button();
             this.uiActionIzradaKonfiguracije = new System.Windows.Forms.Button();
             this.uiOutputIspis = new System.Windows.Forms.Label();
@@ -72,16 +72,16 @@
             this.uiActionPoslovnice.UseVisualStyleBackColor = true;
             this.uiActionPoslovnice.Click += new System.EventHandler(this.UiActionDodajPoslovnicu_Click);
             // 
-            // uiActionIzlaz
+            // uiActionOdjava
             // 
-            this.uiActionIzlaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionIzlaz.Location = new System.Drawing.Point(343, 225);
-            this.uiActionIzlaz.Name = "uiActionIzlaz";
-            this.uiActionIzlaz.Size = new System.Drawing.Size(103, 53);
-            this.uiActionIzlaz.TabIndex = 3;
-            this.uiActionIzlaz.Text = "Izlaz";
-            this.uiActionIzlaz.UseVisualStyleBackColor = true;
-            this.uiActionIzlaz.Click += new System.EventHandler(this.UiActionIzlaz_Click);
+            this.uiActionOdjava.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionOdjava.Location = new System.Drawing.Point(343, 225);
+            this.uiActionOdjava.Name = "uiActionOdjava";
+            this.uiActionOdjava.Size = new System.Drawing.Size(103, 53);
+            this.uiActionOdjava.TabIndex = 3;
+            this.uiActionOdjava.Text = "Odjava";
+            this.uiActionOdjava.UseVisualStyleBackColor = true;
+            this.uiActionOdjava.Click += new System.EventHandler(this.UiActionIzlaz_Click);
             // 
             // uiActionPregledArtikala
             // 
@@ -139,7 +139,7 @@
             this.Controls.Add(this.uiOutputIspis);
             this.Controls.Add(this.uiActionIzradaKonfiguracije);
             this.Controls.Add(this.uiActionPregledArtikala);
-            this.Controls.Add(this.uiActionIzlaz);
+            this.Controls.Add(this.uiActionOdjava);
             this.Controls.Add(this.uiActionPoslovnice);
             this.Controls.Add(this.uiActionZaposlenici);
             this.Controls.Add(this.uiActionDodajArtikl);
@@ -157,7 +157,7 @@
         private System.Windows.Forms.Button uiActionDodajArtikl;
         private System.Windows.Forms.Button uiActionZaposlenici;
         private System.Windows.Forms.Button uiActionPoslovnice;
-        private System.Windows.Forms.Button uiActionIzlaz;
+        private System.Windows.Forms.Button uiActionOdjava;
         private System.Windows.Forms.Button uiActionPregledArtikala;
         private System.Windows.Forms.Button uiActionIzradaKonfiguracije;
         private System.Windows.Forms.Label uiOutputIspis;
