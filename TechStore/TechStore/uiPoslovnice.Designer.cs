@@ -178,7 +178,7 @@
             this.Controls.Add(this.uiOutputPodaciOPoslovnicama);
             this.Name = "uiPoslovnice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Poslovnica";
+            this.Text = "Poslovnice";
             this.Load += new System.EventHandler(this.uiPoslovnice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciOPoslovnicama)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();

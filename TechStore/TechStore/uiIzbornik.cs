@@ -12,17 +12,31 @@ namespace TechStore
 {
     public partial class uiIzbornik : Form
     {
+        /// <summary>
+        /// Konstruktor forme uiIzbornik.
+        /// </summary>
         public uiIzbornik()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionIzlaz. Ispisuje poruku o odjavi
+        /// i zatvara formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionIzlaz_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Uspješno ste se odjavili.", "ODJAVA", MessageBoxButtons.OK);
             Close();
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionZaposlenici. Otvara formu uiZaposlenici.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionZaposlenici_Click(object sender, EventArgs e)
         {
             uiZaposlenici formaZaposlenici = new uiZaposlenici();
@@ -31,7 +45,12 @@ namespace TechStore
             Show();
         }
 
-        private void UiActionDodajPoslovnicu_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionPoslovnice. Otvara formu uiPoslovnice.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionPoslovnice_Click(object sender, EventArgs e)
         {
             uiPoslovnice formaPoslovnica = new uiPoslovnice();
             Hide();
@@ -39,6 +58,12 @@ namespace TechStore
             Show();
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionPregledArtikala. Otvara formu
+        /// uiKolicinaArtikala.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionPregledArtikala_Click(object sender, EventArgs e)
         {
             uiKolicinaArtikala formaKolicina = new uiKolicinaArtikala();
@@ -53,14 +78,25 @@ namespace TechStore
             formaArtikli.Show();
         }
 
-        private void FrmIzbornik_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Rukuje događajem pokretanja forme.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiIzbornik_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += FrmIzbornik_KeyDown;
+            this.KeyDown += uiIzbornik_KeyDown;
             PripremiFunkcionalnosti();
         }
 
-        private void FrmIzbornik_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
+        /// pritisnuta tipka "F1" otvara formu uiHelp.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiIzbornik_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -77,7 +113,12 @@ namespace TechStore
             }
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Rukuje događejem klika na tipku uiActionIzradaKonfiguracije. Otvara formu uiKonfiguracija.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiActionIzradaKonfiguracije_Click(object sender, EventArgs e)
         {
             uiKonfiguracija formaKonfiguracija = new uiKonfiguracija();
             formaKonfiguracija.ShowDialog();
@@ -89,6 +130,13 @@ namespace TechStore
             formaStanje.Show();
         }
 
+        /// <summary>
+        /// Ukoliko je ID prijavljenog zaposlenika 1, odnosno prijavljeni zaposlenik je
+        /// administrator, u labelu uiOutputIspis zapisuje odgovarajući tekst. Ukoliko je
+        /// ID prijavljenog zaposlenika 2, odnosno prijavljeni zaposlenik je korisnik, u
+        /// labelu uiOutputIspis zapisuje odgovarajući tekst te onemogućuje pritisak na 
+        /// tipke uiActionZaposlenici i uiActionPoslovnice.
+        /// </summary>
         private void PripremiFunkcionalnosti()
         {
             if (Zaposlenik.PrijavljeniZaposlenik.Tip_ID == 1)
@@ -102,5 +150,6 @@ namespace TechStore
                 uiActionPoslovnice.Enabled = false;
             }
         }
+
     }
 }

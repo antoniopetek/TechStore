@@ -12,11 +12,23 @@ namespace TechStore
 {
     public partial class uiDodavanjePoslovnica : Form
     {
+        /// <summary>
+        /// Konstruktor forme uiDodavanjePoslovnica.
+        /// </summary>
         public uiDodavanjePoslovnica()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionDodajPoslovnicu. Provjerava ako
+        /// su uneseni podaci ispravni. Ako nisu, ispisuje odgovarajuću poruku. Ako 
+        /// jesu, kreira novi objekt klase Poslovnica i popunjava ga s podacima s 
+        /// forme te ga dodaje u bazu pomoću statičke metode DodajPoslovnicu, ispisuje 
+        /// odgovarajuću poruku i zatvara formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionDodajPoslovnicu_Click(object sender, EventArgs e)
         {
             if (uiInputNaziv.Text == "" || uiInputDrzava.Text == "" || uiInputGrad.Text == "" || uiInputUlica.Text == "" || uiInputBroj.Text == "")
@@ -41,13 +53,24 @@ namespace TechStore
             }
         }
 
-        private void FrmDodavanjePoslovnice_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Rukuje događajem pokretanja forme.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiDodavanjePoslovnice_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += FrmDodavanjePoslovnice_KeyDown;
+            this.KeyDown += uiDodavanjePoslovnice_KeyDown;
         }
 
-        private void FrmDodavanjePoslovnice_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
+        /// pritisnuta tipka "F1" otvara formu uiHelp.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiDodavanjePoslovnice_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -64,6 +87,11 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionOdustani. Zatvara formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionOdustani_Click(object sender, EventArgs e)
         {
             Close();

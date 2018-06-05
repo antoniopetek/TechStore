@@ -28,6 +28,10 @@ namespace TechStore
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Artikl> Artikl { get; set; }
 
+        /// <summary>
+        /// Dohvaæa sve vrste artikala iz baze i vraæa ih u obliku liste.
+        /// </summary>
+        /// <returns>Lista vrsta artikala.</returns>
         public static BindingList<VrstaArtikla> DohvatiVrsteArtikala()
         {
             BindingList<VrstaArtikla> vrstaArtikala = null;

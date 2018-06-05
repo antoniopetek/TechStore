@@ -57,6 +57,13 @@ namespace TechStore
             return zaposlenici;
         }
 
+        /// <summary>
+        /// Dohvaæa jednog zaposlenika iz baze na temelju proslijeðenih parametara.
+        /// </summary>
+        /// <param name="korisnickoIme">Upisano korisnièko ime.</param>
+        /// <param name="lozinka">Upisana lozinka.</param>
+        /// <returns>Ukoliko postoji zaposlenik s proslijeðenim korisnièkim imenom i lozinkom,
+        /// vraæa zaposlenika, inaèe vraæa null.</returns>
         public static Zaposlenik DohvatiZaposlenika(string korisnickoIme, string lozinka)
         {
             Zaposlenik zaposlenik = null;
@@ -68,6 +75,11 @@ namespace TechStore
             return zaposlenik;
         }
 
+        /// <summary>
+        /// Statièka metoda koja dodaje proslijeðenog zaposlenika u bazu i sprema
+        /// napravljene promjene u bazu podataka.
+        /// </summary>
+        /// <param name="zaposlenik">Zaposlenik koji se dodaje u bazu podataka.</param>
         public static void DodajZaposlenika(Zaposlenik zaposlenik)
         {
             using (TechStoreEntities db = new TechStoreEntities())

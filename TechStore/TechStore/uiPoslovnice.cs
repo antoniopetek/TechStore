@@ -12,19 +12,34 @@ namespace TechStore
 {
     public partial class uiPoslovnice : Form
     {
+        /// <summary>
+        /// Konstruktor forme uiPoslovnice.
+        /// </summary>
         public uiPoslovnice()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Rukuje događajem pokretanja forme. Prikazuje sve poslovnice u 
+        /// DataGridView kontroli.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiPoslovnice_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += FrmPoslovnica_KeyDown;
+            this.KeyDown += uiPoslovnica_KeyDown;
             OsvjeziPoslovnice();
         }
 
-        private void FrmPoslovnica_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
+        /// pritisnuta tipka "F1" otvara formu uiHelp.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiPoslovnica_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -39,6 +54,12 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionDodajPoslovnicu. Otvara formu
+        /// uiDodavanjePoslovnice, a nakon zatvaranja forme osvježava prikaz poslovnica.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionDodajPoslovnicu_Click(object sender, EventArgs e)
         {
             uiDodavanjePoslovnica formaDodavanjePoslovnice = new uiDodavanjePoslovnica();
@@ -47,11 +68,19 @@ namespace TechStore
             OsvjeziPoslovnice();
         }
 
+        /// <summary>
+        /// Dohvaća sve poslovnice uz pomoć statičke metode DohvatiPoslovnice.
+        /// </summary>
         private void OsvjeziPoslovnice()
         {
             poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionNatrag. Zatvara formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionNatrag_Click(object sender, EventArgs e)
         {
             Close();

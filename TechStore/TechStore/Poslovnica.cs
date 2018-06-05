@@ -50,17 +50,27 @@ namespace TechStore
             return poslovnice;
         }
 
+        /// <summary>
+        /// Dohvaæa jednu poslovnicu na temelju proslijeðenog parametra.
+        /// </summary>
+        /// <param name="idPoslovnice">ID poslovnice koja se dohvaæa iz baze.</param>
+        /// <returns>Ukoliko poslovnica s traženim ID-om postoji, vraæa poslovnicu, inaèe null.</returns>
         public static Poslovnica DohvatiPoslovnicu(int idPoslovnice)
         {
             Poslovnica poslovnica = null;
             using (TechStoreEntities db = new TechStoreEntities())
             {
-                poslovnica = (from p in db.Poslovnica where p.ID == idPoslovnice select p).Single();
+                poslovnica = (from p in db.Poslovnica where p.ID == idPoslovnice select p).FirstOrDefault();
             }
 
             return poslovnica;
         }
 
+        /// <summary>
+        /// Statièka metoda koja dodaje proslijeðenu poslovnicu u bazu i sprema
+        /// napravljene promjene u bazu podataka.
+        /// </summary>
+        /// <param name="poslovnica">Poslovnica koja se dodaje u bazu podataka.</param>
         public static void DodajPoslovnicu(Poslovnica poslovnica)
         {
             using (TechStoreEntities db = new TechStoreEntities())

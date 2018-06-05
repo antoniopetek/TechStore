@@ -70,7 +70,7 @@
             this.uiActionPoslovnice.TabIndex = 2;
             this.uiActionPoslovnice.Text = "Poslovnice";
             this.uiActionPoslovnice.UseVisualStyleBackColor = true;
-            this.uiActionPoslovnice.Click += new System.EventHandler(this.UiActionDodajPoslovnicu_Click);
+            this.uiActionPoslovnice.Click += new System.EventHandler(this.UiActionPoslovnice_Click);
             // 
             // uiActionOdjava
             // 
@@ -103,7 +103,7 @@
             this.uiActionIzradaKonfiguracije.TabIndex = 5;
             this.uiActionIzradaKonfiguracije.Text = "Izrada konfiguracije";
             this.uiActionIzradaKonfiguracije.UseVisualStyleBackColor = true;
-            this.uiActionIzradaKonfiguracije.Click += new System.EventHandler(this.Button2_Click);
+            this.uiActionIzradaKonfiguracije.Click += new System.EventHandler(this.uiActionIzradaKonfiguracije_Click);
             // 
             // uiOutputIspis
             // 
@@ -146,7 +146,7 @@
             this.Name = "uiIzbornik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izbornik";
-            this.Load += new System.EventHandler(this.FrmIzbornik_Load);
+            this.Load += new System.EventHandler(this.uiIzbornik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,11 +12,20 @@ namespace TechStore
 {
     public partial class uiZaposlenici : Form
     {
+        /// <summary>
+        /// Konstruktor forme uiZaposlenici.
+        /// </summary>
         public uiZaposlenici()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionDodajZaposlenika. Otvara formu
+        /// uiDodavanjeZaposlenika, a nakon zatvaranja forme osvježava prikaz zaposlenika.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionDodajZaposlenika_Click(object sender, EventArgs e)
         {
             uiDodavanjeZaposlenika formaDodavanjeZaposlenika = new uiDodavanjeZaposlenika();
@@ -25,14 +34,26 @@ namespace TechStore
             OsvjeziZaposlenike();
         }
 
-        private void FrmZaposlenici_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Rukuje događajem pokretanja forme. Prikazuje sve zaposlenike u DataGridView
+        /// kontroli.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiZaposlenici_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += FrmZaposlenici_KeyDown;
+            this.KeyDown += uiZaposlenici_KeyDown;
             OsvjeziZaposlenike();   
         }
 
-        private void FrmZaposlenici_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
+        /// pritisnuta tipka "F1" otvara formu uiHelp.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiZaposlenici_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -47,14 +68,24 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Puni zaposlenikBindingSource s listom zaposlenika uz pomoć statičke metode DohvatiSveZaposlenike. 
+        /// Puni tipZaposlenikaBindingSource uz pomoć statičke metode
+        /// DohvatiTipoveZaposlenika i puni poslovnicaBindingSource uz pomoć statičke metode DohvatiPoslovnice.
+        /// </summary>
         private void OsvjeziZaposlenike()
         {
             zaposlenikBindingSource.DataSource = Zaposlenik.DohvatiSveZaposlenike();
             tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
-            poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
-            
+            poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();       
         }
 
+        /// <summary>
+        /// Rukuje događajem promjene selektiranog retka u DataGridView kontroli.
+        /// Podatke o selektiranom zaposleniku prikazuje u TextBox kontrolama.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiOutputPopisZaposlenika_SelectionChanged(object sender, EventArgs e)
         {
             Zaposlenik zaposlenik = zaposlenikBindingSource.Current as Zaposlenik;
@@ -69,9 +100,16 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionNatrag. Zatvara formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionNatrag_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+
     }
 }

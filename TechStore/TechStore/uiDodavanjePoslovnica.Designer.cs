@@ -198,8 +198,8 @@
             this.Controls.Add(this.label1);
             this.Name = "uiDodavanjePoslovnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDodavanjePoslovnice";
-            this.Load += new System.EventHandler(this.FrmDodavanjePoslovnice_Load);
+            this.Text = "Dodavanje poslovnice";
+            this.Load += new System.EventHandler(this.uiDodavanjePoslovnice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

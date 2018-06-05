@@ -373,8 +373,8 @@
             this.Controls.Add(this.uiInputID);
             this.Name = "uiDodavanjeZaposlenika";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDodavanjeZaposlenika";
-            this.Load += new System.EventHandler(this.FrmDodavanjeZaposlenika_Load);
+            this.Text = "Dodavanje zaposlenika";
+            this.Load += new System.EventHandler(this.uiDodavanjeZaposlenika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipZaposlenikaBindingSource)).EndInit();
             this.ResumeLayout(false);

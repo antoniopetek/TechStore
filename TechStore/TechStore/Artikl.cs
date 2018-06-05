@@ -42,6 +42,10 @@ namespace TechStore
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StavkaDokumenta> StavkaDokumenta { get; set; }
 
+        /// <summary>
+        /// Dohvaæa sve artikle iz baze i vraæa ih u obliku liste.
+        /// </summary>
+        /// <returns>Lista artikala.</returns>
         public static BindingList<Artikl> DohvatiSveArtikle()
         {
             BindingList<Artikl> artikli = null;
@@ -54,6 +58,11 @@ namespace TechStore
             return artikli;
         }
 
+        /// <summary>
+        /// Dohvaæa komponente (artikle) na temelju upita iz baze i vraæa ih u obliku liste.
+        /// </summary>
+        /// <param name="upit">Upit na temelju kojeg se dohvaæaju komponente iz baze.</param>
+        /// <returns>Listu komponenata(artikala).</returns>
         public static List<Artikl> DohvatiKomponente(string upit)
         {
             List<Artikl> komponente = null;
@@ -65,6 +74,10 @@ namespace TechStore
             return komponente;
         }
 
+        /// <summary>
+        /// Metoda koja nadjaèava ToString metodu.
+        /// </summary>
+        /// <returns>Naziv artikla.</returns>
         public override string ToString()
         {
             return Naziv;

@@ -12,16 +12,30 @@ namespace TechStore
 {
     public partial class uiPrijava : Form
     {
+        /// <summary>
+        /// Konstruktor forme uiPrijava.
+        /// </summary>
         public uiPrijava()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionOdustani. Zatvara aplikaciju.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionPrijaviSe. Dohvaća zaposlenika
+        /// iz baze prema upisanom korisničkom imenu i lozinki. Ukoliko zaposlenik
+        /// s unesenim korisničkim imenom i lozinkom postoji, otvara uiIzbornik. U
+        /// suprotnom, ispisuje poruku o neuspjehu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionPrijaviSe_Click(object sender, EventArgs e)
         {
             if (uiInputKorisnickoIme.Text != "" && uiInputLozinka.Text != "")
@@ -46,14 +60,23 @@ namespace TechStore
                 MessageBox.Show("Niste unijeli sve podatke", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void FrmPrijava_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Rukuje događajem pokretanja forme.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiPrijava_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += FrmPrijava_KeyDown;
+            this.KeyDown += uiPrijava_KeyDown;
         }
-
-        private void FrmPrijava_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
+        /// pritisnuta tipka "F1" otvara formu uiHelp.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiPrijava_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString()=="F1")
             {

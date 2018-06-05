@@ -12,18 +12,29 @@ namespace TechStore
 {
     public partial class uiDodavanjeZaposlenika : Form
     {
+        /// <summary>
+        /// Konstruktor forme uiDodavanjeZaposlenika.
+        /// </summary>
         public uiDodavanjeZaposlenika()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionDodajZaposlenika. Provjerava ako
+        /// su uneseni svi podaci. Ako nisu, ispisuje odgovarajuću poruku. Ako jesu,
+        /// kreira novi objekt klase Zaposlenik i popunjava ga s podacima s forme te ga
+        /// dodaje u bazu pomoću statičke metode DodajZaposlenika, ispisuje odgovarajuću 
+        /// poruku i zatvara formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionDodajZaposlenika_Click(object sender, EventArgs e)
         {
             if (uiInputIme.Text == "" || uiInputPrezime.Text == "" || uiInputEmail.Text == "" || uiInputKontakt.Text == "" || uiInputDrzava.Text == "" || uiInputGrad.Text == "" || uiInputUlica.Text == "" || uiInputBroj.Text == "" || uiInputKorisnickoIme.Text == "" || uiInputLozinka.Text == "")
             {
                 MessageBox.Show("Niste unijeli sve podatke", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             else
             {
                 Zaposlenik zaposlenik = new Zaposlenik
@@ -48,16 +59,28 @@ namespace TechStore
             }
         }
 
-        private void FrmDodavanjeZaposlenika_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Rukuje događajem pokretanja forme. Dohvaća sve poslovnice i tipove
+        /// zaposlenika i prikazuje ih u odgovarajućim ComboBox kontrolama.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiDodavanjeZaposlenika_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += FrmDodavanjeZaposlenika_KeyDown;
+            this.KeyDown += uiDodavanjeZaposlenika_KeyDown;
 
             poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
             tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
         }
 
-        private void FrmDodavanjeZaposlenika_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
+        /// pritisnuta tipka "F1" otvara formu uiHelp.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiDodavanjeZaposlenika_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -74,9 +97,15 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionOdustani. Zatvara formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionOdustani_Click(object sender, EventArgs e)
         {
             Close();
         }
+
     }
 }

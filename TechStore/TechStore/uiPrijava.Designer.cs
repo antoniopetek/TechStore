@@ -95,7 +95,7 @@
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
-            // FrmPrijava
+            // uiPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,10 +109,10 @@
             this.Controls.Add(this.uiLabelKorisnickoIme);
             this.Controls.Add(this.uiInputLozinka);
             this.Controls.Add(this.uiInputKorisnickoIme);
-            this.Name = "FrmPrijava";
+            this.Name = "uiPrijava";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PRIJAVA";
-            this.Load += new System.EventHandler(this.FrmPrijava_Load);
+            this.Text = "Prijava";
+            this.Load += new System.EventHandler(this.uiPrijava_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

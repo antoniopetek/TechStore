@@ -400,7 +400,7 @@
             this.Name = "uiZaposlenici";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zaposlenici";
-            this.Load += new System.EventHandler(this.FrmZaposlenici_Load);
+            this.Load += new System.EventHandler(this.uiZaposlenici_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPopisZaposlenika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipZaposlenikaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();

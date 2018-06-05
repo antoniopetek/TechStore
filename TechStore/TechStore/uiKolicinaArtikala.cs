@@ -12,20 +12,36 @@ namespace TechStore
 {
     public partial class uiKolicinaArtikala : Form
     {
+        /// <summary>
+        /// Konstruktor forme uiKolicinaArtikala.
+        /// </summary>
         public uiKolicinaArtikala()
         {
             InitializeComponent();
         }
 
-        private void FrmKolicinaArtikala_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Rukuje događajem pokretanja forme. Popunjava ComboBox sa svim artiklima
+        /// uz pomoć statičke metode DohvatiSve artikle. Na Chart kontroli uklanja
+        /// horizontalne crte radi preglednosti grafa.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiKolicinaArtikala_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += FrmKolicinaArtikala_KeyDown;
+            this.KeyDown += uiKolicinaArtikala_KeyDown;
             artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
             uiOutputGraf.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
         }
 
-        private void FrmKolicinaArtikala_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
+        /// pritisnuta tipka "F1" otvara formu uiHelp.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uiKolicinaArtikala_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -40,7 +56,13 @@ namespace TechStore
             }
         }
 
-
+        /// <summary>
+        /// Rukuje događajem promjene vrijednosti u ComboBox kontroli. Briše sve
+        /// sa Chart kontrole. Dohvaća sve dostupnosti odabranog artikla pomoću
+        /// statičke metode DohvatiDostupnost. Crta graf.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiInputArtikl_SelectedValueChanged(object sender, EventArgs e)
         {
             
@@ -53,6 +75,10 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Na grafu crta stupce s podacima koje dobiva iz liste "dostupnost".
+        /// </summary>
+        /// <param name="dostupnost">Lista dostupnosti odabranog artikla.</param>
         private void CrtajGraf(List<Dostupnost> dostupnost)
         {
             int brojac = 0;
@@ -67,9 +93,15 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Rukuje događajem klika na tipku uiActionNatrag. Zatvara formu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionNatrag_Click(object sender, EventArgs e)
         {
             Close();
         }
+
     }
 }

@@ -62,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(24, 51);
+            this.label1.Location = new System.Drawing.Point(144, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 2;
@@ -73,7 +73,7 @@
             this.uiInputArtikl.DataSource = this.artiklBindingSource;
             this.uiInputArtikl.DisplayMember = "Naziv";
             this.uiInputArtikl.FormattingEnabled = true;
-            this.uiInputArtikl.Location = new System.Drawing.Point(112, 48);
+            this.uiInputArtikl.Location = new System.Drawing.Point(232, 48);
             this.uiInputArtikl.Name = "uiInputArtikl";
             this.uiInputArtikl.Size = new System.Drawing.Size(228, 21);
             this.uiInputArtikl.TabIndex = 3;
@@ -87,7 +87,7 @@
             // uiActionNatrag
             // 
             this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionNatrag.Location = new System.Drawing.Point(382, 12);
+            this.uiActionNatrag.Location = new System.Drawing.Point(22, 12);
             this.uiActionNatrag.Name = "uiActionNatrag";
             this.uiActionNatrag.Size = new System.Drawing.Size(78, 28);
             this.uiActionNatrag.TabIndex = 6;
@@ -108,8 +108,8 @@
             this.Controls.Add(this.uiOutputGraf);
             this.Name = "uiKolicinaArtikala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kolicina";
-            this.Load += new System.EventHandler(this.FrmKolicinaArtikala_Load);
+            this.Text = "Količina artikala po poslovnicama";
+            this.Load += new System.EventHandler(this.uiKolicinaArtikala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputGraf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).EndInit();
             this.ResumeLayout(false);

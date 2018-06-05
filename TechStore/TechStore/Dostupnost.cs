@@ -24,6 +24,11 @@ namespace TechStore
         public virtual Artikl Artikl { get; set; }
         public virtual Poslovnica Poslovnica { get; set; }
 
+        /// <summary>
+        /// Dohvaæa sve dostupnosti artikla na temelju proslijeðenog parametra.
+        /// </summary>
+        /// <param name="idArtikla">ID artikla za kojeg se dohvaæa dostupnost.</param>
+        /// <returns>Listu dostupnosti.</returns>
         public static List<Dostupnost> DohvatiDostupnost(int idArtikla)
         {
             List<Dostupnost> dostupnost = null;
