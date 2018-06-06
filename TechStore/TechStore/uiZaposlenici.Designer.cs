@@ -52,13 +52,13 @@
             this.zaposlenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionDodajZaposlenika = new System.Windows.Forms.Button();
             this.uiOutputAdresa = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.uiLabelAdresa = new System.Windows.Forms.Label();
+            this.uiLabelKontakt = new System.Windows.Forms.Label();
+            this.uiLabelEmail = new System.Windows.Forms.Label();
             this.uiOutputEmail = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.uiLabelKorisnickoIme = new System.Windows.Forms.Label();
             this.uiOutputKorisnickoIme = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.uiLabelLozinka = new System.Windows.Forms.Label();
             this.uiOutputLozinka = new System.Windows.Forms.TextBox();
             this.uiOutputKontakt = new System.Windows.Forms.TextBox();
             this.uiActionNatrag = new System.Windows.Forms.Button();
@@ -282,38 +282,38 @@
             this.uiOutputAdresa.Size = new System.Drawing.Size(251, 20);
             this.uiOutputAdresa.TabIndex = 3;
             // 
-            // label1
+            // uiLabelAdresa
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Adresa:";
+            this.uiLabelAdresa.AutoSize = true;
+            this.uiLabelAdresa.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelAdresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelAdresa.Location = new System.Drawing.Point(12, 239);
+            this.uiLabelAdresa.Name = "uiLabelAdresa";
+            this.uiLabelAdresa.Size = new System.Drawing.Size(50, 13);
+            this.uiLabelAdresa.TabIndex = 4;
+            this.uiLabelAdresa.Text = "Adresa:";
             // 
-            // label2
+            // uiLabelKontakt
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(15, 286);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Kontakt:";
+            this.uiLabelKontakt.AutoSize = true;
+            this.uiLabelKontakt.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelKontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelKontakt.Location = new System.Drawing.Point(15, 286);
+            this.uiLabelKontakt.Name = "uiLabelKontakt";
+            this.uiLabelKontakt.Size = new System.Drawing.Size(55, 13);
+            this.uiLabelKontakt.TabIndex = 6;
+            this.uiLabelKontakt.Text = "Kontakt:";
             // 
-            // label4
+            // uiLabelEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(15, 335);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Email:";
+            this.uiLabelEmail.AutoSize = true;
+            this.uiLabelEmail.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelEmail.Location = new System.Drawing.Point(15, 335);
+            this.uiLabelEmail.Name = "uiLabelEmail";
+            this.uiLabelEmail.Size = new System.Drawing.Size(41, 13);
+            this.uiLabelEmail.TabIndex = 10;
+            this.uiLabelEmail.Text = "Email:";
             // 
             // uiOutputEmail
             // 
@@ -322,16 +322,16 @@
             this.uiOutputEmail.Size = new System.Drawing.Size(179, 20);
             this.uiOutputEmail.TabIndex = 9;
             // 
-            // label5
+            // uiLabelKorisnickoIme
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(398, 239);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Korisničko ime:";
+            this.uiLabelKorisnickoIme.AutoSize = true;
+            this.uiLabelKorisnickoIme.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelKorisnickoIme.Location = new System.Drawing.Point(398, 239);
+            this.uiLabelKorisnickoIme.Name = "uiLabelKorisnickoIme";
+            this.uiLabelKorisnickoIme.Size = new System.Drawing.Size(93, 13);
+            this.uiLabelKorisnickoIme.TabIndex = 12;
+            this.uiLabelKorisnickoIme.Text = "Korisničko ime:";
             // 
             // uiOutputKorisnickoIme
             // 
@@ -340,16 +340,16 @@
             this.uiOutputKorisnickoIme.Size = new System.Drawing.Size(179, 20);
             this.uiOutputKorisnickoIme.TabIndex = 11;
             // 
-            // label6
+            // uiLabelLozinka
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(398, 288);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Lozinka:";
+            this.uiLabelLozinka.AutoSize = true;
+            this.uiLabelLozinka.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelLozinka.Location = new System.Drawing.Point(398, 288);
+            this.uiLabelLozinka.Name = "uiLabelLozinka";
+            this.uiLabelLozinka.Size = new System.Drawing.Size(55, 13);
+            this.uiLabelLozinka.TabIndex = 14;
+            this.uiLabelLozinka.Text = "Lozinka:";
             // 
             // uiOutputLozinka
             // 
@@ -385,14 +385,14 @@
             this.ClientSize = new System.Drawing.Size(706, 383);
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiOutputKontakt);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.uiLabelLozinka);
             this.Controls.Add(this.uiOutputLozinka);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.uiLabelKorisnickoIme);
             this.Controls.Add(this.uiOutputKorisnickoIme);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.uiLabelEmail);
             this.Controls.Add(this.uiOutputEmail);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiLabelKontakt);
+            this.Controls.Add(this.uiLabelAdresa);
             this.Controls.Add(this.uiOutputAdresa);
             this.Controls.Add(this.uiActionDodajZaposlenika);
             this.Controls.Add(this.uiOutputPopisZaposlenika);
@@ -416,13 +416,13 @@
         private System.Windows.Forms.DataGridView uiOutputPopisZaposlenika;
         private System.Windows.Forms.Button uiActionDodajZaposlenika;
         private System.Windows.Forms.TextBox uiOutputAdresa;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label uiLabelAdresa;
+        private System.Windows.Forms.Label uiLabelKontakt;
+        private System.Windows.Forms.Label uiLabelEmail;
         private System.Windows.Forms.TextBox uiOutputEmail;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label uiLabelKorisnickoIme;
         private System.Windows.Forms.TextBox uiOutputKorisnickoIme;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label uiLabelLozinka;
         private System.Windows.Forms.TextBox uiOutputLozinka;
         private System.Windows.Forms.TextBox uiOutputKontakt;
         private System.Windows.Forms.BindingSource zaposlenikBindingSource;

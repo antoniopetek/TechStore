@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TechStore.FrmArtikl" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAABAAAACAAAQCAAAAAAgAAAAAQAAAAAg=</HashCode>
+      <FileName>FrmArtikl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.FrmHelp" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAEAAAAAAQAAAAAgAA=</HashCode>
+      <FileName>FrmHelp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.FrmNabava" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAAAAAAACABAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrmNabava.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.FrmNoviArtikl" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAACCgAIBIgAACAAAACAABAAAAAgAAAAAACAAA=</HashCode>
+      <FileName>FrmNoviArtikl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.FrmStanje" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAgCAAABAAIACAAAACAQAAAAACAAAAAAAIAIA=</HashCode>
+      <FileName>FrmStanje.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Program" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.TechStoreEntities" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAACBAAAACAAAAAgEAAAAAEAAAAAASAAAEEgAAAAA=</HashCode>
+      <FileName>TechStoreModel.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Artikl" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAABAgAAAAkBAEAgAAAAAAAAAAAAASAAAAAwAQAAA=</HashCode>
+      <FileName>Artikl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Dokument" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAgAAAAAEAAAACAAAAAAACAAAEAAAAAAA=</HashCode>
+      <FileName>Dokument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Dostupnost" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAoAIAAAAAAAAAAAAAgAAAIAAAAgAAAAA=</HashCode>
+      <FileName>Dostupnost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Kompatibilnost" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAEAAAACAAAAAAAAAAAAEgAAAAA=</HashCode>
+      <FileName>Kompatibilnost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Poslovnica" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAjAQAAgAgAAAAgAACAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Poslovnica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.StanjeDokumenta" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAACAAAAAABCAAQAAAAAAABAAAAAADAAAAAAAAAAA=</HashCode>
+      <FileName>StanjeDokumenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.StavkaDokumenta" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAQAAAAAAAAAAAAAACIAAAAgAAAAA=</HashCode>
+      <FileName>StavkaDokumenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.sysdiagrams" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>sysdiagrams.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.TipZaposlenika" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAADAAAAAAgAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipZaposlenika.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.VrstaArtikla" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQgAAAAA=</HashCode>
+      <FileName>VrstaArtikla.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.VrstaDokumenta" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAgAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>VrstaDokumenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.VrsteStanja" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VrsteStanja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Zaposlenik" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAgBQACgDkAAIAAEgCAEAAAAAgACCAAAAAEAAAAA=</HashCode>
+      <FileName>Zaposlenik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.uiDodavanjePoslovnica" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEAAAAACAAIBAAAACAAAACAAIEQAAAAAIAAACDIAQ=</HashCode>
+      <FileName>uiDodavanjePoslovnica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.uiDodavanjeZaposlenika" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>8gAQEAAAAGAAIBAAACCAEgACgAIgQACAAAIAAQCIIAQ=</HashCode>
+      <FileName>uiDodavanjeZaposlenika.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.uiIzbornik" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIIABAACAAAIQAAACAQAQiAAEAEAgEAAAAgCAQgFA=</HashCode>
+      <FileName>uiIzbornik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.uiKolicinaArtikala" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAgAAEACAAABIAAACAAAgiAAAAAAAAAAABBAAIAAA=</HashCode>
+      <FileName>uiKolicinaArtikala.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.uiKonfiguracija" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lACBMAQiSiAB0BABiKuEwgAmAgFQAEIFBHIlBCItCAQ=</HashCode>
+      <FileName>uiKonfiguracija.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.uiPoslovnice" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAEAACAACAAABAAAACAAgACQAKAAAAhABAAFAIJAAA=</HashCode>
+      <FileName>uiPoslovnice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.uiPrijava" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABAAAACAAAAAAACCIAAACAAAAAACRAAAEQACAAAA=</HashCode>
+      <FileName>uiPrijava.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.uiZaposlenici" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kCKEEABAASAAAJAQQECAAggCMCCACAAAhCAAFAcoAAE=</HashCode>
+      <FileName>uiZaposlenici.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Properties.Resources" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAACAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TechStore.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

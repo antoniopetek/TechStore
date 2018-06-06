@@ -33,7 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.uiOutputGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uiLabelArtikl = new System.Windows.Forms.Label();
             this.uiInputArtikl = new System.Windows.Forms.ComboBox();
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionNatrag = new System.Windows.Forms.Button();
@@ -57,16 +57,16 @@
             this.uiOutputGraf.TabIndex = 0;
             this.uiOutputGraf.Text = "chart1";
             // 
-            // label1
+            // uiLabelArtikl
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(144, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Naziv artikla:";
+            this.uiLabelArtikl.AutoSize = true;
+            this.uiLabelArtikl.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelArtikl.Location = new System.Drawing.Point(144, 51);
+            this.uiLabelArtikl.Name = "uiLabelArtikl";
+            this.uiLabelArtikl.Size = new System.Drawing.Size(82, 13);
+            this.uiLabelArtikl.TabIndex = 2;
+            this.uiLabelArtikl.Text = "Naziv artikla:";
             // 
             // uiInputArtikl
             // 
@@ -104,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(483, 458);
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiInputArtikl);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiLabelArtikl);
             this.Controls.Add(this.uiOutputGraf);
             this.Name = "uiKolicinaArtikala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -120,7 +120,7 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart uiOutputGraf;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label uiLabelArtikl;
         private System.Windows.Forms.ComboBox uiInputArtikl;
         private System.Windows.Forms.Button uiActionNatrag;
         private System.Windows.Forms.BindingSource artiklBindingSource;

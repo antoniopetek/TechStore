@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.uiLabelID = new System.Windows.Forms.Label();
+            this.uiLabelNaziv = new System.Windows.Forms.Label();
+            this.uiLabelDrzava = new System.Windows.Forms.Label();
+            this.uiLabelBroj = new System.Windows.Forms.Label();
+            this.uiLabelUlica = new System.Windows.Forms.Label();
+            this.uiLabelGrad = new System.Windows.Forms.Label();
             this.uiInputID = new System.Windows.Forms.TextBox();
             this.uiInputNaziv = new System.Windows.Forms.TextBox();
             this.uiInputDrzava = new System.Windows.Forms.TextBox();
@@ -44,71 +44,71 @@
             this.uiActionOdustani = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // uiLabelID
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(23, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID poslovnice:";
+            this.uiLabelID.AutoSize = true;
+            this.uiLabelID.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelID.Location = new System.Drawing.Point(23, 38);
+            this.uiLabelID.Name = "uiLabelID";
+            this.uiLabelID.Size = new System.Drawing.Size(89, 13);
+            this.uiLabelID.TabIndex = 0;
+            this.uiLabelID.Text = "ID poslovnice:";
             // 
-            // label2
+            // uiLabelNaziv
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(69, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Naziv:";
+            this.uiLabelNaziv.AutoSize = true;
+            this.uiLabelNaziv.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelNaziv.Location = new System.Drawing.Point(69, 64);
+            this.uiLabelNaziv.Name = "uiLabelNaziv";
+            this.uiLabelNaziv.Size = new System.Drawing.Size(43, 13);
+            this.uiLabelNaziv.TabIndex = 1;
+            this.uiLabelNaziv.Text = "Naziv:";
             // 
-            // label3
+            // uiLabelDrzava
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(61, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Država:";
+            this.uiLabelDrzava.AutoSize = true;
+            this.uiLabelDrzava.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelDrzava.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelDrzava.Location = new System.Drawing.Point(61, 90);
+            this.uiLabelDrzava.Name = "uiLabelDrzava";
+            this.uiLabelDrzava.Size = new System.Drawing.Size(51, 13);
+            this.uiLabelDrzava.TabIndex = 2;
+            this.uiLabelDrzava.Text = "Država:";
             // 
-            // label4
+            // uiLabelBroj
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(79, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Broj:";
+            this.uiLabelBroj.AutoSize = true;
+            this.uiLabelBroj.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelBroj.Location = new System.Drawing.Point(79, 172);
+            this.uiLabelBroj.Name = "uiLabelBroj";
+            this.uiLabelBroj.Size = new System.Drawing.Size(33, 13);
+            this.uiLabelBroj.TabIndex = 5;
+            this.uiLabelBroj.Text = "Broj:";
             // 
-            // label5
+            // uiLabelUlica
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(72, 146);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Ulica:";
+            this.uiLabelUlica.AutoSize = true;
+            this.uiLabelUlica.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelUlica.Location = new System.Drawing.Point(72, 146);
+            this.uiLabelUlica.Name = "uiLabelUlica";
+            this.uiLabelUlica.Size = new System.Drawing.Size(40, 13);
+            this.uiLabelUlica.TabIndex = 4;
+            this.uiLabelUlica.Text = "Ulica:";
             // 
-            // label6
+            // uiLabelGrad
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(74, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Grad:";
+            this.uiLabelGrad.AutoSize = true;
+            this.uiLabelGrad.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelGrad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelGrad.Location = new System.Drawing.Point(74, 118);
+            this.uiLabelGrad.Name = "uiLabelGrad";
+            this.uiLabelGrad.Size = new System.Drawing.Size(38, 13);
+            this.uiLabelGrad.TabIndex = 3;
+            this.uiLabelGrad.Text = "Grad:";
             // 
             // uiInputID
             // 
@@ -190,12 +190,12 @@
             this.Controls.Add(this.uiInputDrzava);
             this.Controls.Add(this.uiInputNaziv);
             this.Controls.Add(this.uiInputID);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiLabelBroj);
+            this.Controls.Add(this.uiLabelUlica);
+            this.Controls.Add(this.uiLabelGrad);
+            this.Controls.Add(this.uiLabelDrzava);
+            this.Controls.Add(this.uiLabelNaziv);
+            this.Controls.Add(this.uiLabelID);
             this.Name = "uiDodavanjePoslovnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje poslovnice";
@@ -207,12 +207,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label uiLabelID;
+        private System.Windows.Forms.Label uiLabelNaziv;
+        private System.Windows.Forms.Label uiLabelDrzava;
+        private System.Windows.Forms.Label uiLabelBroj;
+        private System.Windows.Forms.Label uiLabelUlica;
+        private System.Windows.Forms.Label uiLabelGrad;
         private System.Windows.Forms.TextBox uiInputID;
         private System.Windows.Forms.TextBox uiInputNaziv;
         private System.Windows.Forms.TextBox uiInputDrzava;

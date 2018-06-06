@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.uiLabelMaticna = new System.Windows.Forms.Label();
+            this.uiLabelGraficka = new System.Windows.Forms.Label();
+            this.uiLabelRam = new System.Windows.Forms.Label();
+            this.uiLabelProcesor = new System.Windows.Forms.Label();
+            this.uiLabelSsd = new System.Windows.Forms.Label();
+            this.uiLabelKuciste = new System.Windows.Forms.Label();
+            this.uiLabelZvucna = new System.Windows.Forms.Label();
+            this.uiLabelHladnjak = new System.Windows.Forms.Label();
+            this.uiLabelNapajanje = new System.Windows.Forms.Label();
+            this.uiLabelHdd = new System.Windows.Forms.Label();
             this.uiOutputIznos = new System.Windows.Forms.Label();
             this.uiActionIspis = new System.Windows.Forms.Button();
             this.uiInputMaticna = new System.Windows.Forms.ComboBox();
@@ -71,115 +71,115 @@
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // uiLabelMaticna
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(33, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Matična ploča:";
+            this.uiLabelMaticna.AutoSize = true;
+            this.uiLabelMaticna.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelMaticna.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelMaticna.Location = new System.Drawing.Point(33, 28);
+            this.uiLabelMaticna.Name = "uiLabelMaticna";
+            this.uiLabelMaticna.Size = new System.Drawing.Size(91, 13);
+            this.uiLabelMaticna.TabIndex = 1;
+            this.uiLabelMaticna.Text = "Matična ploča:";
             // 
-            // label2
+            // uiLabelGraficka
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(33, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Grafička kartica:";
+            this.uiLabelGraficka.AutoSize = true;
+            this.uiLabelGraficka.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelGraficka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelGraficka.Location = new System.Drawing.Point(33, 96);
+            this.uiLabelGraficka.Name = "uiLabelGraficka";
+            this.uiLabelGraficka.Size = new System.Drawing.Size(102, 13);
+            this.uiLabelGraficka.TabIndex = 3;
+            this.uiLabelGraficka.Text = "Grafička kartica:";
             // 
-            // label3
+            // uiLabelRam
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(33, 226);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "RAM memorija:";
+            this.uiLabelRam.AutoSize = true;
+            this.uiLabelRam.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelRam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelRam.Location = new System.Drawing.Point(33, 226);
+            this.uiLabelRam.Name = "uiLabelRam";
+            this.uiLabelRam.Size = new System.Drawing.Size(91, 13);
+            this.uiLabelRam.TabIndex = 7;
+            this.uiLabelRam.Text = "RAM memorija:";
             // 
-            // label4
+            // uiLabelProcesor
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(33, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Procesor:";
+            this.uiLabelProcesor.AutoSize = true;
+            this.uiLabelProcesor.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelProcesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelProcesor.Location = new System.Drawing.Point(33, 158);
+            this.uiLabelProcesor.Name = "uiLabelProcesor";
+            this.uiLabelProcesor.Size = new System.Drawing.Size(61, 13);
+            this.uiLabelProcesor.TabIndex = 5;
+            this.uiLabelProcesor.Text = "Procesor:";
             // 
-            // label5
+            // uiLabelSsd
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(33, 293);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "SSD:";
+            this.uiLabelSsd.AutoSize = true;
+            this.uiLabelSsd.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelSsd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelSsd.Location = new System.Drawing.Point(33, 293);
+            this.uiLabelSsd.Name = "uiLabelSsd";
+            this.uiLabelSsd.Size = new System.Drawing.Size(36, 13);
+            this.uiLabelSsd.TabIndex = 9;
+            this.uiLabelSsd.Text = "SSD:";
             // 
-            // label6
+            // uiLabelKuciste
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(334, 293);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Kučište:";
+            this.uiLabelKuciste.AutoSize = true;
+            this.uiLabelKuciste.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelKuciste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelKuciste.Location = new System.Drawing.Point(334, 293);
+            this.uiLabelKuciste.Name = "uiLabelKuciste";
+            this.uiLabelKuciste.Size = new System.Drawing.Size(53, 13);
+            this.uiLabelKuciste.TabIndex = 19;
+            this.uiLabelKuciste.Text = "Kučište:";
             // 
-            // label7
+            // uiLabelZvucna
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(334, 226);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Zvučna kartica:";
+            this.uiLabelZvucna.AutoSize = true;
+            this.uiLabelZvucna.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelZvucna.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelZvucna.Location = new System.Drawing.Point(334, 226);
+            this.uiLabelZvucna.Name = "uiLabelZvucna";
+            this.uiLabelZvucna.Size = new System.Drawing.Size(97, 13);
+            this.uiLabelZvucna.TabIndex = 17;
+            this.uiLabelZvucna.Text = "Zvučna kartica:";
             // 
-            // label8
+            // uiLabelHladnjak
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(334, 158);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Hladnjak:";
+            this.uiLabelHladnjak.AutoSize = true;
+            this.uiLabelHladnjak.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelHladnjak.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelHladnjak.Location = new System.Drawing.Point(334, 158);
+            this.uiLabelHladnjak.Name = "uiLabelHladnjak";
+            this.uiLabelHladnjak.Size = new System.Drawing.Size(61, 13);
+            this.uiLabelHladnjak.TabIndex = 15;
+            this.uiLabelHladnjak.Text = "Hladnjak:";
             // 
-            // label9
+            // uiLabelNapajanje
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(334, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Napajanje:";
+            this.uiLabelNapajanje.AutoSize = true;
+            this.uiLabelNapajanje.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelNapajanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelNapajanje.Location = new System.Drawing.Point(334, 96);
+            this.uiLabelNapajanje.Name = "uiLabelNapajanje";
+            this.uiLabelNapajanje.Size = new System.Drawing.Size(68, 13);
+            this.uiLabelNapajanje.TabIndex = 13;
+            this.uiLabelNapajanje.Text = "Napajanje:";
             // 
-            // label10
+            // uiLabelHdd
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(334, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "HDD:";
+            this.uiLabelHdd.AutoSize = true;
+            this.uiLabelHdd.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelHdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelHdd.Location = new System.Drawing.Point(334, 28);
+            this.uiLabelHdd.Name = "uiLabelHdd";
+            this.uiLabelHdd.Size = new System.Drawing.Size(38, 13);
+            this.uiLabelHdd.TabIndex = 11;
+            this.uiLabelHdd.Text = "HDD:";
             // 
             // uiOutputIznos
             // 
@@ -452,16 +452,16 @@
             this.Controls.Add(this.uiInputMaticna);
             this.Controls.Add(this.uiActionIspis);
             this.Controls.Add(this.uiOutputIznos);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiLabelKuciste);
+            this.Controls.Add(this.uiLabelZvucna);
+            this.Controls.Add(this.uiLabelHladnjak);
+            this.Controls.Add(this.uiLabelNapajanje);
+            this.Controls.Add(this.uiLabelHdd);
+            this.Controls.Add(this.uiLabelSsd);
+            this.Controls.Add(this.uiLabelRam);
+            this.Controls.Add(this.uiLabelProcesor);
+            this.Controls.Add(this.uiLabelGraficka);
+            this.Controls.Add(this.uiLabelMaticna);
             this.Name = "uiKonfiguracija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izrada konfiguracije";
@@ -475,16 +475,16 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label uiLabelMaticna;
+        private System.Windows.Forms.Label uiLabelGraficka;
+        private System.Windows.Forms.Label uiLabelRam;
+        private System.Windows.Forms.Label uiLabelProcesor;
+        private System.Windows.Forms.Label uiLabelSsd;
+        private System.Windows.Forms.Label uiLabelKuciste;
+        private System.Windows.Forms.Label uiLabelZvucna;
+        private System.Windows.Forms.Label uiLabelHladnjak;
+        private System.Windows.Forms.Label uiLabelNapajanje;
+        private System.Windows.Forms.Label uiLabelHdd;
         private System.Windows.Forms.Label uiOutputIznos;
         private System.Windows.Forms.Button uiActionIspis;
         private System.Windows.Forms.ComboBox uiInputMaticna;

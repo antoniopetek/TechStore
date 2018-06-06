@@ -86,7 +86,9 @@ namespace TechStore
                 richTextBox.Text = "TechStore Help Center\n\n";
                 richTextBox.Text += "Trenutno ste pritisnuli F1 na formi Prijava.\n\nNa formi Prijava možete vidjeti dva tekstualna polja za unos korisničkog imena i lozinke te dvije tipke." +
                     " Ukoliko unesete dobro korisničko ime i lozinku i pritisnete na tipku ''PRIJAVI SE'' aplikacija vas vodi do glavnog izbornika aplikacije. Ukoliko unesete" +
-                    "pogrešno korisničko ime i lozinku aplikacija ispisuje grešku. Pritiskom na tipku ''ODUSTANI'' aplikacija se zatvara. ";
+                    "pogrešno korisničko ime i lozinku aplikacija ispisuje grešku. Pritiskom na tipku ''ODUSTANI'' aplikacija se zatvara. " +
+                    "\n\nPodaci za prijavu: \n\nADMINISTRATOR \nKorisničko ime: apetek \nLozinka: password \n\nKORISNIK \n" +
+                    "Korisničko ime: mposavec \nLozinka: martin123";
                 frmHelp.Show();     
             }
         }

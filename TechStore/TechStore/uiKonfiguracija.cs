@@ -54,7 +54,6 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionIspisi_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Račun uspješno izdan.", "IZDANO", MessageBoxButtons.OK);
         }
 
         /// <summary>

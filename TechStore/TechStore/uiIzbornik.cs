@@ -107,7 +107,9 @@ namespace TechStore
                 richTextBox.Text += "Trenutno ste stisnuli F1 na formi Izbornik.\n\nNa formi Izbornik možete vidjeti 7 tipki: ''Zaposlenici'', ''Poslovnice'', ''Pregled artikala po poslovnicama'' " +
                     ", ''Izrada konfiguracije'', ''Artikli'', ''Nabava artikala'' i ''Odjava''.\n\nPritiskom na tipku ''Zaposlenici'' otvara se forma za pregled svih zaposlenika i dodavanje novih zaposlenika.\nPritiskom " +
                     "na tipku ''Poslovnice'' otvara se forma za pregled svih poslovnica i dodavanje novih poslovnice.\nPritiskom na tipku ''Pregled artikala po poslovnicama'' otvara se forma na kojoj je moguće provjeriti " +
-                    "stanje artikala po poslovnicama.\nPritiskom na tipku ''Izrada konfiguracije'' otvara se forma za izradu konfiguracije po želji korisnika. \nPritiskom na tipku ''Odjava'' korisnika se odjavljuje iz aplikacije.";
+                    "stanje artikala po poslovnicama.\nPritiskom na tipku ''Izrada konfiguracije'' otvara se forma za izradu konfiguracije po želji korisnika. \nPritiskom na tipku ''Odjava'' korisnika se odjavljuje iz aplikacije." +
+                    "\n\nPrijavljeni korisnik može biti ili administrator ili korisnik. Ukoliko se korisnik ulogirao kao administrator, dostupne su mu sve funkcionalnosti. Ukoliko se ulogirao kao korisnik, funkcionalnosti za evidenciju" +
+                    " zaposlenika i poslovnica te dodavanje artikala mu neće biti dostupne.";
                 frmHelp.Show();
 
             }

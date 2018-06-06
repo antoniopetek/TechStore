@@ -34,23 +34,23 @@
             this.uiInputPrezime = new System.Windows.Forms.TextBox();
             this.uiInputEmail = new System.Windows.Forms.TextBox();
             this.uiInputKontakt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.uiLabelID = new System.Windows.Forms.Label();
+            this.uiLabelIme = new System.Windows.Forms.Label();
+            this.uiLabelPrezime = new System.Windows.Forms.Label();
+            this.uiLabelEmail = new System.Windows.Forms.Label();
+            this.uiLabelKontakt = new System.Windows.Forms.Label();
+            this.uiLabelPoslovnica = new System.Windows.Forms.Label();
+            this.uiLabelTipZaposlenika = new System.Windows.Forms.Label();
+            this.uiLabelBroj = new System.Windows.Forms.Label();
+            this.uiLabelUlica = new System.Windows.Forms.Label();
+            this.uiLabelGrad = new System.Windows.Forms.Label();
+            this.uiLabelDrzava = new System.Windows.Forms.Label();
             this.uiInputBroj = new System.Windows.Forms.TextBox();
             this.uiInputUlica = new System.Windows.Forms.TextBox();
             this.uiInputGrad = new System.Windows.Forms.TextBox();
             this.uiInputDrzava = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.uiLabelLozinka = new System.Windows.Forms.Label();
+            this.uiLabelKorisnickoIme = new System.Windows.Forms.Label();
             this.uiInputLozinka = new System.Windows.Forms.TextBox();
             this.uiInputKorisnickoIme = new System.Windows.Forms.TextBox();
             this.uiActionDodajZaposlenika = new System.Windows.Forms.Button();
@@ -99,126 +99,126 @@
             this.uiInputKontakt.Size = new System.Drawing.Size(129, 20);
             this.uiInputKontakt.TabIndex = 4;
             // 
-            // label1
+            // uiLabelID
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(197, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "ID zaposlenika:";
+            this.uiLabelID.AutoSize = true;
+            this.uiLabelID.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelID.Location = new System.Drawing.Point(197, 23);
+            this.uiLabelID.Name = "uiLabelID";
+            this.uiLabelID.Size = new System.Drawing.Size(95, 13);
+            this.uiLabelID.TabIndex = 7;
+            this.uiLabelID.Text = "ID zaposlenika:";
             // 
-            // label2
+            // uiLabelIme
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(76, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Ime:";
+            this.uiLabelIme.AutoSize = true;
+            this.uiLabelIme.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelIme.Location = new System.Drawing.Point(76, 63);
+            this.uiLabelIme.Name = "uiLabelIme";
+            this.uiLabelIme.Size = new System.Drawing.Size(31, 13);
+            this.uiLabelIme.TabIndex = 8;
+            this.uiLabelIme.Text = "Ime:";
             // 
-            // label3
+            // uiLabelPrezime
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(52, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Prezime:";
+            this.uiLabelPrezime.AutoSize = true;
+            this.uiLabelPrezime.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelPrezime.Location = new System.Drawing.Point(52, 89);
+            this.uiLabelPrezime.Name = "uiLabelPrezime";
+            this.uiLabelPrezime.Size = new System.Drawing.Size(55, 13);
+            this.uiLabelPrezime.TabIndex = 9;
+            this.uiLabelPrezime.Text = "Prezime:";
             // 
-            // label4
+            // uiLabelEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(62, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "E-mail:";
+            this.uiLabelEmail.AutoSize = true;
+            this.uiLabelEmail.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelEmail.Location = new System.Drawing.Point(62, 115);
+            this.uiLabelEmail.Name = "uiLabelEmail";
+            this.uiLabelEmail.Size = new System.Drawing.Size(45, 13);
+            this.uiLabelEmail.TabIndex = 10;
+            this.uiLabelEmail.Text = "E-mail:";
             // 
-            // label5
+            // uiLabelKontakt
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(52, 141);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Kontakt:";
+            this.uiLabelKontakt.AutoSize = true;
+            this.uiLabelKontakt.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelKontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelKontakt.Location = new System.Drawing.Point(52, 141);
+            this.uiLabelKontakt.Name = "uiLabelKontakt";
+            this.uiLabelKontakt.Size = new System.Drawing.Size(55, 13);
+            this.uiLabelKontakt.TabIndex = 11;
+            this.uiLabelKontakt.Text = "Kontakt:";
             // 
-            // label6
+            // uiLabelPoslovnica
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(34, 167);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Poslovnica:";
+            this.uiLabelPoslovnica.AutoSize = true;
+            this.uiLabelPoslovnica.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelPoslovnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelPoslovnica.Location = new System.Drawing.Point(34, 167);
+            this.uiLabelPoslovnica.Name = "uiLabelPoslovnica";
+            this.uiLabelPoslovnica.Size = new System.Drawing.Size(73, 13);
+            this.uiLabelPoslovnica.TabIndex = 12;
+            this.uiLabelPoslovnica.Text = "Poslovnica:";
             // 
-            // label7
+            // uiLabelTipZaposlenika
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(7, 193);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Tip zaposlenika:";
+            this.uiLabelTipZaposlenika.AutoSize = true;
+            this.uiLabelTipZaposlenika.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelTipZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelTipZaposlenika.Location = new System.Drawing.Point(7, 193);
+            this.uiLabelTipZaposlenika.Name = "uiLabelTipZaposlenika";
+            this.uiLabelTipZaposlenika.Size = new System.Drawing.Size(100, 13);
+            this.uiLabelTipZaposlenika.TabIndex = 13;
+            this.uiLabelTipZaposlenika.Text = "Tip zaposlenika:";
             // 
-            // label8
+            // uiLabelBroj
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(342, 141);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Broj:";
+            this.uiLabelBroj.AutoSize = true;
+            this.uiLabelBroj.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelBroj.Location = new System.Drawing.Point(342, 141);
+            this.uiLabelBroj.Name = "uiLabelBroj";
+            this.uiLabelBroj.Size = new System.Drawing.Size(33, 13);
+            this.uiLabelBroj.TabIndex = 21;
+            this.uiLabelBroj.Text = "Broj:";
             // 
-            // label9
+            // uiLabelUlica
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(335, 115);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Ulica:";
+            this.uiLabelUlica.AutoSize = true;
+            this.uiLabelUlica.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelUlica.Location = new System.Drawing.Point(335, 115);
+            this.uiLabelUlica.Name = "uiLabelUlica";
+            this.uiLabelUlica.Size = new System.Drawing.Size(40, 13);
+            this.uiLabelUlica.TabIndex = 20;
+            this.uiLabelUlica.Text = "Ulica:";
             // 
-            // label10
+            // uiLabelGrad
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(337, 89);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Grad:";
+            this.uiLabelGrad.AutoSize = true;
+            this.uiLabelGrad.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelGrad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelGrad.Location = new System.Drawing.Point(337, 89);
+            this.uiLabelGrad.Name = "uiLabelGrad";
+            this.uiLabelGrad.Size = new System.Drawing.Size(38, 13);
+            this.uiLabelGrad.TabIndex = 19;
+            this.uiLabelGrad.Text = "Grad:";
             // 
-            // label11
+            // uiLabelDrzava
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(324, 63);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Država:";
+            this.uiLabelDrzava.AutoSize = true;
+            this.uiLabelDrzava.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelDrzava.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelDrzava.Location = new System.Drawing.Point(324, 63);
+            this.uiLabelDrzava.Name = "uiLabelDrzava";
+            this.uiLabelDrzava.Size = new System.Drawing.Size(51, 13);
+            this.uiLabelDrzava.TabIndex = 18;
+            this.uiLabelDrzava.Text = "Država:";
             // 
             // uiInputBroj
             // 
@@ -248,27 +248,27 @@
             this.uiInputDrzava.Size = new System.Drawing.Size(129, 20);
             this.uiInputDrzava.TabIndex = 14;
             // 
-            // label12
+            // uiLabelLozinka
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(320, 193);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 13);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Lozinka:";
+            this.uiLabelLozinka.AutoSize = true;
+            this.uiLabelLozinka.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelLozinka.Location = new System.Drawing.Point(320, 193);
+            this.uiLabelLozinka.Name = "uiLabelLozinka";
+            this.uiLabelLozinka.Size = new System.Drawing.Size(55, 13);
+            this.uiLabelLozinka.TabIndex = 25;
+            this.uiLabelLozinka.Text = "Lozinka:";
             // 
-            // label13
+            // uiLabelKorisnickoIme
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(282, 167);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 13);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Korisničko ime:";
+            this.uiLabelKorisnickoIme.AutoSize = true;
+            this.uiLabelKorisnickoIme.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelKorisnickoIme.Location = new System.Drawing.Point(282, 167);
+            this.uiLabelKorisnickoIme.Name = "uiLabelKorisnickoIme";
+            this.uiLabelKorisnickoIme.Size = new System.Drawing.Size(93, 13);
+            this.uiLabelKorisnickoIme.TabIndex = 24;
+            this.uiLabelKorisnickoIme.Text = "Korisničko ime:";
             // 
             // uiInputLozinka
             // 
@@ -347,25 +347,25 @@
             this.Controls.Add(this.uiInputTipZaposlenika);
             this.Controls.Add(this.uiInputPoslovnica);
             this.Controls.Add(this.uiActionDodajZaposlenika);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.uiLabelLozinka);
+            this.Controls.Add(this.uiLabelKorisnickoIme);
             this.Controls.Add(this.uiInputLozinka);
             this.Controls.Add(this.uiInputKorisnickoIme);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.uiLabelBroj);
+            this.Controls.Add(this.uiLabelUlica);
+            this.Controls.Add(this.uiLabelGrad);
+            this.Controls.Add(this.uiLabelDrzava);
             this.Controls.Add(this.uiInputBroj);
             this.Controls.Add(this.uiInputUlica);
             this.Controls.Add(this.uiInputGrad);
             this.Controls.Add(this.uiInputDrzava);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiLabelTipZaposlenika);
+            this.Controls.Add(this.uiLabelPoslovnica);
+            this.Controls.Add(this.uiLabelKontakt);
+            this.Controls.Add(this.uiLabelEmail);
+            this.Controls.Add(this.uiLabelPrezime);
+            this.Controls.Add(this.uiLabelIme);
+            this.Controls.Add(this.uiLabelID);
             this.Controls.Add(this.uiInputKontakt);
             this.Controls.Add(this.uiInputEmail);
             this.Controls.Add(this.uiInputPrezime);
@@ -389,23 +389,23 @@
         private System.Windows.Forms.TextBox uiInputPrezime;
         private System.Windows.Forms.TextBox uiInputEmail;
         private System.Windows.Forms.TextBox uiInputKontakt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label uiLabelID;
+        private System.Windows.Forms.Label uiLabelIme;
+        private System.Windows.Forms.Label uiLabelPrezime;
+        private System.Windows.Forms.Label uiLabelEmail;
+        private System.Windows.Forms.Label uiLabelKontakt;
+        private System.Windows.Forms.Label uiLabelPoslovnica;
+        private System.Windows.Forms.Label uiLabelTipZaposlenika;
+        private System.Windows.Forms.Label uiLabelBroj;
+        private System.Windows.Forms.Label uiLabelUlica;
+        private System.Windows.Forms.Label uiLabelGrad;
+        private System.Windows.Forms.Label uiLabelDrzava;
         private System.Windows.Forms.TextBox uiInputBroj;
         private System.Windows.Forms.TextBox uiInputUlica;
         private System.Windows.Forms.TextBox uiInputGrad;
         private System.Windows.Forms.TextBox uiInputDrzava;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label uiLabelLozinka;
+        private System.Windows.Forms.Label uiLabelKorisnickoIme;
         private System.Windows.Forms.TextBox uiInputLozinka;
         private System.Windows.Forms.TextBox uiInputKorisnickoIme;
         private System.Windows.Forms.Button uiActionDodajZaposlenika;
