@@ -88,7 +88,16 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiOutputPopisZaposlenika_SelectionChanged(object sender, EventArgs e)
         {
+            Zaposlenik zaposlenik = zaposlenikBindingSource.Current as Zaposlenik;
 
+            if (zaposlenik != null)
+            {
+                uiOutputAdresa.Text = zaposlenik.Ulica.ToString() + " " + zaposlenik.Broj.ToString() + ", " + zaposlenik.Grad.ToString() + ", " + zaposlenik.Drzava.ToString();
+                uiOutputKontakt.Text = zaposlenik.Kontakt.ToString();
+                uiOutputEmail.Text = zaposlenik.Email.ToString();
+                uiOutputKorisnickoIme.Text = zaposlenik.Korisnicko_ime.ToString();
+                uiOutputLozinka.Text = zaposlenik.Lozinka.ToString();
+            }
         }
 
         /// <summary>
