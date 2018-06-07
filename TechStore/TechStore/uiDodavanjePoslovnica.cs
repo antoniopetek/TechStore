@@ -58,10 +58,10 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiDodavanjePoslovnice_Load(object sender, EventArgs e)
+        private void UiDodavanjePoslovnice_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += uiDodavanjePoslovnice_KeyDown;
+            this.KeyDown += UiDodavanjePoslovnice_KeyDown;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiDodavanjePoslovnice_KeyDown(object sender, KeyEventArgs e)
+        private void UiDodavanjePoslovnice_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -92,7 +92,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiActionOdustani_Click(object sender, EventArgs e)
+        private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             Close();
         }

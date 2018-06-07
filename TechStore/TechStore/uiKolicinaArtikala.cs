@@ -27,10 +27,10 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiKolicinaArtikala_Load(object sender, EventArgs e)
+        private void UiKolicinaArtikala_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += uiKolicinaArtikala_KeyDown;
+            this.KeyDown += UiKolicinaArtikala_KeyDown;
             artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
             uiOutputGraf.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
         }
@@ -41,7 +41,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiKolicinaArtikala_KeyDown(object sender, KeyEventArgs e)
+        private void UiKolicinaArtikala_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -63,15 +63,14 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputArtikl_SelectedValueChanged(object sender, EventArgs e)
+        private void UiInputArtikl_SelectedValueChanged(object sender, EventArgs e)
         {
-            
             uiOutputGraf.Series["Kolicina"].Points.Clear();
-            
+
             if (uiInputArtikl.SelectedItem != null)
             {
                 List<Dostupnost> dostupnost = Dostupnost.DohvatiDostupnost(int.Parse(uiInputArtikl.SelectedValue.ToString()));
-                CrtajGraf(dostupnost);              
+                CrtajGraf(dostupnost);
             }
         }
 
@@ -98,7 +97,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiActionNatrag_Click(object sender, EventArgs e)
+        private void UiActionNatrag_Click(object sender, EventArgs e)
         {
             Close();
         }

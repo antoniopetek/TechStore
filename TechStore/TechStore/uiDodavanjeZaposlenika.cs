@@ -65,10 +65,10 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiDodavanjeZaposlenika_Load(object sender, EventArgs e)
+        private void UiDodavanjeZaposlenika_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += uiDodavanjeZaposlenika_KeyDown;
+            this.KeyDown += UiDodavanjeZaposlenika_KeyDown;
 
             poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
             tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
@@ -80,7 +80,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiDodavanjeZaposlenika_KeyDown(object sender, KeyEventArgs e)
+        private void UiDodavanjeZaposlenika_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -102,7 +102,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiActionOdustani_Click(object sender, EventArgs e)
+        private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             Close();
         }

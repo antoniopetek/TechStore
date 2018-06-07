@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DGVPrinterHelper;
 using System.Windows.Forms;
 
 namespace TechStore
@@ -14,8 +15,8 @@ namespace TechStore
     {
         #region Svojstva
         public List<Artikl> izabraneKomponente = new List<Artikl>();
-        double odabranaCijena { get; set; }
-        double najvisaCijena { get; set; }
+        private double OdabranaCijena { get; set; }
+        private double NajvisaCijena { get; set; }
         #endregion
 
         #region KonstruktorILoad
@@ -35,10 +36,10 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiKonfiguracija_Load(object sender, EventArgs e)
+        private void UiKonfiguracija_Load(object sender, EventArgs e)
         {
             KeyPreview = true;
-            KeyDown += uiNoviArtikl_KeyDown;
+            KeyDown += UiKonfiguracija_KeyDown;
             vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
             PripremiListu();
             artiklBindingSource.DataSource = izabraneKomponente;
@@ -48,12 +49,23 @@ namespace TechStore
 
         #region PomocneMetode
         /// <summary>
-        /// Rukuje događajem klika na tipku uiActionIspisi.
+        /// Rukuje događajem klika na tipku UiActionIspisi. Ispisuje sve podatke iz DataGridView
+        /// kontrole s uređenim header-om i footer-om.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void UiActionIspisi_Click(object sender, EventArgs e)
         {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "KONFIGURACIJA";
+            printer.SubTitle = "Datum izrade: " + DateTime.Now + "\n\n";
+            printer.PorportionalColumns = true;
+            string zaposlenik = Zaposlenik.PrijavljeniZaposlenik.Ime + " " + Zaposlenik.PrijavljeniZaposlenik.Prezime;
+            Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(Zaposlenik.PrijavljeniZaposlenik.Poslovnica_ID);
+            printer.Footer = uiOutputIznos.Text + "\nKonfiguraciju izradio: " + zaposlenik + "\nPoslovnica: " + poslovnica.Naziv;
+            printer.FooterAlignment = StringAlignment.Near;
+            printer.printDocument.DefaultPageSettings.Landscape = true;
+            printer.PrintDataGridView(uiOutputKonfiguracija);
         }
 
         /// <summary>
@@ -62,7 +74,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiNoviArtikl_KeyDown(object sender, KeyEventArgs e)
+        private void UiKonfiguracija_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -117,8 +129,8 @@ namespace TechStore
         {
             List<Artikl> preporuke = new List<Artikl>();
             List<Artikl> ostale = new List<Artikl>();
-            odabranaCijena = izabraneKomponente[0].Cijena;
-            double postotak = odabranaCijena / najvisaCijena;
+            OdabranaCijena = izabraneKomponente[0].Cijena;
+            double postotak = OdabranaCijena / NajvisaCijena;
 
             comboBox.Items.Clear();
             foreach (Artikl artikl in artikli)
@@ -183,7 +195,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiActionNatrag_Click(object sender, EventArgs e)
+        private void UiActionNatrag_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -204,7 +216,7 @@ namespace TechStore
                 uiInputMaticna.Items.Add(maticna);
             }
 
-            najvisaCijena = maticnePloce.Max(x => x.Cijena);
+            NajvisaCijena = maticnePloce.Max(x => x.Cijena);
         }
 
         /// <summary>
@@ -351,11 +363,11 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputMaticna_SelectedIndexChanged(object sender, EventArgs e)
-        {      
+        private void UiInputMaticna_SelectedIndexChanged(object sender, EventArgs e)
+        {
             izabraneKomponente[0] = uiInputMaticna.SelectedItem as Artikl;
             PripremiComboBoxeve(0);
-            OsvjeziDataGrid(); 
+            OsvjeziDataGrid();
             uiInputGraficka.Enabled = true;
             OsvjeziGraficke();
             RacunajIznos(0);
@@ -368,7 +380,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputGraficka_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputGraficka_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[1] = uiInputGraficka.SelectedItem as Artikl;
             PripremiComboBoxeve(1);
@@ -385,7 +397,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputProcesor_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputProcesor_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[2] = uiInputProcesor.SelectedItem as Artikl;
             PripremiComboBoxeve(2);
@@ -402,7 +414,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputRam_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputRam_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[3] = uiInputRam.SelectedItem as Artikl;
             PripremiComboBoxeve(3);
@@ -419,7 +431,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputSsd_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputSsd_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[4] = uiInputSsd.SelectedItem as Artikl;
             PripremiComboBoxeve(4);
@@ -436,7 +448,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputHdd_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputHdd_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[5] = uiInputHdd.SelectedItem as Artikl;
             PripremiComboBoxeve(5);
@@ -453,7 +465,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputNapajanje_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputNapajanje_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[6] = uiInputNapajanje.SelectedItem as Artikl;
             PripremiComboBoxeve(6);
@@ -470,7 +482,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputHladnjak_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputHladnjak_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[7] = uiInputHladnjak.SelectedItem as Artikl;
             PripremiComboBoxeve(7);
@@ -487,7 +499,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputZvucna_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputZvucna_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[8] = uiInputZvucna.SelectedItem as Artikl;
             PripremiComboBoxeve(8);
@@ -503,14 +515,14 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiInputKuciste_SelectedIndexChanged(object sender, EventArgs e)
+        private void UiInputKuciste_SelectedIndexChanged(object sender, EventArgs e)
         {
             izabraneKomponente[9] = uiInputKuciste.SelectedItem as Artikl;
             OsvjeziDataGrid();
             RacunajIznos(9);
         }
+
         #endregion
-    
     }
     
 }

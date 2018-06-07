@@ -112,7 +112,7 @@
             this.Name = "uiPrijava";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";
-            this.Load += new System.EventHandler(this.uiPrijava_Load);
+            this.Load += new System.EventHandler(this.UiPrijava_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -52,6 +52,7 @@
             this.uiInputZvucna = new System.Windows.Forms.ComboBox();
             this.uiInputKuciste = new System.Windows.Forms.ComboBox();
             this.uiOutputKonfiguracija = new System.Windows.Forms.DataGridView();
+            this.uiActionNatrag = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kratkiopisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +66,6 @@
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uiActionNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputKonfiguracija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -210,7 +210,7 @@
             this.uiInputMaticna.Name = "uiInputMaticna";
             this.uiInputMaticna.Size = new System.Drawing.Size(267, 21);
             this.uiInputMaticna.TabIndex = 23;
-            this.uiInputMaticna.SelectedIndexChanged += new System.EventHandler(this.uiInputMaticna_SelectedIndexChanged);
+            this.uiInputMaticna.SelectedIndexChanged += new System.EventHandler(this.UiInputMaticna_SelectedIndexChanged);
             // 
             // uiInputGraficka
             // 
@@ -220,7 +220,7 @@
             this.uiInputGraficka.Name = "uiInputGraficka";
             this.uiInputGraficka.Size = new System.Drawing.Size(267, 21);
             this.uiInputGraficka.TabIndex = 24;
-            this.uiInputGraficka.SelectedIndexChanged += new System.EventHandler(this.uiInputGraficka_SelectedIndexChanged);
+            this.uiInputGraficka.SelectedIndexChanged += new System.EventHandler(this.UiInputGraficka_SelectedIndexChanged);
             // 
             // uiInputProcesor
             // 
@@ -230,7 +230,7 @@
             this.uiInputProcesor.Name = "uiInputProcesor";
             this.uiInputProcesor.Size = new System.Drawing.Size(267, 21);
             this.uiInputProcesor.TabIndex = 25;
-            this.uiInputProcesor.SelectedIndexChanged += new System.EventHandler(this.uiInputProcesor_SelectedIndexChanged);
+            this.uiInputProcesor.SelectedIndexChanged += new System.EventHandler(this.UiInputProcesor_SelectedIndexChanged);
             // 
             // uiInputRam
             // 
@@ -240,7 +240,7 @@
             this.uiInputRam.Name = "uiInputRam";
             this.uiInputRam.Size = new System.Drawing.Size(267, 21);
             this.uiInputRam.TabIndex = 26;
-            this.uiInputRam.SelectedIndexChanged += new System.EventHandler(this.uiInputRam_SelectedIndexChanged);
+            this.uiInputRam.SelectedIndexChanged += new System.EventHandler(this.UiInputRam_SelectedIndexChanged);
             // 
             // uiInputSsd
             // 
@@ -250,7 +250,7 @@
             this.uiInputSsd.Name = "uiInputSsd";
             this.uiInputSsd.Size = new System.Drawing.Size(267, 21);
             this.uiInputSsd.TabIndex = 27;
-            this.uiInputSsd.SelectedIndexChanged += new System.EventHandler(this.uiInputSsd_SelectedIndexChanged);
+            this.uiInputSsd.SelectedIndexChanged += new System.EventHandler(this.UiInputSsd_SelectedIndexChanged);
             // 
             // uiInputHdd
             // 
@@ -260,7 +260,7 @@
             this.uiInputHdd.Name = "uiInputHdd";
             this.uiInputHdd.Size = new System.Drawing.Size(258, 21);
             this.uiInputHdd.TabIndex = 28;
-            this.uiInputHdd.SelectedIndexChanged += new System.EventHandler(this.uiInputHdd_SelectedIndexChanged);
+            this.uiInputHdd.SelectedIndexChanged += new System.EventHandler(this.UiInputHdd_SelectedIndexChanged);
             // 
             // uiInputNapajanje
             // 
@@ -270,7 +270,7 @@
             this.uiInputNapajanje.Name = "uiInputNapajanje";
             this.uiInputNapajanje.Size = new System.Drawing.Size(258, 21);
             this.uiInputNapajanje.TabIndex = 29;
-            this.uiInputNapajanje.SelectedIndexChanged += new System.EventHandler(this.uiInputNapajanje_SelectedIndexChanged);
+            this.uiInputNapajanje.SelectedIndexChanged += new System.EventHandler(this.UiInputNapajanje_SelectedIndexChanged);
             // 
             // uiInputHladnjak
             // 
@@ -280,7 +280,7 @@
             this.uiInputHladnjak.Name = "uiInputHladnjak";
             this.uiInputHladnjak.Size = new System.Drawing.Size(258, 21);
             this.uiInputHladnjak.TabIndex = 30;
-            this.uiInputHladnjak.SelectedIndexChanged += new System.EventHandler(this.uiInputHladnjak_SelectedIndexChanged);
+            this.uiInputHladnjak.SelectedIndexChanged += new System.EventHandler(this.UiInputHladnjak_SelectedIndexChanged);
             // 
             // uiInputZvucna
             // 
@@ -290,7 +290,7 @@
             this.uiInputZvucna.Name = "uiInputZvucna";
             this.uiInputZvucna.Size = new System.Drawing.Size(258, 21);
             this.uiInputZvucna.TabIndex = 31;
-            this.uiInputZvucna.SelectedIndexChanged += new System.EventHandler(this.uiInputZvucna_SelectedIndexChanged);
+            this.uiInputZvucna.SelectedIndexChanged += new System.EventHandler(this.UiInputZvucna_SelectedIndexChanged);
             // 
             // uiInputKuciste
             // 
@@ -300,7 +300,7 @@
             this.uiInputKuciste.Name = "uiInputKuciste";
             this.uiInputKuciste.Size = new System.Drawing.Size(258, 21);
             this.uiInputKuciste.TabIndex = 32;
-            this.uiInputKuciste.SelectedIndexChanged += new System.EventHandler(this.uiInputKuciste_SelectedIndexChanged);
+            this.uiInputKuciste.SelectedIndexChanged += new System.EventHandler(this.UiInputKuciste_SelectedIndexChanged);
             // 
             // uiOutputKonfiguracija
             // 
@@ -325,6 +325,17 @@
             this.uiOutputKonfiguracija.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiOutputKonfiguracija.Size = new System.Drawing.Size(585, 247);
             this.uiOutputKonfiguracija.TabIndex = 33;
+            // 
+            // uiActionNatrag
+            // 
+            this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNatrag.Location = new System.Drawing.Point(1090, 331);
+            this.uiActionNatrag.Name = "uiActionNatrag";
+            this.uiActionNatrag.Size = new System.Drawing.Size(116, 26);
+            this.uiActionNatrag.TabIndex = 34;
+            this.uiActionNatrag.Text = "NATRAG";
+            this.uiActionNatrag.UseVisualStyleBackColor = true;
+            this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -420,17 +431,6 @@
             // 
             this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
             // 
-            // uiActionNatrag
-            // 
-            this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionNatrag.Location = new System.Drawing.Point(1090, 331);
-            this.uiActionNatrag.Name = "uiActionNatrag";
-            this.uiActionNatrag.Size = new System.Drawing.Size(116, 26);
-            this.uiActionNatrag.TabIndex = 34;
-            this.uiActionNatrag.Text = "NATRAG";
-            this.uiActionNatrag.UseVisualStyleBackColor = true;
-            this.uiActionNatrag.Click += new System.EventHandler(this.uiActionNatrag_Click);
-            // 
             // uiKonfiguracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,7 +465,7 @@
             this.Name = "uiKonfiguracija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izrada konfiguracije";
-            this.Load += new System.EventHandler(this.uiKonfiguracija_Load);
+            this.Load += new System.EventHandler(this.UiKonfiguracija_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputKonfiguracija)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).EndInit();

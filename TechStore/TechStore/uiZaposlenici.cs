@@ -26,7 +26,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiActionDodajZaposlenika_Click(object sender, EventArgs e)
+        private void UiActionDodajZaposlenika_Click(object sender, EventArgs e)
         {
             uiDodavanjeZaposlenika formaDodavanjeZaposlenika = new uiDodavanjeZaposlenika();
             formaDodavanjeZaposlenika.ShowDialog();
@@ -40,10 +40,10 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiZaposlenici_Load(object sender, EventArgs e)
+        private void UiZaposlenici_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += uiZaposlenici_KeyDown;
+            this.KeyDown += UiZaposlenici_KeyDown;
             OsvjeziZaposlenike();   
         }
 
@@ -53,7 +53,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiZaposlenici_KeyDown(object sender, KeyEventArgs e)
+        private void UiZaposlenici_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -86,18 +86,9 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiOutputPopisZaposlenika_SelectionChanged(object sender, EventArgs e)
+        private void UiOutputPopisZaposlenika_SelectionChanged(object sender, EventArgs e)
         {
-            Zaposlenik zaposlenik = zaposlenikBindingSource.Current as Zaposlenik;
 
-            if (zaposlenik != null)
-            {
-                uiOutputAdresa.Text = zaposlenik.Ulica.ToString() + " " + zaposlenik.Broj.ToString() + ", " + zaposlenik.Grad.ToString() + ", " + zaposlenik.Drzava.ToString();
-                uiOutputKontakt.Text = zaposlenik.Kontakt.ToString();
-                uiOutputEmail.Text = zaposlenik.Email.ToString();
-                uiOutputKorisnickoIme.Text = zaposlenik.Korisnicko_ime.ToString();
-                uiOutputLozinka.Text = zaposlenik.Lozinka.ToString();
-            }
         }
 
         /// <summary>
@@ -105,11 +96,10 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiActionNatrag_Click(object sender, EventArgs e)
+        private void UiActionNatrag_Click(object sender, EventArgs e)
         {
             Close();
         }
-
 
     }
 }

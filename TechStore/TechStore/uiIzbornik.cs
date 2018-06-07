@@ -83,10 +83,10 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiIzbornik_Load(object sender, EventArgs e)
+        private void UiIzbornik_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += uiIzbornik_KeyDown;
+            this.KeyDown += UiIzbornik_KeyDown;
             PripremiFunkcionalnosti();
         }
 
@@ -96,7 +96,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiIzbornik_KeyDown(object sender, KeyEventArgs e)
+        private void UiIzbornik_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
@@ -120,7 +120,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiActionIzradaKonfiguracije_Click(object sender, EventArgs e)
+        private void UiActionIzradaKonfiguracije_Click(object sender, EventArgs e)
         {
             uiKonfiguracija formaKonfiguracija = new uiKonfiguracija();
             formaKonfiguracija.ShowDialog();

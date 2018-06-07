@@ -334,7 +334,7 @@
             this.uiActionOdustani.TabIndex = 29;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
-            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
+            this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
             // uiDodavanjeZaposlenika
             // 
@@ -374,7 +374,7 @@
             this.Name = "uiDodavanjeZaposlenika";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje zaposlenika";
-            this.Load += new System.EventHandler(this.uiDodavanjeZaposlenika_Load);
+            this.Load += new System.EventHandler(this.UiDodavanjeZaposlenika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipZaposlenikaBindingSource)).EndInit();
             this.ResumeLayout(false);

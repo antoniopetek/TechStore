@@ -103,7 +103,7 @@
             this.uiActionIzradaKonfiguracije.TabIndex = 5;
             this.uiActionIzradaKonfiguracije.Text = "Izrada konfiguracije";
             this.uiActionIzradaKonfiguracije.UseVisualStyleBackColor = true;
-            this.uiActionIzradaKonfiguracije.Click += new System.EventHandler(this.uiActionIzradaKonfiguracije_Click);
+            this.uiActionIzradaKonfiguracije.Click += new System.EventHandler(this.UiActionIzradaKonfiguracije_Click);
             // 
             // uiOutputIspis
             // 
@@ -146,7 +146,7 @@
             this.Name = "uiIzbornik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izbornik";
-            this.Load += new System.EventHandler(this.uiIzbornik_Load);
+            this.Load += new System.EventHandler(this.UiIzbornik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

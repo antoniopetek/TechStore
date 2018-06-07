@@ -108,7 +108,7 @@
             this.uiOutputPopisZaposlenika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiOutputPopisZaposlenika.Size = new System.Drawing.Size(565, 179);
             this.uiOutputPopisZaposlenika.TabIndex = 1;
-            this.uiOutputPopisZaposlenika.SelectionChanged += new System.EventHandler(this.uiOutputPopisZaposlenika_SelectionChanged);
+            this.uiOutputPopisZaposlenika.SelectionChanged += new System.EventHandler(this.UiOutputPopisZaposlenika_SelectionChanged);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -273,7 +273,7 @@
             this.uiActionDodajZaposlenika.TabIndex = 2;
             this.uiActionDodajZaposlenika.Text = "DODAJ";
             this.uiActionDodajZaposlenika.UseVisualStyleBackColor = true;
-            this.uiActionDodajZaposlenika.Click += new System.EventHandler(this.uiActionDodajZaposlenika_Click);
+            this.uiActionDodajZaposlenika.Click += new System.EventHandler(this.UiActionDodajZaposlenika_Click);
             // 
             // uiOutputAdresa
             // 
@@ -374,7 +374,7 @@
             this.uiActionNatrag.TabIndex = 16;
             this.uiActionNatrag.Text = "NATRAG";
             this.uiActionNatrag.UseVisualStyleBackColor = true;
-            this.uiActionNatrag.Click += new System.EventHandler(this.uiActionNatrag_Click);
+            this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
             // 
             // uiZaposlenici
             // 
@@ -400,7 +400,7 @@
             this.Name = "uiZaposlenici";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zaposlenici";
-            this.Load += new System.EventHandler(this.uiZaposlenici_Load);
+            this.Load += new System.EventHandler(this.UiZaposlenici_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPopisZaposlenika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipZaposlenikaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();

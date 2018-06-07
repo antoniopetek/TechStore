@@ -65,10 +65,10 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiPrijava_Load(object sender, EventArgs e)
+        private void UiPrijava_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += uiPrijava_KeyDown;
+            this.KeyDown += UiPrijava_KeyDown;
         }
         /// <summary>
         /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
@@ -76,7 +76,7 @@ namespace TechStore
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void uiPrijava_KeyDown(object sender, KeyEventArgs e)
+        private void UiPrijava_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString()=="F1")
             {
@@ -92,5 +92,6 @@ namespace TechStore
                 frmHelp.Show();     
             }
         }
+
     }
 }
