@@ -1,6 +1,6 @@
 ﻿namespace TechStore
 {
-    partial class FrmNabava
+    partial class uiNabava
     {
         /// <summary>
         /// Required designer variable.

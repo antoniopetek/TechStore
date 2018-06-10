@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmArtikl : Form
+    public partial class uiArtikl : Form
     {
-        public FrmArtikl()
+        public uiArtikl()
         {
             InitializeComponent();
         }
 
         private void UiActionDodajArtikl_Click(object sender, EventArgs e)
         {
-            FrmNoviArtikl noviArtikl = new FrmNoviArtikl();
+            uiNoviArtikl noviArtikl = new uiNoviArtikl();
             noviArtikl.Show();
         }
 
@@ -33,7 +33,7 @@ namespace TechStore
         {
             if (e.KeyCode.ToString() == "F1")
             {
-                FrmHelp frmHelp = new FrmHelp();
+                uiHelp frmHelp = new uiHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";

@@ -57,7 +57,7 @@ namespace TechStore
         {
             if (e.KeyCode.ToString() == "F1")
             {
-                FrmHelp frmHelp = new FrmHelp();
+                uiHelp frmHelp = new uiHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\n\n";

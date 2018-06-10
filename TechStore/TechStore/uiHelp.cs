@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmHelp : Form
+    public partial class uiHelp : Form
     {
-        public FrmHelp()
+        public uiHelp()
         {
             InitializeComponent();
         }

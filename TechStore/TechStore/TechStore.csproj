@@ -67,11 +67,11 @@
     <Compile Include="Dostupnost.cs">
       <DependentUpon>TechStoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FrmArtikl.cs">
+    <Compile Include="uiArtikl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmArtikl.Designer.cs">
-      <DependentUpon>FrmArtikl.cs</DependentUpon>
+    <Compile Include="uiArtikl.Designer.cs">
+      <DependentUpon>uiArtikl.cs</DependentUpon>
     </Compile>
     <Compile Include="uiDodavanjePoslovnica.cs">
       <SubType>Form</SubType>
@@ -85,11 +85,11 @@
     <Compile Include="uiDodavanjeZaposlenika.Designer.cs">
       <DependentUpon>uiDodavanjeZaposlenika.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmHelp.cs">
+    <Compile Include="uiHelp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmHelp.Designer.cs">
-      <DependentUpon>FrmHelp.cs</DependentUpon>
+    <Compile Include="uiHelp.Designer.cs">
+      <DependentUpon>uiHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="uiKonfiguracija.cs">
       <SubType>Form</SubType>
@@ -97,17 +97,17 @@
     <Compile Include="uiKonfiguracija.Designer.cs">
       <DependentUpon>uiKonfiguracija.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNabava.cs">
+    <Compile Include="uiNabava.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNabava.Designer.cs">
-      <DependentUpon>FrmNabava.cs</DependentUpon>
+    <Compile Include="uiNabava.Designer.cs">
+      <DependentUpon>uiNabava.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNoviArtikl.cs">
+    <Compile Include="uiNoviArtikl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNoviArtikl.Designer.cs">
-      <DependentUpon>FrmNoviArtikl.cs</DependentUpon>
+    <Compile Include="uiNoviArtikl.Designer.cs">
+      <DependentUpon>uiNoviArtikl.cs</DependentUpon>
     </Compile>
     <Compile Include="uiPoslovnice.cs">
       <SubType>Form</SubType>
@@ -127,11 +127,11 @@
     <Compile Include="uiIzbornik.Designer.cs">
       <DependentUpon>uiIzbornik.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmStanje.cs">
+    <Compile Include="uiStanje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmStanje.Designer.cs">
-      <DependentUpon>FrmStanje.cs</DependentUpon>
+    <Compile Include="uiStanje.Designer.cs">
+      <DependentUpon>uiStanje.cs</DependentUpon>
     </Compile>
     <Compile Include="uiZaposlenici.cs">
       <SubType>Form</SubType>
@@ -192,8 +192,8 @@
     <Compile Include="Zaposlenik.cs">
       <DependentUpon>TechStoreModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmArtikl.resx">
-      <DependentUpon>FrmArtikl.cs</DependentUpon>
+    <EmbeddedResource Include="uiArtikl.resx">
+      <DependentUpon>uiArtikl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiDodavanjePoslovnica.resx">
       <DependentUpon>uiDodavanjePoslovnica.cs</DependentUpon>
@@ -201,8 +201,8 @@
     <EmbeddedResource Include="uiDodavanjeZaposlenika.resx">
       <DependentUpon>uiDodavanjeZaposlenika.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmHelp.resx">
-      <DependentUpon>FrmHelp.cs</DependentUpon>
+    <EmbeddedResource Include="uiHelp.resx">
+      <DependentUpon>uiHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiIzbornik.resx">
       <DependentUpon>uiIzbornik.cs</DependentUpon>
@@ -210,11 +210,11 @@
     <EmbeddedResource Include="uiKonfiguracija.resx">
       <DependentUpon>uiKonfiguracija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNabava.resx">
-      <DependentUpon>FrmNabava.cs</DependentUpon>
+    <EmbeddedResource Include="uiNabava.resx">
+      <DependentUpon>uiNabava.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNoviArtikl.resx">
-      <DependentUpon>FrmNoviArtikl.cs</DependentUpon>
+    <EmbeddedResource Include="uiNoviArtikl.resx">
+      <DependentUpon>uiNoviArtikl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiPoslovnice.resx">
       <DependentUpon>uiPoslovnice.cs</DependentUpon>
@@ -222,8 +222,8 @@
     <EmbeddedResource Include="uiPrijava.resx">
       <DependentUpon>uiPrijava.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmStanje.resx">
-      <DependentUpon>FrmStanje.cs</DependentUpon>
+    <EmbeddedResource Include="uiStanje.resx">
+      <DependentUpon>uiStanje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiZaposlenici.resx">
       <DependentUpon>uiZaposlenici.cs</DependentUpon>

@@ -74,7 +74,7 @@ namespace TechStore
 
         private void UiActionDodajArtikl_Click(object sender, EventArgs e)
         {
-            FrmArtikl formaArtikli = new FrmArtikl();
+            uiArtikl formaArtikli = new uiArtikl();
             formaArtikli.Show();
         }
 
@@ -100,7 +100,7 @@ namespace TechStore
         {
             if (e.KeyCode.ToString() == "F1")
             {
-                FrmHelp frmHelp = new FrmHelp();
+                uiHelp frmHelp = new uiHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\n\n";
@@ -128,7 +128,7 @@ namespace TechStore
 
         private void UiActionNabavaArtikala_Click(object sender, EventArgs e)
         {
-            FrmStanje formaStanje = new FrmStanje();
+            uiStanje formaStanje = new uiStanje();
             formaStanje.Show();
         }
 

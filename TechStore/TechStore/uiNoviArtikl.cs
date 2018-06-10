@@ -10,28 +10,28 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmNabava : Form
+    public partial class uiNoviArtikl : Form
     {
-        public FrmNabava()
+        public uiNoviArtikl()
         {
             InitializeComponent();
         }
 
-        private void FrmNabava_Load(object sender, EventArgs e)
+        private void FrmNoviArtikl_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
-            this.KeyDown += FrmNabava_KeyDown;
+            this.KeyDown += FrmNoviArtikl_KeyDown;
         }
 
-        private void FrmNabava_KeyDown(object sender, KeyEventArgs e)
+        private void FrmNoviArtikl_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
             {
-                FrmHelp frmHelp = new FrmHelp();
+                uiHelp frmHelp = new uiHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
-                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Nabava. Na formi Nabava možete vidjeti";
+                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Dodavanje artikla.";
                 frmHelp.Show();
 
             }

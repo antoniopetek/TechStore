@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class FrmStanje : Form
+    public partial class uiStanje : Form
     {
-        public FrmStanje()
+        public uiStanje()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace TechStore
         {
             if (e.KeyCode.ToString() == "F1")
             {
-                FrmHelp frmHelp = new FrmHelp();
+                uiHelp frmHelp = new uiHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
@@ -44,7 +44,7 @@ namespace TechStore
 
         private void UiActionNaruci_Click(object sender, EventArgs e)
         {
-            FrmNabava formaNabava = new FrmNabava();
+            uiNabava formaNabava = new uiNabava();
             formaNabava.Show();
         }
     }

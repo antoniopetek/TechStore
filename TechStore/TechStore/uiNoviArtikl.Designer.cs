@@ -1,6 +1,6 @@
 ﻿namespace TechStore
 {
-    partial class FrmNoviArtikl
+    partial class uiNoviArtikl
     {
         /// <summary>
         /// Required designer variable.
