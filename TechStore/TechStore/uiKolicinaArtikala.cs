@@ -31,7 +31,8 @@ namespace TechStore
         {
             this.KeyPreview = true;
             this.KeyDown += UiKolicinaArtikala_KeyDown;
-            artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
+            BindingList<Artikl> artikli = Artikl.DohvatiSveArtikle();
+            artiklBindingSource.DataSource = artikli;
             uiOutputGraf.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
         }
 
@@ -72,6 +73,7 @@ namespace TechStore
                 List<Dostupnost> dostupnost = Dostupnost.DohvatiDostupnost(int.Parse(uiInputArtikl.SelectedValue.ToString()));
                 CrtajGraf(dostupnost);
             }
+
         }
 
         /// <summary>
