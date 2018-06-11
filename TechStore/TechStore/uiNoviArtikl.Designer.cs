@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uiActionDodajArtikl = new System.Windows.Forms.Button();
             this.uiInputCijena = new System.Windows.Forms.TextBox();
             this.uiInputSpecifikacije = new System.Windows.Forms.TextBox();
@@ -41,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.uiInputVrstaArtikla = new System.Windows.Forms.ComboBox();
+            this.vrstaArtiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiActionDodajArtikl
@@ -158,13 +161,20 @@
             // 
             // uiInputVrstaArtikla
             // 
+            this.uiInputVrstaArtikla.DataSource = this.vrstaArtiklaBindingSource;
+            this.uiInputVrstaArtikla.DisplayMember = "Naziv";
             this.uiInputVrstaArtikla.FormattingEnabled = true;
             this.uiInputVrstaArtikla.Location = new System.Drawing.Point(235, 194);
             this.uiInputVrstaArtikla.Name = "uiInputVrstaArtikla";
             this.uiInputVrstaArtikla.Size = new System.Drawing.Size(137, 21);
             this.uiInputVrstaArtikla.TabIndex = 26;
+            this.uiInputVrstaArtikla.ValueMember = "ID";
             // 
-            // FrmNoviArtikl
+            // vrstaArtiklaBindingSource
+            // 
+            this.vrstaArtiklaBindingSource.DataSource = typeof(TechStore.VrstaArtikla);
+            // 
+            // uiNoviArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,9 +194,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmNoviArtikl";
+            this.Name = "uiNoviArtikl";
             this.Text = "FrmNoviArtikl";
             this.Load += new System.EventHandler(this.FrmNoviArtikl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +218,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox uiInputVrstaArtikla;
+        private System.Windows.Forms.BindingSource vrstaArtiklaBindingSource;
     }
 }

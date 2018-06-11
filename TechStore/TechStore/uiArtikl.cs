@@ -12,23 +12,45 @@ namespace TechStore
 {
     public partial class uiArtikl : Form
     {
+        /// <summary>
+        /// Konstruktor forme uiArtikl
+        /// </summary>
         public uiArtikl()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Metoda koja se poziva na klik gumbića
+        /// uiActionDodajArtikl
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionDodajArtikl_Click(object sender, EventArgs e)
         {
             uiNoviArtikl noviArtikl = new uiNoviArtikl();
             noviArtikl.Show();
         }
 
+        /// <summary>
+        /// Metoda koja se poziva prilikom učitavanja
+        /// forme uiArtikl
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmArtikl_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
             this.KeyDown += FrmArtikl_KeyDown;
+            artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
+            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
         }
 
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na tipku F11
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmArtikl_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
