@@ -83,8 +83,9 @@ namespace TechStore
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\n\n";
                 richTextBox.Text += "Trenutno ste stisnuli F1 na formi Izrada konfiguracije.\n\nOdabirom komponenata iz padajućih izbornika, korisnik aplikacije može izrađivati konfiguraciju " +
-                    "računala. Odabirom svake komponente, u polju za ispis prikazuju mu se osnovne informacije o odabranim komponentama (ID, Naziv, Kratki opis, Cijena i Vrsta). Istovremeno " +
-                    "prikazuje se ukupna cijena odabranih komponenata.";
+                    "računala. \n\nOdabirom svake komponente, u polju za ispis prikazuju mu se osnovne informacije o odabranim komponentama (ID, Naziv, Kratki opis, Cijena i Vrsta). Istovremeno " +
+                    "prikazuje se ukupna cijena odabranih komponenata.\n\nKlikom na tipku 'ISPIŠI' korisnik može spremiti odabranu konfiguraciju u PDF formatu te ju potom isprintati.\n\n" +
+                    "Klikom na tipku 'NATRAG', vraćate se na glavni izbornik.";
                 frmHelp.Show();
 
             }

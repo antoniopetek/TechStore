@@ -51,7 +51,7 @@ namespace TechStore
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\n\n";
                 richTextBox.Text += "Trenutno ste stisnuli F1 na formi Pregled količina artikala po poslovnicama.\n\nOdabirom artikla iz padajućeg izbornika, " +
-                    "na stupičastom grafu ispod, prikazuje se količina odabranog artikla po poslovnicama.\nKlikom na tipku ''NATRAG'' vraćate se na glavni izbornik.";
+                    "na stupičastom grafu ispod, prikazuje se količina odabranog artikla po poslovnicama.\n\nKlikom na tipku ''NATRAG'' vraćate se na glavni izbornik.";
                 frmHelp.Show();
 
             }

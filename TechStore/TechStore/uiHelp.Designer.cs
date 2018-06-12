@@ -34,7 +34,7 @@
             // 
             // uiActionIzlaz
             // 
-            this.uiActionIzlaz.Location = new System.Drawing.Point(713, 415);
+            this.uiActionIzlaz.Location = new System.Drawing.Point(361, 378);
             this.uiActionIzlaz.Name = "uiActionIzlaz";
             this.uiActionIzlaz.Size = new System.Drawing.Size(75, 23);
             this.uiActionIzlaz.TabIndex = 0;
@@ -45,22 +45,22 @@
             // uiOutputPrikazPomoci
             // 
             this.uiOutputPrikazPomoci.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiOutputPrikazPomoci.Location = new System.Drawing.Point(54, 12);
+            this.uiOutputPrikazPomoci.Location = new System.Drawing.Point(12, 12);
             this.uiOutputPrikazPomoci.Name = "uiOutputPrikazPomoci";
-            this.uiOutputPrikazPomoci.Size = new System.Drawing.Size(650, 395);
+            this.uiOutputPrikazPomoci.Size = new System.Drawing.Size(424, 344);
             this.uiOutputPrikazPomoci.TabIndex = 1;
             this.uiOutputPrikazPomoci.Text = "";
             // 
-            // FrmHelp
+            // uiHelp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(457, 415);
             this.Controls.Add(this.uiOutputPrikazPomoci);
             this.Controls.Add(this.uiActionIzlaz);
-            this.Name = "FrmHelp";
+            this.Name = "uiHelp";
             this.Text = "Pomoć";
             this.ResumeLayout(false);
 

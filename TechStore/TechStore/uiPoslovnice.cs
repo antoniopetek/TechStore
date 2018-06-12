@@ -48,7 +48,7 @@ namespace TechStore
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\n\n";
                 richTextBox.Text += "Trenutno ste stisnuli F1 na formi Poslovnice.\n\nNa formi ''Poslovnice'' možete vidjeti popis svih poslovnica." +
-                    "\nKlikom na tipku ''DODAJ POSLOVNICU'' otvara se forma za dodavanje poslovnice. \nKlikom na tipku ''NATRAG'' vraćate se na glavni izbornik.";
+                    "\n\nKlikom na tipku ''DODAJ POSLOVNICU'' otvara se forma za dodavanje poslovnice. \n\nKlikom na tipku ''NATRAG'' vraćate se na glavni izbornik.";
                 frmHelp.Show();
 
             }

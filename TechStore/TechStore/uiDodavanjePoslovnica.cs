@@ -79,8 +79,8 @@ namespace TechStore
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\n\n";
                 richTextBox.Text += "Trenutno ste stisnuli F1 na formi Dodavanje poslovnice.\n\nForma Dodavanje poslovnice služi za dodavanje poslovnice u bazu. Kako bi se poslovnica " +
-                    "dodala, potrebno je popuniti tekstualna polja i kliknuti na tipku ''Dodaj poslovnicu''. \nKlikom na tipku ''Dodaj poslovnicu'', poslovnica se, ukoliko su podaci ispravni, " +
-                    "dodaje te se forma zatvara. U slučaju neispravnog unosa, ispisuje se poruka o neuspješnom unosu te korisnik ima mogućnost ispravka unesenih podataka.\n" +
+                    "dodala, potrebno je popuniti tekstualna polja i kliknuti na tipku ''Dodaj poslovnicu''. \n\nKlikom na tipku ''Dodaj poslovnicu'', poslovnica se, ukoliko su podaci ispravni, " +
+                    "dodaje te se forma zatvara. U slučaju neispravnog unosa, ispisuje se poruka o neuspješnom unosu te korisnik ima mogućnost ispravka unesenih podataka.\n\n" +
                     "Klikom na tipku ''Odustani'', vraćate se na formu za pregled poslovnica.";
                 frmHelp.Show();
 
