@@ -141,7 +141,7 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionNabavaArtikala_Click(object sender, EventArgs e)
         {
-            uiStanje formaStanje = new uiStanje();
+            UiStanje formaStanje = new UiStanje();
             formaStanje.Show();
         }
 

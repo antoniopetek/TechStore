@@ -201,7 +201,7 @@
             this.uiActionAzurirajArtikl.Text = "Ažuriraj";
             this.uiActionAzurirajArtikl.UseVisualStyleBackColor = true;
             // 
-            // uiArtikl
+            // UiArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,7 +213,7 @@
             this.Controls.Add(this.uiActionDodajArtikl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiOutputPodaciArtikli);
-            this.Name = "uiArtikl";
+            this.Name = "UiArtikl";
             this.Text = "FrmArtikl";
             this.Load += new System.EventHandler(this.FrmArtikl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciArtikli)).EndInit();

@@ -40,5 +40,48 @@ namespace TechStore
 
             return dostupnost;
         }
+
+        /// <summary>
+        /// Statièka metoda koja prima kao parametar novu dostupnost.
+        /// </summary>
+        /// <param name="novaDostupnost"></param>
+        public static void DodajDostupnost(Dostupnost novaDostupnost) {
+            using (var db= new TechStoreEntities())
+            {
+                db.Dostupnost.Add(novaDostupnost);
+                db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Statièka metoda koja kao argumente prima novu dostupnost i kolièinu
+        /// </summary>
+        /// <param name="izmjenaDostupnosti"> Objekt tipa Dostupnost</param>
+        /// <param name="kolicina">Nova kolièina artikla</param>
+        public static void IzmjenaDostupnosti(Dostupnost izmjenaDostupnosti,int kolicina)
+        {
+            using (var db= new TechStoreEntities())
+            {
+                db.Dostupnost.Attach(izmjenaDostupnosti);
+                izmjenaDostupnosti.Kolicina += kolicina;
+                db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Statièka metoda koja kao argumente prima poslovnicu i ID artikla.
+        /// </summary>
+        /// <param name="poslovnica">Poslovnica</param>
+        /// <param name="artiklId">ArtiklId</param>
+        /// <returns></returns>
+        public static Dostupnost DohvatiDostupnost(Poslovnica poslovnica, int artiklId)
+        {
+            Dostupnost dostupnost = null;
+            using (var db= new TechStoreEntities())
+            {
+                dostupnost = (from d in db.Dostupnost where d.Artikl_ID == artiklId && d.Poslovnica_ID == poslovnica.ID select d).FirstOrDefault();
+            }
+            return dostupnost;
+        }
     }
 }
