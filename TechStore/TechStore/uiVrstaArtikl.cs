@@ -32,12 +32,42 @@ namespace TechStore
         }
 
         /// <summary>
-        /// Metoda koja se poziva prilikom pritiska na gumbić Dodaj.
+        /// Metoda koja se poziva prilikom pritiska na gumbić uiActionDodaj.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void UiActionDodaj_Click(object sender, EventArgs e)
         {
+            uiDodavanjeVrsteArtikla dodavanjeVrsteArtikla = new uiDodavanjeVrsteArtikla();
+            dodavanjeVrsteArtikla.ShowDialog();
+            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+        }
+
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na gumbić uiActionObrisi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionObrisi_Click(object sender, EventArgs e)
+        {
+            VrstaArtikla vrstaArtiklaZaBrisanje = (VrstaArtikla)vrstaArtiklaBindingSource.Current;
+            if (MessageBox.Show("Sigurno želite obrisati vrstu artikla " + vrstaArtiklaZaBrisanje.Naziv.ToString() + " ?", "Upozorenje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                VrstaArtikla.ObrisiVrstuArtikla(vrstaArtiklaZaBrisanje);
+            }
+            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+        }
+
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na gumbić uiActionAzuriraj.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionAzuriraj_Click(object sender, EventArgs e)
+        {
+            VrstaArtikla vrstaArtiklaZaIzmjenu = (VrstaArtikla)vrstaArtiklaBindingSource.Current;
+            uiDodavanjeVrsteArtikla formaDodavanjeVrsteArtikla = new uiDodavanjeVrsteArtikla(vrstaArtiklaZaIzmjenu);
+            formaDodavanjeVrsteArtikla.ShowDialog();
             vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
         }
     }

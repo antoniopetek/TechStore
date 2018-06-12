@@ -35,6 +35,8 @@
             this.artiklDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaArtiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionDodaj = new System.Windows.Forms.Button();
+            this.uiActionObrisi = new System.Windows.Forms.Button();
+            this.uiActionAzuriraj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +53,9 @@
             this.artiklDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.vrstaArtiklaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(719, 150);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -88,13 +92,35 @@
             this.uiActionDodaj.UseVisualStyleBackColor = true;
             this.uiActionDodaj.Click += new System.EventHandler(this.UiActionDodaj_Click);
             // 
+            // uiActionObrisi
+            // 
+            this.uiActionObrisi.Location = new System.Drawing.Point(575, 168);
+            this.uiActionObrisi.Name = "uiActionObrisi";
+            this.uiActionObrisi.Size = new System.Drawing.Size(75, 23);
+            this.uiActionObrisi.TabIndex = 2;
+            this.uiActionObrisi.Text = "Obriši";
+            this.uiActionObrisi.UseVisualStyleBackColor = true;
+            this.uiActionObrisi.Click += new System.EventHandler(this.UiActionObrisi_Click);
+            // 
+            // uiActionAzuriraj
+            // 
+            this.uiActionAzuriraj.Location = new System.Drawing.Point(494, 168);
+            this.uiActionAzuriraj.Name = "uiActionAzuriraj";
+            this.uiActionAzuriraj.Size = new System.Drawing.Size(75, 23);
+            this.uiActionAzuriraj.TabIndex = 3;
+            this.uiActionAzuriraj.Text = "Ažuriraj";
+            this.uiActionAzuriraj.UseVisualStyleBackColor = true;
+            this.uiActionAzuriraj.Click += new System.EventHandler(this.UiActionAzuriraj_Click);
+            // 
             // UiVrstaArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(743, 450);
+            this.ClientSize = new System.Drawing.Size(743, 258);
+            this.Controls.Add(this.uiActionAzuriraj);
+            this.Controls.Add(this.uiActionObrisi);
             this.Controls.Add(this.uiActionDodaj);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UiVrstaArtikl";
@@ -114,5 +140,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn artiklDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource vrstaArtiklaBindingSource;
         private System.Windows.Forms.Button uiActionDodaj;
+        private System.Windows.Forms.Button uiActionObrisi;
+        private System.Windows.Forms.Button uiActionAzuriraj;
     }
 }

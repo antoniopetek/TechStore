@@ -44,7 +44,7 @@ namespace TechStore
         }
 
         /// <summary>
-        /// Statièka metoda koja kao argument dobiva novu vrstu artikala te
+        /// Statièka metoda koja kao argument prima novu vrstu artikala te
         /// ju sprema u bazu podataka.
         /// </summary>
         /// <param name="novaVrstaArtikla"></param>
@@ -52,6 +52,37 @@ namespace TechStore
             using (var db= new TechStoreEntities())
             {
                 db.VrstaArtikla.Add(novaVrstaArtikla);
+                db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Statièka metoda koja kao argument prima postojeæu vrstu artikla te
+        /// ju briše iz baze podataka.
+        /// </summary>
+        /// <param name="vrstaArtiklaZaBrisanje"></param>
+        public static void ObrisiVrstuArtikla(VrstaArtikla vrstaArtiklaZaBrisanje)
+        {
+            using (var db= new TechStoreEntities())
+            {
+                db.VrstaArtikla.Attach(vrstaArtiklaZaBrisanje);
+                db.VrstaArtikla.Remove(vrstaArtiklaZaBrisanje);
+                db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Statièka metoda koja kao argument prima postojeæu vrstu artikla i
+        /// Naziv koji je tipa string. Metoda ažurira atribut naziv proslijeðene
+        /// vrste artikla i sprema u bazu podataka.
+        /// </summary>
+        /// <param name="vrstaArtiklaZaIzmjenu"></param>
+        /// <param name="naziv"></param>
+        public static void IzmjenaVrsteArtikla(VrstaArtikla vrstaArtiklaZaIzmjenu, string naziv) {
+            using (var db= new TechStoreEntities())
+            {
+                db.VrstaArtikla.Attach(vrstaArtiklaZaIzmjenu);
+                vrstaArtiklaZaIzmjenu.Naziv = naziv;
                 db.SaveChanges();
             }
         }
