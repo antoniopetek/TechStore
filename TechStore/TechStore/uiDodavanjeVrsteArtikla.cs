@@ -86,5 +86,16 @@ namespace TechStore
             this.Close();
 
         }
+
+        /// <summary>
+        /// Metoda koja se poziva prilikom učitavanja 
+        /// forme uiDodavanjeVrsteArtikla.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiDodavanjeVrsteArtikla_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

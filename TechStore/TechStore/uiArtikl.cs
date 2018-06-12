@@ -29,7 +29,9 @@ namespace TechStore
         private void UiActionDodajArtikl_Click(object sender, EventArgs e)
         {
             uiNoviArtikl noviArtikl = new uiNoviArtikl();
-            noviArtikl.Show();
+            noviArtikl.ShowDialog();
+            artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
+            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
         }
 
         /// <summary>
@@ -42,8 +44,7 @@ namespace TechStore
         {
             this.KeyPreview = true;
             this.KeyDown += FrmArtikl_KeyDown;
-            artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            OsvjeziPrikaze();
         }
 
         /// <summary>
@@ -59,15 +60,44 @@ namespace TechStore
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
-                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Artikl.";
+                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Artikl. Na formi možete vidjeti tri gumbića: Ažuriraj, Obriši i Dodaj te popis svih artikala.";
+                richTextBox.Text += "Pritiskom na gumbić Dodaj korisniku se otvara nova forma. Ukoliko pritisne na gumbić Ažuriraj korisniku se otvara nova forma s već popunjenim podacima";
+                richTextBox.Text += "Pritiskom na gumbić Obriši korisnik može obrisati odabrani artikl.";
                 frmHelp.Show();
 
             }
         }
 
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na gumbić Obriši
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na gumbić Ažuriraj
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionAzurirajArtikl_Click(object sender, EventArgs e)
+        {
+            Artikl artiklZaAzuriranje = (Artikl)artiklBindingSource.Current;
+            uiNoviArtikl formaNoviArtikl = new uiNoviArtikl(artiklZaAzuriranje);
+            formaNoviArtikl.ShowDialog();
+            OsvjeziPrikaze();
+        }
+
+        /// <summary>
+        /// Metoda koja služi za osvježavanje prikaza na datagridview - u.
+        /// </summary>
+        private void OsvjeziPrikaze()
+        {
+            artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
+            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
         }
     }
 }

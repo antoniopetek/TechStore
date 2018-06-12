@@ -85,6 +85,7 @@
             this.Controls.Add(this.uiInputNaziv);
             this.Name = "uiDodavanjeVrsteArtikla";
             this.Text = "Dodaj vrstu artikla";
+            this.Load += new System.EventHandler(this.UiDodavanjeVrsteArtikla_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

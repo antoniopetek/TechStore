@@ -200,6 +200,7 @@
             this.uiActionAzurirajArtikl.TabIndex = 7;
             this.uiActionAzurirajArtikl.Text = "Ažuriraj";
             this.uiActionAzurirajArtikl.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajArtikl.Click += new System.EventHandler(this.UiActionAzurirajArtikl_Click);
             // 
             // UiArtikl
             // 
