@@ -43,18 +43,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.uiInputVrstaArtikla = new System.Windows.Forms.ComboBox();
             this.vrstaArtiklaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionOdustani = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiActionDodajArtikl
             // 
             this.uiActionDodajArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajArtikl.Location = new System.Drawing.Point(235, 230);
+            this.uiActionDodajArtikl.Location = new System.Drawing.Point(160, 224);
             this.uiActionDodajArtikl.Name = "uiActionDodajArtikl";
             this.uiActionDodajArtikl.Size = new System.Drawing.Size(137, 41);
             this.uiActionDodajArtikl.TabIndex = 25;
             this.uiActionDodajArtikl.Text = "Dodaj artikl";
             this.uiActionDodajArtikl.UseVisualStyleBackColor = true;
+            this.uiActionDodajArtikl.Click += new System.EventHandler(this.UiActionDodajArtikl_Click);
             // 
             // uiInputCijena
             // 
@@ -174,6 +176,17 @@
             // 
             this.vrstaArtiklaBindingSource.DataSource = typeof(TechStore.VrstaArtikla);
             // 
+            // uiActionOdustani
+            // 
+            this.uiActionOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionOdustani.Location = new System.Drawing.Point(312, 224);
+            this.uiActionOdustani.Name = "uiActionOdustani";
+            this.uiActionOdustani.Size = new System.Drawing.Size(137, 41);
+            this.uiActionOdustani.TabIndex = 27;
+            this.uiActionOdustani.Text = "Odustani";
+            this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
+            // 
             // uiNoviArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +194,7 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(502, 277);
+            this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiInputVrstaArtikla);
             this.Controls.Add(this.uiActionDodajArtikl);
             this.Controls.Add(this.uiInputCijena);
@@ -219,5 +233,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox uiInputVrstaArtikla;
         private System.Windows.Forms.BindingSource vrstaArtiklaBindingSource;
+        private System.Windows.Forms.Button uiActionOdustani;
     }
 }
