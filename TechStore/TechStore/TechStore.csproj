@@ -79,6 +79,12 @@
     <Compile Include="uiDodavanjePoslovnica.Designer.cs">
       <DependentUpon>uiDodavanjePoslovnica.cs</DependentUpon>
     </Compile>
+    <Compile Include="uiDodavanjeVrsteArtikla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uiDodavanjeVrsteArtikla.Designer.cs">
+      <DependentUpon>uiDodavanjeVrsteArtikla.cs</DependentUpon>
+    </Compile>
     <Compile Include="uiDodavanjeZaposlenika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     </Compile>
     <Compile Include="uiStanje.Designer.cs">
       <DependentUpon>uiStanje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uiVrstaArtikl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uiVrstaArtikl.Designer.cs">
+      <DependentUpon>uiVrstaArtikl.cs</DependentUpon>
     </Compile>
     <Compile Include="uiZaposlenici.cs">
       <SubType>Form</SubType>
@@ -198,6 +210,9 @@
     <EmbeddedResource Include="uiDodavanjePoslovnica.resx">
       <DependentUpon>uiDodavanjePoslovnica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uiDodavanjeVrsteArtikla.resx">
+      <DependentUpon>uiDodavanjeVrsteArtikla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uiDodavanjeZaposlenika.resx">
       <DependentUpon>uiDodavanjeZaposlenika.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uiStanje.resx">
       <DependentUpon>uiStanje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uiVrstaArtikl.resx">
+      <DependentUpon>uiVrstaArtikl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiZaposlenici.resx">
       <DependentUpon>uiZaposlenici.cs</DependentUpon>

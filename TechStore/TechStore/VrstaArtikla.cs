@@ -43,5 +43,17 @@ namespace TechStore
             return vrstaArtikala;
         }
 
+        /// <summary>
+        /// Statièka metoda koja kao argument dobiva novu vrstu artikala te
+        /// ju sprema u bazu podataka.
+        /// </summary>
+        /// <param name="novaVrstaArtikla"></param>
+        public static void DodajVrstuArtikla(VrstaArtikla novaVrstaArtikla) {
+            using (var db= new TechStoreEntities())
+            {
+                db.VrstaArtikla.Add(novaVrstaArtikla);
+                db.SaveChanges();
+            }
+        }
     }
 }

@@ -72,9 +72,16 @@ namespace TechStore
             Show();
         }
 
+
+        /// <summary>
+        /// Metoda koja se poziva prilikom klika na gumbić Artikl.
+        /// Metoda otvara novu formu naziva uiArtikl.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionDodajArtikl_Click(object sender, EventArgs e)
         {
-            uiArtikl formaArtikli = new uiArtikl();
+            UiArtikl formaArtikli = new UiArtikl();
             formaArtikli.Show();
         }
 
@@ -126,6 +133,12 @@ namespace TechStore
             formaKonfiguracija.ShowDialog();
         }
 
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na gumbić Nabava artikala.
+        /// Metoda otvara formu uiStanje.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionNabavaArtikala_Click(object sender, EventArgs e)
         {
             uiStanje formaStanje = new uiStanje();
@@ -153,5 +166,16 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na gumbić Vrste artikala.
+        /// Metoda otvara novu formu naziva uiVrstaArtikl.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionVrsteArtikala_Click(object sender, EventArgs e)
+        {
+            UiVrstaArtikl formaVrstaArtikl = new UiVrstaArtikl();
+            formaVrstaArtikl.Show();
+        }
     }
 }

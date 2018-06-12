@@ -36,6 +36,7 @@
             this.uiActionIzradaKonfiguracije = new System.Windows.Forms.Button();
             this.uiOutputIspis = new System.Windows.Forms.Label();
             this.uiActionNabavaArtikala = new System.Windows.Forms.Button();
+            this.uiActionVrsteArtikala = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uiActionDodajArtikl
@@ -112,7 +113,7 @@
             this.uiOutputIspis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiOutputIspis.Location = new System.Drawing.Point(9, 265);
             this.uiOutputIspis.Name = "uiOutputIspis";
-            this.uiOutputIspis.Size = new System.Drawing.Size(136, 16);
+            this.uiOutputIspis.Size = new System.Drawing.Size(140, 16);
             this.uiOutputIspis.TabIndex = 6;
             this.uiOutputIspis.Text = "Prijavljeni ste kao:";
             // 
@@ -127,6 +128,17 @@
             this.uiActionNabavaArtikala.UseVisualStyleBackColor = true;
             this.uiActionNabavaArtikala.Click += new System.EventHandler(this.UiActionNabavaArtikala_Click);
             // 
+            // uiActionVrsteArtikala
+            // 
+            this.uiActionVrsteArtikala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionVrsteArtikala.Location = new System.Drawing.Point(230, 84);
+            this.uiActionVrsteArtikala.Name = "uiActionVrsteArtikala";
+            this.uiActionVrsteArtikala.Size = new System.Drawing.Size(103, 53);
+            this.uiActionVrsteArtikala.TabIndex = 8;
+            this.uiActionVrsteArtikala.Text = "Vrste artikala";
+            this.uiActionVrsteArtikala.UseVisualStyleBackColor = true;
+            this.uiActionVrsteArtikala.Click += new System.EventHandler(this.UiActionVrsteArtikala_Click);
+            // 
             // uiIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +147,7 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(458, 290);
+            this.Controls.Add(this.uiActionVrsteArtikala);
             this.Controls.Add(this.uiActionNabavaArtikala);
             this.Controls.Add(this.uiOutputIspis);
             this.Controls.Add(this.uiActionIzradaKonfiguracije);
@@ -162,5 +175,6 @@
         private System.Windows.Forms.Button uiActionIzradaKonfiguracije;
         private System.Windows.Forms.Label uiOutputIspis;
         private System.Windows.Forms.Button uiActionNabavaArtikala;
+        private System.Windows.Forms.Button uiActionVrsteArtikala;
     }
 }

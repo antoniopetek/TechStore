@@ -75,6 +75,20 @@ namespace TechStore
         }
 
         /// <summary>
+        /// Statièka metoda klase Artikl èije je argument 
+        /// novi artikl koji
+        /// se sprema u bazu podataka.
+        /// </summary>
+        /// <param name="noviArtikl"></param>
+        public static void DodajArtikl(Artikl noviArtikl) {
+            using (var db=new TechStoreEntities())
+            {
+                db.Artikl.Add(noviArtikl);
+                db.SaveChanges();
+            }
+        }
+
+        /// <summary>
         /// Metoda koja nadjaèava ToString metodu.
         /// </summary>
         /// <returns>Naziv artikla.</returns>

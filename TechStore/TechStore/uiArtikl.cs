@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
-    public partial class uiArtikl : Form
+    public partial class UiArtikl : Form
     {
         /// <summary>
         /// Konstruktor forme uiArtikl
         /// </summary>
-        public uiArtikl()
+        public UiArtikl()
         {
             InitializeComponent();
         }
@@ -63,6 +63,11 @@ namespace TechStore
                 frmHelp.Show();
 
             }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
