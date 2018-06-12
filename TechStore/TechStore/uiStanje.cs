@@ -46,7 +46,10 @@ namespace TechStore
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
                 richTextBox.Clear();
                 richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
-                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Izbornik. Na formi Izbornik možete vidjeti";
+                richTextBox.Text += "Trenutno ste stisnuli F1 na formi Stanje. Na formi Stanje možete vidjeti popis poslovnica te svih artikala i količinu artikala u odabranoj poslovnici.";
+                richTextBox.Text += " Korisnik može vidjeti artikle druge poslovnice mijenjanjem poslovnice u prikazu poslovnica. Ako želi naručiti proizvod može pritisnuti na gumbić Naruči ";
+                richTextBox.Text += " ili Naruči postojeći. Ako je pritisnut gumbić naruči korisnik može odabrati sve poslovnice i sve artikla a ako je pritisnut gumbić naruči postojeći može ";
+                richTextBox.Text += " naručiti samo odabrani artikl za odabranu poslovnicu. Pritiskom na gumbić Natrag korisnik se vraća na glavni izbornik aplikacije.";
                 frmHelp.Show();
 
             }

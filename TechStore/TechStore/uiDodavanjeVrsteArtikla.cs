@@ -95,7 +95,30 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiDodavanjeVrsteArtikla_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            this.KeyDown += UiDodavanjeVrsteArtikla_KeyDown;
+        }
 
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na tipku F11
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiDodavanjeVrsteArtikla_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                uiHelp frmHelp = new uiHelp();
+                RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
+                richTextBox.Clear();
+                richTextBox.Text = "TechStore Help Center\nViše informacija možete pronaći na sljedećem linku:\nhttps://github.com/foivz/r18038/wiki/3.-Korisni%C4%8Dka-dokumentacija\n\n";
+                richTextBox.Text += "Trenutno ste stisnuli F1 na formi uiDodavanjeVrsteArtikla. Na formi možete vidjeti dva gumbića: Spremi i odustani te polje naziv";
+                richTextBox.Text += " Ukoliko je korisnik na prijašnjoj formi pritisnuo gumbić Ažuriraj, na ovoj formi je naziv popunjen s nazivom vrste artikla koju želi ažurirati. Ukoliko ";
+                richTextBox.Text += " je korisnik pritisnuo Dodaj onda je polje prazno i korisnik unosi sam naziv. Pritiskom na Spremi dodaje / ažurira vrstu artikla ako su podaci ispravno uneseni.";
+                richTextBox.Text += " Pritiskom na gumbić Odustani korisnik odustaje od ažuriranja / dodavanja vrste oglasa te se ova forma gasi.";
+                frmHelp.Show();
+
+            }
         }
     }
 }
