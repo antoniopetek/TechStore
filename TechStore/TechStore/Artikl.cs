@@ -89,6 +89,42 @@ namespace TechStore
         }
 
         /// <summary>
+        /// Statièka metoda koja prima kao argument artikl koji
+        /// se želi obrisati. Metoda briše proslijeðeni artikl
+        /// iz baze podataka.
+        /// </summary>
+        /// <param name="artiklZaBrisanje"></param>
+        public static void ObrisiArtikl(Artikl artiklZaBrisanje) {
+            using (var db= new TechStoreEntities())
+            {
+                db.Artikl.Attach(artiklZaBrisanje);
+                db.Artikl.Remove(artiklZaBrisanje);
+                db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Statièka metoda koja prima kao argument artikl koji 
+        /// se želi ažurirati te sve atribute u tablici.
+        /// Metoda proslijeðeni artikl
+        /// ažurira i sprema u bazu podataka.
+        /// </summary>
+        /// <param name="artiklZaAzuriranje"></param>
+        public static void AzurirajArtikl(Artikl artiklZaAzuriranje,string naziv, string kratkiOpis, string specifikacija, int cijena, int vrstaId)
+        {
+            using (var db= new TechStoreEntities())
+            {
+                db.Artikl.Attach(artiklZaAzuriranje);
+                artiklZaAzuriranje.Naziv = naziv;
+                artiklZaAzuriranje.Kratki_opis = kratkiOpis;
+                artiklZaAzuriranje.Specifikacija = specifikacija;
+                artiklZaAzuriranje.Cijena = cijena;
+                artiklZaAzuriranje.Vrsta_ID = vrstaId;
+                db.SaveChanges();
+            }
+        }
+
+        /// <summary>
         /// Metoda koja nadjaèava ToString metodu.
         /// </summary>
         /// <returns>Naziv artikla.</returns>
