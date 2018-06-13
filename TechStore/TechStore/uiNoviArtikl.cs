@@ -12,7 +12,7 @@ namespace TechStore
 {
     public partial class uiNoviArtikl : Form
     {
-        
+
         private Artikl ArtiklZaIzmjenu;
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace TechStore
             uiInputKratkiOpis.Text = ArtiklZaIzmjenu.Kratki_opis;
             uiInputSpecifikacije.Text = ArtiklZaIzmjenu.Specifikacija;
             uiInputCijena.Text = ArtiklZaIzmjenu.Cijena.ToString();
-            
+
         }
         /// <summary>
         /// Konstruktor forme uiNoviArtikl
@@ -82,9 +82,9 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionDodajArtikl_Click(object sender, EventArgs e)
         {
-            if (ArtiklZaIzmjenu==null)
+            if (ArtiklZaIzmjenu == null)
             {
-                if (uiInputNaziv.Text!="" && uiInputKratkiOpis.Text!="" && uiInputSpecifikacije.Text!="" && int.TryParse(uiInputCijena.Text,out int cijena) && uiInputVrstaArtikla.SelectedValue.ToString()!="")
+                if (uiInputNaziv.Text != "" && uiInputKratkiOpis.Text != "" && uiInputSpecifikacije.Text != "" && int.TryParse(uiInputCijena.Text, out int cijena) && uiInputVrstaArtikla.SelectedValue.ToString() != "")
                 {
                     Artikl noviArtikl = new Artikl
                     {
@@ -94,9 +94,17 @@ namespace TechStore
                         Cijena = cijena,
                         Vrsta_ID = int.Parse(uiInputVrstaArtikla.SelectedValue.ToString())
                     };
+                    if (noviArtikl.Vrsta_ID == 1)
+                    {
+                        var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl");
+                    }
+                    if (noviArtikl.Vrsta_ID == 2)
+                    {
+                        var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl WHERE Vrsta_ID !=2");
+                    }
                     //Artikl.DodajArtikl(noviArtikl);
                     MessageBox.Show("Artikl je uspješno dodan.", "Artikl dodan!", MessageBoxButtons.OK);
-                    
+
                     this.Close();
                 }
                 else
@@ -127,6 +135,317 @@ namespace TechStore
         private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Za svaki artikl dodaje kompatibilnost s novim artiklom ako je 
+        /// novi artikl kategorije Ostalo.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void OstaloKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
+            foreach (var artikl in listaArtikala)
+            {
+                //DodajKompatibilnostPomoc(artikl, noviArtikl, true);
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost za svaki proizvod ako je novi objekt
+        /// matična ploča.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void MaticnaPlocaKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
+            double visinaNoviArtikl = 0;
+            double sirinaNoviArtikl = 0;
+            double duljinaNoviArtikl = 0;
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var specifikacija in listaSpecifikacijaNovogArtikla)
+            {
+                if (specifikacija.Contains("Visina:"))
+                {
+                    visinaNoviArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
+                }
+                if (specifikacija.Contains("Sirina:"))
+                {
+                    sirinaNoviArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
+                }
+                if (specifikacija.Contains("Duljina:"))
+                {
+                    duljinaNoviArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
+                }
+            }
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID == 1)
+                {
+                    //DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+                else if (trenutniArtikl.Vrsta_ID == 11)
+                {
+                    bool nadeno = false;
+                    double visinaTrenutniArtikl = 0;
+                    double sirinaTrenutniArtikl = 0;
+                    double duljinaTrenutniArtikl = 0;
+                    List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
+                    foreach (var specifikacija in listaSpecifikacijaTrenutnogArtikla)
+                    {
+                        if (specifikacija.Contains("Visina:"))
+                        {
+                            visinaTrenutniArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
+                            nadeno = true;
+                        }
+                        if (specifikacija.Contains("Sirina:"))
+                        {
+                            sirinaTrenutniArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
+                            nadeno = true;
+                        }
+                        if (specifikacija.Contains("Duljina:"))
+                        {
+                            duljinaTrenutniArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
+                            nadeno = true;
+                        }
+                    }
+                    if (nadeno && sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                    }
+                    else
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, false);
+                    }
+
+                }
+                else
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je
+        /// novi proizvod grafička kartica.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void GrafickaKarticaKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 8)
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je 
+        /// novi proizvod procesor.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void ProcesorKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID==2)
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je 
+        /// novi proizvod RAM.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void RAMKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID==2)
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je 
+        /// novi proizvod SSD.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void SSDKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID==2)
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je 
+        /// novi proizvod HDD.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void HDDKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID==2)
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je 
+        /// novi proizvod napajanje.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void NapajanjeKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID==4 || trenutniArtikl.Vrsta_ID==2 || trenutniArtikl.Vrsta_ID==3)
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else if (trenutniArtikl.Vrsta_ID==11)
+                {
+
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je 
+        /// novi proizvod hladnjak.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void HladnjakKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID==4 || trenutniArtikl.Vrsta_ID==2)
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je 
+        /// novi proizvod zvučna kartica.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void ZvucnaKarticaKompatibilnost(List<Artikl> listaArtikala,Artikl noviArtikl)
+        {
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                if (trenutniArtikl.Vrsta_ID==2)
+                {
+                    ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja služi za pozivanje metode DodajKompatibilnost u klasi Kompatibilnost.
+        /// </summary>
+        /// <param name="trenutniArtikl"></param>
+        /// <param name="noviArtikl"></param>
+        /// <param name="kompatibilni"></param>
+        public void DodajKompatibilnostPomoc(Artikl trenutniArtikl, Artikl noviArtikl, bool kompatibilni)
+        {
+            Kompatibilnost kompatibilnost = new Kompatibilnost
+            {
+                Komponenta1 = noviArtikl.ID,
+                Komponenta2 = trenutniArtikl.ID,
+                Kompatibilni = true
+            };
+            Kompatibilnost.DodajKompatibilnost(kompatibilnost);
+        }
+
+        /// <summary>
+        /// Metoda koja provjerava postoji li kompatibilnost između artikala.
+        /// </summary>
+        /// <param name="trenutniArtikl"></param>
+        /// <param name="noviArtikl"></param>
+        /// <param name="listaSpecifikacijaNovogArtikla"></param>
+        public void ProvjeraPoSvimSpecifikacijama(Artikl trenutniArtikl, Artikl noviArtikl, List<string> listaSpecifikacijaNovogArtikla)
+        {
+            List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
+            if (listaSpecifikacijaNovogArtikla.Intersect(listaSpecifikacijaTrenutnogArtikla).Any())
+            {
+                DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+            }
+            else
+            {
+                DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, false);
+            }
         }
     }
 }
