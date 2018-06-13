@@ -20,5 +20,14 @@ namespace TechStore
     
         public virtual Artikl Artikl { get; set; }
         public virtual Artikl Artikl1 { get; set; }
+
+        public static void DodajKompatibilnost(Kompatibilnost novaKompatibilnost) {
+            using (var db = new TechStoreEntities())
+            {
+                db.Kompatibilnost.Attach(novaKompatibilnost);
+                db.Kompatibilnost.Add(novaKompatibilnost);
+                db.SaveChanges();
+            }
+        }
     }
 }
