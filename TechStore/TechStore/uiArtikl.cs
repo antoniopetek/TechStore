@@ -42,6 +42,12 @@ namespace TechStore
         /// <param name="e"></param>
         private void FrmArtikl_Load(object sender, EventArgs e)
         {
+            if (Zaposlenik.PrijavljeniZaposlenik.Tip_ID !=1)
+            {
+                uiActionAzurirajArtikl.Enabled = false;
+                uiActionDodajArtikl.Enabled = false;
+                uiActionObrisiArtikl.Enabled = false;
+            }
             this.KeyPreview = true;
             this.KeyDown += FrmArtikl_KeyDown;
             OsvjeziPrikaze();

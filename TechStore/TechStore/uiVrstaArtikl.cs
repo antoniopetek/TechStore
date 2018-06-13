@@ -28,6 +28,12 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiVrstaArtikl_Load(object sender, EventArgs e)
         {
+            if (Zaposlenik.PrijavljeniZaposlenik.Tip_ID!=1)
+            {
+                uiActionAzuriraj.Enabled = false;
+                uiActionDodaj.Enabled = false;
+                uiActionObrisi.Enabled = false;
+            }
             vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
             this.KeyPreview = true;
             this.KeyDown += UiVrstaArtikl_KeyDown;

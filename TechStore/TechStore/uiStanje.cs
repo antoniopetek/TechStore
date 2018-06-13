@@ -88,6 +88,7 @@ namespace TechStore
         private void UiOutputStanjeArtikala_SelectionChanged(object sender, EventArgs e)
         {
             OsvjeziArtikle();
+            
         }
 
         /// <summary>
@@ -100,7 +101,6 @@ namespace TechStore
             Poslovnica trenutnaPoslovnica = (Poslovnica)poslovnicaBindingSource.Current;
             int trenutniArtiklId = int.Parse(uiOutputStanjeArtikala.CurrentRow.Cells[0].Value.ToString());
             string trenutniArtiklNaziv = uiOutputStanjeArtikala.CurrentRow.Cells[1].Value.ToString();
-            MessageBox.Show(trenutniArtiklId.ToString());
             UiNabava uiNabava = new UiNabava(trenutniArtiklId, trenutnaPoslovnica, trenutniArtiklNaziv);
             uiNabava.ShowDialog();
             OsvjeziArtikle();

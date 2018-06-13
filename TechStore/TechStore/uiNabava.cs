@@ -99,6 +99,7 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
+            DateTime trenutnoVrijeme = DateTime.Now;
             if (poslovnicaNabava == null || artiklNabavaId == 0 || artiklNabavaNaziv == "")
             {
                 if (IspravnostKolicine())
@@ -114,11 +115,17 @@ namespace TechStore
                             Kolicina = int.Parse(uiInputKolicina.Text)
                         };
                         Dostupnost.DodajDostupnost(novaDostupnost);
+                        Dokument noviDokument = DodajDokument(trenutnoVrijeme);
+                        DodajStavkuDokumenta(noviDokument);
+                        DodajStanjeDokumenta(noviDokument, trenutnoVrijeme);
                         MessageBox.Show("Uspješno je naručen proizvod za poslovnicu !", "Naručen artikl!", MessageBoxButtons.OK);
                     }
                     else
                     {
                         Dostupnost.IzmjenaDostupnosti(postojeca, int.Parse(uiInputKolicina.Text));
+                        Dokument noviDokument = DodajDokument(trenutnoVrijeme);
+                        DodajStavkuDokumenta(noviDokument);
+                        DodajStanjeDokumenta(noviDokument, trenutnoVrijeme);
                         MessageBox.Show("Uspješno je naručen proizvod za poslovnicu !", "Naručen artikl!", MessageBoxButtons.OK);
                     }
                     
@@ -136,6 +143,9 @@ namespace TechStore
                 {
                     Dostupnost dostupnost = Dostupnost.DohvatiDostupnost(poslovnicaNabava, artiklNabavaId);
                     Dostupnost.IzmjenaDostupnosti(dostupnost, int.Parse(uiInputKolicina.Text));
+                    Dokument noviDokument = DodajDokument(trenutnoVrijeme);
+                    DodajStavkuDokumenta(noviDokument);
+                    DodajStanjeDokumenta(noviDokument, trenutnoVrijeme);
                     MessageBox.Show("Uspješno je naručen proizvod " + artiklNabavaNaziv + " za poslovnicu " + poslovnicaNabava.Naziv + "!", "Naručen artikl!", MessageBoxButtons.OK);
                     this.Close();
                 }
@@ -162,6 +172,60 @@ namespace TechStore
                 return false;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Metoda koja prima trenutno vrijeme te poziva metodu za dodavanje
+        /// novog dokumenta. Metoda vraća dodani dokument.
+        /// </summary>
+        /// <param name="trenutnoVrijeme">Kreirani DateTime objekt</param>
+        /// <returns></returns>
+        private Dokument DodajDokument(DateTime trenutnoVrijeme)
+        {
+            Dokument noviDokument = new Dokument
+            {
+                VrstaDokumenta_ID = 1,
+                Vrijeme_izdavanja = BitConverter.GetBytes(trenutnoVrijeme.Ticks),
+
+            };
+            Dokument.DodajDokument(noviDokument);
+            return noviDokument;
+        }
+
+        /// <summary>
+        /// Metoda koja kao argument prima dokument. Metoda poziva metodu koja 
+        /// kreira novu stavku dokumenta.
+        /// </summary>
+        /// <param name="noviDokument">Kreirani objek novog dokumenta</param>
+        private void DodajStavkuDokumenta(Dokument noviDokument)
+        {
+            StavkaDokumenta novaStavkaDokumenta = new StavkaDokumenta
+            {
+                Artikl_ID = artiklNabavaId,
+                Dokument_ID = noviDokument.ID,
+                Kolicina = int.Parse(uiInputKolicina.Text)
+            };
+            StavkaDokumenta.DodajStavkuDokumenta(novaStavkaDokumenta);
+        }
+
+        /// <summary>
+        /// Metoda koja kao argument prima novi dokument te trenutno vrijeme.
+        /// Metoda poziva metodu za kreiranje stanja dokumenta.
+        /// </summary>
+        /// <param name="noviDokument">Objekt novog dokumenta</param>
+        /// <param name="trenutnoVrijeme">Kreirani DateTime objekt</param>
+        private void DodajStanjeDokumenta(Dokument noviDokument, DateTime trenutnoVrijeme)
+        {
+            StanjeDokumenta novoStanjeDokumenta = new StanjeDokumenta
+            {
+                Dokument_ID = noviDokument.ID,
+                VrstaStanja_ID = 4,
+                Zaposlenik_ID = Zaposlenik.PrijavljeniZaposlenik.ID,
+                Napomena = "Naručen je proizvod " + artiklNabavaNaziv + " za poslovnicu " + poslovnicaNabava.Naziv + ".",
+                Datum_promjene = BitConverter.GetBytes(trenutnoVrijeme.Ticks),
+
+            };
+            StanjeDokumenta.DodajStanjeDokumenta(novoStanjeDokumenta);
         }
     }
 }
