@@ -58,7 +58,7 @@ namespace TechStore
         {
             DGVPrinter printer = new DGVPrinter();
             printer.Title = "KONFIGURACIJA";
-            printer.SubTitle = "Datum izrade: " + DateTime.Now + "\n\n";
+            printer.SubTitle = "Vrijeme i datum izrade: " + DateTime.Now.ToLongTimeString() + ", " + DateTime.Now.ToLongDateString() + "\n\n";
             printer.PorportionalColumns = true;
             string zaposlenik = Zaposlenik.PrijavljeniZaposlenik.Ime + " " + Zaposlenik.PrijavljeniZaposlenik.Prezime;
             Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(Zaposlenik.PrijavljeniZaposlenik.Poslovnica_ID);
@@ -370,8 +370,8 @@ namespace TechStore
             PripremiComboBoxeve(0);
             OsvjeziDataGrid();
             uiInputGraficka.Enabled = true;
-            OsvjeziGraficke();
             RacunajIznos(0);
+            OsvjeziGraficke(); 
         }
 
         /// <summary>
@@ -387,8 +387,8 @@ namespace TechStore
             PripremiComboBoxeve(1);
             OsvjeziDataGrid();
             uiInputProcesor.Enabled = true;
-            OsvjeziProcesore();
             RacunajIznos(1);
+            OsvjeziProcesore();            
         }
 
         /// <summary>
@@ -404,8 +404,8 @@ namespace TechStore
             PripremiComboBoxeve(2);
             OsvjeziDataGrid();
             uiInputRam.Enabled = true;
-            OsvjeziRAM();
             RacunajIznos(2);
+            OsvjeziRAM();
         }
 
         /// <summary>
@@ -421,8 +421,8 @@ namespace TechStore
             PripremiComboBoxeve(3);
             OsvjeziDataGrid();
             uiInputSsd.Enabled = true;
-            OsvjeziSSD();
             RacunajIznos(3);
+            OsvjeziSSD();      
         }
 
         /// <summary>
@@ -438,8 +438,8 @@ namespace TechStore
             PripremiComboBoxeve(4);
             OsvjeziDataGrid();
             uiInputHdd.Enabled = true;
-            OsvjeziHDD();
             RacunajIznos(4);
+            OsvjeziHDD();
         }
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace TechStore
             PripremiComboBoxeve(5);
             OsvjeziDataGrid();
             uiInputNapajanje.Enabled = true;
-            OsvjeziNapajanje();
             RacunajIznos(5);
+            OsvjeziNapajanje();
         }
 
         /// <summary>
@@ -472,8 +472,8 @@ namespace TechStore
             PripremiComboBoxeve(6);
             OsvjeziDataGrid();
             uiInputHladnjak.Enabled = true;
-            OsvjeziHladnjak();
             RacunajIznos(6);
+            OsvjeziHladnjak();
         }
 
         /// <summary>
@@ -489,8 +489,8 @@ namespace TechStore
             PripremiComboBoxeve(7);
             OsvjeziDataGrid();
             uiInputZvucna.Enabled = true;
-            OsvjeziZvucneKartice();
             RacunajIznos(7);
+            OsvjeziZvucneKartice();
         }
 
         /// <summary>
@@ -506,8 +506,8 @@ namespace TechStore
             PripremiComboBoxeve(8);
             OsvjeziDataGrid();
             uiInputKuciste.Enabled = true;
-            OsvjeziKucista();
             RacunajIznos(8);
+            OsvjeziKucista();
         }
 
         /// <summary>
