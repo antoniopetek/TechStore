@@ -30,5 +30,20 @@ namespace TechStore
         public virtual ICollection<StanjeDokumenta> StanjeDokumenta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StavkaDokumenta> StavkaDokumenta { get; set; }
+
+        /// <summary>
+        /// Statièka metoda koja kao argument prima novi dokument.
+        /// Metoda sprema novi dokument u bazu podataka.
+        /// </summary>
+        /// <param name="noviDokument"></param>
+        public static void DodajDokument(Dokument noviDokument)
+        {
+            using (var db = new TechStoreEntities())
+            {
+                db.Dokument.Attach(noviDokument);
+                db.Dokument.Add(noviDokument);
+                db.SaveChanges();
+            }
+        }
     }
 }

@@ -20,5 +20,15 @@ namespace TechStore
     
         public virtual Artikl Artikl { get; set; }
         public virtual Dokument Dokument { get; set; }
+
+        public static void DodajStavkuDokumenta(StavkaDokumenta stavkaDokumenta)
+        {
+            using (var db= new TechStoreEntities())
+            {
+                db.StavkaDokumenta.Attach(stavkaDokumenta);
+                db.StavkaDokumenta.Add(stavkaDokumenta);
+                db.SaveChanges();
+            }
+        }
     }
 }

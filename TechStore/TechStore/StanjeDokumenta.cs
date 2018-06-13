@@ -23,5 +23,14 @@ namespace TechStore
         public virtual Dokument Dokument { get; set; }
         public virtual VrsteStanja VrsteStanja { get; set; }
         public virtual Zaposlenik Zaposlenik { get; set; }
+
+        public static void DodajStanjeDokumenta(StanjeDokumenta stanjeDokumenta) {
+            using (var db= new TechStoreEntities())
+            {
+                db.StanjeDokumenta.Attach(stanjeDokumenta);
+                db.StanjeDokumenta.Add(stanjeDokumenta);
+                db.SaveChanges();
+            }
+        }
     }
 }
