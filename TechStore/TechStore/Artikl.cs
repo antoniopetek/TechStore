@@ -125,6 +125,22 @@ namespace TechStore
         }
 
         /// <summary>
+        /// Statièka metoda koja kao argument prima ID artikla.
+        /// Metoda vraæa artikl s primljenim ID - om iz
+        /// baze podataka.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Artikl DohvatiArtikl(int id) {
+            Artikl artikl = null;
+            using (var db= new TechStoreEntities())
+            {
+                 artikl = (from a in db.Artikl where a.ID == id select a).First();
+            }
+            return artikl;
+        }
+
+        /// <summary>
         /// Metoda koja nadjaèava ToString metodu.
         /// </summary>
         /// <returns>Naziv artikla.</returns>

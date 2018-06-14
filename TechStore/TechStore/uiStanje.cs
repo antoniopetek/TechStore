@@ -72,7 +72,8 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionNaruci_Click(object sender, EventArgs e)
         {
-            UiNabava formaNabava = new UiNabava();
+            Poslovnica trenutnaPoslovnica = (Poslovnica)poslovnicaBindingSource.Current;
+            UiNabava formaNabava = new UiNabava(trenutnaPoslovnica);
             formaNabava.ShowDialog();
             OsvjeziArtikle();
         }
