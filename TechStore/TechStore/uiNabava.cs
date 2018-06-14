@@ -15,13 +15,15 @@ namespace TechStore
         private int artiklNabavaId;
         private Poslovnica poslovnicaNabava;
         private string artiklNabavaNaziv;
+        private Dokument noviDokument = null;
 
         /// <summary>
         /// Konstruktor forme uiNabava
         /// </summary>
-        public UiNabava()
+        public UiNabava(Poslovnica poslovnica)
         {
             InitializeComponent();
+            poslovnicaNabava = poslovnica;
         }
         /// <summary>
         /// Konstruktor forme uiNabava. Kao argumente prima artikl
@@ -43,12 +45,17 @@ namespace TechStore
         /// <param name="e"></param>
         private void FrmNabava_Load(object sender, EventArgs e)
         {
+           
+            noviDokument = new Dokument();
             this.KeyPreview = true;
             this.KeyDown += FrmNabava_KeyDown;
             if (poslovnicaNabava == null || artiklNabavaId == 0 || artiklNabavaNaziv == "")
             {
                 artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
                 poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+                uiInputPoslovnica.Text = poslovnicaNabava.Naziv;
+                uiInputPoslovnica.Enabled = false;
+                
             }
             else
             {
@@ -56,6 +63,8 @@ namespace TechStore
                 uiInputPoslovnica.Text = poslovnicaNabava.Naziv;
                 uiInputArtikl.Enabled = false;
                 uiInputPoslovnica.Enabled = false;
+                
+                uiActionDodaj.Enabled = false;
             }
         }
 
@@ -226,6 +235,55 @@ namespace TechStore
 
             };
             StanjeDokumenta.DodajStanjeDokumenta(novoStanjeDokumenta);
+        }
+        BindingList<Artikl> artikls = new BindingList<Artikl>();
+        /// <summary>
+        /// Dodaje odabrani artikl u datagridview iz kojeg se zatim
+        /// popunjavaja narudžba
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionDodaj_Click(object sender, EventArgs e)
+        {
+            if (double.TryParse(uiInputKolicina.Text,out double kolicina))
+            {
+                bool nadeno = false;
+                int indexReda = 0;
+                Artikl odabraniArtikl = (Artikl)uiInputArtikl.SelectedItem;
+                foreach (var artikl in artikls)
+                {
+                    if (artikl.ID == odabraniArtikl.ID)
+                    {
+                        nadeno = true;
+                        break;
+                    }
+                    indexReda++;
+                }
+                if (!nadeno)
+                {
+                    uiOutputPopisArtikala.Refresh();
+                    artikls.Add(odabraniArtikl);
+                    uiOutputPopisArtikala.Refresh();
+                    uiOutputPopisArtikala.DataSource = artikls;
+                    uiOutputPopisArtikala.Refresh();
+                    uiOutputPopisArtikala.Rows[artikls.Count - 1].Cells["Kolicina"].Value = int.Parse(uiInputKolicina.Text);
+                    uiOutputPopisArtikala.Refresh();
+                }
+                else
+                {
+                    uiOutputPopisArtikala.Refresh();
+                    int trenutnaKolicina = int.Parse(uiOutputPopisArtikala.Rows[indexReda].Cells["Kolicina"].Value.ToString());
+                    uiOutputPopisArtikala.Refresh();
+                    uiOutputPopisArtikala.Rows[indexReda].Cells["Kolicina"].Value = kolicina+trenutnaKolicina;
+                    uiOutputPopisArtikala.Refresh();
+                    uiOutputPopisArtikala.DataSource = artikls;
+                    uiOutputPopisArtikala.Refresh();
+                }
+                foreach (DataGridViewRow item in uiOutputPopisArtikala.Rows)
+                {
+                    MessageBox.Show(item.Cells["Kolicina"].Value.ToString());
+                }
+            }
         }
     }
 }
