@@ -32,6 +32,8 @@
             this.uiActionDodajArtikl = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.uiOutputPodaciArtikli = new System.Windows.Forms.DataGridView();
+            this.uiActionObrisiArtikl = new System.Windows.Forms.Button();
+            this.uiActionAzurirajArtikl = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kratkiopisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +47,6 @@
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uiActionObrisiArtikl = new System.Windows.Forms.Button();
-            this.uiActionAzurirajArtikl = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciArtikli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -54,12 +54,12 @@
             // 
             // uiActionDodajArtikl
             // 
-            this.uiActionDodajArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajArtikl.Location = new System.Drawing.Point(498, 217);
+            this.uiActionDodajArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.uiActionDodajArtikl.Location = new System.Drawing.Point(943, 347);
             this.uiActionDodajArtikl.Name = "uiActionDodajArtikl";
-            this.uiActionDodajArtikl.Size = new System.Drawing.Size(157, 34);
+            this.uiActionDodajArtikl.Size = new System.Drawing.Size(75, 26);
             this.uiActionDodajArtikl.TabIndex = 5;
-            this.uiActionDodajArtikl.Text = "DODAJ ARTIKL";
+            this.uiActionDodajArtikl.Text = "Dodaj";
             this.uiActionDodajArtikl.UseVisualStyleBackColor = true;
             this.uiActionDodajArtikl.Click += new System.EventHandler(this.UiActionDodajArtikl_Click);
             // 
@@ -77,6 +77,7 @@
             // uiOutputPodaciArtikli
             // 
             this.uiOutputPodaciArtikli.AutoGenerateColumns = false;
+            this.uiOutputPodaciArtikli.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiOutputPodaciArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uiOutputPodaciArtikli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -92,39 +93,66 @@
             this.stavkaDokumentaDataGridViewTextBoxColumn});
             this.uiOutputPodaciArtikli.DataSource = this.artiklBindingSource;
             this.uiOutputPodaciArtikli.Location = new System.Drawing.Point(12, 28);
+            this.uiOutputPodaciArtikli.MultiSelect = false;
             this.uiOutputPodaciArtikli.Name = "uiOutputPodaciArtikli";
-            this.uiOutputPodaciArtikli.Size = new System.Drawing.Size(643, 183);
+            this.uiOutputPodaciArtikli.ReadOnly = true;
+            this.uiOutputPodaciArtikli.Size = new System.Drawing.Size(1006, 313);
             this.uiOutputPodaciArtikli.TabIndex = 3;
+            // 
+            // uiActionObrisiArtikl
+            // 
+            this.uiActionObrisiArtikl.Location = new System.Drawing.Point(862, 349);
+            this.uiActionObrisiArtikl.Name = "uiActionObrisiArtikl";
+            this.uiActionObrisiArtikl.Size = new System.Drawing.Size(75, 23);
+            this.uiActionObrisiArtikl.TabIndex = 6;
+            this.uiActionObrisiArtikl.Text = "Obriši";
+            this.uiActionObrisiArtikl.UseVisualStyleBackColor = true;
+            this.uiActionObrisiArtikl.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // uiActionAzurirajArtikl
+            // 
+            this.uiActionAzurirajArtikl.Location = new System.Drawing.Point(781, 349);
+            this.uiActionAzurirajArtikl.Name = "uiActionAzurirajArtikl";
+            this.uiActionAzurirajArtikl.Size = new System.Drawing.Size(75, 23);
+            this.uiActionAzurirajArtikl.TabIndex = 7;
+            this.uiActionAzurirajArtikl.Text = "Ažuriraj";
+            this.uiActionAzurirajArtikl.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajArtikl.Click += new System.EventHandler(this.UiActionAzurirajArtikl_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazivDataGridViewTextBoxColumn
             // 
             this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
             this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kratkiopisDataGridViewTextBoxColumn
             // 
             this.kratkiopisDataGridViewTextBoxColumn.DataPropertyName = "Kratki_opis";
             this.kratkiopisDataGridViewTextBoxColumn.HeaderText = "Kratki_opis";
             this.kratkiopisDataGridViewTextBoxColumn.Name = "kratkiopisDataGridViewTextBoxColumn";
+            this.kratkiopisDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // specifikacijaDataGridViewTextBoxColumn
             // 
             this.specifikacijaDataGridViewTextBoxColumn.DataPropertyName = "Specifikacija";
             this.specifikacijaDataGridViewTextBoxColumn.HeaderText = "Specifikacija";
             this.specifikacijaDataGridViewTextBoxColumn.Name = "specifikacijaDataGridViewTextBoxColumn";
+            this.specifikacijaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cijenaDataGridViewTextBoxColumn
             // 
             this.cijenaDataGridViewTextBoxColumn.DataPropertyName = "Cijena";
             this.cijenaDataGridViewTextBoxColumn.HeaderText = "Cijena";
             this.cijenaDataGridViewTextBoxColumn.Name = "cijenaDataGridViewTextBoxColumn";
+            this.cijenaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // vrstaIDDataGridViewTextBoxColumn
             // 
@@ -135,6 +163,7 @@
             this.vrstaIDDataGridViewTextBoxColumn.DisplayStyleForCurrentCellOnly = true;
             this.vrstaIDDataGridViewTextBoxColumn.HeaderText = "Vrsta artikla";
             this.vrstaIDDataGridViewTextBoxColumn.Name = "vrstaIDDataGridViewTextBoxColumn";
+            this.vrstaIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.vrstaIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.vrstaIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.vrstaIDDataGridViewTextBoxColumn.ValueMember = "ID";
@@ -148,6 +177,7 @@
             this.vrstaArtiklaDataGridViewTextBoxColumn.DataPropertyName = "VrstaArtikla";
             this.vrstaArtiklaDataGridViewTextBoxColumn.HeaderText = "VrstaArtikla";
             this.vrstaArtiklaDataGridViewTextBoxColumn.Name = "vrstaArtiklaDataGridViewTextBoxColumn";
+            this.vrstaArtiklaDataGridViewTextBoxColumn.ReadOnly = true;
             this.vrstaArtiklaDataGridViewTextBoxColumn.Visible = false;
             // 
             // dostupnostDataGridViewTextBoxColumn
@@ -155,6 +185,7 @@
             this.dostupnostDataGridViewTextBoxColumn.DataPropertyName = "Dostupnost";
             this.dostupnostDataGridViewTextBoxColumn.HeaderText = "Dostupnost";
             this.dostupnostDataGridViewTextBoxColumn.Name = "dostupnostDataGridViewTextBoxColumn";
+            this.dostupnostDataGridViewTextBoxColumn.ReadOnly = true;
             this.dostupnostDataGridViewTextBoxColumn.Visible = false;
             // 
             // kompatibilnostDataGridViewTextBoxColumn
@@ -162,6 +193,7 @@
             this.kompatibilnostDataGridViewTextBoxColumn.DataPropertyName = "Kompatibilnost";
             this.kompatibilnostDataGridViewTextBoxColumn.HeaderText = "Kompatibilnost";
             this.kompatibilnostDataGridViewTextBoxColumn.Name = "kompatibilnostDataGridViewTextBoxColumn";
+            this.kompatibilnostDataGridViewTextBoxColumn.ReadOnly = true;
             this.kompatibilnostDataGridViewTextBoxColumn.Visible = false;
             // 
             // kompatibilnost1DataGridViewTextBoxColumn
@@ -169,6 +201,7 @@
             this.kompatibilnost1DataGridViewTextBoxColumn.DataPropertyName = "Kompatibilnost1";
             this.kompatibilnost1DataGridViewTextBoxColumn.HeaderText = "Kompatibilnost1";
             this.kompatibilnost1DataGridViewTextBoxColumn.Name = "kompatibilnost1DataGridViewTextBoxColumn";
+            this.kompatibilnost1DataGridViewTextBoxColumn.ReadOnly = true;
             this.kompatibilnost1DataGridViewTextBoxColumn.Visible = false;
             // 
             // stavkaDokumentaDataGridViewTextBoxColumn
@@ -176,31 +209,12 @@
             this.stavkaDokumentaDataGridViewTextBoxColumn.DataPropertyName = "StavkaDokumenta";
             this.stavkaDokumentaDataGridViewTextBoxColumn.HeaderText = "StavkaDokumenta";
             this.stavkaDokumentaDataGridViewTextBoxColumn.Name = "stavkaDokumentaDataGridViewTextBoxColumn";
+            this.stavkaDokumentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.stavkaDokumentaDataGridViewTextBoxColumn.Visible = false;
             // 
             // artiklBindingSource
             // 
             this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
-            // 
-            // uiActionObrisiArtikl
-            // 
-            this.uiActionObrisiArtikl.Location = new System.Drawing.Point(417, 224);
-            this.uiActionObrisiArtikl.Name = "uiActionObrisiArtikl";
-            this.uiActionObrisiArtikl.Size = new System.Drawing.Size(75, 23);
-            this.uiActionObrisiArtikl.TabIndex = 6;
-            this.uiActionObrisiArtikl.Text = "Obriši";
-            this.uiActionObrisiArtikl.UseVisualStyleBackColor = true;
-            this.uiActionObrisiArtikl.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // uiActionAzurirajArtikl
-            // 
-            this.uiActionAzurirajArtikl.Location = new System.Drawing.Point(336, 224);
-            this.uiActionAzurirajArtikl.Name = "uiActionAzurirajArtikl";
-            this.uiActionAzurirajArtikl.Size = new System.Drawing.Size(75, 23);
-            this.uiActionAzurirajArtikl.TabIndex = 7;
-            this.uiActionAzurirajArtikl.Text = "Ažuriraj";
-            this.uiActionAzurirajArtikl.UseVisualStyleBackColor = true;
-            this.uiActionAzurirajArtikl.Click += new System.EventHandler(this.UiActionAzurirajArtikl_Click);
             // 
             // UiArtikl
             // 
@@ -208,14 +222,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(688, 277);
+            this.ClientSize = new System.Drawing.Size(1030, 389);
             this.Controls.Add(this.uiActionAzurirajArtikl);
             this.Controls.Add(this.uiActionObrisiArtikl);
             this.Controls.Add(this.uiActionDodajArtikl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiOutputPodaciArtikli);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "UiArtikl";
-            this.Text = "FrmArtikl";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Artikli";
             this.Load += new System.EventHandler(this.FrmArtikl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciArtikli)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).EndInit();

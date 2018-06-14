@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace TechStore
 {
@@ -165,20 +166,23 @@ namespace TechStore
             double sirinaNoviArtikl = 0;
             double duljinaNoviArtikl = 0;
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
-            foreach (var specifikacija in listaSpecifikacijaNovogArtikla)
+            visinaNoviArtikl = DohvatiVisinu(listaSpecifikacijaNovogArtikla);
+            sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
+            duljinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
+            if (visinaNoviArtikl==-1)
             {
-                if (specifikacija.Contains("Visina:"))
-                {
-                    visinaNoviArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
-                }
-                if (specifikacija.Contains("Sirina:"))
-                {
-                    sirinaNoviArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
-                }
-                if (specifikacija.Contains("Duljina:"))
-                {
-                    duljinaNoviArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
-                }
+                MessageBox.Show("Novi artikl nema unesenu visinu!");
+                return;
+            }
+            if (sirinaNoviArtikl==-1)
+            {
+                MessageBox.Show("Novi artikl nema unesenu širinu!");
+                return;
+            }
+            if (sirinaNoviArtikl == -1)
+            {
+                MessageBox.Show("Novi artikl nema unesenu širinu!");
+                return;
             }
             foreach (var trenutniArtikl in listaArtikala)
             {
@@ -188,30 +192,14 @@ namespace TechStore
                 }
                 else if (trenutniArtikl.Vrsta_ID == 11)
                 {
-                    bool nadeno = false;
                     double visinaTrenutniArtikl = 0;
                     double sirinaTrenutniArtikl = 0;
                     double duljinaTrenutniArtikl = 0;
                     List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
-                    foreach (var specifikacija in listaSpecifikacijaTrenutnogArtikla)
-                    {
-                        if (specifikacija.Contains("Visina:"))
-                        {
-                            visinaTrenutniArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
-                            nadeno = true;
-                        }
-                        if (specifikacija.Contains("Sirina:"))
-                        {
-                            sirinaTrenutniArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
-                            nadeno = true;
-                        }
-                        if (specifikacija.Contains("Duljina:"))
-                        {
-                            duljinaTrenutniArtikl = double.Parse(specifikacija.Substring(specifikacija.Length - 3));
-                            nadeno = true;
-                        }
-                    }
-                    if (nadeno && sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
+                    sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
+                    duljinaNoviArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
+                    if ( sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
                     {
                         DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
                     }
@@ -446,6 +434,81 @@ namespace TechStore
             {
                 DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, false);
             }
+        }
+
+
+        /// <summary>
+        /// Pomoćna metoda koja vraća visinu komponenta ako postoji.
+        /// Ako visina komponente ne postoji vraća -1.
+        /// </summary>
+        /// <param name="listaStringova">Lista stringova </param>
+        /// <returns></returns>
+        public double DohvatiVisinu(List<string> listaStringova) {
+            double visina = 0;
+            bool nadeno = false;
+            foreach (var specifikacija in listaStringova)
+            {
+                if (specifikacija.Contains("Visina"))
+                {
+                    visina= double.Parse(specifikacija.Substring(specifikacija.LastIndexOf(':') + 1), CultureInfo.InvariantCulture);
+                    nadeno = true;
+                }
+
+            }
+            if (nadeno)
+            {
+                return visina;
+            }
+            return -1;
+        }
+
+   
+        /// <summary>
+        /// Pomoćna metoda koja vraća širinu komponente ako postoji.
+        /// Ako širina komponente ne postoji vraća -1.
+        /// </summary>
+        /// <param name="listaStringova"></param>
+        /// <returns></returns>
+        public double DohvatiSirinu(List<string> listaStringova) {
+            double sirina = 0;
+            bool nadeno = false;
+            foreach (var spec in listaStringova)
+            {
+                if (spec.Contains("Sirina:"))
+                {
+                    sirina= double.Parse(spec.Substring(spec.LastIndexOf(':') + 1), CultureInfo.InvariantCulture);
+                    nadeno = true;
+                }
+            }
+            if (nadeno)
+            {
+                return sirina;
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// Pomoćna metoda koja vraća duljinu komponenta ako postoji.
+        /// Ako duljina komponente ne postoji vraća -1.
+        /// </summary>
+        /// <param name="listaStringova"></param>
+        /// <returns></returns>
+        public double DohvatiDuljinu(List<string> listaStringova) {
+            double duljina = 0;
+            bool nadeno = false;
+            foreach (var spec in listaStringova)
+            {
+                if (spec.Contains("Duljina:"))
+                {
+                    duljina = double.Parse(spec.Substring(spec.LastIndexOf(':') + 1), CultureInfo.InvariantCulture);
+                    nadeno = true;
+                }
+            }
+            if (nadeno)
+            {
+                return duljina;
+            }
+            return -1;
         }
     }
 }
