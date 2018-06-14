@@ -38,14 +38,14 @@
             // 
             // uiInputKorisnickoIme
             // 
-            this.uiInputKorisnickoIme.Location = new System.Drawing.Point(113, 91);
+            this.uiInputKorisnickoIme.Location = new System.Drawing.Point(113, 77);
             this.uiInputKorisnickoIme.Name = "uiInputKorisnickoIme";
             this.uiInputKorisnickoIme.Size = new System.Drawing.Size(180, 20);
             this.uiInputKorisnickoIme.TabIndex = 0;
             // 
             // uiInputLozinka
             // 
-            this.uiInputLozinka.Location = new System.Drawing.Point(113, 143);
+            this.uiInputLozinka.Location = new System.Drawing.Point(113, 129);
             this.uiInputLozinka.Name = "uiInputLozinka";
             this.uiInputLozinka.PasswordChar = '*';
             this.uiInputLozinka.Size = new System.Drawing.Size(180, 20);
@@ -56,7 +56,7 @@
             this.uiLabelKorisnickoIme.AutoSize = true;
             this.uiLabelKorisnickoIme.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiLabelKorisnickoIme.Location = new System.Drawing.Point(110, 75);
+            this.uiLabelKorisnickoIme.Location = new System.Drawing.Point(110, 61);
             this.uiLabelKorisnickoIme.Name = "uiLabelKorisnickoIme";
             this.uiLabelKorisnickoIme.Size = new System.Drawing.Size(93, 13);
             this.uiLabelKorisnickoIme.TabIndex = 2;
@@ -67,7 +67,7 @@
             this.uiLabelLozinka.AutoSize = true;
             this.uiLabelLozinka.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiLabelLozinka.Location = new System.Drawing.Point(110, 127);
+            this.uiLabelLozinka.Location = new System.Drawing.Point(110, 113);
             this.uiLabelLozinka.Name = "uiLabelLozinka";
             this.uiLabelLozinka.Size = new System.Drawing.Size(55, 13);
             this.uiLabelLozinka.TabIndex = 3;
@@ -76,7 +76,7 @@
             // uiActionPrijaviSe
             // 
             this.uiActionPrijaviSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionPrijaviSe.Location = new System.Drawing.Point(113, 194);
+            this.uiActionPrijaviSe.Location = new System.Drawing.Point(113, 180);
             this.uiActionPrijaviSe.Name = "uiActionPrijaviSe";
             this.uiActionPrijaviSe.Size = new System.Drawing.Size(90, 44);
             this.uiActionPrijaviSe.TabIndex = 4;
@@ -87,7 +87,7 @@
             // uiActionOdustani
             // 
             this.uiActionOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionOdustani.Location = new System.Drawing.Point(209, 194);
+            this.uiActionOdustani.Location = new System.Drawing.Point(209, 180);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(84, 44);
             this.uiActionOdustani.TabIndex = 5;
@@ -102,7 +102,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(390, 323);
+            this.ClientSize = new System.Drawing.Size(390, 286);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionPrijaviSe);
             this.Controls.Add(this.uiLabelLozinka);

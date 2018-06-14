@@ -30,7 +30,6 @@ namespace TechStore
         {
             uiDodavanjeZaposlenika formaDodavanjeZaposlenika = new uiDodavanjeZaposlenika();
             formaDodavanjeZaposlenika.ShowDialog();
-
             OsvjeziZaposlenike();
         }
 

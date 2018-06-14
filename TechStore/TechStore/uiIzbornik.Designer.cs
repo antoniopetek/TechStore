@@ -42,7 +42,7 @@
             // uiActionDodajArtikl
             // 
             this.uiActionDodajArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajArtikl.Location = new System.Drawing.Point(12, 84);
+            this.uiActionDodajArtikl.Location = new System.Drawing.Point(172, 110);
             this.uiActionDodajArtikl.Name = "uiActionDodajArtikl";
             this.uiActionDodajArtikl.Size = new System.Drawing.Size(103, 53);
             this.uiActionDodajArtikl.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             this.uiActionZaposlenici.BackColor = System.Drawing.Color.Transparent;
             this.uiActionZaposlenici.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionZaposlenici.Location = new System.Drawing.Point(12, 25);
+            this.uiActionZaposlenici.Location = new System.Drawing.Point(39, 25);
             this.uiActionZaposlenici.Name = "uiActionZaposlenici";
             this.uiActionZaposlenici.Size = new System.Drawing.Size(103, 53);
             this.uiActionZaposlenici.TabIndex = 1;
@@ -65,7 +65,7 @@
             // uiActionPoslovnice
             // 
             this.uiActionPoslovnice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionPoslovnice.Location = new System.Drawing.Point(121, 25);
+            this.uiActionPoslovnice.Location = new System.Drawing.Point(172, 25);
             this.uiActionPoslovnice.Name = "uiActionPoslovnice";
             this.uiActionPoslovnice.Size = new System.Drawing.Size(103, 53);
             this.uiActionPoslovnice.TabIndex = 2;
@@ -76,7 +76,7 @@
             // uiActionOdjava
             // 
             this.uiActionOdjava.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionOdjava.Location = new System.Drawing.Point(343, 225);
+            this.uiActionOdjava.Location = new System.Drawing.Point(309, 198);
             this.uiActionOdjava.Name = "uiActionOdjava";
             this.uiActionOdjava.Size = new System.Drawing.Size(103, 53);
             this.uiActionOdjava.TabIndex = 3;
@@ -87,7 +87,7 @@
             // uiActionPregledArtikala
             // 
             this.uiActionPregledArtikala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionPregledArtikala.Location = new System.Drawing.Point(230, 25);
+            this.uiActionPregledArtikala.Location = new System.Drawing.Point(309, 25);
             this.uiActionPregledArtikala.Name = "uiActionPregledArtikala";
             this.uiActionPregledArtikala.Size = new System.Drawing.Size(103, 53);
             this.uiActionPregledArtikala.TabIndex = 4;
@@ -98,7 +98,7 @@
             // uiActionIzradaKonfiguracije
             // 
             this.uiActionIzradaKonfiguracije.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionIzradaKonfiguracije.Location = new System.Drawing.Point(343, 25);
+            this.uiActionIzradaKonfiguracije.Location = new System.Drawing.Point(39, 110);
             this.uiActionIzradaKonfiguracije.Name = "uiActionIzradaKonfiguracije";
             this.uiActionIzradaKonfiguracije.Size = new System.Drawing.Size(103, 53);
             this.uiActionIzradaKonfiguracije.TabIndex = 5;
@@ -111,16 +111,16 @@
             this.uiOutputIspis.AutoSize = true;
             this.uiOutputIspis.BackColor = System.Drawing.Color.Transparent;
             this.uiOutputIspis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiOutputIspis.Location = new System.Drawing.Point(9, 265);
+            this.uiOutputIspis.Location = new System.Drawing.Point(6, 299);
             this.uiOutputIspis.Name = "uiOutputIspis";
-            this.uiOutputIspis.Size = new System.Drawing.Size(140, 16);
+            this.uiOutputIspis.Size = new System.Drawing.Size(136, 16);
             this.uiOutputIspis.TabIndex = 6;
             this.uiOutputIspis.Text = "Prijavljeni ste kao:";
             // 
             // uiActionNabavaArtikala
             // 
             this.uiActionNabavaArtikala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionNabavaArtikala.Location = new System.Drawing.Point(121, 84);
+            this.uiActionNabavaArtikala.Location = new System.Drawing.Point(309, 110);
             this.uiActionNabavaArtikala.Name = "uiActionNabavaArtikala";
             this.uiActionNabavaArtikala.Size = new System.Drawing.Size(103, 53);
             this.uiActionNabavaArtikala.TabIndex = 7;
@@ -131,7 +131,7 @@
             // uiActionVrsteArtikala
             // 
             this.uiActionVrsteArtikala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionVrsteArtikala.Location = new System.Drawing.Point(230, 84);
+            this.uiActionVrsteArtikala.Location = new System.Drawing.Point(39, 198);
             this.uiActionVrsteArtikala.Name = "uiActionVrsteArtikala";
             this.uiActionVrsteArtikala.Size = new System.Drawing.Size(103, 53);
             this.uiActionVrsteArtikala.TabIndex = 8;
@@ -146,7 +146,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(458, 290);
+            this.ClientSize = new System.Drawing.Size(458, 324);
             this.Controls.Add(this.uiActionVrsteArtikala);
             this.Controls.Add(this.uiActionNabavaArtikala);
             this.Controls.Add(this.uiOutputIspis);

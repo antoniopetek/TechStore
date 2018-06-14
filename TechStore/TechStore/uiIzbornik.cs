@@ -40,9 +40,7 @@ namespace TechStore
         private void UiActionZaposlenici_Click(object sender, EventArgs e)
         {
             uiZaposlenici formaZaposlenici = new uiZaposlenici();
-            Hide();
             formaZaposlenici.ShowDialog();
-            Show();
         }
 
         /// <summary>
@@ -53,9 +51,7 @@ namespace TechStore
         private void UiActionPoslovnice_Click(object sender, EventArgs e)
         {
             uiPoslovnice formaPoslovnica = new uiPoslovnice();
-            Hide();
             formaPoslovnica.ShowDialog();
-            Show();
         }
 
         /// <summary>
@@ -67,9 +63,7 @@ namespace TechStore
         private void UiActionPregledArtikala_Click(object sender, EventArgs e)
         {
             uiKolicinaArtikala formaKolicina = new uiKolicinaArtikala();
-            Hide();
             formaKolicina.ShowDialog();   
-            Show();
         }
 
 

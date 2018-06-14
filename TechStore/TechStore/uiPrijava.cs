@@ -44,9 +44,7 @@ namespace TechStore
                 if (Zaposlenik.PrijavljeniZaposlenik != null)
                 {
                     uiIzbornik izbornik = new uiIzbornik();
-                    Hide();
                     izbornik.ShowDialog();
-                    Show();
                     uiInputKorisnickoIme.Clear();
                     uiInputLozinka.Clear();
                 }
