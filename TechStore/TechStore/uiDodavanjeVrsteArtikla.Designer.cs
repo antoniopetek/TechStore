@@ -83,7 +83,10 @@
             this.Controls.Add(this.uiActionSpremi);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiInputNaziv);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "uiDodavanjeVrsteArtikla";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj vrstu artikla";
             this.Load += new System.EventHandler(this.UiDodavanjeVrsteArtikla_Load);
             this.ResumeLayout(false);

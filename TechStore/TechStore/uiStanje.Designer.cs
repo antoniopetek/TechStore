@@ -34,6 +34,7 @@
             this.uiActionNatrag = new System.Windows.Forms.Button();
             this.uiActionNaruci = new System.Windows.Forms.Button();
             this.uiOutputStanjeArtikala = new System.Windows.Forms.DataGridView();
+            this.uiActionNaruciPostojeci = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drzavaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +45,7 @@
             this.zaposlenikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uiActionNaruciPostojeci = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPoslovnice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputStanjeArtikala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
@@ -63,6 +64,7 @@
             // uiOutputPoslovnice
             // 
             this.uiOutputPoslovnice.AutoGenerateColumns = false;
+            this.uiOutputPoslovnice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiOutputPoslovnice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uiOutputPoslovnice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -78,13 +80,13 @@
             this.uiOutputPoslovnice.MultiSelect = false;
             this.uiOutputPoslovnice.Name = "uiOutputPoslovnice";
             this.uiOutputPoslovnice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uiOutputPoslovnice.Size = new System.Drawing.Size(642, 194);
+            this.uiOutputPoslovnice.Size = new System.Drawing.Size(875, 194);
             this.uiOutputPoslovnice.TabIndex = 1;
             this.uiOutputPoslovnice.SelectionChanged += new System.EventHandler(this.UiOutputStanjeArtikala_SelectionChanged);
             // 
             // uiActionNatrag
             // 
-            this.uiActionNatrag.Location = new System.Drawing.Point(728, 401);
+            this.uiActionNatrag.Location = new System.Drawing.Point(632, 438);
             this.uiActionNatrag.Name = "uiActionNatrag";
             this.uiActionNatrag.Size = new System.Drawing.Size(75, 23);
             this.uiActionNatrag.TabIndex = 2;
@@ -94,7 +96,7 @@
             // 
             // uiActionNaruci
             // 
-            this.uiActionNaruci.Location = new System.Drawing.Point(700, 106);
+            this.uiActionNaruci.Location = new System.Drawing.Point(812, 438);
             this.uiActionNaruci.Name = "uiActionNaruci";
             this.uiActionNaruci.Size = new System.Drawing.Size(75, 23);
             this.uiActionNaruci.TabIndex = 3;
@@ -107,12 +109,22 @@
             this.uiOutputStanjeArtikala.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiOutputStanjeArtikala.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.uiOutputStanjeArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uiOutputStanjeArtikala.Location = new System.Drawing.Point(12, 230);
+            this.uiOutputStanjeArtikala.Location = new System.Drawing.Point(12, 238);
             this.uiOutputStanjeArtikala.MultiSelect = false;
             this.uiOutputStanjeArtikala.Name = "uiOutputStanjeArtikala";
             this.uiOutputStanjeArtikala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.uiOutputStanjeArtikala.Size = new System.Drawing.Size(642, 194);
+            this.uiOutputStanjeArtikala.Size = new System.Drawing.Size(875, 194);
             this.uiOutputStanjeArtikala.TabIndex = 4;
+            // 
+            // uiActionNaruciPostojeci
+            // 
+            this.uiActionNaruciPostojeci.Location = new System.Drawing.Point(713, 438);
+            this.uiActionNaruciPostojeci.Name = "uiActionNaruciPostojeci";
+            this.uiActionNaruciPostojeci.Size = new System.Drawing.Size(93, 23);
+            this.uiActionNaruciPostojeci.TabIndex = 5;
+            this.uiActionNaruciPostojeci.Text = "Naruči postojeći";
+            this.uiActionNaruciPostojeci.UseVisualStyleBackColor = true;
+            this.uiActionNaruciPostojeci.Click += new System.EventHandler(this.UiActionNaruciPostojeci_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -172,15 +184,14 @@
             // 
             this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
             // 
-            // uiActionNaruciPostojeci
+            // label2
             // 
-            this.uiActionNaruciPostojeci.Location = new System.Drawing.Point(700, 135);
-            this.uiActionNaruciPostojeci.Name = "uiActionNaruciPostojeci";
-            this.uiActionNaruciPostojeci.Size = new System.Drawing.Size(75, 42);
-            this.uiActionNaruciPostojeci.TabIndex = 5;
-            this.uiActionNaruciPostojeci.Text = "Naruči postojeći";
-            this.uiActionNaruciPostojeci.UseVisualStyleBackColor = true;
-            this.uiActionNaruciPostojeci.Click += new System.EventHandler(this.UiActionNaruciPostojeci_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 222);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Artikli:";
             // 
             // UiStanje
             // 
@@ -188,14 +199,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(815, 436);
+            this.ClientSize = new System.Drawing.Size(899, 473);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.uiActionNaruciPostojeci);
             this.Controls.Add(this.uiOutputStanjeArtikala);
             this.Controls.Add(this.uiActionNaruci);
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiOutputPoslovnice);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "UiStanje";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmStanje";
             this.Load += new System.EventHandler(this.FrmStanje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPoslovnice)).EndInit();
@@ -225,5 +240,6 @@
         private System.Windows.Forms.DataGridView uiOutputStanjeArtikala;
         private System.Windows.Forms.BindingSource artiklBindingSource;
         private System.Windows.Forms.Button uiActionNaruciPostojeci;
+        private System.Windows.Forms.Label label2;
     }
 }

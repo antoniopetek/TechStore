@@ -56,7 +56,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(719, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(719, 205);
             this.dataGridView1.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
@@ -84,7 +84,7 @@
             // 
             // uiActionDodaj
             // 
-            this.uiActionDodaj.Location = new System.Drawing.Point(656, 168);
+            this.uiActionDodaj.Location = new System.Drawing.Point(656, 223);
             this.uiActionDodaj.Name = "uiActionDodaj";
             this.uiActionDodaj.Size = new System.Drawing.Size(75, 23);
             this.uiActionDodaj.TabIndex = 1;
@@ -94,7 +94,7 @@
             // 
             // uiActionObrisi
             // 
-            this.uiActionObrisi.Location = new System.Drawing.Point(575, 168);
+            this.uiActionObrisi.Location = new System.Drawing.Point(575, 223);
             this.uiActionObrisi.Name = "uiActionObrisi";
             this.uiActionObrisi.Size = new System.Drawing.Size(75, 23);
             this.uiActionObrisi.TabIndex = 2;
@@ -104,7 +104,7 @@
             // 
             // uiActionAzuriraj
             // 
-            this.uiActionAzuriraj.Location = new System.Drawing.Point(494, 168);
+            this.uiActionAzuriraj.Location = new System.Drawing.Point(494, 223);
             this.uiActionAzuriraj.Name = "uiActionAzuriraj";
             this.uiActionAzuriraj.Size = new System.Drawing.Size(75, 23);
             this.uiActionAzuriraj.TabIndex = 3;
@@ -123,7 +123,10 @@
             this.Controls.Add(this.uiActionObrisi);
             this.Controls.Add(this.uiActionDodaj);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "UiVrstaArtikl";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "uiVrstaArtikl";
             this.Load += new System.EventHandler(this.UiVrstaArtikl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
