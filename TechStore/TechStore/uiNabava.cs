@@ -15,6 +15,7 @@ namespace TechStore
         private DateTime trenutnoVrijeme = DateTime.Now;
         private Poslovnica poslovnicaNabava;
         private Dokument noviDokument;
+        private BindingList<Artikl> artikls = new BindingList<Artikl>();
 
         /// <summary>
         /// Konstruktor forme uiNabava
@@ -33,7 +34,7 @@ namespace TechStore
         /// <param name="e"></param>
         private void FrmNabava_Load(object sender, EventArgs e)
         {
-            noviDokument = DodajDokument(trenutnoVrijeme);
+            
             this.KeyPreview = true;
             this.KeyDown += FrmNabava_KeyDown;
             if (poslovnicaNabava != null )
@@ -87,9 +88,9 @@ namespace TechStore
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
 
-            if (poslovnicaNabava != null )
+            if (poslovnicaNabava != null && artikls.Count>0 )
             {
-
+                noviDokument = DodajDokument(trenutnoVrijeme);
                 Poslovnica poslovnicaIzComboBoxa = (Poslovnica)poslovnicaBindingSource.Current;
                 int trenutniIndex = 0;
                 foreach (var artikl in artikls)
@@ -117,6 +118,10 @@ namespace TechStore
                 DodajStanjeDokumenta(noviDokument, trenutnoVrijeme);
                 MessageBox.Show("Uspješno je naručen proizvod za poslovnicu !", "Naručen artikl!", MessageBoxButtons.OK);
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Nisu odabrani artikli!", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -192,7 +197,7 @@ namespace TechStore
             StanjeDokumenta.DodajStanjeDokumenta(novoStanjeDokumenta);
         }
 
-        BindingList<Artikl> artikls = new BindingList<Artikl>();
+        
 
         /// <summary>
         /// Dodaje odabrani artikl u datagridview iz kojeg se zatim
