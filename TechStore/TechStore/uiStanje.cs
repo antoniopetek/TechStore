@@ -93,21 +93,6 @@ namespace TechStore
         }
 
         /// <summary>
-        /// Metoda koja se poziva kod pritiska na gumbić Naruči postojeći.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UiActionNaruciPostojeci_Click(object sender, EventArgs e)
-        {
-            Poslovnica trenutnaPoslovnica = (Poslovnica)poslovnicaBindingSource.Current;
-            int trenutniArtiklId = int.Parse(uiOutputStanjeArtikala.CurrentRow.Cells[0].Value.ToString());
-            string trenutniArtiklNaziv = uiOutputStanjeArtikala.CurrentRow.Cells[1].Value.ToString();
-            UiNabava uiNabava = new UiNabava(trenutniArtiklId, trenutnaPoslovnica, trenutniArtiklNaziv);
-            uiNabava.ShowDialog();
-            OsvjeziArtikle();
-        }
-
-        /// <summary>
         /// Metoda koja služi za prikaz artikala pojedine poslovnice
         /// </summary>
         private void OsvjeziArtikle()
@@ -127,6 +112,14 @@ namespace TechStore
                                     dostupnost.Kolicina
                                 }).ToList();
                 uiOutputStanjeArtikala.DataSource = rezultat;
+                uiOutputStanjeArtikala.Refresh();
+                foreach (DataGridViewRow red in uiOutputStanjeArtikala.Rows)
+                {
+                    if (Convert.ToInt32(red.Cells[3].Value)<5)
+                    {
+                        red.DefaultCellStyle.BackColor = Color.Red;
+                    }
+                }
                 uiOutputStanjeArtikala.Refresh();
             }
         }

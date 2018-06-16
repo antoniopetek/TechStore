@@ -12,10 +12,8 @@ namespace TechStore
 {
     public partial class UiNabava : Form
     {
-        DateTime trenutnoVrijeme = DateTime.Now;
-        private int artiklNabavaId;
+        private DateTime trenutnoVrijeme = DateTime.Now;
         private Poslovnica poslovnicaNabava;
-        private string artiklNabavaNaziv;
         private Dokument noviDokument;
 
         /// <summary>
@@ -26,18 +24,7 @@ namespace TechStore
             InitializeComponent();
             poslovnicaNabava = poslovnica;
         }
-        /// <summary>
-        /// Konstruktor forme uiNabava. Kao argumente prima artikl
-        /// koji želimo naručiti te poslovnicu za koju želimo naručiti
-        /// artikl.
-        /// </summary>
-        public UiNabava(int artikl, Poslovnica poslovnica, string artiklNaziv)
-        {
-            InitializeComponent();
-            artiklNabavaId = artikl;
-            poslovnicaNabava = poslovnica;
-            artiklNabavaNaziv = artiklNaziv;
-        }
+        
 
         /// <summary>
         /// Metoda koja se poziva prilikom učitavanja forme uiNabava
@@ -49,22 +36,13 @@ namespace TechStore
             noviDokument = DodajDokument(trenutnoVrijeme);
             this.KeyPreview = true;
             this.KeyDown += FrmNabava_KeyDown;
-            if (poslovnicaNabava == null || artiklNabavaId == 0 || artiklNabavaNaziv == "")
+            if (poslovnicaNabava != null )
             {
                 artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
                 poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
                 uiInputPoslovnica.Text = poslovnicaNabava.Naziv;
                 uiInputPoslovnica.Enabled = false;
 
-            }
-            else
-            {
-                uiInputArtikl.Text = artiklNabavaNaziv.ToString();
-                uiInputPoslovnica.Text = poslovnicaNabava.Naziv;
-                uiInputArtikl.Enabled = false;
-                uiInputPoslovnica.Enabled = false;
-
-                uiActionDodaj.Enabled = false;
             }
         }
 
@@ -109,7 +87,7 @@ namespace TechStore
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
 
-            if (poslovnicaNabava == null || artiklNabavaId == 0 || artiklNabavaNaziv == "")
+            if (poslovnicaNabava != null )
             {
 
                 Poslovnica poslovnicaIzComboBoxa = (Poslovnica)poslovnicaBindingSource.Current;
@@ -139,23 +117,6 @@ namespace TechStore
                 DodajStanjeDokumenta(noviDokument, trenutnoVrijeme);
                 MessageBox.Show("Uspješno je naručen proizvod za poslovnicu !", "Naručen artikl!", MessageBoxButtons.OK);
                 this.Close();
-            }
-            else
-            {
-                if (IspravnostKolicine())
-                {
-                    Dostupnost dostupnost = Dostupnost.DohvatiDostupnost(poslovnicaNabava, artiklNabavaId);
-                    Artikl trenutniArtikl = (Artikl)artiklBindingSource.Current;
-                    Dostupnost.IzmjenaDostupnosti(dostupnost, int.Parse(uiInputKolicina.Text));
-                    DodajStavkuDokumenta(noviDokument, trenutniArtikl.ID, int.Parse(uiInputKolicina.Text));
-                    DodajStanjeDokumenta(noviDokument, trenutnoVrijeme);
-                    MessageBox.Show("Uspješno je naručen proizvod za poslovnicu " + poslovnicaNabava.Naziv + "!", "Naručen artikl!", MessageBoxButtons.OK);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Unesite pozitivan broj za količinu", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
 
         }
@@ -224,7 +185,7 @@ namespace TechStore
                 Dokument_ID = noviDokument.ID,
                 VrstaStanja_ID = 4,
                 Zaposlenik_ID = Zaposlenik.PrijavljeniZaposlenik.ID,
-                Napomena = "Naručen je proizvod " + artiklNabavaNaziv + " za poslovnicu " + poslovnicaNabava.Naziv + ".",
+                Napomena = "Naručen je proizvod za poslovnicu " + poslovnicaNabava.Naziv + ".",
                 Datum_promjene = BitConverter.GetBytes(trenutnoVrijeme.Ticks),
 
             };
