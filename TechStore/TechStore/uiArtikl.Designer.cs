@@ -32,8 +32,6 @@
             this.uiActionDodajArtikl = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.uiOutputPodaciArtikli = new System.Windows.Forms.DataGridView();
-            this.uiActionObrisiArtikl = new System.Windows.Forms.Button();
-            this.uiActionAzurirajArtikl = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kratkiopisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +45,8 @@
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionObrisiArtikl = new System.Windows.Forms.Button();
+            this.uiActionAzurirajArtikl = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciArtikli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -98,26 +98,6 @@
             this.uiOutputPodaciArtikli.ReadOnly = true;
             this.uiOutputPodaciArtikli.Size = new System.Drawing.Size(1006, 313);
             this.uiOutputPodaciArtikli.TabIndex = 3;
-            // 
-            // uiActionObrisiArtikl
-            // 
-            this.uiActionObrisiArtikl.Location = new System.Drawing.Point(862, 349);
-            this.uiActionObrisiArtikl.Name = "uiActionObrisiArtikl";
-            this.uiActionObrisiArtikl.Size = new System.Drawing.Size(75, 23);
-            this.uiActionObrisiArtikl.TabIndex = 6;
-            this.uiActionObrisiArtikl.Text = "Obriši";
-            this.uiActionObrisiArtikl.UseVisualStyleBackColor = true;
-            this.uiActionObrisiArtikl.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // uiActionAzurirajArtikl
-            // 
-            this.uiActionAzurirajArtikl.Location = new System.Drawing.Point(781, 349);
-            this.uiActionAzurirajArtikl.Name = "uiActionAzurirajArtikl";
-            this.uiActionAzurirajArtikl.Size = new System.Drawing.Size(75, 23);
-            this.uiActionAzurirajArtikl.TabIndex = 7;
-            this.uiActionAzurirajArtikl.Text = "Ažuriraj";
-            this.uiActionAzurirajArtikl.UseVisualStyleBackColor = true;
-            this.uiActionAzurirajArtikl.Click += new System.EventHandler(this.UiActionAzurirajArtikl_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -216,11 +196,30 @@
             // 
             this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
             // 
+            // uiActionObrisiArtikl
+            // 
+            this.uiActionObrisiArtikl.Location = new System.Drawing.Point(862, 349);
+            this.uiActionObrisiArtikl.Name = "uiActionObrisiArtikl";
+            this.uiActionObrisiArtikl.Size = new System.Drawing.Size(75, 23);
+            this.uiActionObrisiArtikl.TabIndex = 6;
+            this.uiActionObrisiArtikl.Text = "Obriši";
+            this.uiActionObrisiArtikl.UseVisualStyleBackColor = true;
+            this.uiActionObrisiArtikl.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // uiActionAzurirajArtikl
+            // 
+            this.uiActionAzurirajArtikl.Location = new System.Drawing.Point(781, 349);
+            this.uiActionAzurirajArtikl.Name = "uiActionAzurirajArtikl";
+            this.uiActionAzurirajArtikl.Size = new System.Drawing.Size(75, 23);
+            this.uiActionAzurirajArtikl.TabIndex = 7;
+            this.uiActionAzurirajArtikl.Text = "Ažuriraj";
+            this.uiActionAzurirajArtikl.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajArtikl.Click += new System.EventHandler(this.UiActionAzurirajArtikl_Click);
+            // 
             // UiArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1030, 389);
             this.Controls.Add(this.uiActionAzurirajArtikl);

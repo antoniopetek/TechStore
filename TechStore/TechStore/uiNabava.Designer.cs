@@ -62,9 +62,9 @@
             this.uiInputPoslovnica.DataSource = this.poslovnicaBindingSource;
             this.uiInputPoslovnica.DisplayMember = "Naziv";
             this.uiInputPoslovnica.FormattingEnabled = true;
-            this.uiInputPoslovnica.Location = new System.Drawing.Point(12, 25);
+            this.uiInputPoslovnica.Location = new System.Drawing.Point(102, 160);
             this.uiInputPoslovnica.Name = "uiInputPoslovnica";
-            this.uiInputPoslovnica.Size = new System.Drawing.Size(121, 21);
+            this.uiInputPoslovnica.Size = new System.Drawing.Size(250, 21);
             this.uiInputPoslovnica.TabIndex = 0;
             this.uiInputPoslovnica.ValueMember = "ID";
             // 
@@ -77,9 +77,9 @@
             this.uiInputArtikl.DataSource = this.artiklBindingSource;
             this.uiInputArtikl.DisplayMember = "Naziv";
             this.uiInputArtikl.FormattingEnabled = true;
-            this.uiInputArtikl.Location = new System.Drawing.Point(12, 52);
+            this.uiInputArtikl.Location = new System.Drawing.Point(102, 187);
             this.uiInputArtikl.Name = "uiInputArtikl";
-            this.uiInputArtikl.Size = new System.Drawing.Size(121, 21);
+            this.uiInputArtikl.Size = new System.Drawing.Size(250, 21);
             this.uiInputArtikl.TabIndex = 1;
             this.uiInputArtikl.ValueMember = "ID";
             // 
@@ -89,14 +89,14 @@
             // 
             // uiInputKolicina
             // 
-            this.uiInputKolicina.Location = new System.Drawing.Point(12, 79);
+            this.uiInputKolicina.Location = new System.Drawing.Point(102, 214);
             this.uiInputKolicina.Name = "uiInputKolicina";
-            this.uiInputKolicina.Size = new System.Drawing.Size(121, 20);
+            this.uiInputKolicina.Size = new System.Drawing.Size(250, 20);
             this.uiInputKolicina.TabIndex = 2;
             // 
             // uiActionSpremi
             // 
-            this.uiActionSpremi.Location = new System.Drawing.Point(488, 285);
+            this.uiActionSpremi.Location = new System.Drawing.Point(903, 372);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(75, 23);
             this.uiActionSpremi.TabIndex = 3;
@@ -106,7 +106,7 @@
             // 
             // uiActionOdustani
             // 
-            this.uiActionOdustani.Location = new System.Drawing.Point(569, 285);
+            this.uiActionOdustani.Location = new System.Drawing.Point(822, 372);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(75, 23);
             this.uiActionOdustani.TabIndex = 4;
@@ -116,7 +116,7 @@
             // 
             // uiActionDodaj
             // 
-            this.uiActionDodaj.Location = new System.Drawing.Point(155, 50);
+            this.uiActionDodaj.Location = new System.Drawing.Point(374, 184);
             this.uiActionDodaj.Name = "uiActionDodaj";
             this.uiActionDodaj.Size = new System.Drawing.Size(75, 23);
             this.uiActionDodaj.TabIndex = 6;
@@ -146,11 +146,11 @@
             this.stavkaDokumentaDataGridViewTextBoxColumn,
             this.Kolicina});
             this.uiOutputPopisArtikala.DataSource = this.artiklBindingSource1;
-            this.uiOutputPopisArtikala.Location = new System.Drawing.Point(236, 12);
+            this.uiOutputPopisArtikala.Location = new System.Drawing.Point(470, 12);
             this.uiOutputPopisArtikala.MultiSelect = false;
             this.uiOutputPopisArtikala.Name = "uiOutputPopisArtikala";
             this.uiOutputPopisArtikala.ReadOnly = true;
-            this.uiOutputPopisArtikala.Size = new System.Drawing.Size(486, 157);
+            this.uiOutputPopisArtikala.Size = new System.Drawing.Size(508, 354);
             this.uiOutputPopisArtikala.TabIndex = 8;
             // 
             // iDDataGridViewTextBoxColumn
@@ -252,7 +252,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 407);
             this.Controls.Add(this.uiOutputPopisArtikala);
