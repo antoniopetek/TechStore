@@ -81,7 +81,11 @@ namespace TechStore
         /// <param name="e"></param>
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            Artikl artiklZaBrisanje = (Artikl)artiklBindingSource.Current;
+            if (MessageBox.Show("Sigurno želite obrisati artikl " + artiklZaBrisanje.Naziv + " i sve stavke, kompatibilnosti i dostupnosti vezane uz artikl?", "Upozorenje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+              
+            }
         }
 
         /// <summary>

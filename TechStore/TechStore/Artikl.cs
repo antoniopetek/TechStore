@@ -98,6 +98,7 @@ namespace TechStore
             using (var db= new TechStoreEntities())
             {
                 db.Artikl.Attach(artiklZaBrisanje);
+                db.Kompatibilnost.RemoveRange(db.Kompatibilnost.Where(komp => komp.Komponenta1 == artiklZaBrisanje.ID));
                 db.Artikl.Remove(artiklZaBrisanje);
                 db.SaveChanges();
             }
