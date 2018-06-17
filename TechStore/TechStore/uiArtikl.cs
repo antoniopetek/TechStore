@@ -84,7 +84,8 @@ namespace TechStore
             Artikl artiklZaBrisanje = (Artikl)artiklBindingSource.Current;
             if (MessageBox.Show("Sigurno želite obrisati artikl " + artiklZaBrisanje.Naziv + " i sve stavke, kompatibilnosti i dostupnosti vezane uz artikl?", "Upozorenje", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-              
+                //Artikl.ObrisiArtikl(artiklZaBrisanje);
+                MessageBox.Show("Artikl je uspješno obrisan!", "Artikl obrisan", MessageBoxButtons.OK);
             }
         }
 
