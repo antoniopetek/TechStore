@@ -52,7 +52,6 @@
             this.uiInputZvucna = new System.Windows.Forms.ComboBox();
             this.uiInputKuciste = new System.Windows.Forms.ComboBox();
             this.uiOutputKonfiguracija = new System.Windows.Forms.DataGridView();
-            this.uiActionNatrag = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kratkiopisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +65,7 @@
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputKonfiguracija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -326,17 +326,6 @@
             this.uiOutputKonfiguracija.Size = new System.Drawing.Size(585, 247);
             this.uiOutputKonfiguracija.TabIndex = 33;
             // 
-            // uiActionNatrag
-            // 
-            this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionNatrag.Location = new System.Drawing.Point(1090, 331);
-            this.uiActionNatrag.Name = "uiActionNatrag";
-            this.uiActionNatrag.Size = new System.Drawing.Size(116, 26);
-            this.uiActionNatrag.TabIndex = 34;
-            this.uiActionNatrag.Text = "NATRAG";
-            this.uiActionNatrag.UseVisualStyleBackColor = true;
-            this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -431,11 +420,21 @@
             // 
             this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
             // 
+            // uiActionNatrag
+            // 
+            this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNatrag.Location = new System.Drawing.Point(1090, 331);
+            this.uiActionNatrag.Name = "uiActionNatrag";
+            this.uiActionNatrag.Size = new System.Drawing.Size(116, 26);
+            this.uiActionNatrag.TabIndex = 34;
+            this.uiActionNatrag.Text = "NATRAG";
+            this.uiActionNatrag.UseVisualStyleBackColor = true;
+            this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
+            // 
             // uiKonfiguracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1235, 369);
             this.Controls.Add(this.uiActionNatrag);

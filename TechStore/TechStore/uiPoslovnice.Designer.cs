@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.uiOutputPodaciOPoslovnicama = new System.Windows.Forms.DataGridView();
-            this.uiOutpotPodaci = new System.Windows.Forms.Label();
-            this.uiActionDodajPoslovnicu = new System.Windows.Forms.Button();
-            this.uiActionNatrag = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ulicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +39,9 @@
             this.dostupnostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zaposlenikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiOutpotPodaci = new System.Windows.Forms.Label();
+            this.uiActionDodajPoslovnicu = new System.Windows.Forms.Button();
+            this.uiActionNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciOPoslovnicama)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -67,39 +67,6 @@
             this.uiOutputPodaciOPoslovnicama.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiOutputPodaciOPoslovnicama.Size = new System.Drawing.Size(652, 236);
             this.uiOutputPodaciOPoslovnicama.TabIndex = 0;
-            // 
-            // uiOutpotPodaci
-            // 
-            this.uiOutpotPodaci.AutoSize = true;
-            this.uiOutpotPodaci.BackColor = System.Drawing.Color.Transparent;
-            this.uiOutpotPodaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiOutpotPodaci.Location = new System.Drawing.Point(22, 9);
-            this.uiOutpotPodaci.Name = "uiOutpotPodaci";
-            this.uiOutpotPodaci.Size = new System.Drawing.Size(159, 15);
-            this.uiOutpotPodaci.TabIndex = 1;
-            this.uiOutpotPodaci.Text = "Podaci o poslovnicama:";
-            // 
-            // uiActionDodajPoslovnicu
-            // 
-            this.uiActionDodajPoslovnicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionDodajPoslovnicu.Location = new System.Drawing.Point(263, 275);
-            this.uiActionDodajPoslovnicu.Name = "uiActionDodajPoslovnicu";
-            this.uiActionDodajPoslovnicu.Size = new System.Drawing.Size(157, 34);
-            this.uiActionDodajPoslovnicu.TabIndex = 2;
-            this.uiActionDodajPoslovnicu.Text = "DODAJ POSLOVNICU";
-            this.uiActionDodajPoslovnicu.UseVisualStyleBackColor = true;
-            this.uiActionDodajPoslovnicu.Click += new System.EventHandler(this.UiActionDodajPoslovnicu_Click);
-            // 
-            // uiActionNatrag
-            // 
-            this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionNatrag.Location = new System.Drawing.Point(594, 277);
-            this.uiActionNatrag.Name = "uiActionNatrag";
-            this.uiActionNatrag.Size = new System.Drawing.Size(83, 30);
-            this.uiActionNatrag.TabIndex = 3;
-            this.uiActionNatrag.Text = "NATRAG";
-            this.uiActionNatrag.UseVisualStyleBackColor = true;
-            this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -165,11 +132,43 @@
             // 
             this.poslovnicaBindingSource.DataSource = typeof(TechStore.Poslovnica);
             // 
+            // uiOutpotPodaci
+            // 
+            this.uiOutpotPodaci.AutoSize = true;
+            this.uiOutpotPodaci.BackColor = System.Drawing.Color.Transparent;
+            this.uiOutpotPodaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiOutpotPodaci.Location = new System.Drawing.Point(22, 9);
+            this.uiOutpotPodaci.Name = "uiOutpotPodaci";
+            this.uiOutpotPodaci.Size = new System.Drawing.Size(159, 15);
+            this.uiOutpotPodaci.TabIndex = 1;
+            this.uiOutpotPodaci.Text = "Podaci o poslovnicama:";
+            // 
+            // uiActionDodajPoslovnicu
+            // 
+            this.uiActionDodajPoslovnicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajPoslovnicu.Location = new System.Drawing.Point(263, 275);
+            this.uiActionDodajPoslovnicu.Name = "uiActionDodajPoslovnicu";
+            this.uiActionDodajPoslovnicu.Size = new System.Drawing.Size(157, 34);
+            this.uiActionDodajPoslovnicu.TabIndex = 2;
+            this.uiActionDodajPoslovnicu.Text = "DODAJ POSLOVNICU";
+            this.uiActionDodajPoslovnicu.UseVisualStyleBackColor = true;
+            this.uiActionDodajPoslovnicu.Click += new System.EventHandler(this.UiActionDodajPoslovnicu_Click);
+            // 
+            // uiActionNatrag
+            // 
+            this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNatrag.Location = new System.Drawing.Point(594, 277);
+            this.uiActionNatrag.Name = "uiActionNatrag";
+            this.uiActionNatrag.Size = new System.Drawing.Size(83, 30);
+            this.uiActionNatrag.TabIndex = 3;
+            this.uiActionNatrag.Text = "NATRAG";
+            this.uiActionNatrag.UseVisualStyleBackColor = true;
+            this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
+            // 
             // uiPoslovnice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(689, 325);
             this.Controls.Add(this.uiActionNatrag);
