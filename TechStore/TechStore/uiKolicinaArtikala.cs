@@ -12,6 +12,9 @@ namespace TechStore
 {
     public partial class uiKolicinaArtikala : Form
     {
+        private BindingList<Artikl> Artikli { get; set; }
+        private Poslovnica Poslovnica { get; set; }
+        private Artikl OdabraniArtikl { get; set; }
         /// <summary>
         /// Konstruktor forme uiKolicinaArtikala.
         /// </summary>
@@ -31,8 +34,8 @@ namespace TechStore
         {
             this.KeyPreview = true;
             this.KeyDown += UiKolicinaArtikala_KeyDown;
-            BindingList<Artikl> artikli = Artikl.DohvatiSveArtikle();
-            artiklBindingSource.DataSource = artikli;
+            Artikli = Artikl.DohvatiSveArtikle();
+            artiklBindingSource.DataSource = Artikli;
             uiOutputGraf.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
         }
 
@@ -67,10 +70,10 @@ namespace TechStore
         private void UiInputArtikl_SelectedValueChanged(object sender, EventArgs e)
         {
             uiOutputGraf.Series["Kolicina"].Points.Clear();
-
-            if (uiInputArtikl.SelectedItem != null)
+            OdabraniArtikl = uiInputArtikl.SelectedItem as Artikl;
+            if (OdabraniArtikl != null)
             {
-                List<Dostupnost> dostupnost = Dostupnost.DohvatiDostupnost(int.Parse(uiInputArtikl.SelectedValue.ToString()));
+                List<Dostupnost> dostupnost = Dostupnost.DohvatiDostupnost(int.Parse(OdabraniArtikl.ID.ToString()));
                 CrtajGraf(dostupnost);
             }
 
@@ -85,9 +88,9 @@ namespace TechStore
             int brojac = 0;
             foreach (Dostupnost d in dostupnost)
             {
-                Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(d.Poslovnica_ID);
+                Poslovnica = Poslovnica.DohvatiPoslovnicu(d.Poslovnica_ID);
 
-                uiOutputGraf.Series["Kolicina"].Points.AddXY(poslovnica.Naziv, d.Kolicina);
+                uiOutputGraf.Series["Kolicina"].Points.AddXY(Poslovnica.Naziv, d.Kolicina);
                 uiOutputGraf.Series["Kolicina"].Points[brojac].Label = d.Kolicina.ToString();
                 brojac++;
 

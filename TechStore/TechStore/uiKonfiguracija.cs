@@ -17,6 +17,7 @@ namespace TechStore
         public List<Artikl> izabraneKomponente = new List<Artikl>();
         private double OdabranaCijena { get; set; }
         private double NajvisaCijena { get; set; }
+        private DGVPrinter Printer { get; set; } = new DGVPrinter();
         #endregion
 
         #region KonstruktorILoad
@@ -56,16 +57,15 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionIspisi_Click(object sender, EventArgs e)
         {
-            DGVPrinter printer = new DGVPrinter();
-            printer.Title = "KONFIGURACIJA";
-            printer.SubTitle = "Vrijeme i datum izrade: " + DateTime.Now.ToLongTimeString() + ", " + DateTime.Now.ToLongDateString() + "\n\n";
-            printer.PorportionalColumns = true;
+            Printer.Title = "KONFIGURACIJA";
+            Printer.SubTitle = "Vrijeme i datum izrade: " + DateTime.Now.ToLongTimeString() + ", " + DateTime.Now.ToLongDateString() + "\n\n";
+            Printer.PorportionalColumns = true;
             string zaposlenik = Zaposlenik.PrijavljeniZaposlenik.Ime + " " + Zaposlenik.PrijavljeniZaposlenik.Prezime;
             Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(Zaposlenik.PrijavljeniZaposlenik.Poslovnica_ID);
-            printer.Footer = uiOutputIznos.Text + "\nKonfiguraciju izradio: " + zaposlenik + "\nPoslovnica: " + poslovnica.Naziv;
-            printer.FooterAlignment = StringAlignment.Near;
-            printer.printDocument.DefaultPageSettings.Landscape = true;
-            printer.PrintDataGridView(uiOutputKonfiguracija);
+            Printer.Footer = uiOutputIznos.Text + "\nKonfiguraciju izradio: " + zaposlenik + "\nPoslovnica: " + poslovnica.Naziv;
+            Printer.FooterAlignment = StringAlignment.Near;
+            Printer.printDocument.DefaultPageSettings.Landscape = true;
+            Printer.PrintDataGridView(uiOutputKonfiguracija);
         }
 
         /// <summary>
