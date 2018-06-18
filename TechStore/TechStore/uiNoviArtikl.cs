@@ -95,15 +95,56 @@ namespace TechStore
                         Cijena = cijena,
                         Vrsta_ID = int.Parse(uiInputVrstaArtikla.SelectedValue.ToString())
                     };
+                    //Artikl.DodajArtikl(noviArtikl);
+                    var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl WHERE ID !=(SELECT MAX(ID) FROM Artikl)");
                     if (noviArtikl.Vrsta_ID == 1)
                     {
-                        var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl");
+                        OstaloKompatibilnost(listaArtikala, noviArtikl);
                     }
-                    if (noviArtikl.Vrsta_ID == 2)
+                    else if (noviArtikl.Vrsta_ID == 2)
                     {
-                        var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl WHERE Vrsta_ID !=2");
+                        MaticnaPlocaKompatibilnost(listaArtikala, noviArtikl);
                     }
-                    //Artikl.DodajArtikl(noviArtikl);
+                    else if (noviArtikl.Vrsta_ID == 3)
+                    {
+                        GrafickaKarticaKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else if (noviArtikl.Vrsta_ID == 4)
+                    {
+                        ProcesorKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else if (noviArtikl.Vrsta_ID == 5)
+                    {
+                        RAMKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else if (noviArtikl.Vrsta_ID == 6)
+                    {
+                        SSDKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else if (noviArtikl.Vrsta_ID == 7)
+                    {
+                        HDDKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else if (noviArtikl.Vrsta_ID == 8)
+                    {
+                        NapajanjeKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else if (noviArtikl.Vrsta_ID == 9)
+                    {
+                        HladnjakKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else if (noviArtikl.Vrsta_ID == 10)
+                    {
+                        ZvucnaKarticaKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else if (noviArtikl.Vrsta_ID == 11)
+                    {
+                        KucisteKompatibilnost(listaArtikala, noviArtikl);
+                    }
+                    else
+                    {
+                        SveOstaloKompatibilnost(listaArtikala, noviArtikl);
+                    }
                     MessageBox.Show("Artikl je uspješno dodan.", "Artikl dodan!", MessageBoxButtons.OK);
 
                     this.Close();
@@ -149,7 +190,7 @@ namespace TechStore
         {
             foreach (var artikl in listaArtikala)
             {
-                //DodajKompatibilnostPomoc(artikl, noviArtikl, true);
+                DodajKompatibilnostPomoc(artikl, noviArtikl, true);
             }
         }
 
@@ -168,15 +209,10 @@ namespace TechStore
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
             visinaNoviArtikl = DohvatiVisinu(listaSpecifikacijaNovogArtikla);
             sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
-            duljinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
-            if (visinaNoviArtikl==-1)
+            duljinaNoviArtikl = DohvatiDuljinu(listaSpecifikacijaNovogArtikla);
+            if (visinaNoviArtikl == -1)
             {
                 MessageBox.Show("Novi artikl nema unesenu visinu!");
-                return;
-            }
-            if (sirinaNoviArtikl==-1)
-            {
-                MessageBox.Show("Novi artikl nema unesenu širinu!");
                 return;
             }
             if (sirinaNoviArtikl == -1)
@@ -184,22 +220,29 @@ namespace TechStore
                 MessageBox.Show("Novi artikl nema unesenu širinu!");
                 return;
             }
-            foreach (var trenutniArtikl in listaArtikala)
+            if (duljinaNoviArtikl == -1)
             {
+                MessageBox.Show("Novi artikl nema unesenu duljinu!");
+                return;
+            }
+            foreach (var trenutniArtikl in listaArtikala)
+
+            {
+
                 if (trenutniArtikl.Vrsta_ID == 1)
                 {
-                    //DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
                 }
-                else if (trenutniArtikl.Vrsta_ID == 11)
+                else if (trenutniArtikl.Vrsta_ID == 11 || trenutniArtikl.Vrsta_ID == 9)
                 {
                     double visinaTrenutniArtikl = 0;
                     double sirinaTrenutniArtikl = 0;
                     double duljinaTrenutniArtikl = 0;
                     List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
                     visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
-                    sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
-                    duljinaNoviArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
-                    if ( sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    sirinaTrenutniArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
+                    duljinaTrenutniArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
+                    if (sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
                     {
                         DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
                     }
@@ -225,12 +268,36 @@ namespace TechStore
         /// <param name="noviArtikl"></param>
         public void GrafickaKarticaKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
         {
+            double visinaNoviArtikl = 0;
+            double sirinaNoviArtikl = 0;
+            double duljinaNoviArtikl = 0;
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            visinaNoviArtikl = DohvatiVisinu(listaSpecifikacijaNovogArtikla);
+            sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
+            duljinaNoviArtikl = DohvatiDuljinu(listaSpecifikacijaNovogArtikla);
             foreach (var trenutniArtikl in listaArtikala)
             {
                 if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 8)
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else if (trenutniArtikl.Vrsta_ID == 11)
+                {
+                    double visinaTrenutniArtikl = 0;
+                    double sirinaTrenutniArtikl = 0;
+                    double duljinaTrenutniArtikl = 0;
+                    List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
+                    visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
+                    sirinaTrenutniArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
+                    duljinaTrenutniArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
+                    if (sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                    }
+                    else
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, false);
+                    }
                 }
                 else
                 {
@@ -251,7 +318,7 @@ namespace TechStore
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
             foreach (var trenutniArtikl in listaArtikala)
             {
-                if (trenutniArtikl.Vrsta_ID==2)
+                if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 5)
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
                 }
@@ -269,11 +336,12 @@ namespace TechStore
         /// </summary>
         /// <param name="listaArtikala"></param>
         /// <param name="noviArtikl"></param>
-        public void RAMKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+        public void RAMKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
             foreach (var trenutniArtikl in listaArtikala)
             {
-                if (trenutniArtikl.Vrsta_ID==2)
+                if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 4)
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
                 }
@@ -291,11 +359,12 @@ namespace TechStore
         /// </summary>
         /// <param name="listaArtikala"></param>
         /// <param name="noviArtikl"></param>
-        public void SSDKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+        public void SSDKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
             foreach (var trenutniArtikl in listaArtikala)
             {
-                if (trenutniArtikl.Vrsta_ID==2)
+                if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 8)
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
                 }
@@ -313,11 +382,12 @@ namespace TechStore
         /// </summary>
         /// <param name="listaArtikala"></param>
         /// <param name="noviArtikl"></param>
-        public void HDDKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+        public void HDDKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
             foreach (var trenutniArtikl in listaArtikala)
             {
-                if (trenutniArtikl.Vrsta_ID==2)
+                if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 8)
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
                 }
@@ -335,17 +405,38 @@ namespace TechStore
         /// </summary>
         /// <param name="listaArtikala"></param>
         /// <param name="noviArtikl"></param>
-        public void NapajanjeKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+        public void NapajanjeKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
+            double visinaNoviArtikl = 0;
+            double sirinaNoviArtikl = 0;
+            double duljinaNoviArtikl = 0;
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            visinaNoviArtikl = DohvatiVisinu(listaSpecifikacijaNovogArtikla);
+            sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
+            duljinaNoviArtikl = DohvatiDuljinu(listaSpecifikacijaNovogArtikla);
             foreach (var trenutniArtikl in listaArtikala)
             {
-                if (trenutniArtikl.Vrsta_ID==4 || trenutniArtikl.Vrsta_ID==2 || trenutniArtikl.Vrsta_ID==3)
+                if (trenutniArtikl.Vrsta_ID == 4 || trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 3 || trenutniArtikl.Vrsta_ID == 6 || trenutniArtikl.Vrsta_ID == 7)
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
                 }
-                else if (trenutniArtikl.Vrsta_ID==11)
+                else if (trenutniArtikl.Vrsta_ID == 11)
                 {
-
+                    double visinaTrenutniArtikl = 0;
+                    double sirinaTrenutniArtikl = 0;
+                    double duljinaTrenutniArtikl = 0;
+                    List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
+                    visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
+                    sirinaTrenutniArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
+                    duljinaTrenutniArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
+                    if (sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                    }
+                    else
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, false);
+                    }
                 }
                 else
                 {
@@ -361,13 +452,38 @@ namespace TechStore
         /// </summary>
         /// <param name="listaArtikala"></param>
         /// <param name="noviArtikl"></param>
-        public void HladnjakKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl) {
+        public void HladnjakKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
+            double visinaNoviArtikl = 0;
+            double sirinaNoviArtikl = 0;
+            double duljinaNoviArtikl = 0;
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            visinaNoviArtikl = DohvatiVisinu(listaSpecifikacijaNovogArtikla);
+            sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
+            duljinaNoviArtikl = DohvatiDuljinu(listaSpecifikacijaNovogArtikla);
             foreach (var trenutniArtikl in listaArtikala)
             {
-                if (trenutniArtikl.Vrsta_ID==4 || trenutniArtikl.Vrsta_ID==2)
+                if (trenutniArtikl.Vrsta_ID == 4 || trenutniArtikl.Vrsta_ID == 2)
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else if (trenutniArtikl.Vrsta_ID == 11)
+                {
+                    double visinaTrenutniArtikl = 0;
+                    double sirinaTrenutniArtikl = 0;
+                    double duljinaTrenutniArtikl = 0;
+                    List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
+                    visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
+                    sirinaTrenutniArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
+                    duljinaTrenutniArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
+                    if (sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                    }
+                    else
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, false);
+                    }
                 }
                 else
                 {
@@ -384,14 +500,100 @@ namespace TechStore
         /// </summary>
         /// <param name="listaArtikala"></param>
         /// <param name="noviArtikl"></param>
-        public void ZvucnaKarticaKompatibilnost(List<Artikl> listaArtikala,Artikl noviArtikl)
+        public void ZvucnaKarticaKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
         {
+            double visinaNoviArtikl = 0;
+            double sirinaNoviArtikl = 0;
+            double duljinaNoviArtikl = 0;
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            visinaNoviArtikl = DohvatiVisinu(listaSpecifikacijaNovogArtikla);
+            sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
+            duljinaNoviArtikl = DohvatiDuljinu(listaSpecifikacijaNovogArtikla);
             foreach (var trenutniArtikl in listaArtikala)
             {
-                if (trenutniArtikl.Vrsta_ID==2)
+                if (trenutniArtikl.Vrsta_ID == 2)
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+                }
+                else if (trenutniArtikl.Vrsta_ID == 11)
+                {
+                    double visinaTrenutniArtikl = 0;
+                    double sirinaTrenutniArtikl = 0;
+                    double duljinaTrenutniArtikl = 0;
+                    List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
+                    visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
+                    sirinaTrenutniArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
+                    duljinaTrenutniArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
+                    if (sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                    }
+                    else
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, false);
+                    }
+                }
+                else
+                {
+                    DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi proizvod.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako
+        /// novi proizvod nije vrste za koje već postoje metode.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void SveOstaloKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
+           
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+           
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
+            }
+        }
+
+        /// <summary>
+        /// Metoda koja kao parametar prima listu artikala te novi artikl.
+        /// Dodaje kompatibilnost novog proizvoda s ostalim proizvodima ako je novi 
+        /// proizvod kučište.
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <param name="noviArtikl"></param>
+        public void KucisteKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
+        {
+            double visinaNoviArtikl = 0;
+            double sirinaNoviArtikl = 0;
+            double duljinaNoviArtikl = 0;
+            List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
+            visinaNoviArtikl = DohvatiVisinu(listaSpecifikacijaNovogArtikla);
+            sirinaNoviArtikl = DohvatiSirinu(listaSpecifikacijaNovogArtikla);
+            duljinaNoviArtikl = DohvatiDuljinu(listaSpecifikacijaNovogArtikla);
+            foreach (var trenutniArtikl in listaArtikala)
+            {
+                List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
+                if (trenutniArtikl.Vrsta_ID==2 || trenutniArtikl.Vrsta_ID==3 || trenutniArtikl.Vrsta_ID==8 || trenutniArtikl.Vrsta_ID==9 || trenutniArtikl.Vrsta_ID==10)
+                {
+                    double visinaTrenutniArtikl = 0;
+                    double sirinaTrenutniArtikl = 0;
+                    double duljinaTrenutniArtikl = 0;
+                    
+                    visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
+                    sirinaTrenutniArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
+                    duljinaTrenutniArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
+                    if (sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
+                    }
+                    else
+                    {
+                        DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, false);
+                    }
                 }
                 else
                 {
@@ -414,7 +616,7 @@ namespace TechStore
                 Komponenta2 = trenutniArtikl.ID,
                 Kompatibilni = true
             };
-            Kompatibilnost.DodajKompatibilnost(kompatibilnost);
+            //Kompatibilnost.DodajKompatibilnost(kompatibilnost);
         }
 
         /// <summary>
@@ -443,46 +645,38 @@ namespace TechStore
         /// </summary>
         /// <param name="listaStringova">Lista stringova </param>
         /// <returns></returns>
-        public double DohvatiVisinu(List<string> listaStringova) {
+        public double DohvatiVisinu(List<string> listaStringova)
+        {
             double visina = 0;
-            bool nadeno = false;
             foreach (var specifikacija in listaStringova)
             {
-                if (specifikacija.Contains("Visina"))
+                if (specifikacija.Contains("Visina:"))
                 {
-                    visina= double.Parse(specifikacija.Substring(specifikacija.LastIndexOf(':') + 1), CultureInfo.InvariantCulture);
-                    nadeno = true;
+                    visina = double.Parse(specifikacija.Substring(specifikacija.LastIndexOf(':') + 1), CultureInfo.InvariantCulture);
+                    return visina;
                 }
 
-            }
-            if (nadeno)
-            {
-                return visina;
             }
             return -1;
         }
 
-   
+
         /// <summary>
         /// Pomoćna metoda koja vraća širinu komponente ako postoji.
         /// Ako širina komponente ne postoji vraća -1.
         /// </summary>
         /// <param name="listaStringova"></param>
         /// <returns></returns>
-        public double DohvatiSirinu(List<string> listaStringova) {
+        public double DohvatiSirinu(List<string> listaStringova)
+        {
             double sirina = 0;
-            bool nadeno = false;
             foreach (var spec in listaStringova)
             {
-                if (spec.Contains("Sirina:"))
+                if (spec.Contains("Širina:"))
                 {
-                    sirina= double.Parse(spec.Substring(spec.LastIndexOf(':') + 1), CultureInfo.InvariantCulture);
-                    nadeno = true;
+                    sirina = double.Parse(spec.Substring(spec.LastIndexOf(':') + 1), CultureInfo.InvariantCulture);
+                    return sirina;
                 }
-            }
-            if (nadeno)
-            {
-                return sirina;
             }
             return -1;
         }
@@ -493,20 +687,16 @@ namespace TechStore
         /// </summary>
         /// <param name="listaStringova"></param>
         /// <returns></returns>
-        public double DohvatiDuljinu(List<string> listaStringova) {
+        public double DohvatiDuljinu(List<string> listaStringova)
+        {
             double duljina = 0;
-            bool nadeno = false;
             foreach (var spec in listaStringova)
             {
                 if (spec.Contains("Duljina:"))
                 {
                     duljina = double.Parse(spec.Substring(spec.LastIndexOf(':') + 1), CultureInfo.InvariantCulture);
-                    nadeno = true;
+                    return duljina;
                 }
-            }
-            if (nadeno)
-            {
-                return duljina;
             }
             return -1;
         }
