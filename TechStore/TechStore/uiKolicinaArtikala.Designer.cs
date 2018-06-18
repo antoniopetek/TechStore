@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.uiOutputGraf = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.uiLabelArtikl = new System.Windows.Forms.Label();
             this.uiInputArtikl = new System.Windows.Forms.ComboBox();
@@ -43,16 +43,16 @@
             // 
             // uiOutputGraf
             // 
-            chartArea3.Name = "ChartArea1";
-            this.uiOutputGraf.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.uiOutputGraf.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.uiOutputGraf.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.uiOutputGraf.Legends.Add(legend1);
             this.uiOutputGraf.Location = new System.Drawing.Point(22, 95);
             this.uiOutputGraf.Name = "uiOutputGraf";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Kolicina";
-            this.uiOutputGraf.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Kolicina";
+            this.uiOutputGraf.Series.Add(series1);
             this.uiOutputGraf.Size = new System.Drawing.Size(438, 351);
             this.uiOutputGraf.TabIndex = 0;
             this.uiOutputGraf.Text = "chart1";
@@ -99,7 +99,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(483, 458);
             this.Controls.Add(this.uiActionNatrag);
