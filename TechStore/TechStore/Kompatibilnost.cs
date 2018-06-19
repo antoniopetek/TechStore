@@ -7,11 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Linq;
+
 namespace TechStore
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class Kompatibilnost
     {
         public int Komponenta1 { get; set; }
@@ -21,6 +22,12 @@ namespace TechStore
         public virtual Artikl Artikl { get; set; }
         public virtual Artikl Artikl1 { get; set; }
 
+
+        /// <summary>
+        /// Statièka metoda koja kao argument prima novu kompatibilnost.
+        /// Metoda dodaje novu kompatibilnost u bazu podataka.
+        /// </summary>
+        /// <param name="novaKompatibilnost"></param>
         public static void DodajKompatibilnost(Kompatibilnost novaKompatibilnost) {
             using (var db = new TechStoreEntities())
             {
@@ -28,6 +35,37 @@ namespace TechStore
                 db.Kompatibilnost.Add(novaKompatibilnost);
                 db.SaveChanges();
             }
+        }
+
+        /// <summary>
+        /// Statièka metoda koja kao argument prima kompatibilnost koja se želi obrisati.
+        /// Metoda briše odabranu kompatibilnost iz baze podataka.
+        /// </summary>
+        /// <param name="kompatibilnostZaBrisanje"></param>
+        public static void ObrisiKompatibilnost(Kompatibilnost kompatibilnostZaBrisanje) {
+            using (var db= new TechStoreEntities())
+            {
+                db.Kompatibilnost.Attach(kompatibilnostZaBrisanje);
+                db.Kompatibilnost.Remove(kompatibilnostZaBrisanje);
+                db.SaveChanges();
+            }
+        }
+
+       /// <summary>
+       /// Statièka metoda koja kao argument prima upit koji se izvršava.
+       /// Metoda izvršava proslijeðeni upit te dohvaæa sve kompatibilnosti
+       /// koje zadovoljavaju upit te ih sprema u listu kompatibilnosti.
+       /// Metoda vraæa listu kompatibilnosti.
+       /// </summary>
+       /// <param name="upit"></param>
+       /// <returns></returns>
+        public static List<Kompatibilnost> DohvatiKompatibilnosti(string upit) {
+            List<Kompatibilnost> listaKompatibilnosti = null;
+            using (var db= new TechStoreEntities())
+            {
+                listaKompatibilnosti = db.Kompatibilnost.SqlQuery(upit).ToList();
+            }
+            return listaKompatibilnosti;
         }
     }
 }

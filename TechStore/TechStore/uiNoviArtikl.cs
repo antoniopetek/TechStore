@@ -85,7 +85,7 @@ namespace TechStore
         {
             if (ArtiklZaIzmjenu == null)
             {
-                if (uiInputNaziv.Text != "" && uiInputKratkiOpis.Text != "" && uiInputSpecifikacije.Text != "" && int.TryParse(uiInputCijena.Text, out int cijena) && uiInputVrstaArtikla.SelectedValue.ToString() != "")
+                if (uiInputNaziv.Text != "" && uiInputKratkiOpis.Text != "" && uiInputSpecifikacije.Text != "" && double.TryParse(uiInputCijena.Text, out double cijena) && uiInputVrstaArtikla.SelectedValue.ToString() != "")
                 {
                     Artikl noviArtikl = new Artikl
                     {
@@ -156,9 +156,64 @@ namespace TechStore
             }
             else
             {
-                if (uiInputNaziv.Text != "" && uiInputKratkiOpis.Text != "" && uiInputSpecifikacije.Text != "" && int.TryParse(uiInputCijena.Text, out int cijena) && uiInputVrstaArtikla.SelectedValue.ToString() != "")
+                if (uiInputNaziv.Text != "" && uiInputKratkiOpis.Text != "" && uiInputSpecifikacije.Text != "" && double.TryParse(uiInputCijena.Text, out double cijena) && uiInputVrstaArtikla.SelectedValue.ToString() != "")
                 {
                     //Artikl.AzurirajArtikl(ArtiklZaIzmjenu, uiInputNaziv.Text, uiInputKratkiOpis.Text, uiInputSpecifikacije.Text, cijena,int.Parse(uiInputVrstaArtikla.SelectedValue.ToString()));
+                    var listaKompatibilnosti = Kompatibilnost.DohvatiKompatibilnosti("SELECT * FROM Kompatibilnost WHERE Komponenta1=" + ArtiklZaIzmjenu.ID);
+                    foreach (var kompatibilnost in listaKompatibilnosti)
+                    {
+                        //Kompatibilnost.ObrisiKompatibilnost(kompatibilnost);
+                    }
+                    var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl WHERE ID !=" + ArtiklZaIzmjenu.ID);
+                    //Artikl.ObrisiArtikl(ArtiklZaIzmjenu);
+                    if (ArtiklZaIzmjenu.Vrsta_ID == 1)
+                    {
+                        OstaloKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 2)
+                    {
+                        MaticnaPlocaKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 3)
+                    {
+                        GrafickaKarticaKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 4)
+                    {
+                        ProcesorKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 5)
+                    {
+                        RAMKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 6)
+                    {
+                        SSDKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 7)
+                    {
+                        HDDKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 8)
+                    {
+                        NapajanjeKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 9)
+                    {
+                        HladnjakKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 10)
+                    {
+                        ZvucnaKarticaKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else if (ArtiklZaIzmjenu.Vrsta_ID == 11)
+                    {
+                        KucisteKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
+                    else
+                    {
+                        SveOstaloKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
+                    }
                     MessageBox.Show("Artikl je uspješno ažuriran.", "Artikl ažuriran!", MessageBoxButtons.OK);
                     this.Close();
                 }
@@ -549,9 +604,9 @@ namespace TechStore
         /// <param name="noviArtikl"></param>
         public void SveOstaloKompatibilnost(List<Artikl> listaArtikala, Artikl noviArtikl)
         {
-           
+
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
-           
+
             foreach (var trenutniArtikl in listaArtikala)
             {
                 ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
@@ -577,12 +632,12 @@ namespace TechStore
             foreach (var trenutniArtikl in listaArtikala)
             {
                 List<string> listaSpecifikacijaTrenutnogArtikla = trenutniArtikl.Specifikacija.Split(',').ToList();
-                if (trenutniArtikl.Vrsta_ID==2 || trenutniArtikl.Vrsta_ID==3 || trenutniArtikl.Vrsta_ID==8 || trenutniArtikl.Vrsta_ID==9 || trenutniArtikl.Vrsta_ID==10)
+                if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 3 || trenutniArtikl.Vrsta_ID == 8 || trenutniArtikl.Vrsta_ID == 9 || trenutniArtikl.Vrsta_ID == 10)
                 {
                     double visinaTrenutniArtikl = 0;
                     double sirinaTrenutniArtikl = 0;
                     double duljinaTrenutniArtikl = 0;
-                    
+
                     visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
                     sirinaTrenutniArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
                     duljinaTrenutniArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
