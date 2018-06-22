@@ -104,6 +104,7 @@
             this.uiLabelID.AutoSize = true;
             this.uiLabelID.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelID.ForeColor = System.Drawing.Color.White;
             this.uiLabelID.Location = new System.Drawing.Point(197, 23);
             this.uiLabelID.Name = "uiLabelID";
             this.uiLabelID.Size = new System.Drawing.Size(95, 13);
@@ -115,6 +116,7 @@
             this.uiLabelIme.AutoSize = true;
             this.uiLabelIme.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelIme.ForeColor = System.Drawing.Color.White;
             this.uiLabelIme.Location = new System.Drawing.Point(76, 63);
             this.uiLabelIme.Name = "uiLabelIme";
             this.uiLabelIme.Size = new System.Drawing.Size(31, 13);
@@ -126,6 +128,7 @@
             this.uiLabelPrezime.AutoSize = true;
             this.uiLabelPrezime.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelPrezime.ForeColor = System.Drawing.Color.White;
             this.uiLabelPrezime.Location = new System.Drawing.Point(52, 89);
             this.uiLabelPrezime.Name = "uiLabelPrezime";
             this.uiLabelPrezime.Size = new System.Drawing.Size(55, 13);
@@ -137,6 +140,7 @@
             this.uiLabelEmail.AutoSize = true;
             this.uiLabelEmail.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelEmail.ForeColor = System.Drawing.Color.White;
             this.uiLabelEmail.Location = new System.Drawing.Point(62, 115);
             this.uiLabelEmail.Name = "uiLabelEmail";
             this.uiLabelEmail.Size = new System.Drawing.Size(45, 13);
@@ -148,6 +152,7 @@
             this.uiLabelKontakt.AutoSize = true;
             this.uiLabelKontakt.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelKontakt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelKontakt.ForeColor = System.Drawing.Color.White;
             this.uiLabelKontakt.Location = new System.Drawing.Point(52, 141);
             this.uiLabelKontakt.Name = "uiLabelKontakt";
             this.uiLabelKontakt.Size = new System.Drawing.Size(55, 13);
@@ -159,6 +164,7 @@
             this.uiLabelPoslovnica.AutoSize = true;
             this.uiLabelPoslovnica.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelPoslovnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelPoslovnica.ForeColor = System.Drawing.Color.White;
             this.uiLabelPoslovnica.Location = new System.Drawing.Point(34, 167);
             this.uiLabelPoslovnica.Name = "uiLabelPoslovnica";
             this.uiLabelPoslovnica.Size = new System.Drawing.Size(73, 13);
@@ -170,6 +176,7 @@
             this.uiLabelTipZaposlenika.AutoSize = true;
             this.uiLabelTipZaposlenika.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelTipZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelTipZaposlenika.ForeColor = System.Drawing.Color.White;
             this.uiLabelTipZaposlenika.Location = new System.Drawing.Point(7, 193);
             this.uiLabelTipZaposlenika.Name = "uiLabelTipZaposlenika";
             this.uiLabelTipZaposlenika.Size = new System.Drawing.Size(100, 13);
@@ -181,6 +188,7 @@
             this.uiLabelBroj.AutoSize = true;
             this.uiLabelBroj.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelBroj.ForeColor = System.Drawing.Color.White;
             this.uiLabelBroj.Location = new System.Drawing.Point(342, 141);
             this.uiLabelBroj.Name = "uiLabelBroj";
             this.uiLabelBroj.Size = new System.Drawing.Size(33, 13);
@@ -192,6 +200,7 @@
             this.uiLabelUlica.AutoSize = true;
             this.uiLabelUlica.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelUlica.ForeColor = System.Drawing.Color.White;
             this.uiLabelUlica.Location = new System.Drawing.Point(335, 115);
             this.uiLabelUlica.Name = "uiLabelUlica";
             this.uiLabelUlica.Size = new System.Drawing.Size(40, 13);
@@ -203,6 +212,7 @@
             this.uiLabelGrad.AutoSize = true;
             this.uiLabelGrad.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelGrad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelGrad.ForeColor = System.Drawing.Color.White;
             this.uiLabelGrad.Location = new System.Drawing.Point(337, 89);
             this.uiLabelGrad.Name = "uiLabelGrad";
             this.uiLabelGrad.Size = new System.Drawing.Size(38, 13);
@@ -214,6 +224,7 @@
             this.uiLabelDrzava.AutoSize = true;
             this.uiLabelDrzava.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelDrzava.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelDrzava.ForeColor = System.Drawing.Color.White;
             this.uiLabelDrzava.Location = new System.Drawing.Point(324, 63);
             this.uiLabelDrzava.Name = "uiLabelDrzava";
             this.uiLabelDrzava.Size = new System.Drawing.Size(51, 13);
@@ -253,6 +264,7 @@
             this.uiLabelLozinka.AutoSize = true;
             this.uiLabelLozinka.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelLozinka.ForeColor = System.Drawing.Color.White;
             this.uiLabelLozinka.Location = new System.Drawing.Point(320, 193);
             this.uiLabelLozinka.Name = "uiLabelLozinka";
             this.uiLabelLozinka.Size = new System.Drawing.Size(55, 13);
@@ -264,6 +276,7 @@
             this.uiLabelKorisnickoIme.AutoSize = true;
             this.uiLabelKorisnickoIme.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelKorisnickoIme.ForeColor = System.Drawing.Color.White;
             this.uiLabelKorisnickoIme.Location = new System.Drawing.Point(282, 167);
             this.uiLabelKorisnickoIme.Name = "uiLabelKorisnickoIme";
             this.uiLabelKorisnickoIme.Size = new System.Drawing.Size(93, 13);
@@ -286,13 +299,16 @@
             // 
             // uiActionDodajZaposlenika
             // 
-            this.uiActionDodajZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajZaposlenika.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionDodajZaposlenika.FlatAppearance.BorderSize = 0;
+            this.uiActionDodajZaposlenika.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionDodajZaposlenika.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiActionDodajZaposlenika.Location = new System.Drawing.Point(113, 234);
             this.uiActionDodajZaposlenika.Name = "uiActionDodajZaposlenika";
             this.uiActionDodajZaposlenika.Size = new System.Drawing.Size(198, 37);
             this.uiActionDodajZaposlenika.TabIndex = 26;
             this.uiActionDodajZaposlenika.Text = "Dodaj zaposlenika";
-            this.uiActionDodajZaposlenika.UseVisualStyleBackColor = true;
+            this.uiActionDodajZaposlenika.UseVisualStyleBackColor = false;
             this.uiActionDodajZaposlenika.Click += new System.EventHandler(this.UiActionDodajZaposlenika_Click);
             // 
             // uiInputPoslovnica
@@ -327,19 +343,23 @@
             // 
             // uiActionOdustani
             // 
-            this.uiActionOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionOdustani.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionOdustani.FlatAppearance.BorderSize = 0;
+            this.uiActionOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiActionOdustani.Location = new System.Drawing.Point(418, 233);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(92, 38);
             this.uiActionOdustani.TabIndex = 29;
             this.uiActionOdustani.Text = "Odustani";
-            this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.UseVisualStyleBackColor = false;
             this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
             // uiDodavanjeZaposlenika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(559, 284);
             this.Controls.Add(this.uiActionOdustani);
@@ -370,6 +390,8 @@
             this.Controls.Add(this.uiInputPrezime);
             this.Controls.Add(this.uiInputIme);
             this.Controls.Add(this.uiInputID);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "uiDodavanjeZaposlenika";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje zaposlenika";

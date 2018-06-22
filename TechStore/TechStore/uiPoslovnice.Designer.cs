@@ -137,6 +137,7 @@
             this.uiOutpotPodaci.AutoSize = true;
             this.uiOutpotPodaci.BackColor = System.Drawing.Color.Transparent;
             this.uiOutpotPodaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiOutpotPodaci.ForeColor = System.Drawing.Color.White;
             this.uiOutpotPodaci.Location = new System.Drawing.Point(22, 9);
             this.uiOutpotPodaci.Name = "uiOutpotPodaci";
             this.uiOutpotPodaci.Size = new System.Drawing.Size(159, 15);
@@ -145,36 +146,46 @@
             // 
             // uiActionDodajPoslovnicu
             // 
+            this.uiActionDodajPoslovnicu.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionDodajPoslovnicu.FlatAppearance.BorderSize = 0;
+            this.uiActionDodajPoslovnicu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.uiActionDodajPoslovnicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajPoslovnicu.ForeColor = System.Drawing.Color.White;
             this.uiActionDodajPoslovnicu.Location = new System.Drawing.Point(263, 275);
             this.uiActionDodajPoslovnicu.Name = "uiActionDodajPoslovnicu";
             this.uiActionDodajPoslovnicu.Size = new System.Drawing.Size(157, 34);
             this.uiActionDodajPoslovnicu.TabIndex = 2;
             this.uiActionDodajPoslovnicu.Text = "DODAJ POSLOVNICU";
-            this.uiActionDodajPoslovnicu.UseVisualStyleBackColor = true;
+            this.uiActionDodajPoslovnicu.UseVisualStyleBackColor = false;
             this.uiActionDodajPoslovnicu.Click += new System.EventHandler(this.UiActionDodajPoslovnicu_Click);
             // 
             // uiActionNatrag
             // 
+            this.uiActionNatrag.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionNatrag.FlatAppearance.BorderSize = 0;
+            this.uiActionNatrag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNatrag.ForeColor = System.Drawing.Color.White;
             this.uiActionNatrag.Location = new System.Drawing.Point(594, 277);
             this.uiActionNatrag.Name = "uiActionNatrag";
             this.uiActionNatrag.Size = new System.Drawing.Size(83, 30);
             this.uiActionNatrag.TabIndex = 3;
             this.uiActionNatrag.Text = "NATRAG";
-            this.uiActionNatrag.UseVisualStyleBackColor = true;
+            this.uiActionNatrag.UseVisualStyleBackColor = false;
             this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
             // 
             // uiPoslovnice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(689, 325);
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiActionDodajPoslovnicu);
             this.Controls.Add(this.uiOutpotPodaci);
             this.Controls.Add(this.uiOutputPodaciOPoslovnicama);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "uiPoslovnice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Poslovnice";

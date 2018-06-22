@@ -49,6 +49,9 @@
             this.uiOutputGraf.Legends.Add(legend1);
             this.uiOutputGraf.Location = new System.Drawing.Point(22, 95);
             this.uiOutputGraf.Name = "uiOutputGraf";
+            this.uiOutputGraf.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            this.uiOutputGraf.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Maroon};
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Kolicina";
@@ -62,6 +65,7 @@
             this.uiLabelArtikl.AutoSize = true;
             this.uiLabelArtikl.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelArtikl.ForeColor = System.Drawing.Color.White;
             this.uiLabelArtikl.Location = new System.Drawing.Point(144, 51);
             this.uiLabelArtikl.Name = "uiLabelArtikl";
             this.uiLabelArtikl.Size = new System.Drawing.Size(82, 13);
@@ -86,25 +90,31 @@
             // 
             // uiActionNatrag
             // 
+            this.uiActionNatrag.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionNatrag.FlatAppearance.BorderSize = 0;
+            this.uiActionNatrag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNatrag.ForeColor = System.Drawing.Color.White;
             this.uiActionNatrag.Location = new System.Drawing.Point(22, 12);
             this.uiActionNatrag.Name = "uiActionNatrag";
             this.uiActionNatrag.Size = new System.Drawing.Size(78, 28);
             this.uiActionNatrag.TabIndex = 6;
             this.uiActionNatrag.Text = "NATRAG";
-            this.uiActionNatrag.UseVisualStyleBackColor = true;
+            this.uiActionNatrag.UseVisualStyleBackColor = false;
             this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
             // 
             // uiKolicinaArtikala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(483, 458);
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiInputArtikl);
             this.Controls.Add(this.uiLabelArtikl);
             this.Controls.Add(this.uiOutputGraf);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "uiKolicinaArtikala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Količina artikala po poslovnicama";

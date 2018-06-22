@@ -130,6 +130,7 @@ namespace TechStore
         {
             List<Artikl> preporuke = new List<Artikl>();
             List<Artikl> ostale = new List<Artikl>();
+            double odstupanje = 0.2;
             OdabranaCijena = izabraneKomponente[0].Cijena;
             double postotak = OdabranaCijena / NajvisaCijena;
 
@@ -137,7 +138,7 @@ namespace TechStore
             foreach (Artikl artikl in artikli)
             {
                 double interval = artikl.Cijena / artikli.Max(x => x.Cijena);
-                if ((interval >= postotak - 0.2) && (interval <= postotak + 0.2))
+                if ((interval >= postotak - odstupanje) && (interval <= postotak + odstupanje))
                 {
                     preporuke.Insert(0, artikl);
                 }
