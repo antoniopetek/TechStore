@@ -290,6 +290,7 @@
     <None Include="Resources\pozadina.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pozadina_nova.jpg" />
     <Content Include="TechStoreModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TechStoreModel.Context.cs</LastGenOutput>

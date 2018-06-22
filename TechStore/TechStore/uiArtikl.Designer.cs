@@ -47,6 +47,7 @@
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionObrisiArtikl = new System.Windows.Forms.Button();
             this.uiActionAzurirajArtikl = new System.Windows.Forms.Button();
+            this.uiActionNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciArtikli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -54,13 +55,17 @@
             // 
             // uiActionDodajArtikl
             // 
-            this.uiActionDodajArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.uiActionDodajArtikl.BackColor = System.Drawing.Color.DarkRed;
+            this.uiActionDodajArtikl.FlatAppearance.BorderSize = 0;
+            this.uiActionDodajArtikl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionDodajArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodajArtikl.ForeColor = System.Drawing.Color.White;
             this.uiActionDodajArtikl.Location = new System.Drawing.Point(943, 347);
             this.uiActionDodajArtikl.Name = "uiActionDodajArtikl";
             this.uiActionDodajArtikl.Size = new System.Drawing.Size(75, 26);
             this.uiActionDodajArtikl.TabIndex = 5;
             this.uiActionDodajArtikl.Text = "Dodaj";
-            this.uiActionDodajArtikl.UseVisualStyleBackColor = true;
+            this.uiActionDodajArtikl.UseVisualStyleBackColor = false;
             this.uiActionDodajArtikl.Click += new System.EventHandler(this.UiActionDodajArtikl_Click);
             // 
             // label1
@@ -68,6 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 15);
@@ -76,6 +82,8 @@
             // 
             // uiOutputPodaciArtikli
             // 
+            this.uiOutputPodaciArtikli.AllowUserToAddRows = false;
+            this.uiOutputPodaciArtikli.AllowUserToDeleteRows = false;
             this.uiOutputPodaciArtikli.AutoGenerateColumns = false;
             this.uiOutputPodaciArtikli.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiOutputPodaciArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -96,6 +104,7 @@
             this.uiOutputPodaciArtikli.MultiSelect = false;
             this.uiOutputPodaciArtikli.Name = "uiOutputPodaciArtikli";
             this.uiOutputPodaciArtikli.ReadOnly = true;
+            this.uiOutputPodaciArtikli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiOutputPodaciArtikli.Size = new System.Drawing.Size(1006, 313);
             this.uiOutputPodaciArtikli.TabIndex = 3;
             // 
@@ -198,35 +207,63 @@
             // 
             // uiActionObrisiArtikl
             // 
+            this.uiActionObrisiArtikl.BackColor = System.Drawing.Color.DarkRed;
+            this.uiActionObrisiArtikl.FlatAppearance.BorderSize = 0;
+            this.uiActionObrisiArtikl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionObrisiArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionObrisiArtikl.ForeColor = System.Drawing.Color.White;
             this.uiActionObrisiArtikl.Location = new System.Drawing.Point(862, 349);
             this.uiActionObrisiArtikl.Name = "uiActionObrisiArtikl";
             this.uiActionObrisiArtikl.Size = new System.Drawing.Size(75, 23);
             this.uiActionObrisiArtikl.TabIndex = 6;
             this.uiActionObrisiArtikl.Text = "Obriši";
-            this.uiActionObrisiArtikl.UseVisualStyleBackColor = true;
+            this.uiActionObrisiArtikl.UseVisualStyleBackColor = false;
             this.uiActionObrisiArtikl.Click += new System.EventHandler(this.Button1_Click);
             // 
             // uiActionAzurirajArtikl
             // 
+            this.uiActionAzurirajArtikl.BackColor = System.Drawing.Color.DarkRed;
+            this.uiActionAzurirajArtikl.FlatAppearance.BorderSize = 0;
+            this.uiActionAzurirajArtikl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionAzurirajArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionAzurirajArtikl.ForeColor = System.Drawing.Color.White;
             this.uiActionAzurirajArtikl.Location = new System.Drawing.Point(781, 349);
             this.uiActionAzurirajArtikl.Name = "uiActionAzurirajArtikl";
             this.uiActionAzurirajArtikl.Size = new System.Drawing.Size(75, 23);
             this.uiActionAzurirajArtikl.TabIndex = 7;
             this.uiActionAzurirajArtikl.Text = "Ažuriraj";
-            this.uiActionAzurirajArtikl.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajArtikl.UseVisualStyleBackColor = false;
             this.uiActionAzurirajArtikl.Click += new System.EventHandler(this.UiActionAzurirajArtikl_Click);
+            // 
+            // uiActionNatrag
+            // 
+            this.uiActionNatrag.BackColor = System.Drawing.Color.DarkRed;
+            this.uiActionNatrag.FlatAppearance.BorderSize = 0;
+            this.uiActionNatrag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNatrag.ForeColor = System.Drawing.Color.White;
+            this.uiActionNatrag.Location = new System.Drawing.Point(12, 354);
+            this.uiActionNatrag.Name = "uiActionNatrag";
+            this.uiActionNatrag.Size = new System.Drawing.Size(75, 23);
+            this.uiActionNatrag.TabIndex = 8;
+            this.uiActionNatrag.Text = "Natrag";
+            this.uiActionNatrag.UseVisualStyleBackColor = false;
+            this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
             // 
             // UiArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1030, 389);
+            this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiActionAzurirajArtikl);
             this.Controls.Add(this.uiActionObrisiArtikl);
             this.Controls.Add(this.uiActionDodajArtikl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiOutputPodaciArtikli);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UiArtikl";
@@ -261,5 +298,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stavkaDokumentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button uiActionObrisiArtikl;
         private System.Windows.Forms.Button uiActionAzurirajArtikl;
+        private System.Windows.Forms.Button uiActionNatrag;
     }
 }

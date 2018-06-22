@@ -99,5 +99,16 @@ namespace TechStore
             formaDodavanjeVrsteArtikla.ShowDialog();
             vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
         }
+
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritiska na gumbić Natrag.
+        /// Metoda zatvara formu uiVrstaArtikl.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -96,32 +96,49 @@
             // 
             // uiActionSpremi
             // 
+            this.uiActionSpremi.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionSpremi.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.uiActionSpremi.FlatAppearance.BorderSize = 0;
+            this.uiActionSpremi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionSpremi.ForeColor = System.Drawing.Color.White;
             this.uiActionSpremi.Location = new System.Drawing.Point(903, 372);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(75, 23);
             this.uiActionSpremi.TabIndex = 3;
             this.uiActionSpremi.Text = "Spremi";
-            this.uiActionSpremi.UseVisualStyleBackColor = true;
+            this.uiActionSpremi.UseVisualStyleBackColor = false;
             this.uiActionSpremi.Click += new System.EventHandler(this.UiActionSpremi_Click);
             // 
             // uiActionOdustani
             // 
+            this.uiActionOdustani.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionOdustani.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.uiActionOdustani.FlatAppearance.BorderSize = 0;
+            this.uiActionOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionOdustani.ForeColor = System.Drawing.Color.White;
             this.uiActionOdustani.Location = new System.Drawing.Point(822, 372);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(75, 23);
             this.uiActionOdustani.TabIndex = 4;
             this.uiActionOdustani.Text = "Odustani";
-            this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.UseVisualStyleBackColor = false;
             this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
             // uiActionDodaj
             // 
+            this.uiActionDodaj.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionDodaj.FlatAppearance.BorderSize = 0;
+            this.uiActionDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionDodaj.ForeColor = System.Drawing.Color.White;
             this.uiActionDodaj.Location = new System.Drawing.Point(374, 184);
             this.uiActionDodaj.Name = "uiActionDodaj";
             this.uiActionDodaj.Size = new System.Drawing.Size(75, 23);
             this.uiActionDodaj.TabIndex = 6;
             this.uiActionDodaj.Text = ">";
-            this.uiActionDodaj.UseVisualStyleBackColor = true;
+            this.uiActionDodaj.UseVisualStyleBackColor = false;
             this.uiActionDodaj.Click += new System.EventHandler(this.UiActionDodaj_Click);
             // 
             // uiOutputPopisArtikala
@@ -150,6 +167,7 @@
             this.uiOutputPopisArtikala.MultiSelect = false;
             this.uiOutputPopisArtikala.Name = "uiOutputPopisArtikala";
             this.uiOutputPopisArtikala.ReadOnly = true;
+            this.uiOutputPopisArtikala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uiOutputPopisArtikala.Size = new System.Drawing.Size(508, 354);
             this.uiOutputPopisArtikala.TabIndex = 8;
             // 
@@ -252,6 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 407);
             this.Controls.Add(this.uiOutputPopisArtikala);
@@ -261,6 +280,7 @@
             this.Controls.Add(this.uiInputKolicina);
             this.Controls.Add(this.uiInputArtikl);
             this.Controls.Add(this.uiInputPoslovnica);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UiNabava";

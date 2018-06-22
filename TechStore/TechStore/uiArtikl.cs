@@ -110,5 +110,16 @@ namespace TechStore
             artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
             vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
         }
+
+        /// <summary>
+        /// Metoda koja se poziva kod pritiska na gumbić Natrag.
+        /// Metoda zatvara formu uiArtikl.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

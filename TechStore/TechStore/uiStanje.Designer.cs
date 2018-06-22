@@ -54,14 +54,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(80, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Poslovnice:";
             // 
             // uiOutputPoslovnice
             // 
+            this.uiOutputPoslovnice.AllowUserToAddRows = false;
+            this.uiOutputPoslovnice.AllowUserToDeleteRows = false;
             this.uiOutputPoslovnice.AutoGenerateColumns = false;
             this.uiOutputPoslovnice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiOutputPoslovnice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -139,26 +144,38 @@
             // 
             // uiActionNatrag
             // 
-            this.uiActionNatrag.Location = new System.Drawing.Point(632, 438);
+            this.uiActionNatrag.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionNatrag.FlatAppearance.BorderSize = 0;
+            this.uiActionNatrag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNatrag.ForeColor = System.Drawing.Color.White;
+            this.uiActionNatrag.Location = new System.Drawing.Point(12, 438);
             this.uiActionNatrag.Name = "uiActionNatrag";
             this.uiActionNatrag.Size = new System.Drawing.Size(75, 23);
             this.uiActionNatrag.TabIndex = 2;
             this.uiActionNatrag.Text = "Natrag";
-            this.uiActionNatrag.UseVisualStyleBackColor = true;
+            this.uiActionNatrag.UseVisualStyleBackColor = false;
             this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
             // 
             // uiActionNaruci
             // 
+            this.uiActionNaruci.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionNaruci.FlatAppearance.BorderSize = 0;
+            this.uiActionNaruci.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionNaruci.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNaruci.ForeColor = System.Drawing.Color.White;
             this.uiActionNaruci.Location = new System.Drawing.Point(812, 438);
             this.uiActionNaruci.Name = "uiActionNaruci";
             this.uiActionNaruci.Size = new System.Drawing.Size(75, 23);
             this.uiActionNaruci.TabIndex = 3;
             this.uiActionNaruci.Text = "Naruči";
-            this.uiActionNaruci.UseVisualStyleBackColor = true;
+            this.uiActionNaruci.UseVisualStyleBackColor = false;
             this.uiActionNaruci.Click += new System.EventHandler(this.UiActionNaruci_Click);
             // 
             // uiOutputStanjeArtikala
             // 
+            this.uiOutputStanjeArtikala.AllowUserToAddRows = false;
+            this.uiOutputStanjeArtikala.AllowUserToDeleteRows = false;
             this.uiOutputStanjeArtikala.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.uiOutputStanjeArtikala.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.uiOutputStanjeArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -176,9 +193,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 222);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(9, 222);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 6;
             this.label2.Text = "Artikli:";
             // 
@@ -186,6 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(899, 473);
             this.Controls.Add(this.label2);
@@ -194,6 +215,7 @@
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiOutputPoslovnice);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UiStanje";
