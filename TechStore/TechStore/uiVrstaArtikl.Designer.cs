@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.uiOutputVrsteArtikla = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,29 +38,29 @@
             this.uiActionObrisi = new System.Windows.Forms.Button();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.uiActionNatrag = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiOutputVrsteArtikla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // uiOutputVrsteArtikla
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.uiOutputVrsteArtikla.AllowUserToAddRows = false;
+            this.uiOutputVrsteArtikla.AllowUserToDeleteRows = false;
+            this.uiOutputVrsteArtikla.AutoGenerateColumns = false;
+            this.uiOutputVrsteArtikla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.uiOutputVrsteArtikla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.uiOutputVrsteArtikla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uiOutputVrsteArtikla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.nazivDataGridViewTextBoxColumn,
             this.artiklDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.vrstaArtiklaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(719, 205);
-            this.dataGridView1.TabIndex = 0;
+            this.uiOutputVrsteArtikla.DataSource = this.vrstaArtiklaBindingSource;
+            this.uiOutputVrsteArtikla.Location = new System.Drawing.Point(12, 12);
+            this.uiOutputVrsteArtikla.MultiSelect = false;
+            this.uiOutputVrsteArtikla.Name = "uiOutputVrsteArtikla";
+            this.uiOutputVrsteArtikla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.uiOutputVrsteArtikla.Size = new System.Drawing.Size(719, 205);
+            this.uiOutputVrsteArtikla.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -156,7 +156,7 @@
             this.Controls.Add(this.uiActionAzuriraj);
             this.Controls.Add(this.uiActionObrisi);
             this.Controls.Add(this.uiActionDodaj);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.uiOutputVrsteArtikla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -164,7 +164,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "uiVrstaArtikl";
             this.Load += new System.EventHandler(this.UiVrstaArtikl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiOutputVrsteArtikla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -172,7 +172,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView uiOutputVrsteArtikla;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn artiklDataGridViewTextBoxColumn;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uiLabelPoslovnice = new System.Windows.Forms.Label();
             this.uiOutputPoslovnice = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,24 +44,24 @@
             this.uiActionNaruci = new System.Windows.Forms.Button();
             this.uiOutputStanjeArtikala = new System.Windows.Forms.DataGridView();
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
+            this.uiLabelArtikli = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPoslovnice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputStanjeArtikala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // uiLabelPoslovnice
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Poslovnice:";
+            this.uiLabelPoslovnice.AutoSize = true;
+            this.uiLabelPoslovnice.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelPoslovnice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelPoslovnice.ForeColor = System.Drawing.Color.Transparent;
+            this.uiLabelPoslovnice.Location = new System.Drawing.Point(9, 9);
+            this.uiLabelPoslovnice.Name = "uiLabelPoslovnice";
+            this.uiLabelPoslovnice.Size = new System.Drawing.Size(80, 15);
+            this.uiLabelPoslovnice.TabIndex = 0;
+            this.uiLabelPoslovnice.Text = "Poslovnice:";
             // 
             // uiOutputPoslovnice
             // 
@@ -190,17 +190,17 @@
             // 
             this.artiklBindingSource.DataSource = typeof(TechStore.Artikl);
             // 
-            // label2
+            // uiLabelArtikli
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(9, 222);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Artikli:";
+            this.uiLabelArtikli.AutoSize = true;
+            this.uiLabelArtikli.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelArtikli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelArtikli.ForeColor = System.Drawing.Color.Transparent;
+            this.uiLabelArtikli.Location = new System.Drawing.Point(9, 222);
+            this.uiLabelArtikli.Name = "uiLabelArtikli";
+            this.uiLabelArtikli.Size = new System.Drawing.Size(47, 15);
+            this.uiLabelArtikli.TabIndex = 6;
+            this.uiLabelArtikli.Text = "Artikli:";
             // 
             // UiStanje
             // 
@@ -209,12 +209,12 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(899, 473);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.uiLabelArtikli);
             this.Controls.Add(this.uiOutputStanjeArtikala);
             this.Controls.Add(this.uiActionNaruci);
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiOutputPoslovnice);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiLabelPoslovnice);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -233,7 +233,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label uiLabelPoslovnice;
         private System.Windows.Forms.DataGridView uiOutputPoslovnice;
         private System.Windows.Forms.Button uiActionNatrag;
         private System.Windows.Forms.Button uiActionNaruci;
@@ -248,6 +248,6 @@
         private System.Windows.Forms.BindingSource poslovnicaBindingSource;
         private System.Windows.Forms.DataGridView uiOutputStanjeArtikala;
         private System.Windows.Forms.BindingSource artiklBindingSource;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label uiLabelArtikli;
     }
 }
