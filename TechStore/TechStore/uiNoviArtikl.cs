@@ -95,7 +95,7 @@ namespace TechStore
                         Cijena = cijena,
                         Vrsta_ID = int.Parse(uiInputVrstaArtikla.SelectedValue.ToString())
                     };
-                    //Artikl.DodajArtikl(noviArtikl);
+                    Artikl.DodajArtikl(noviArtikl);
                     var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl WHERE ID !=(SELECT MAX(ID) FROM Artikl)");
                     if (noviArtikl.Vrsta_ID == 1)
                     {
@@ -158,14 +158,13 @@ namespace TechStore
             {
                 if (uiInputNaziv.Text != "" && uiInputKratkiOpis.Text != "" && uiInputSpecifikacije.Text != "" && double.TryParse(uiInputCijena.Text, out double cijena) && uiInputVrstaArtikla.SelectedValue.ToString() != "")
                 {
-                    //Artikl.AzurirajArtikl(ArtiklZaIzmjenu, uiInputNaziv.Text, uiInputKratkiOpis.Text, uiInputSpecifikacije.Text, cijena,int.Parse(uiInputVrstaArtikla.SelectedValue.ToString()));
+                    Artikl.AzurirajArtikl(ArtiklZaIzmjenu, uiInputNaziv.Text, uiInputKratkiOpis.Text, uiInputSpecifikacije.Text, cijena,int.Parse(uiInputVrstaArtikla.SelectedValue.ToString()));
                     var listaKompatibilnosti = Kompatibilnost.DohvatiKompatibilnosti("SELECT * FROM Kompatibilnost WHERE Komponenta1=" + ArtiklZaIzmjenu.ID);
                     foreach (var kompatibilnost in listaKompatibilnosti)
                     {
-                        //Kompatibilnost.ObrisiKompatibilnost(kompatibilnost);
+                        Kompatibilnost.ObrisiKompatibilnost(kompatibilnost);
                     }
-                    var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl WHERE ID !=" + ArtiklZaIzmjenu.ID);
-                    //Artikl.ObrisiArtikl(ArtiklZaIzmjenu);
+                    var listaArtikala = Artikl.DohvatiKomponente("SELECT * FROM Artikl WHERE ID !=" + ArtiklZaIzmjenu.ID);                   
                     if (ArtiklZaIzmjenu.Vrsta_ID == 1)
                     {
                         OstaloKompatibilnost(listaArtikala, ArtiklZaIzmjenu);
@@ -641,7 +640,7 @@ namespace TechStore
                     visinaTrenutniArtikl = DohvatiVisinu(listaSpecifikacijaTrenutnogArtikla);
                     sirinaTrenutniArtikl = DohvatiSirinu(listaSpecifikacijaTrenutnogArtikla);
                     duljinaTrenutniArtikl = DohvatiDuljinu(listaSpecifikacijaTrenutnogArtikla);
-                    if (sirinaNoviArtikl < sirinaTrenutniArtikl && visinaNoviArtikl < visinaTrenutniArtikl && duljinaNoviArtikl < duljinaTrenutniArtikl)
+                    if (sirinaNoviArtikl > sirinaTrenutniArtikl && visinaNoviArtikl > visinaTrenutniArtikl && duljinaNoviArtikl > duljinaTrenutniArtikl)
                     {
                         DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
                     }
@@ -669,9 +668,9 @@ namespace TechStore
             {
                 Komponenta1 = noviArtikl.ID,
                 Komponenta2 = trenutniArtikl.ID,
-                Kompatibilni = true
+                Kompatibilni = kompatibilni
             };
-            //Kompatibilnost.DodajKompatibilnost(kompatibilnost);
+            Kompatibilnost.DodajKompatibilnost(kompatibilnost);
         }
 
         /// <summary>

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.uiActionDodajArtikl = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uiLabelPodaci = new System.Windows.Forms.Label();
             this.uiOutputPodaciArtikli = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,17 +68,17 @@
             this.uiActionDodajArtikl.UseVisualStyleBackColor = false;
             this.uiActionDodajArtikl.Click += new System.EventHandler(this.UiActionDodajArtikl_Click);
             // 
-            // label1
+            // uiLabelPodaci
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Podaci o artiklima:";
+            this.uiLabelPodaci.AutoSize = true;
+            this.uiLabelPodaci.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelPodaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelPodaci.ForeColor = System.Drawing.Color.White;
+            this.uiLabelPodaci.Location = new System.Drawing.Point(12, 10);
+            this.uiLabelPodaci.Name = "uiLabelPodaci";
+            this.uiLabelPodaci.Size = new System.Drawing.Size(127, 15);
+            this.uiLabelPodaci.TabIndex = 4;
+            this.uiLabelPodaci.Text = "Podaci o artiklima:";
             // 
             // uiOutputPodaciArtikli
             // 
@@ -261,7 +261,7 @@
             this.Controls.Add(this.uiActionAzurirajArtikl);
             this.Controls.Add(this.uiActionObrisiArtikl);
             this.Controls.Add(this.uiActionDodajArtikl);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uiLabelPodaci);
             this.Controls.Add(this.uiOutputPodaciArtikli);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -281,7 +281,7 @@
         #endregion
 
         private System.Windows.Forms.Button uiActionDodajArtikl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label uiLabelPodaci;
         private System.Windows.Forms.DataGridView uiOutputPodaciArtikli;
         private System.Windows.Forms.BindingSource artiklBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;

@@ -111,7 +111,7 @@ namespace TechStore
         /// ažurira i sprema u bazu podataka.
         /// </summary>
         /// <param name="artiklZaAzuriranje"></param>
-        public static void AzurirajArtikl(Artikl artiklZaAzuriranje,string naziv, string kratkiOpis, string specifikacija, int cijena, int vrstaId)
+        public static void AzurirajArtikl(Artikl artiklZaAzuriranje,string naziv, string kratkiOpis, string specifikacija, double cijena, int vrstaId)
         {
             using (var db= new TechStoreEntities())
             {
