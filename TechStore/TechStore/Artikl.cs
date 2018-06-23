@@ -136,7 +136,7 @@ namespace TechStore
             Artikl artikl = null;
             using (var db= new TechStoreEntities())
             {
-                 artikl = (from a in db.Artikl where a.ID == id select a).First();
+                 artikl = (from a in db.Artikl where a.ID == id select a).FirstOrDefault();
             }
             return artikl;
         }
