@@ -11,7 +11,9 @@ namespace TechStore
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class Dokument
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -44,6 +46,20 @@ namespace TechStore
                 db.Dokument.Add(noviDokument);
                 db.SaveChanges();
             }
+        }
+
+        /// <summary>
+        /// Statièka metoda koja vraæa sve dokumente
+        /// koji su narudžbe.
+        /// </summary>
+        /// <returns></returns>
+        public static BindingList<Dokument> DohvatiDokumente() {
+            BindingList<Dokument> listadokumenata = null;
+            using (var db= new TechStoreEntities())
+            {
+                listadokumenata = new BindingList<Dokument>(db.Dokument.SqlQuery("SELECT * FROM Dokument where VrstaDokumenta_ID=1").ToList());
+            }
+            return listadokumenata;
         }
     }
 }

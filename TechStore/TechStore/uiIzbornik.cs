@@ -171,5 +171,17 @@ namespace TechStore
             UiVrstaArtikl formaVrstaArtikl = new UiVrstaArtikl();
             formaVrstaArtikl.Show();
         }
+
+        /// <summary>
+        /// Metoda koja se poziva prilikom pritisna na gumbić Narudžbe.
+        /// Metoda otvara novu formu naziva uiPregledNarudzbi.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiActionNarudzbe_Click(object sender, EventArgs e)
+        {
+            UiPregledNarudzbi formaPregledNarudzbi= new UiPregledNarudzbi();
+            formaPregledNarudzbi.ShowDialog();
+        }
     }
 }

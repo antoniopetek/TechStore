@@ -11,7 +11,9 @@ namespace TechStore
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class StavkaDokumenta
     {
         public int Artikl_ID { get; set; }
@@ -29,6 +31,17 @@ namespace TechStore
                 db.StavkaDokumenta.Add(stavkaDokumenta);
                 db.SaveChanges();
             }
+        }
+
+        public static BindingList<StavkaDokumenta> DohvatiStavkeDokumenta(Dokument dokument)
+        {
+            BindingList<StavkaDokumenta> listaStavaka = null;
+            using (var db= new TechStoreEntities())
+            {
+                db.Dokument.Attach(dokument);
+                listaStavaka = new BindingList<StavkaDokumenta>(dokument.StavkaDokumenta.ToList());
+            }
+            return listaStavaka;
         }
     }
 }

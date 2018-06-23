@@ -37,6 +37,7 @@
             this.uiOutputIspis = new System.Windows.Forms.Label();
             this.uiActionNabavaArtikala = new System.Windows.Forms.Button();
             this.uiActionVrsteArtikala = new System.Windows.Forms.Button();
+            this.uiActionNarudzbe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uiActionDodajArtikl
@@ -172,6 +173,22 @@
             this.uiActionVrsteArtikala.UseVisualStyleBackColor = false;
             this.uiActionVrsteArtikala.Click += new System.EventHandler(this.UiActionVrsteArtikala_Click);
             // 
+            // uiActionNarudzbe
+            // 
+            this.uiActionNarudzbe.BackColor = System.Drawing.Color.Maroon;
+            this.uiActionNarudzbe.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.uiActionNarudzbe.FlatAppearance.BorderSize = 0;
+            this.uiActionNarudzbe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uiActionNarudzbe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionNarudzbe.ForeColor = System.Drawing.Color.White;
+            this.uiActionNarudzbe.Location = new System.Drawing.Point(172, 198);
+            this.uiActionNarudzbe.Name = "uiActionNarudzbe";
+            this.uiActionNarudzbe.Size = new System.Drawing.Size(103, 53);
+            this.uiActionNarudzbe.TabIndex = 9;
+            this.uiActionNarudzbe.Text = "Pregled narudžbi";
+            this.uiActionNarudzbe.UseVisualStyleBackColor = false;
+            this.uiActionNarudzbe.Click += new System.EventHandler(this.UiActionNarudzbe_Click);
+            // 
             // uiIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +197,7 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(458, 324);
+            this.Controls.Add(this.uiActionNarudzbe);
             this.Controls.Add(this.uiActionVrsteArtikala);
             this.Controls.Add(this.uiActionNabavaArtikala);
             this.Controls.Add(this.uiOutputIspis);
@@ -210,5 +228,6 @@
         private System.Windows.Forms.Label uiOutputIspis;
         private System.Windows.Forms.Button uiActionNabavaArtikala;
         private System.Windows.Forms.Button uiActionVrsteArtikala;
+        private System.Windows.Forms.Button uiActionNarudzbe;
     }
 }
