@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Forma za prijavu.
+    /// </summary>
     public partial class uiPrijava : Form
     {
         /// <summary>
@@ -19,6 +22,7 @@ namespace TechStore
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Rukuje događajem klika na tipku uiActionOdustani. Zatvara aplikaciju.
         /// </summary>
@@ -28,6 +32,7 @@ namespace TechStore
         {
             Application.Exit();
         }
+
         /// <summary>
         /// Rukuje događajem klika na tipku uiActionPrijaviSe. Dohvaća zaposlenika
         /// iz baze prema upisanom korisničkom imenu i lozinki. Ukoliko zaposlenik
@@ -58,6 +63,7 @@ namespace TechStore
                 MessageBox.Show("Niste unijeli sve podatke", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         /// <summary>
         /// Rukuje događajem pokretanja forme.
         /// </summary>
@@ -68,6 +74,7 @@ namespace TechStore
             this.KeyPreview = true;
             this.KeyDown += UiPrijava_KeyDown;
         }
+
         /// <summary>
         /// Rukuje događajem pritiska tipke na tipkovnici. Ako je na tipkovnici
         /// pritisnuta tipka "F1" otvara formu uiHelp.

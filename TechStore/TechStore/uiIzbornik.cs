@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Forma glavni izbornik.
+    /// </summary>
     public partial class uiIzbornik : Form
     {
         /// <summary>
@@ -65,7 +68,6 @@ namespace TechStore
             uiKolicinaArtikala formaKolicina = new uiKolicinaArtikala();
             formaKolicina.ShowDialog();   
         }
-
 
         /// <summary>
         /// Metoda koja se poziva prilikom klika na gumbić Artikl.

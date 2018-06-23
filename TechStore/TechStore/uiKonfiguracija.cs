@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Forma za izradu konfiguracije.
+    /// </summary>
     public partial class uiKonfiguracija : Form
     {
         #region Svojstva

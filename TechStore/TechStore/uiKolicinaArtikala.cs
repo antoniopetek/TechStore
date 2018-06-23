@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Forma za pregled količina artikala po poslovnicama.
+    /// </summary>
     public partial class uiKolicinaArtikala : Form
     {
         private BindingList<Artikl> Artikli { get; set; }
-        private Poslovnica Poslovnica { get; set; }
-        private Artikl OdabraniArtikl { get; set; }
+
         /// <summary>
         /// Konstruktor forme uiKolicinaArtikala.
         /// </summary>
@@ -70,13 +72,18 @@ namespace TechStore
         private void UiInputArtikl_SelectedValueChanged(object sender, EventArgs e)
         {
             uiOutputGraf.Series["Kolicina"].Points.Clear();
-            OdabraniArtikl = uiInputArtikl.SelectedItem as Artikl;
-            if (OdabraniArtikl != null)
+            try
             {
-                List<Dostupnost> dostupnost = Dostupnost.DohvatiDostupnost(int.Parse(OdabraniArtikl.ID.ToString()));
-                CrtajGraf(dostupnost);
+                if (uiInputArtikl.SelectedItem is Artikl odabraniArtikl)
+                {
+                    List<Dostupnost> dostupnost = Dostupnost.DohvatiDostupnost(int.Parse(odabraniArtikl.ID.ToString()));
+                    CrtajGraf(dostupnost);
+                }
             }
-
+            catch (Exception)
+            {
+                MessageBox.Show("Odaberite artikl.", "Greška", MessageBoxButtons.OK);
+            }
         }
 
         /// <summary>
@@ -88,9 +95,9 @@ namespace TechStore
             int brojac = 0;
             foreach (Dostupnost d in dostupnost)
             {
-                Poslovnica = Poslovnica.DohvatiPoslovnicu(d.Poslovnica_ID);
+                Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(d.Poslovnica_ID);
 
-                uiOutputGraf.Series["Kolicina"].Points.AddXY(Poslovnica.Naziv, d.Kolicina);
+                uiOutputGraf.Series["Kolicina"].Points.AddXY(poslovnica.Naziv, d.Kolicina);
                 uiOutputGraf.Series["Kolicina"].Points[brojac].Label = d.Kolicina.ToString();
                 brojac++;
 

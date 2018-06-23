@@ -14,6 +14,9 @@ namespace TechStore
     using System.ComponentModel;
     using System.Linq;
 
+    /// <summary>
+    /// Klasa Poslovnica.
+    /// </summary>
     public partial class Poslovnica
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

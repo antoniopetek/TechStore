@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Forma za pregled zaposlenika.
+    /// </summary>
     public partial class uiZaposlenici : Form
     {
-        private Zaposlenik Zaposlenik { get; set; }
         /// <summary>
         /// Konstruktor forme uiZaposlenici.
         /// </summary>
@@ -88,15 +90,15 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiOutputPopisZaposlenika_SelectionChanged(object sender, EventArgs e)
         {
-            Zaposlenik = zaposlenikBindingSource.Current as Zaposlenik;
+            Zaposlenik zaposlenik = zaposlenikBindingSource.Current as Zaposlenik;
 
-            if (Zaposlenik != null)
+            if (zaposlenik != null)
             {
-                uiOutputAdresa.Text = Zaposlenik.Ulica.ToString() + " " + Zaposlenik.Broj.ToString() + ", " + Zaposlenik.Grad.ToString() + ", " + Zaposlenik.Drzava.ToString();
-                uiOutputKontakt.Text = Zaposlenik.Kontakt.ToString();
-                uiOutputEmail.Text = Zaposlenik.Email.ToString();
-                uiOutputKorisnickoIme.Text = Zaposlenik.Korisnicko_ime.ToString();
-                uiOutputLozinka.Text = Zaposlenik.Lozinka.ToString();
+                uiOutputAdresa.Text = zaposlenik.Ulica.ToString() + " " + zaposlenik.Broj.ToString() + ", " + zaposlenik.Grad.ToString() + ", " + zaposlenik.Drzava.ToString();
+                uiOutputKontakt.Text = zaposlenik.Kontakt.ToString();
+                uiOutputEmail.Text = zaposlenik.Email.ToString();
+                uiOutputKorisnickoIme.Text = zaposlenik.Korisnicko_ime.ToString();
+                uiOutputLozinka.Text = zaposlenik.Lozinka.ToString();
             }
         }
 
@@ -109,6 +111,5 @@ namespace TechStore
         {
             Close();
         }
-
     }
 }

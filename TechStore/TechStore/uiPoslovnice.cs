@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Forma za pregled poslovnica.
+    /// </summary>
     public partial class uiPoslovnice : Form
     {
         /// <summary>

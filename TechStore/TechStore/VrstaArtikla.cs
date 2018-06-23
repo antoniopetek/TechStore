@@ -14,6 +14,9 @@ namespace TechStore
     using System.ComponentModel;
     using System.Linq;
 
+    /// <summary>
+    /// Klasa VrstaArtikla.
+    /// </summary>
     public partial class VrstaArtikla
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

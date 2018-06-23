@@ -13,6 +13,9 @@ using System.Linq;
 namespace TechStore
 {
 
+    /// <summary>
+    /// Klasa Kompatibilnost.
+    /// </summary>
     public partial class Kompatibilnost
     {
         public int Komponenta1 { get; set; }

@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Forma za dodavanje zaposlenika.
+    /// </summary>
     public partial class uiDodavanjeZaposlenika : Form
     {
         /// <summary>

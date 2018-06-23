@@ -14,6 +14,9 @@ namespace TechStore
     using System.ComponentModel;
     using System.Linq;
 
+    /// <summary>
+    /// Klasa Dostupnost.
+    /// </summary>
     public partial class Dostupnost
     {
         public int ID { get; set; }
