@@ -11,7 +11,9 @@ namespace TechStore
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class VrstaDokumenta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,5 +27,20 @@ namespace TechStore
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dokument> Dokument { get; set; }
+
+
+        /// <summary>
+        /// Statièka metoda koja vraæa listu svih vrsta dokumenata
+        /// iz baze podataka.
+        /// </summary>
+        /// <returns></returns>
+        public static BindingList<VrstaDokumenta> DohvatiVrsteDokumenta() {
+            BindingList<VrstaDokumenta> listaVrstaArtikala = null;
+            using (var db= new TechStoreEntities())
+            {
+                listaVrstaArtikala = new BindingList<VrstaDokumenta>(db.VrstaDokumenta.ToList());
+            }
+            return listaVrstaArtikala;
+        }
     }
 }

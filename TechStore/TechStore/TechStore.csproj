@@ -121,6 +121,12 @@
     <Compile Include="uiPoslovnice.Designer.cs">
       <DependentUpon>uiPoslovnice.cs</DependentUpon>
     </Compile>
+    <Compile Include="uiPregledNarudzbi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uiPregledNarudzbi.Designer.cs">
+      <DependentUpon>uiPregledNarudzbi.cs</DependentUpon>
+    </Compile>
     <Compile Include="uiPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     <EmbeddedResource Include="uiPoslovnice.resx">
       <DependentUpon>uiPoslovnice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uiPregledNarudzbi.resx">
+      <DependentUpon>uiPregledNarudzbi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uiPrijava.resx">
       <DependentUpon>uiPrijava.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,9 +271,12 @@
     <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Artikl.datasource" />
+    <None Include="Properties\DataSources\Dokument.datasource" />
     <None Include="Properties\DataSources\Poslovnica.datasource" />
+    <None Include="Properties\DataSources\StavkaDokumenta.datasource" />
     <None Include="Properties\DataSources\TipZaposlenika.datasource" />
     <None Include="Properties\DataSources\VrstaArtikla.datasource" />
+    <None Include="Properties\DataSources\VrstaDokumenta.datasource" />
     <None Include="Properties\DataSources\Zaposlenik.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

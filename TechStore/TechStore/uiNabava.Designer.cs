@@ -44,12 +44,12 @@
             this.specifikacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaArtiklaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dostupnostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kompatibilnostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -156,12 +156,12 @@
             this.specifikacijaDataGridViewTextBoxColumn,
             this.cijenaDataGridViewTextBoxColumn,
             this.vrstaIDDataGridViewTextBoxColumn,
+            this.Kolicina,
             this.vrstaArtiklaDataGridViewTextBoxColumn,
             this.dostupnostDataGridViewTextBoxColumn,
             this.kompatibilnostDataGridViewTextBoxColumn,
             this.kompatibilnost1DataGridViewTextBoxColumn,
-            this.stavkaDokumentaDataGridViewTextBoxColumn,
-            this.Kolicina});
+            this.stavkaDokumentaDataGridViewTextBoxColumn});
             this.uiOutputPopisArtikala.DataSource = this.artiklBindingSource1;
             this.uiOutputPopisArtikala.Location = new System.Drawing.Point(470, 12);
             this.uiOutputPopisArtikala.MultiSelect = false;
@@ -216,6 +216,12 @@
             this.vrstaIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.vrstaIDDataGridViewTextBoxColumn.Visible = false;
             // 
+            // Kolicina
+            // 
+            this.Kolicina.HeaderText = "Količina";
+            this.Kolicina.Name = "Kolicina";
+            this.Kolicina.ReadOnly = true;
+            // 
             // vrstaArtiklaDataGridViewTextBoxColumn
             // 
             this.vrstaArtiklaDataGridViewTextBoxColumn.DataPropertyName = "VrstaArtikla";
@@ -255,12 +261,6 @@
             this.stavkaDokumentaDataGridViewTextBoxColumn.Name = "stavkaDokumentaDataGridViewTextBoxColumn";
             this.stavkaDokumentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.stavkaDokumentaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Kolicina
-            // 
-            this.Kolicina.HeaderText = "Količina";
-            this.Kolicina.Name = "Kolicina";
-            this.Kolicina.ReadOnly = true;
             // 
             // artiklBindingSource1
             // 
@@ -307,18 +307,18 @@
         private System.Windows.Forms.BindingSource artiklBindingSource;
         private System.Windows.Forms.Button uiActionDodaj;
         private System.Windows.Forms.DataGridView uiOutputPopisArtikala;
-        private System.Windows.Forms.BindingSource artiklBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kratkiopisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specifikacijaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cijenaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vrstaIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
         private System.Windows.Forms.DataGridViewTextBoxColumn vrstaArtiklaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dostupnostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kompatibilnostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kompatibilnost1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stavkaDokumentaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
+        private System.Windows.Forms.BindingSource artiklBindingSource1;
     }
 }
