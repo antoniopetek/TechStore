@@ -8,10 +8,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TechStoreTest
 {
+    /// <summary>
+    /// Testna klasa ArtiklTest.
+    /// </summary>
     [TestClass]
     public class ArtiklTest
     {
-
+        /// <summary>
+        /// Testna metoda koja provjerava postojanje artikla. Ako artikl s proslijeđenim
+        /// ID - em postoji vraća taj artikl, inače vraća null.
+        /// </summary>
         [TestMethod]
         public void DohvatiArtiklTest_ArtiklNePostoji()
         {
@@ -20,6 +26,10 @@ namespace TechStoreTest
             Assert.IsNull(artikl);
         }
 
+        /// <summary>
+        /// Testna metoda koja provjerava postojanje artikla. Ako artikl s proslijeđenim
+        /// ID - em postoji vraća taj artikl, inače vraća null.
+        /// </summary>
         [TestMethod]
         public void DohvatiArtiklTest_ArtiklPostoji()
         {
@@ -27,6 +37,7 @@ namespace TechStoreTest
             artikl = Artikl.DohvatiArtikl(1);
             Assert.IsNotNull(artikl);
         }
+       
     }
 
 }
