@@ -130,11 +130,11 @@
             this.uiLabelSpecifikacija.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelSpecifikacija.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiLabelSpecifikacija.ForeColor = System.Drawing.Color.White;
-            this.uiLabelSpecifikacija.Location = new System.Drawing.Point(22, 190);
+            this.uiLabelSpecifikacija.Location = new System.Drawing.Point(15, 188);
             this.uiLabelSpecifikacija.Name = "uiLabelSpecifikacija";
-            this.uiLabelSpecifikacija.Size = new System.Drawing.Size(89, 15);
+            this.uiLabelSpecifikacija.Size = new System.Drawing.Size(93, 15);
             this.uiLabelSpecifikacija.TabIndex = 16;
-            this.uiLabelSpecifikacija.Text = "Specifikacije";
+            this.uiLabelSpecifikacija.Text = "Specifikacije:";
             // 
             // uiLabelKratkiOpis
             // 
@@ -154,7 +154,7 @@
             this.uiLabelNaziv.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiLabelNaziv.ForeColor = System.Drawing.Color.White;
-            this.uiLabelNaziv.Location = new System.Drawing.Point(59, 40);
+            this.uiLabelNaziv.Location = new System.Drawing.Point(63, 38);
             this.uiLabelNaziv.Name = "uiLabelNaziv";
             this.uiLabelNaziv.Size = new System.Drawing.Size(46, 15);
             this.uiLabelNaziv.TabIndex = 14;
@@ -166,7 +166,7 @@
             this.uiLabelId.BackColor = System.Drawing.Color.Transparent;
             this.uiLabelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiLabelId.ForeColor = System.Drawing.Color.White;
-            this.uiLabelId.Location = new System.Drawing.Point(39, 14);
+            this.uiLabelId.Location = new System.Drawing.Point(39, 12);
             this.uiLabelId.Name = "uiLabelId";
             this.uiLabelId.Size = new System.Drawing.Size(69, 15);
             this.uiLabelId.TabIndex = 13;

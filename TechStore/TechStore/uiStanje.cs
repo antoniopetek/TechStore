@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Parcijalna klasa uiStanje.
+    /// </summary>
     public partial class UiStanje : Form
     {
         /// <summary>

@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Parcijalna klasa uiArtikl.
+    /// </summary>
     public partial class UiArtikl : Form
     {
         Pretraga pretraga = new Pretraga();

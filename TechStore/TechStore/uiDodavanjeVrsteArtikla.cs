@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Parcijalna klasa uiDodavanjeVrsteArtikla
+    /// </summary>
     public partial class uiDodavanjeVrsteArtikla : Form
     {
         public VrstaArtikla VrstaArtiklaZaIzmjenu;

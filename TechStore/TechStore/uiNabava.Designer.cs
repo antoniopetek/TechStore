@@ -51,6 +51,9 @@
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.uiLabelPoslovnica = new System.Windows.Forms.Label();
+            this.uiLabelArtikl = new System.Windows.Forms.Label();
+            this.uiLabelKolicina = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPopisArtikala)).BeginInit();
@@ -266,6 +269,42 @@
             // 
             this.artiklBindingSource1.DataSource = typeof(TechStore.Artikl);
             // 
+            // uiLabelPoslovnica
+            // 
+            this.uiLabelPoslovnica.AutoSize = true;
+            this.uiLabelPoslovnica.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelPoslovnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelPoslovnica.ForeColor = System.Drawing.Color.White;
+            this.uiLabelPoslovnica.Location = new System.Drawing.Point(1, 160);
+            this.uiLabelPoslovnica.Name = "uiLabelPoslovnica";
+            this.uiLabelPoslovnica.Size = new System.Drawing.Size(80, 15);
+            this.uiLabelPoslovnica.TabIndex = 9;
+            this.uiLabelPoslovnica.Text = "Poslovnica:";
+            // 
+            // uiLabelArtikl
+            // 
+            this.uiLabelArtikl.AutoSize = true;
+            this.uiLabelArtikl.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelArtikl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelArtikl.ForeColor = System.Drawing.Color.White;
+            this.uiLabelArtikl.Location = new System.Drawing.Point(1, 188);
+            this.uiLabelArtikl.Name = "uiLabelArtikl";
+            this.uiLabelArtikl.Size = new System.Drawing.Size(43, 15);
+            this.uiLabelArtikl.TabIndex = 10;
+            this.uiLabelArtikl.Text = "Artikl:";
+            // 
+            // uiLabelKolicina
+            // 
+            this.uiLabelKolicina.AutoSize = true;
+            this.uiLabelKolicina.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelKolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelKolicina.ForeColor = System.Drawing.Color.White;
+            this.uiLabelKolicina.Location = new System.Drawing.Point(1, 215);
+            this.uiLabelKolicina.Name = "uiLabelKolicina";
+            this.uiLabelKolicina.Size = new System.Drawing.Size(63, 15);
+            this.uiLabelKolicina.TabIndex = 11;
+            this.uiLabelKolicina.Text = "Količina:";
+            // 
             // UiNabava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +312,9 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 407);
+            this.Controls.Add(this.uiLabelKolicina);
+            this.Controls.Add(this.uiLabelArtikl);
+            this.Controls.Add(this.uiLabelPoslovnica);
             this.Controls.Add(this.uiOutputPopisArtikala);
             this.Controls.Add(this.uiActionDodaj);
             this.Controls.Add(this.uiActionOdustani);
@@ -320,5 +362,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kompatibilnost1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stavkaDokumentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource artiklBindingSource1;
+        private System.Windows.Forms.Label uiLabelPoslovnica;
+        private System.Windows.Forms.Label uiLabelArtikl;
+        private System.Windows.Forms.Label uiLabelKolicina;
     }
 }

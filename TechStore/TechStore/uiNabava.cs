@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Parcijalna klasa uiNabava.
+    /// </summary>
     public partial class UiNabava : Form
     {
         private DateTime trenutnoVrijeme = DateTime.Now;

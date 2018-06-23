@@ -11,8 +11,12 @@ using System.Windows.Forms;
 
 namespace TechStore
 {
+    /// <summary>
+    /// Parcijalna klasa uiVrstaArtikl
+    /// </summary>
     public partial class UiVrstaArtikl : Form
     {
+        
         private Pretraga pretraga = new Pretraga();
         /// <summary>
         /// Konstruktor forme uiVrstaArtikl
