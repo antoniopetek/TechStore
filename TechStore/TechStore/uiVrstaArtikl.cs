@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Komponente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace TechStore
 {
     public partial class UiVrstaArtikl : Form
     {
+        private Pretraga pretraga = new Pretraga();
         /// <summary>
         /// Konstruktor forme uiVrstaArtikl
         /// </summary>
@@ -110,5 +112,19 @@ namespace TechStore
         {
             Close();
         }
+
+        /// <summary>
+        /// Metoda se  poziva prilikom promjene sadržaja polja uiInputPretraga.
+        /// Metoda osvježava prikaz dataGridView - a te se pretražuje datagridView
+        /// prema unesenom tekstu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UiInputPretraga_TextChanged(object sender, EventArgs e)
+        {
+            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            pretraga.Pretrazi(uiOutputVrsteArtikla, uiInputPretraga.Text, 1);
+        }
+
     }
 }

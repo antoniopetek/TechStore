@@ -48,6 +48,8 @@
             this.uiActionObrisiArtikl = new System.Windows.Forms.Button();
             this.uiActionAzurirajArtikl = new System.Windows.Forms.Button();
             this.uiActionNatrag = new System.Windows.Forms.Button();
+            this.uiInputPretraga = new System.Windows.Forms.TextBox();
+            this.uiLabelPretraga = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPodaciArtikli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstaArtiklaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
@@ -250,6 +252,26 @@
             this.uiActionNatrag.UseVisualStyleBackColor = false;
             this.uiActionNatrag.Click += new System.EventHandler(this.UiActionNatrag_Click);
             // 
+            // uiInputPretraga
+            // 
+            this.uiInputPretraga.Location = new System.Drawing.Point(884, 5);
+            this.uiInputPretraga.Name = "uiInputPretraga";
+            this.uiInputPretraga.Size = new System.Drawing.Size(134, 20);
+            this.uiInputPretraga.TabIndex = 9;
+            this.uiInputPretraga.TextChanged += new System.EventHandler(this.UiInputPretraga_TextChanged);
+            // 
+            // uiLabelPretraga
+            // 
+            this.uiLabelPretraga.AutoSize = true;
+            this.uiLabelPretraga.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabelPretraga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiLabelPretraga.ForeColor = System.Drawing.Color.White;
+            this.uiLabelPretraga.Location = new System.Drawing.Point(752, 6);
+            this.uiLabelPretraga.Name = "uiLabelPretraga";
+            this.uiLabelPretraga.Size = new System.Drawing.Size(126, 15);
+            this.uiLabelPretraga.TabIndex = 10;
+            this.uiLabelPretraga.Text = "Pretraži po nazivu:";
+            // 
             // UiArtikl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +279,8 @@
             this.BackgroundImage = global::TechStore.Properties.Resources.pozadina_nova;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1030, 389);
+            this.Controls.Add(this.uiLabelPretraga);
+            this.Controls.Add(this.uiInputPretraga);
             this.Controls.Add(this.uiActionNatrag);
             this.Controls.Add(this.uiActionAzurirajArtikl);
             this.Controls.Add(this.uiActionObrisiArtikl);
@@ -299,5 +323,7 @@
         private System.Windows.Forms.Button uiActionObrisiArtikl;
         private System.Windows.Forms.Button uiActionAzurirajArtikl;
         private System.Windows.Forms.Button uiActionNatrag;
+        private System.Windows.Forms.TextBox uiInputPretraga;
+        private System.Windows.Forms.Label uiLabelPretraga;
     }
 }

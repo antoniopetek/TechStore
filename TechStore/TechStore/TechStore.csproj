@@ -317,5 +317,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Komponente\Komponente.csproj">
+      <Project>{3FF5F4B0-4FC9-4C89-A540-1147EF58F318}</Project>
+      <Name>Komponente</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
