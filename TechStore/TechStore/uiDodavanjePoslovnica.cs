@@ -50,8 +50,16 @@ namespace TechStore
                     Broj = uiInputBroj.Text
                 };
 
-                Poslovnica.DodajPoslovnicu(poslovnica);
-                MessageBox.Show("Poslovnica uspješno dodana.", "POSLOVNICA DODANA", MessageBoxButtons.OK);
+                try
+                {
+                    Poslovnica.DodajPoslovnicu(poslovnica);
+                    MessageBox.Show("Poslovnica uspješno dodana.", "POSLOVNICA DODANA", MessageBoxButtons.OK);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 Close();
             }
         }

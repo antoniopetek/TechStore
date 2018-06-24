@@ -36,8 +36,16 @@ namespace TechStore
         {
             this.KeyPreview = true;
             this.KeyDown += UiKolicinaArtikala_KeyDown;
-            Artikli = Artikl.DohvatiSveArtikle();
-            artiklBindingSource.DataSource = Artikli;
+            try
+            {
+                Artikli = Artikl.DohvatiSveArtikle();
+                artiklBindingSource.DataSource = Artikli;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             uiOutputGraf.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
         }
 
@@ -92,16 +100,23 @@ namespace TechStore
         /// <param name="dostupnost">Lista dostupnosti odabranog artikla.</param>
         private void CrtajGraf(List<Dostupnost> dostupnost)
         {
-            int brojac = 0;
-            foreach (Dostupnost d in dostupnost)
+            try
             {
-                Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(d.Poslovnica_ID);
+                int brojac = 0;
+                foreach (Dostupnost d in dostupnost)
+                {
+                    Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(d.Poslovnica_ID);
 
-                uiOutputGraf.Series["Kolicina"].Points.AddXY(poslovnica.Naziv, d.Kolicina);
-                uiOutputGraf.Series["Kolicina"].Points[brojac].Label = d.Kolicina.ToString();
-                brojac++;
+                    uiOutputGraf.Series["Kolicina"].Points.AddXY(poslovnica.Naziv, d.Kolicina);
+                    uiOutputGraf.Series["Kolicina"].Points[brojac].Label = d.Kolicina.ToString();
+                    brojac++;
 
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }     
         }
 
         /// <summary>

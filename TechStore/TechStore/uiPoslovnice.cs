@@ -76,7 +76,15 @@ namespace TechStore
         /// </summary>
         private void OsvjeziPoslovnice()
         {
-            poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+            try
+            {
+                poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>

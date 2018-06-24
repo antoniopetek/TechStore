@@ -56,8 +56,16 @@ namespace TechStore
                     Tip_ID = int.Parse(uiInputTipZaposlenika.SelectedValue.ToString())
                 };
 
-                Zaposlenik.DodajZaposlenika(zaposlenik);
-                MessageBox.Show("Zaposlenik uspješno dodan.", "ZAPOSLENIK DODAN", MessageBoxButtons.OK);
+                try
+                {
+                    Zaposlenik.DodajZaposlenika(zaposlenik);
+                    MessageBox.Show("Zaposlenik uspješno dodan.", "ZAPOSLENIK DODAN", MessageBoxButtons.OK);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 Close();
             }
         }
@@ -73,8 +81,15 @@ namespace TechStore
             this.KeyPreview = true;
             this.KeyDown += UiDodavanjeZaposlenika_KeyDown;
 
-            poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
-            tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
+            try
+            {
+                poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+                tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }  
         }
 
         /// <summary>

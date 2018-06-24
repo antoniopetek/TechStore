@@ -45,7 +45,15 @@ namespace TechStore
         {
             if (uiInputKorisnickoIme.Text != "" && uiInputLozinka.Text != "")
             {
-                Zaposlenik.PrijavljeniZaposlenik = Zaposlenik.DohvatiZaposlenika(uiInputKorisnickoIme.Text, uiInputLozinka.Text);
+                try
+                {
+                    Zaposlenik.PrijavljeniZaposlenik = Zaposlenik.DohvatiZaposlenika(uiInputKorisnickoIme.Text, uiInputLozinka.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }  
+
                 if (Zaposlenik.PrijavljeniZaposlenik != null)
                 {
                     uiIzbornik izbornik = new uiIzbornik();

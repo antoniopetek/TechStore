@@ -77,9 +77,17 @@ namespace TechStore
         /// </summary>
         private void OsvjeziZaposlenike()
         {
-            zaposlenikBindingSource.DataSource = Zaposlenik.DohvatiSveZaposlenike();
-            tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
-            poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();       
+            try
+            {
+                zaposlenikBindingSource.DataSource = Zaposlenik.DohvatiSveZaposlenike();
+                tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
+                poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                   
         }
 
         /// <summary>
@@ -90,7 +98,15 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiOutputPopisZaposlenika_SelectionChanged(object sender, EventArgs e)
         {
-            Zaposlenik zaposlenik = zaposlenikBindingSource.Current as Zaposlenik;
+            Zaposlenik zaposlenik = null;
+            try
+            {
+                zaposlenik = zaposlenikBindingSource.Current as Zaposlenik;
+            } 
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             if (zaposlenik != null)
             {

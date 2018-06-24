@@ -44,10 +44,17 @@ namespace TechStore
         {
             KeyPreview = true;
             KeyDown += UiKonfiguracija_KeyDown;
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
-            PripremiListu();
-            artiklBindingSource.DataSource = izabraneKomponente;
-            OsvjeziMaticne();
+            try
+            {
+                vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+                PripremiListu();
+                artiklBindingSource.DataSource = izabraneKomponente;
+                OsvjeziMaticne();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }        
         }
         #endregion
 
@@ -60,15 +67,23 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionIspisi_Click(object sender, EventArgs e)
         {
-            Printer.Title = "KONFIGURACIJA";
-            Printer.SubTitle = "Vrijeme i datum izrade: " + DateTime.Now.ToLongTimeString() + ", " + DateTime.Now.ToLongDateString() + "\n\n";
-            Printer.PorportionalColumns = true;
-            string zaposlenik = Zaposlenik.PrijavljeniZaposlenik.Ime + " " + Zaposlenik.PrijavljeniZaposlenik.Prezime;
-            Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(Zaposlenik.PrijavljeniZaposlenik.Poslovnica_ID);
-            Printer.Footer = uiOutputIznos.Text + "\nKonfiguraciju izradio: " + zaposlenik + "\nPoslovnica: " + poslovnica.Naziv;
-            Printer.FooterAlignment = StringAlignment.Near;
-            Printer.printDocument.DefaultPageSettings.Landscape = true;
-            Printer.PrintDataGridView(uiOutputKonfiguracija);
+            try
+            {
+                Printer.Title = "KONFIGURACIJA";
+                Printer.SubTitle = "Vrijeme i datum izrade: " + DateTime.Now.ToLongTimeString() + ", " + DateTime.Now.ToLongDateString() + "\n\n";
+                Printer.PorportionalColumns = true;
+                string zaposlenik = Zaposlenik.PrijavljeniZaposlenik.Ime + " " + Zaposlenik.PrijavljeniZaposlenik.Prezime;
+                Poslovnica poslovnica = Poslovnica.DohvatiPoslovnicu(Zaposlenik.PrijavljeniZaposlenik.Poslovnica_ID);
+                Printer.Footer = uiOutputIznos.Text + "\nKonfiguraciju izradio: " + zaposlenik + "\nPoslovnica: " + poslovnica.Naziv;
+                Printer.FooterAlignment = StringAlignment.Near;
+                Printer.printDocument.DefaultPageSettings.Landscape = true;
+                Printer.PrintDataGridView(uiOutputKonfiguracija);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -102,22 +117,30 @@ namespace TechStore
         /// <param name="broj">Broj koji predstavlja indeks ComboBox kontrole.</param>
         private void PripremiComboBoxeve(int broj)
         {
-            List<ComboBox> comboBoxevi = Controls.OfType<ComboBox>().Reverse().ToList();
-            int brojac = 0;
-            foreach (var combo in comboBoxevi)
+            try
             {
-                if (brojac > broj)
+                List<ComboBox> comboBoxevi = Controls.OfType<ComboBox>().Reverse().ToList();
+                int brojac = 0;
+                foreach (var combo in comboBoxevi)
                 {
-                    combo.Text = "";
-                    combo.Items.Clear();
-                    combo.Enabled = false;
+                    if (brojac > broj)
+                    {
+                        combo.Text = "";
+                        combo.Items.Clear();
+                        combo.Enabled = false;
+                    }
+                    brojac++;
                 }
-                brojac++;
+                for (int i = broj + 1; i < izabraneKomponente.Count; i++)
+                {
+                    izabraneKomponente[i] = null;
+                }
             }
-            for (int i = broj + 1; i < izabraneKomponente.Count; i++)
+            catch (Exception)
             {
-                izabraneKomponente[i] = null;
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         /// <summary>
@@ -166,10 +189,18 @@ namespace TechStore
         /// </summary>
         private void PripremiListu()
         {
-            for (int i = 0; i < 10; i++)
+            try
             {
-                izabraneKomponente.Add(null);
+                for (int i = 0; i < 10; i++)
+                {
+                    izabraneKomponente.Add(null);
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -177,7 +208,14 @@ namespace TechStore
         /// </summary>
         private void OsvjeziDataGrid()
         {
-            uiOutputKonfiguracija.Refresh();
+            try
+            {
+                uiOutputKonfiguracija.Refresh();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -187,12 +225,19 @@ namespace TechStore
         /// <param name="indeks"></param>
         private void RacunajIznos(int indeks)
         {
-            double iznos = 0;
-            for (int i = 0; i <= indeks; i++)
+            try
             {
-                iznos += izabraneKomponente[i].Cijena;
+                double iznos = 0;
+                for (int i = 0; i <= indeks; i++)
+                {
+                    iznos += izabraneKomponente[i].Cijena;
+                }
+                uiOutputIznos.Text = "Ukupan iznos: " + iznos.ToString() + " kn";
             }
-            uiOutputIznos.Text = "Ukupan iznos: " + iznos.ToString() + " kn";
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }         
         }
 
         /// <summary>
@@ -213,8 +258,17 @@ namespace TechStore
         /// </summary>
         private void OsvjeziMaticne()
         {
-            string upit = "SELECT * FROM Artikl a WHERE a.Vrsta_ID = 2";
-            List<Artikl> maticnePloce = Artikl.DohvatiKomponente(upit);
+            List<Artikl> maticnePloce = null;
+            try
+            {
+                string upit = "SELECT * FROM Artikl a WHERE a.Vrsta_ID = 2";
+                maticnePloce = Artikl.DohvatiKomponente(upit);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
             foreach (Artikl maticna in maticnePloce.OrderBy(x => x.Cijena))
             {
@@ -230,9 +284,17 @@ namespace TechStore
         /// </summary>
         private void OsvjeziGraficke()
         {
-            string upit = "SELECT* From Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 3 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + " )) AND k.Kompatibilni = 1";
-            List<Artikl> grafickeKartice = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(grafickeKartice, uiInputGraficka);
+            List<Artikl> grafickeKartice = null;
+            try
+            {
+                string upit = "SELECT* From Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 3 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + " )) AND k.Kompatibilni = 1";
+                grafickeKartice = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(grafickeKartice, uiInputGraficka);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }      
         }
 
         /// <summary>
@@ -241,10 +303,19 @@ namespace TechStore
         /// </summary>
         private void OsvjeziProcesore()
         {
-            string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 4 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
+            List<Artikl> procesori = null;
+            try
+            {
+                string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 4 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT  SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 4 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1";
-            List<Artikl> procesori = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(procesori, uiInputProcesor);
+                procesori = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(procesori, uiInputProcesor);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -253,11 +324,19 @@ namespace TechStore
         /// </summary>
         private void OsvjeziRAM()
         {
-            string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 5 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
+            List<Artikl> ram = null;
+            try
+            {
+                string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 5 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 5 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 5 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[2].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[2].ID + ")) AND k.Kompatibilni = 1";
-            List<Artikl> ram = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(ram, uiInputRam);
+                ram = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(ram, uiInputRam);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         /// <summary>
@@ -266,12 +345,20 @@ namespace TechStore
         /// </summary>
         private void OsvjeziSSD()
         {
-            string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 6 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
+            List<Artikl> ssd = null;
+            try
+            {
+                string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 6 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 6 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 6 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[2].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[2].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 6 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[3].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[3].ID + ")) AND k.Kompatibilni = 1";
-            List<Artikl> ssd = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(ssd, uiInputSsd);
+                ssd = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(ssd, uiInputSsd);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }          
         }
 
         /// <summary>
@@ -280,13 +367,21 @@ namespace TechStore
         /// </summary>
         private void OsvjeziHDD()
         {
-            string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 7 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
+            List<Artikl> hdd = null;
+            try
+            {
+                string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 7 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 7 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 7 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[2].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[2].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 7 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[3].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[3].ID + ")) AND k.Kompatibilni = 1" +
                 "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 7 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[4].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[4].ID + ")) AND k.Kompatibilni = 1";
-            List<Artikl> hdd = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(hdd, uiInputHdd);
+                hdd = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(hdd, uiInputHdd);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -295,14 +390,22 @@ namespace TechStore
         /// </summary>
         private void OsvjeziNapajanje()
         {
-            string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
-                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1" +
-                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[2].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[2].ID + ")) AND k.Kompatibilni = 1" +
-                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[3].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[3].ID + ")) AND k.Kompatibilni = 1" +
-                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[4].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[4].ID + ")) AND k.Kompatibilni = 1" +
-                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[5].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[5].ID + ")) AND k.Kompatibilni = 1";
-            List<Artikl> napajanje = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(napajanje, uiInputNapajanje);
+            List<Artikl> napajanje = null;
+            try
+            {
+                string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
+                   "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1" +
+                   "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[2].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[2].ID + ")) AND k.Kompatibilni = 1" +
+                   "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[3].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[3].ID + ")) AND k.Kompatibilni = 1" +
+                   "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[4].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[4].ID + ")) AND k.Kompatibilni = 1" +
+                   "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 8 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[5].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[5].ID + ")) AND k.Kompatibilni = 1";
+                napajanje = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(napajanje, uiInputNapajanje);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }     
         }
 
         /// <summary>
@@ -311,15 +414,23 @@ namespace TechStore
         /// </summary>
         private void OsvjeziHladnjak()
         {
-            string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 9 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
+            List<Artikl> hladnjak = null;
+            try
+            {
+                string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 9 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 9 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 9 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[2].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[2].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 9 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[3].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[3].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 9 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[4].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[4].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 9 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[5].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[5].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 9 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[6].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[6].ID + ")) AND k.Kompatibilni = 1";
-            List<Artikl> hladnjak = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(hladnjak, uiInputHladnjak);
+                hladnjak = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(hladnjak, uiInputHladnjak);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         /// <summary>
@@ -328,7 +439,10 @@ namespace TechStore
         /// </summary>
         private void OsvjeziZvucneKartice()
         {
-            string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 10 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
+            List<Artikl> zvucnaKartica = null;
+            try
+            {
+                string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 10 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 10 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 10 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[2].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[2].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 10 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[3].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[3].ID + ")) AND k.Kompatibilni = 1" +
@@ -336,8 +450,13 @@ namespace TechStore
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 10 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[5].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[5].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 10 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[6].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[6].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 10 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[7].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[7].ID + ")) AND k.Kompatibilni = 1";
-            List<Artikl> zvucnaKartica = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(zvucnaKartica, uiInputZvucna);
+                zvucnaKartica = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(zvucnaKartica, uiInputZvucna);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }       
         }
 
         /// <summary>
@@ -346,7 +465,10 @@ namespace TechStore
         /// </summary>
         private void OsvjeziKucista()
         {
-            string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 11 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
+            List<Artikl> kuciste = null;
+            try
+            {
+                string upit = "SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 11 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[0].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[0].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.Vrsta_ID = 11 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[1].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[1].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 11 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[2].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[2].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 11 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[3].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[3].ID + ")) AND k.Kompatibilni = 1" +
@@ -355,8 +477,13 @@ namespace TechStore
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 11 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[6].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[6].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 11 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[7].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[7].ID + ")) AND k.Kompatibilni = 1" +
                "INTERSECT SELECT a.ID, a.Naziv, a.Kratki_opis, a.Specifikacija, a.Cijena, a.Vrsta_ID FROM Artikl a, Kompatibilnost k WHERE a.VRSTA_ID = 11 AND ((a.ID = k.Komponenta2 AND k.Komponenta1 = " + izabraneKomponente[8].ID + ") OR (a.ID = k.Komponenta1 AND k.Komponenta2 = " + izabraneKomponente[8].ID + ")) AND k.Kompatibilni = 1";
-            List<Artikl> kuciste = Artikl.DohvatiKomponente(upit);
-            RacunajPreporuke(kuciste, uiInputKuciste);
+                kuciste = Artikl.DohvatiKomponente(upit);
+                RacunajPreporuke(kuciste, uiInputKuciste);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
 
