@@ -43,9 +43,7 @@ namespace TechStore
             if (poslovnicaNabava != null )
             {
                 artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
-                poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
-                uiInputPoslovnica.Text = poslovnicaNabava.Naziv;
-                uiInputPoslovnica.Enabled = false;
+               
 
             }
         }
@@ -94,18 +92,18 @@ namespace TechStore
             if (poslovnicaNabava != null && artikls.Count>0 )
             {
                 noviDokument = DodajDokument(trenutnoVrijeme);
-                Poslovnica poslovnicaIzComboBoxa = (Poslovnica)poslovnicaBindingSource.Current;
+                
                 int trenutniIndex = 0;
                 foreach (var artikl in artikls)
                 {
-                    Dostupnost postojeca = Dostupnost.DohvatiDostupnost(poslovnicaIzComboBoxa, artikl.ID);
+                    Dostupnost postojeca = Dostupnost.DohvatiDostupnost(poslovnicaNabava, artikl.ID);
                     int kolicina = int.Parse(uiOutputPopisArtikala.Rows[trenutniIndex].Cells["Kolicina"].Value.ToString());
                     if (postojeca == null)
                     {
                         Dostupnost novaDostupnost = new Dostupnost
                         {
                             Artikl_ID = int.Parse(uiInputArtikl.SelectedValue.ToString()),
-                            Poslovnica_ID = int.Parse(uiInputPoslovnica.SelectedValue.ToString()),
+                            Poslovnica_ID = poslovnicaNabava.ID,
                             Kolicina = kolicina
                         };
                         Dostupnost.DodajDostupnost(novaDostupnost);

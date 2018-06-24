@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.uiInputPoslovnica = new System.Windows.Forms.ComboBox();
-            this.poslovnicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiInputArtikl = new System.Windows.Forms.ComboBox();
             this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiInputKolicina = new System.Windows.Forms.TextBox();
@@ -51,29 +49,12 @@
             this.kompatibilnost1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkaDokumentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.uiLabelPoslovnica = new System.Windows.Forms.Label();
             this.uiLabelArtikl = new System.Windows.Forms.Label();
             this.uiLabelKolicina = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPopisArtikala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // uiInputPoslovnica
-            // 
-            this.uiInputPoslovnica.DataSource = this.poslovnicaBindingSource;
-            this.uiInputPoslovnica.DisplayMember = "Naziv";
-            this.uiInputPoslovnica.FormattingEnabled = true;
-            this.uiInputPoslovnica.Location = new System.Drawing.Point(102, 160);
-            this.uiInputPoslovnica.Name = "uiInputPoslovnica";
-            this.uiInputPoslovnica.Size = new System.Drawing.Size(250, 21);
-            this.uiInputPoslovnica.TabIndex = 0;
-            this.uiInputPoslovnica.ValueMember = "ID";
-            // 
-            // poslovnicaBindingSource
-            // 
-            this.poslovnicaBindingSource.DataSource = typeof(TechStore.Poslovnica);
             // 
             // uiInputArtikl
             // 
@@ -269,18 +250,6 @@
             // 
             this.artiklBindingSource1.DataSource = typeof(TechStore.Artikl);
             // 
-            // uiLabelPoslovnica
-            // 
-            this.uiLabelPoslovnica.AutoSize = true;
-            this.uiLabelPoslovnica.BackColor = System.Drawing.Color.Transparent;
-            this.uiLabelPoslovnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiLabelPoslovnica.ForeColor = System.Drawing.Color.White;
-            this.uiLabelPoslovnica.Location = new System.Drawing.Point(1, 160);
-            this.uiLabelPoslovnica.Name = "uiLabelPoslovnica";
-            this.uiLabelPoslovnica.Size = new System.Drawing.Size(80, 15);
-            this.uiLabelPoslovnica.TabIndex = 9;
-            this.uiLabelPoslovnica.Text = "Poslovnica:";
-            // 
             // uiLabelArtikl
             // 
             this.uiLabelArtikl.AutoSize = true;
@@ -314,14 +283,12 @@
             this.ClientSize = new System.Drawing.Size(990, 407);
             this.Controls.Add(this.uiLabelKolicina);
             this.Controls.Add(this.uiLabelArtikl);
-            this.Controls.Add(this.uiLabelPoslovnica);
             this.Controls.Add(this.uiOutputPopisArtikala);
             this.Controls.Add(this.uiActionDodaj);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiActionSpremi);
             this.Controls.Add(this.uiInputKolicina);
             this.Controls.Add(this.uiInputArtikl);
-            this.Controls.Add(this.uiInputPoslovnica);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -329,7 +296,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nabava";
             this.Load += new System.EventHandler(this.FrmNabava_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.poslovnicaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiOutputPopisArtikala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource1)).EndInit();
@@ -339,13 +305,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox uiInputPoslovnica;
         private System.Windows.Forms.ComboBox uiInputArtikl;
         private System.Windows.Forms.TextBox uiInputKolicina;
         private System.Windows.Forms.Button uiActionSpremi;
         private System.Windows.Forms.Button uiActionOdustani;
-        private System.Windows.Forms.BindingSource poslovnicaBindingSource;
         private System.Windows.Forms.BindingSource artiklBindingSource;
         private System.Windows.Forms.Button uiActionDodaj;
         private System.Windows.Forms.DataGridView uiOutputPopisArtikala;
@@ -362,7 +325,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kompatibilnost1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stavkaDokumentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource artiklBindingSource1;
-        private System.Windows.Forms.Label uiLabelPoslovnica;
         private System.Windows.Forms.Label uiLabelArtikl;
         private System.Windows.Forms.Label uiLabelKolicina;
     }

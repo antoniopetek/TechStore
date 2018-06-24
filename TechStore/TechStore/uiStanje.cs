@@ -15,6 +15,7 @@ namespace TechStore
     /// </summary>
     public partial class UiStanje : Form
     {
+        private Poslovnica trenutnaPoslovnica = Poslovnica.DohvatiPoslovnicu(Zaposlenik.PrijavljeniZaposlenik.Poslovnica_ID);
         /// <summary>
         /// Konstruktor forme uiStanje.
         /// </summary>
@@ -32,7 +33,8 @@ namespace TechStore
         {
             this.KeyPreview = true;
             this.KeyDown += FrmStanje_KeyDown;
-            poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+            uiLabelPoslovnice.Text = "Poslovnica : " + trenutnaPoslovnica.Naziv;
+            OsvjeziArtikle();
 
         }
 
@@ -75,24 +77,10 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionNaruci_Click(object sender, EventArgs e)
         {
-            Poslovnica trenutnaPoslovnica = (Poslovnica)poslovnicaBindingSource.Current;
+            
             UiNabava formaNabava = new UiNabava(trenutnaPoslovnica);
             formaNabava.ShowDialog();
             OsvjeziArtikle();
-        }
-
-        /// <summary>
-        /// Metoda koja se poziva prilikom mijenjanja poslovnica.
-        /// Dohvaća se trenutno označena poslovnica te se prema njoj 
-        /// kreira upit s kojim se dohvaća naziv i cijena artikla te
-        /// količina artikla u označenoj poslovnici.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UiOutputStanjeArtikala_SelectionChanged(object sender, EventArgs e)
-        {
-            OsvjeziArtikle();
-            
         }
 
         /// <summary>
@@ -100,7 +88,6 @@ namespace TechStore
         /// </summary>
         private void OsvjeziArtikle()
         {
-            Poslovnica trenutnaPoslovnica = (Poslovnica)poslovnicaBindingSource.Current;
             using (var db = new TechStoreEntities())
             {
                 var rezultat = (from artikl in db.Artikl
