@@ -46,7 +46,9 @@ namespace TechStore
         {
             this.KeyPreview = true;
             this.KeyDown += UiZaposlenici_KeyDown;
-            OsvjeziZaposlenike();   
+            OsvjeziTipoveZaposlenika();
+            OsvjeziPoslovnice();
+            OsvjeziZaposlenike();    
         }
 
         /// <summary>
@@ -80,8 +82,6 @@ namespace TechStore
             try
             {
                 zaposlenikBindingSource.DataSource = Zaposlenik.DohvatiSveZaposlenike();
-                tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
-                poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
             }
             catch (Exception)
             {
@@ -90,6 +90,29 @@ namespace TechStore
                    
         }
 
+        private void OsvjeziTipoveZaposlenika()
+        {
+            try
+            {
+                tipZaposlenikaBindingSource.DataSource = TipZaposlenika.DohvatiTipoveZaposlenika();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void OsvjeziPoslovnice()
+        {
+            try
+            {
+                poslovnicaBindingSource.DataSource = Poslovnica.DohvatiPoslovnice();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         /// <summary>
         /// Rukuje događajem promjene selektiranog retka u DataGridView kontroli.
         /// Podatke o selektiranom zaposleniku prikazuje u TextBox kontrolama.
