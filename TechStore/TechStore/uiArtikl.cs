@@ -35,8 +35,16 @@ namespace TechStore
         {
             uiNoviArtikl noviArtikl = new uiNoviArtikl();
             noviArtikl.ShowDialog();
-            artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            try
+            {
+                artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
+                vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -86,10 +94,27 @@ namespace TechStore
         /// <param name="e"></param>
         private void Button1_Click(object sender, EventArgs e)
         {
-            Artikl artiklZaBrisanje = (Artikl)artiklBindingSource.Current;
+            Artikl artiklZaBrisanje = null;
+            try
+            {
+                artiklZaBrisanje = (Artikl)artiklBindingSource.Current;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             if (MessageBox.Show("Sigurno želite obrisati artikl " + artiklZaBrisanje.Naziv + " i sve stavke, kompatibilnosti i dostupnosti vezane uz artikl?", "Upozorenje", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Artikl.ObrisiArtikl(artiklZaBrisanje);
+                try
+                {
+                    Artikl.ObrisiArtikl(artiklZaBrisanje);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 MessageBox.Show("Artikl je uspješno obrisan!", "Artikl obrisan", MessageBoxButtons.OK);
                 OsvjeziPrikaze();
             }
@@ -102,9 +127,16 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionAzurirajArtikl_Click(object sender, EventArgs e)
         {
-            Artikl artiklZaAzuriranje = (Artikl)artiklBindingSource.Current;
-            uiNoviArtikl formaNoviArtikl = new uiNoviArtikl(artiklZaAzuriranje);
-            formaNoviArtikl.ShowDialog();
+            try
+            {
+                Artikl artiklZaAzuriranje = (Artikl)artiklBindingSource.Current;
+                uiNoviArtikl formaNoviArtikl = new uiNoviArtikl(artiklZaAzuriranje);
+                formaNoviArtikl.ShowDialog();
+            }
+            catch (Exception)
+            {
+                
+            }
             OsvjeziPrikaze();
         }
 
@@ -113,8 +145,16 @@ namespace TechStore
         /// </summary>
         private void OsvjeziPrikaze()
         {
-            artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            try
+            {
+                artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
+                vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>

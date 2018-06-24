@@ -57,36 +57,44 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
-            if (VrstaArtiklaZaIzmjenu == null)
+            try
             {
-                if (uiInputNaziv.Text != "")
+                if (VrstaArtiklaZaIzmjenu == null)
                 {
-                    VrstaArtikla novaVrstaArtikla = new VrstaArtikla
+                    if (uiInputNaziv.Text != "")
                     {
-                        Naziv = uiInputNaziv.Text
-                    };
-                    VrstaArtikla.DodajVrstuArtikla(novaVrstaArtikla);
-                    MessageBox.Show("Vrsta artikla uspješno dodana.", "Vrsta artikla dodana!", MessageBoxButtons.OK);
+                        VrstaArtikla novaVrstaArtikla = new VrstaArtikla
+                        {
+                            Naziv = uiInputNaziv.Text
+                        };
+                        VrstaArtikla.DodajVrstuArtikla(novaVrstaArtikla);
+                        MessageBox.Show("Vrsta artikla uspješno dodana.", "Vrsta artikla dodana!", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Niste unijeli sve podatke", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Niste unijeli sve podatke", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                if (uiInputNaziv.Text != "")
-                {
-                    VrstaArtikla.IzmjenaVrsteArtikla(VrstaArtiklaZaIzmjenu, uiInputNaziv.Text);
-                    MessageBox.Show("Vrsta artikla usješno ažurirana", "Vrsta artikla ažurirana!", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("Unesi naziv vrste artikla!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    if (uiInputNaziv.Text != "")
+                    {
+                        VrstaArtikla.IzmjenaVrsteArtikla(VrstaArtiklaZaIzmjenu, uiInputNaziv.Text);
+                        MessageBox.Show("Vrsta artikla usješno ažurirana", "Vrsta artikla ažurirana!", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unesi naziv vrste artikla!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
+                }
+                this.Close();
             }
-            this.Close();
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
         }
 

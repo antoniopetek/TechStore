@@ -28,7 +28,7 @@ namespace TechStore
             InitializeComponent();
             poslovnicaNabava = poslovnica;
         }
-        
+
 
         /// <summary>
         /// Metoda koja se poziva prilikom učitavanja forme uiNabava
@@ -37,15 +37,18 @@ namespace TechStore
         /// <param name="e"></param>
         private void FrmNabava_Load(object sender, EventArgs e)
         {
-            
+
             this.KeyPreview = true;
             this.KeyDown += FrmNabava_KeyDown;
-            if (poslovnicaNabava != null )
+            try
             {
                 artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
-               
-
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -89,36 +92,44 @@ namespace TechStore
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
 
-            if (poslovnicaNabava != null && artikls.Count>0 )
+            if (poslovnicaNabava != null && artikls.Count > 0)
             {
-                noviDokument = DodajDokument(trenutnoVrijeme);
-                
-                int trenutniIndex = 0;
-                foreach (var artikl in artikls)
+                try
                 {
-                    Dostupnost postojeca = Dostupnost.DohvatiDostupnost(poslovnicaNabava, artikl.ID);
-                    int kolicina = int.Parse(uiOutputPopisArtikala.Rows[trenutniIndex].Cells["Kolicina"].Value.ToString());
-                    if (postojeca == null)
+                    noviDokument = DodajDokument(trenutnoVrijeme);
+
+                    int trenutniIndex = 0;
+                    foreach (var artikl in artikls)
                     {
-                        Dostupnost novaDostupnost = new Dostupnost
+                        Dostupnost postojeca = Dostupnost.DohvatiDostupnost(poslovnicaNabava, artikl.ID);
+                        int kolicina = int.Parse(uiOutputPopisArtikala.Rows[trenutniIndex].Cells["Kolicina"].Value.ToString());
+                        if (postojeca == null)
                         {
-                            Artikl_ID = int.Parse(uiInputArtikl.SelectedValue.ToString()),
-                            Poslovnica_ID = poslovnicaNabava.ID,
-                            Kolicina = kolicina
-                        };
-                        Dostupnost.DodajDostupnost(novaDostupnost);
-                        DodajStavkuDokumenta(noviDokument, artikl.ID, kolicina);
+                            Dostupnost novaDostupnost = new Dostupnost
+                            {
+                                Artikl_ID = int.Parse(uiInputArtikl.SelectedValue.ToString()),
+                                Poslovnica_ID = poslovnicaNabava.ID,
+                                Kolicina = kolicina
+                            };
+                            Dostupnost.DodajDostupnost(novaDostupnost);
+                            DodajStavkuDokumenta(noviDokument, artikl.ID, kolicina);
+                        }
+                        else
+                        {
+                            Dostupnost.IzmjenaDostupnosti(postojeca, kolicina);
+                            DodajStavkuDokumenta(noviDokument, artikl.ID, kolicina);
+                        }
+                        trenutniIndex++;
                     }
-                    else
-                    {
-                        Dostupnost.IzmjenaDostupnosti(postojeca, kolicina);
-                        DodajStavkuDokumenta(noviDokument, artikl.ID, kolicina);
-                    }
-                    trenutniIndex++;
+                    DodajStanjeDokumenta(noviDokument, trenutnoVrijeme);
+                    MessageBox.Show("Uspješno je naručen proizvod za poslovnicu !", "Naručen artikl!", MessageBoxButtons.OK);
+                    this.Close();
                 }
-                DodajStanjeDokumenta(noviDokument, trenutnoVrijeme);
-                MessageBox.Show("Uspješno je naručen proizvod za poslovnicu !", "Naručen artikl!", MessageBoxButtons.OK);
-                this.Close();
+                catch (Exception)
+                {
+                    MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
             else
             {
@@ -152,13 +163,21 @@ namespace TechStore
         /// <returns></returns>
         private Dokument DodajDokument(DateTime trenutnoVrijeme)
         {
+
             Dokument noviDokument = new Dokument
             {
                 VrstaDokumenta_ID = 1,
                 Vrijeme_izdavanja = BitConverter.GetBytes(trenutnoVrijeme.Ticks),
 
             };
-            Dokument.DodajDokument(noviDokument);
+            try
+            {
+                Dokument.DodajDokument(noviDokument);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             return noviDokument;
         }
 
@@ -175,7 +194,15 @@ namespace TechStore
                 Dokument_ID = noviDokument.ID,
                 Kolicina = kolicina
             };
-            StavkaDokumenta.DodajStavkuDokumenta(novaStavkaDokumenta);
+            try
+            {
+                StavkaDokumenta.DodajStavkuDokumenta(novaStavkaDokumenta);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -195,10 +222,18 @@ namespace TechStore
                 Datum_promjene = BitConverter.GetBytes(trenutnoVrijeme.Ticks),
 
             };
-            StanjeDokumenta.DodajStanjeDokumenta(novoStanjeDokumenta);
+            try
+            {
+                StanjeDokumenta.DodajStanjeDokumenta(novoStanjeDokumenta);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
-        
+
 
         /// <summary>
         /// Dodaje odabrani artikl u datagridview iz kojeg se zatim
@@ -208,39 +243,47 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionDodaj_Click(object sender, EventArgs e)
         {
-            if (IspravnostKolicine())
+            try
             {
-                bool nadeno = false;
-                int indexReda = 0;
-                Artikl odabraniArtikl = (Artikl)uiInputArtikl.SelectedItem;
-                foreach (var artikl in artikls)
+                if (IspravnostKolicine())
                 {
-                    if (artikl.ID == odabraniArtikl.ID)
+                    bool nadeno = false;
+                    int indexReda = 0;
+                    Artikl odabraniArtikl = (Artikl)uiInputArtikl.SelectedItem;
+                    foreach (var artikl in artikls)
                     {
-                        nadeno = true;
-                        break;
+                        if (artikl.ID == odabraniArtikl.ID)
+                        {
+                            nadeno = true;
+                            break;
+                        }
+                        indexReda++;
                     }
-                    indexReda++;
-                }
-                if (!nadeno)
-                {
-                    artikls.Add(odabraniArtikl);
-                    uiOutputPopisArtikala.DataSource = artikls;
-                    uiOutputPopisArtikala.Rows[artikls.Count - 1].Cells["Kolicina"].Value = int.Parse(uiInputKolicina.Text);
+                    if (!nadeno)
+                    {
+                        artikls.Add(odabraniArtikl);
+                        uiOutputPopisArtikala.DataSource = artikls;
+                        uiOutputPopisArtikala.Rows[artikls.Count - 1].Cells["Kolicina"].Value = int.Parse(uiInputKolicina.Text);
+                    }
+                    else
+                    {
+                        int trenutnaKolicina = int.Parse(uiOutputPopisArtikala.Rows[indexReda].Cells["Kolicina"].Value.ToString());
+                        uiOutputPopisArtikala.Rows[indexReda].Cells["Kolicina"].Value = int.Parse(uiInputKolicina.Text) + trenutnaKolicina;
+                        uiOutputPopisArtikala.DataSource = artikls;
+                    }
                 }
                 else
                 {
-                    int trenutnaKolicina = int.Parse(uiOutputPopisArtikala.Rows[indexReda].Cells["Kolicina"].Value.ToString());
-                    uiOutputPopisArtikala.Rows[indexReda].Cells["Kolicina"].Value = int.Parse(uiInputKolicina.Text) + trenutnaKolicina;
-                    uiOutputPopisArtikala.DataSource = artikls;
+                    MessageBox.Show("Unesite pozitivan broj za količinu", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                uiInputKolicina.Clear();
+                uiInputArtikl.DataSource = artiklBindingSource;
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Unesite pozitivan broj za količinu", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            uiInputKolicina.Clear();
-            uiInputArtikl.DataSource = artiklBindingSource;
+            
         }
     }
 }

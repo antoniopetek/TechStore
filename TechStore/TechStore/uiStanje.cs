@@ -77,7 +77,7 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionNaruci_Click(object sender, EventArgs e)
         {
-            
+
             UiNabava formaNabava = new UiNabava(trenutnaPoslovnica);
             formaNabava.ShowDialog();
             OsvjeziArtikle();
@@ -88,30 +88,39 @@ namespace TechStore
         /// </summary>
         private void OsvjeziArtikle()
         {
-            using (var db = new TechStoreEntities())
+            try
             {
-                var rezultat = (from artikl in db.Artikl
-                                join dostupnost in db.Dostupnost on artikl.ID equals dostupnost.Artikl_ID
-                                join poslovnica in db.Poslovnica on dostupnost.Poslovnica_ID equals poslovnica.ID
-                                where poslovnica.ID == trenutnaPoslovnica.ID
-                                select new
-                                {
-                                    artikl.ID,
-                                    artikl.Naziv,
-                                    artikl.Cijena,
-                                    dostupnost.Kolicina
-                                }).ToList();
-                uiOutputStanjeArtikala.DataSource = rezultat;
-                uiOutputStanjeArtikala.Refresh();
-                foreach (DataGridViewRow red in uiOutputStanjeArtikala.Rows)
+                using (var db = new TechStoreEntities())
                 {
-                    if (Convert.ToInt32(red.Cells[3].Value)<5)
+                    var rezultat = (from artikl in db.Artikl
+                                    join dostupnost in db.Dostupnost on artikl.ID equals dostupnost.Artikl_ID
+                                    join poslovnica in db.Poslovnica on dostupnost.Poslovnica_ID equals poslovnica.ID
+                                    where poslovnica.ID == trenutnaPoslovnica.ID
+                                    select new
+                                    {
+                                        artikl.ID,
+                                        artikl.Naziv,
+                                        artikl.Cijena,
+                                        dostupnost.Kolicina
+                                    }).ToList();
+                    uiOutputStanjeArtikala.DataSource = rezultat;
+                    uiOutputStanjeArtikala.Refresh();
+                    foreach (DataGridViewRow red in uiOutputStanjeArtikala.Rows)
                     {
-                        red.DefaultCellStyle.BackColor = Color.Red;
+                        if (Convert.ToInt32(red.Cells[3].Value) < 5)
+                        {
+                            red.DefaultCellStyle.BackColor = Color.Red;
+                        }
                     }
+                    uiOutputStanjeArtikala.Refresh();
                 }
-                uiOutputStanjeArtikala.Refresh();
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

@@ -21,8 +21,16 @@ namespace TechStore
         public UiPregledNarudzbi()
         {
             InitializeComponent();
-            artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
-            vrstaDokumentaBindingSource.DataSource = VrstaDokumenta.DohvatiVrsteDokumenta();
+            try
+            {
+                artiklBindingSource.DataSource = Artikl.DohvatiSveArtikle();
+                vrstaDokumentaBindingSource.DataSource = VrstaDokumenta.DohvatiVrsteDokumenta();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         /// <summary>
@@ -44,7 +52,15 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiPregledNarudzbi_Load(object sender, EventArgs e)
         {
-            dokumentBindingSource.DataSource = Dokument.DohvatiDokumente();
+            try
+            {
+                dokumentBindingSource.DataSource = Dokument.DohvatiDokumente();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             this.KeyPreview = true;
             this.KeyDown += UiPregledNarudzbi_KeyDown;
         }
@@ -58,7 +74,7 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiPregledNarudzbi_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode.ToString() == "F1")
+            if (e.KeyCode.ToString() == "F1")
             {
                 uiHelp frmHelp = new uiHelp();
                 RichTextBox richTextBox = (RichTextBox)frmHelp.Controls.Find("uiOutputPrikazPomoci", true)[0];
@@ -79,10 +95,14 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiOutputNarudzbe_SelectionChanged(object sender, EventArgs e)
         {
-            Dokument trenutniDokument = (Dokument)dokumentBindingSource.Current;
-            if (trenutniDokument!=null)
+            try
             {
+                Dokument trenutniDokument = (Dokument)dokumentBindingSource.Current;
                 stavkaDokumentaBindingSource.DataSource = StavkaDokumenta.DohvatiStavkeDokumenta(trenutniDokument);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

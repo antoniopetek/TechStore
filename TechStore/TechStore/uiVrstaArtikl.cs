@@ -40,7 +40,14 @@ namespace TechStore
                 uiActionDodaj.Enabled = false;
                 uiActionObrisi.Enabled = false;
             }
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            try
+            {
+                vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             this.KeyPreview = true;
             this.KeyDown += UiVrstaArtikl_KeyDown;
         }
@@ -73,9 +80,17 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionDodaj_Click(object sender, EventArgs e)
         {
-            uiDodavanjeVrsteArtikla dodavanjeVrsteArtikla = new uiDodavanjeVrsteArtikla();
-            dodavanjeVrsteArtikla.ShowDialog();
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            try
+            {
+                uiDodavanjeVrsteArtikla dodavanjeVrsteArtikla = new uiDodavanjeVrsteArtikla();
+                dodavanjeVrsteArtikla.ShowDialog();
+                vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -85,12 +100,20 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionObrisi_Click(object sender, EventArgs e)
         {
-            VrstaArtikla vrstaArtiklaZaBrisanje = (VrstaArtikla)vrstaArtiklaBindingSource.Current;
-            if (MessageBox.Show("Sigurno želite obrisati vrstu artikla " + vrstaArtiklaZaBrisanje.Naziv.ToString() + " ?", "Upozorenje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            try
             {
-                VrstaArtikla.ObrisiVrstuArtikla(vrstaArtiklaZaBrisanje);
+                VrstaArtikla vrstaArtiklaZaBrisanje = (VrstaArtikla)vrstaArtiklaBindingSource.Current;
+                if (MessageBox.Show("Sigurno želite obrisati vrstu artikla " + vrstaArtiklaZaBrisanje.Naziv.ToString() + " ?", "Upozorenje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    VrstaArtikla.ObrisiVrstuArtikla(vrstaArtiklaZaBrisanje);
+                }
+                vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
             }
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         /// <summary>
@@ -100,10 +123,18 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiActionAzuriraj_Click(object sender, EventArgs e)
         {
-            VrstaArtikla vrstaArtiklaZaIzmjenu = (VrstaArtikla)vrstaArtiklaBindingSource.Current;
-            uiDodavanjeVrsteArtikla formaDodavanjeVrsteArtikla = new uiDodavanjeVrsteArtikla(vrstaArtiklaZaIzmjenu);
-            formaDodavanjeVrsteArtikla.ShowDialog();
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            try
+            {
+                VrstaArtikla vrstaArtiklaZaIzmjenu = (VrstaArtikla)vrstaArtiklaBindingSource.Current;
+                uiDodavanjeVrsteArtikla formaDodavanjeVrsteArtikla = new uiDodavanjeVrsteArtikla(vrstaArtiklaZaIzmjenu);
+                formaDodavanjeVrsteArtikla.ShowDialog();
+                vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         /// <summary>
@@ -126,7 +157,15 @@ namespace TechStore
         /// <param name="e"></param>
         private void UiInputPretraga_TextChanged(object sender, EventArgs e)
         {
-            vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            try
+            {
+                vrstaArtiklaBindingSource.DataSource = VrstaArtikla.DohvatiVrsteArtikala();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pogreška!", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
             pretraga.Pretrazi(uiOutputVrsteArtikla, uiInputPretraga.Text, 1);
         }
 
