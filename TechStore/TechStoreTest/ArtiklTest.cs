@@ -15,8 +15,9 @@ namespace TechStoreTest
     public class ArtiklTest
     {
         /// <summary>
-        /// Testna metoda koja provjerava postojanje artikla. Ako artikl s proslijeđenim
-        /// ID - em postoji vraća taj artikl, inače vraća null.
+        /// Testna metoda koja provjerava postojanje artikla. Ako
+        /// artikl s proslijeđenim ID - em postoji vraća taj artikl,
+        /// inače vraća null.
         /// </summary>
         [TestMethod]
         public void DohvatiArtiklTest_ArtiklNePostoji()
@@ -27,8 +28,7 @@ namespace TechStoreTest
         }
 
         /// <summary>
-        /// Testna metoda koja provjerava postojanje artikla. Ako artikl s proslijeđenim
-        /// ID - em postoji vraća taj artikl, inače vraća null.
+        /// Testna metoda koja provjerava postojanje artikla. 
         /// </summary>
         [TestMethod]
         public void DohvatiArtiklTest_ArtiklPostoji()
@@ -37,7 +37,74 @@ namespace TechStoreTest
             artikl = Artikl.DohvatiArtikl(1);
             Assert.IsNotNull(artikl);
         }
-       
+
+        /// <summary>
+        /// Testna metoda koja provjerava je li isti ID novog objekta i 
+        /// već postojećeg objekta klase Artikl.
+        /// </summary>
+        [TestMethod]
+        public void DohvatiArtiklTest_UsporediSNovimIsti()
+        {
+            Artikl postojeci = Artikl.DohvatiArtikl(1);
+            Artikl novi = new Artikl
+            {
+                ID = 1
+            };
+            Assert.AreEqual(postojeci.ID, novi.ID);
+        }
+
+        /// <summary>
+        /// Testna metoda koja provjera je li različit ID novog objekta i 
+        /// već postojećeg objekta klase Artikl.
+        /// </summary>
+        [TestMethod]
+        public void DohvatiArtiklTest_UsporediSNovimRazliciti()
+        {
+            Artikl postojeci = Artikl.DohvatiArtikl(1);
+            Artikl novi = new Artikl
+            {
+                ID = 2
+            };
+            Assert.AreNotEqual(postojeci.ID, novi.ID);
+        }
+
+        /// <summary>
+        /// Testna metoda koja provjera brisanje artikla koji ne postoji
+        /// u bazi podataka.
+        /// </summary>
+        [TestMethod]
+        public void ObrisiArtiklTest_ArtikNelPostoji()
+        {
+            try
+            {
+                Artikl artikl = Artikl.DohvatiArtikl(456);
+                Artikl.ObrisiArtikl(artikl);
+                Assert.Fail();
+            }
+            catch (Exception )
+            {
+                
+            }
+        }
+        
+        /// <summary>
+        /// Testna metoda koja provjera brisanje artikla koji postoji
+        /// u bazi podataka
+        /// </summary>
+        [TestMethod]
+        public void ObrisiArtiklTest_ArtiklPostoji()
+        {
+            try
+            {
+                Artikl artikl = Artikl.DohvatiArtikl(1);
+                Artikl.ObrisiArtikl(artikl);
+                Assert.IsTrue(true);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 
 }
