@@ -303,7 +303,7 @@ namespace TechStore
                 {
                     DodajKompatibilnostPomoc(trenutniArtikl, noviArtikl, true);
                 }
-                else if (trenutniArtikl.Vrsta_ID == 11 || trenutniArtikl.Vrsta_ID == 9)
+                else if (trenutniArtikl.Vrsta_ID == 11)
                 {
                     double visinaTrenutniArtikl = 0;
                     double sirinaTrenutniArtikl = 0;
@@ -388,7 +388,7 @@ namespace TechStore
             List<string> listaSpecifikacijaNovogArtikla = noviArtikl.Specifikacija.Split(',').ToList();
             foreach (var trenutniArtikl in listaArtikala)
             {
-                if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 5)
+                if (trenutniArtikl.Vrsta_ID == 2 || trenutniArtikl.Vrsta_ID == 5 || trenutniArtikl.Vrsta_ID==9)   
                 {
                     ProvjeraPoSvimSpecifikacijama(trenutniArtikl, noviArtikl, listaSpecifikacijaNovogArtikla);
                 }
