@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>186225_VQC_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DGV Printer">
       <HintPath>..\DGV Printer.dll</HintPath>
@@ -303,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pozadina_nova.jpg" />
+    <Content Include="186225_VQC_icon.ico" />
     <Content Include="TechStoreModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TechStoreModel.Context.cs</LastGenOutput>

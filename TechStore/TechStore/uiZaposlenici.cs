@@ -73,9 +73,7 @@ namespace TechStore
         }
 
         /// <summary>
-        /// Puni zaposlenikBindingSource s listom zaposlenika uz pomoć statičke metode DohvatiSveZaposlenike. 
-        /// Puni tipZaposlenikaBindingSource uz pomoć statičke metode
-        /// DohvatiTipoveZaposlenika i puni poslovnicaBindingSource uz pomoć statičke metode DohvatiPoslovnice.
+        /// Metodu puni zaposlenikBindingSource s listom zaposlenika uz pomoć statičke metode DohvatiSveZaposlenike. 
         /// </summary>
         private void OsvjeziZaposlenike()
         {
@@ -90,6 +88,9 @@ namespace TechStore
                    
         }
 
+        /// <summary>
+        /// Metoda puni tipZaposlenikaBindingSource uz pomoć statičke metode DohvatiTipoveZaposlenike.
+        /// </summary>
         private void OsvjeziTipoveZaposlenika()
         {
             try
@@ -102,6 +103,9 @@ namespace TechStore
             }
         }
 
+        /// <summary>
+        /// Metoda puni poslovnicaBindingSource uz pomoć statičke metode DohvatiPoslovnice.
+        /// </summary>
         private void OsvjeziPoslovnice()
         {
             try
@@ -113,6 +117,7 @@ namespace TechStore
                 MessageBox.Show("Došlo je do pogreške.", "GREŠKA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         /// <summary>
         /// Rukuje događajem promjene selektiranog retka u DataGridView kontroli.
         /// Podatke o selektiranom zaposleniku prikazuje u TextBox kontrolama.
