@@ -108,6 +108,11 @@ namespace TechStore
             {
                 try
                 {
+                    var listaKompatibilnosti = Kompatibilnost.DohvatiKompatibilnosti("SELECT * FROM Kompatibilnost WHERE Komponenta1=" + artiklZaBrisanje.ID+ " OR Komponenta2=" + artiklZaBrisanje.ID);
+                    foreach (var kompatibilnost in listaKompatibilnosti)
+                    {
+                        Kompatibilnost.ObrisiKompatibilnost(kompatibilnost);
+                    }
                     Artikl.ObrisiArtikl(artiklZaBrisanje);
                 }
                 catch (Exception)

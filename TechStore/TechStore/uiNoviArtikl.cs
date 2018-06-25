@@ -30,6 +30,7 @@ namespace TechStore
             uiInputKratkiOpis.Text = ArtiklZaIzmjenu.Kratki_opis;
             uiInputSpecifikacije.Text = ArtiklZaIzmjenu.Specifikacija;
             uiInputCijena.Text = ArtiklZaIzmjenu.Cijena.ToString();
+            uiActionDodajArtikl.Text = "Ažuriraj";
 
         }
         /// <summary>
